@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SQL Dojo — dbt-core onboarding</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #161922;
+    --panel2: #1d212c;
+    --border: #2a2f3a;
+    --text: #e6e8ec;
+    --muted: #8b92a3;
+    --accent: #5b8cff;
+    --easy: #3ecf8e;
+    --medium: #f5a623;
+    --hard: #ef5b5b;
+    --mono: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  #app { display: flex; height: 100vh; }
+
+  /* Sidebar */
+  #sidebar { width: 300px; flex-shrink: 0; background: var(--panel); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+  #sidebar-header { padding: 16px; border-bottom: 1px solid var(--border); }
+  #sidebar-header h1 { font-size: 16px; margin: 0 0 4px; }
+  #sidebar-header .sub { font-size: 12px; color: var(--muted); }
+  #progress-bar-wrap { margin-top: 10px; height: 6px; background: var(--panel2); border-radius: 3px; overflow: hidden; }
+  #progress-bar-fill { height: 100%; background: var(--accent); width: 0%; transition: width .3s; }
+  #progress-label { font-size: 11px; color: var(--muted); margin-top: 6px; }
+  #total-timer-wrap { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+  #total-timer-display { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  #total-timer-toggle-btn { font-size: 10px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 4px 8px; border-radius: 6px; cursor: pointer; }
+  #total-timer-toggle-btn:hover { color: var(--text); border-color: var(--accent); }
+  #total-timer-toggle-btn.active { color: var(--accent); border-color: var(--accent); }
+  #lesson-list { flex: 1; overflow-y: auto; padding: 8px; }
+  .lesson-group { margin-bottom: 6px; border-radius: 8px; overflow: hidden; }
+  .lesson-head { display: flex; align-items: center; gap: 8px; padding: 10px 10px; cursor: pointer; background: var(--panel2); user-select: none; }
+  .lesson-head:hover { background: #232838; }
+  .lesson-head .diff-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .lesson-head .lesson-title { flex: 1; font-size: 13px; font-weight: 600; }
+  .lesson-head .lesson-count { font-size: 11px; color: var(--muted); }
+  .lesson-head .chev { color: var(--muted); font-size: 10px; transition: transform .15s; }
+  .lesson-group.open .chev { transform: rotate(90deg); }
+  .module-list { display: none; }
+  .lesson-group.open .module-list { display: block; }
+  .module-item { display: flex; align-items: center; gap: 8px; padding: 8px 10px 8px 26px; cursor: pointer; font-size: 12.5px; border-left: 2px solid transparent; }
+  .module-item:hover { background: #1a1e28; }
+  .module-item.active { background: #202840; border-left-color: var(--accent); }
+  .module-item .check { width: 14px; text-align: center; flex-shrink: 0; color: var(--easy); }
+  .module-item .m-title { flex: 1; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #sidebar-footer { padding: 10px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+  #sidebar-footer button { flex: 1; font-size: 11px; }
+
+  /* Main */
+  #main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  #topbar { padding: 14px 24px; border-bottom: 1px solid var(--border); }
+  #topbar .crumb { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  #topbar .title-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+  #topbar h2 { font-size: 19px; margin: 0; }
+  .badge { font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; letter-spacing: .03em; }
+  .badge.easy { background: rgba(62,207,142,.15); color: var(--easy); }
+  .badge.medium { background: rgba(245,166,35,.15); color: var(--medium); }
+  .badge.hard { background: rgba(239,91,91,.15); color: var(--hard); }
+  #topbar .concept { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  #timer-wrap { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  #timer-display { font-family: var(--mono); font-size: 13px; color: var(--muted); min-width: 56px; text-align: right; }
+  #timer-display:empty { display: none; }
+  #timer-toggle-btn { font-size: 11px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 5px 10px; border-radius: 6px; cursor: pointer; }
+  #timer-toggle-btn:hover { color: var(--text); border-color: var(--accent); }
+  #timer-toggle-btn.active { color: var(--accent); border-color: var(--accent); }
+
+  #content { flex: 1; display: flex; overflow: hidden; }
+  #left-pane { width: 44%; padding: 20px 24px; overflow-y: auto; border-right: 1px solid var(--border); }
+  #right-pane { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  #prompt-wrap .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+  #prompt-box { font-size: 14px; line-height: 1.6; white-space: pre-wrap; }
+  #prompt-box code { background: var(--panel2); padding: 1px 5px; border-radius: 4px; font-family: var(--mono); font-size: 12.5px; }
+  #prompt-box strong { color: #fff; }
+
+  #tables-box { margin-top: 18px; padding: 12px; background: var(--panel2); border-radius: 8px; border: 1px solid var(--border); }
+  #tables-box .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+  #tables-box pre { margin: 0; font-family: var(--mono); font-size: 12px; color: #b9c4e0; white-space: pre-wrap; }
+
+  #hint-wrap { margin-top: 14px; }
+  #hint-btn { font-size: 12px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+  #hint-btn:hover { color: var(--text); border-color: var(--accent); }
+  #hint-text { display: none; margin-top: 8px; font-size: 13px; color: var(--muted); background: var(--panel2); padding: 10px; border-radius: 6px; border: 1px solid var(--border); }
+
+  #solution-wrap { margin-top: 10px; display: none; }
+  #solution-btn { font-size: 12px; background: none; border: 1px solid var(--medium); color: var(--medium); padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+  #solution-btn:hover { background: rgba(245,166,35,.12); }
+  #solution-text { display: none; margin-top: 8px; }
+  #solution-text .solution-note { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  #solution-text pre.solution-code { margin: 0; font-family: var(--mono); font-size: 12.5px; line-height: 1.5; background: var(--panel2); border: 1px solid rgba(245,166,35,.4); border-radius: 6px; padding: 10px; overflow-x: auto; white-space: pre-wrap; }
+
+  #editor-wrap { padding: 16px 24px 8px; }
+  #editor-shell { position: relative; width: 100%; height: 360px; resize: vertical; overflow: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--panel2); }
+  #editor-shell:focus-within { border-color: var(--accent); }
+  #sql-highlight, #sql-input {
+    position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 12px;
+    font-family: var(--mono); font-size: 13px; line-height: 1.5; box-sizing: border-box;
+    white-space: pre-wrap; word-wrap: break-word; overflow: auto; border: none;
+  }
+  #sql-highlight { color: var(--text); pointer-events: none; z-index: 1; background: transparent; }
+  #sql-highlight code { font-family: inherit; }
+  #sql-input { background: transparent; color: transparent; caret-color: var(--text); resize: none; z-index: 2; }
+  #sql-input:focus { outline: none; }
+  #sql-input::selection { background: rgba(91,140,255,.35); }
+  .tok-keyword { color: var(--accent); font-weight: 700; }
+  .tok-string { color: var(--easy); }
+  .tok-number { color: var(--medium); }
+  .tok-comment { color: var(--muted); font-style: italic; }
+  .tok-function { color: #d6a8ff; }
+
+  #actions-row { display: flex; gap: 10px; padding: 0 24px 14px; }
+  button { cursor: pointer; border: none; border-radius: 6px; padding: 9px 16px; font-size: 13px; font-weight: 600; }
+  #run-btn { background: var(--panel2); color: var(--text); border: 1px solid var(--border); }
+  #run-btn:hover { border-color: var(--accent); }
+  #check-btn { background: var(--accent); color: #fff; }
+  #check-btn:hover { background: #4a7aef; }
+  #reset-btn { background: none; color: var(--muted); border: 1px solid var(--border); }
+  .nav-btn { background: none; color: var(--muted); border: 1px solid var(--border); }
+  .nav-btn:hover { color: var(--text); }
+  #spacer { flex: 1; }
+
+  #feedback { margin: 0 24px 12px; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: none; }
+  #feedback.success { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; background: rgba(62,207,142,.15); border: 1px solid var(--easy); color: var(--easy); animation: feedback-pop .25s ease-out; }
+  #feedback.fail { display: flex; align-items: center; gap: 8px; font-weight: 600; background: rgba(239,91,91,.12); border: 1px solid rgba(239,91,91,.5); color: #ff8a8a; animation: feedback-pop .25s ease-out; }
+  #feedback.error { display: block; background: rgba(239,91,91,.1); border: 1px solid rgba(239,91,91,.4); color: #ff8a8a; font-family: var(--mono); font-size: 12px; }
+  #feedback.info { display: block; background: rgba(91,140,255,.1); border: 1px solid rgba(91,140,255,.4); color: #9db8ff; }
+  @keyframes feedback-pop { from { transform: scale(.97); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  #results-wrap { flex: 1; overflow: auto; margin: 0 24px 20px; border: 1px solid var(--border); border-radius: 8px; }
+  table.result-table { border-collapse: collapse; width: 100%; font-size: 12.5px; font-family: var(--mono); }
+  table.result-table th, table.result-table td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+  table.result-table th { background: var(--panel2); position: sticky; top: 0; color: var(--muted); font-weight: 600; }
+  table.result-table tr:hover td { background: #1a1e28; }
+  #results-empty { padding: 30px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  #loading-screen { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; z-index: 100; }
+  #loading-screen .spinner { width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #loading-screen .msg { color: var(--muted); font-size: 13px; }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="spinner"></div>
+  <div class="msg" id="loading-msg">Loading SQL engine (DuckDB-Wasm)…</div>
+</div>
+
+<div id="app" style="display:none;">
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <h1>SQL Dojo</h1>
+      <div class="sub">dbt-core onboarding curriculum</div>
+      <div id="progress-bar-wrap"><div id="progress-bar-fill"></div></div>
+      <div id="progress-label">0 / 100 complete</div>
+      <div id="total-timer-wrap">
+        <span id="total-timer-display"></span>
+        <button id="total-timer-toggle-btn">Show Total Timer</button>
+      </div>
+    </div>
+    <div id="lesson-list"></div>
+    <div id="sidebar-footer">
+      <button id="export-btn" title="Download your progress as JSON">Export</button>
+      <button id="import-btn" title="Load progress from a JSON file">Import</button>
+      <input type="file" id="import-file" accept="application/json" style="display:none;" />
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="topbar">
+      <div class="crumb" id="crumb"></div>
+      <div class="title-row">
+        <h2 id="mod-title"></h2>
+        <span class="badge" id="mod-badge"></span>
+        <div id="timer-wrap">
+          <span id="timer-display"></span>
+          <button id="timer-toggle-btn">Show Timer</button>
+        </div>
+      </div>
+      <div class="concept" id="mod-concept"></div>
+    </div>
+
+    <div id="content">
+      <div id="left-pane">
+        <div id="prompt-wrap">
+          <div class="label">Prompt</div>
+          <div id="prompt-box"></div>
+        </div>
+        <div id="tables-box">
+          <div class="label">Sample tables</div>
+          <pre id="tables-text"></pre>
+        </div>
+        <div id="hint-wrap">
+          <button id="hint-btn">Show hint</button>
+          <div id="hint-text"></div>
+        </div>
+        <div id="solution-wrap">
+          <button id="solution-btn">Show solution</button>
+          <div id="solution-text"></div>
+        </div>
+      </div>
+
+      <div id="right-pane">
+        <div id="editor-wrap">
+          <div id="editor-shell">
+            <pre id="sql-highlight" aria-hidden="true"><code id="sql-highlight-code"></code></pre>
+            <textarea id="sql-input" spellcheck="false" placeholder="-- write your SQL here"></textarea>
+          </div>
+        </div>
+        <div id="actions-row">
+          <button id="run-btn">Run</button>
+          <button id="check-btn">Check answer</button>
+          <button id="reset-btn">Reset</button>
+          <div id="spacer"></div>
+          <button class="nav-btn" id="prev-btn">← Prev</button>
+          <button class="nav-btn" id="next-btn">Next →</button>
+        </div>
+        <div id="feedback"></div>
+        <div id="results-wrap"><div id="results-empty">Run your query to see results here.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Registered before the module script below, and with useCapture:true,
+// specifically to catch resource-load failures (e.g. a module import
+// failing to fetch) — those don't bubble to window in the default phase,
+// so a plain (non-capturing) window.onerror/addEventListener miss them
+// entirely, unlike runtime script errors.
+window.addEventListener('error', (event) => {
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
+    const target = event.target;
+    const targetInfo = target && target.src ? (' src=' + target.src) : '';
+    window.webkit.messageHandlers.log.postMessage(
+      'capture-phase error: ' + (event.message || event.type) + targetInfo
+    );
+  }
+}, true);
+</script>
+<script type="module">
+import { LESSONS, MODULES } from './curriculum.js';
+import * as duckdb from './vendor/duckdb-wasm/duckdb-browser.mjs';
+
+const STORAGE_KEY = 'sqlDojoProgress.v1';
+
+// ---------- progress persistence ----------
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+let progress = loadProgress(); // { [moduleId]: { completed: bool, code: string, failCount: number } }
+
+function saveProgress() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+}
+
+function getModuleState(id) {
+  if (!progress[id]) progress[id] = { completed: false, code: '', failCount: 0 };
+  if (progress[id].failCount === undefined) progress[id].failCount = 0;
+  return progress[id];
+}
+
+// ---------- timer ----------
+const SETTINGS_KEY = 'sqlDojoSettings.v1';
+
+function loadSettings() {
+  try {
+    const raw = localStorage.getItem(SETTINGS_KEY);
+    return raw ? JSON.parse(raw) : { showTimer: true, showTotalTimer: false };
+  } catch (e) {
+    return { showTimer: true, showTotalTimer: false };
+  }
+}
+let settings = loadSettings();
+if (settings.showTotalTimer === undefined) settings.showTotalTimer = false;
+
+function saveSettings() {
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+}
+
+let moduleStartTs = null; // Date.now() when the current module began being worked on
+
+// Per-module elapsed time is intentionally kept in memory only (not persisted to
+// localStorage): it should reset to 0:00 on every fresh page load — whether that's a
+// hard refresh (Cmd+Option+R) or re-running start.sh — rather than resuming a total
+// from a previous session. Completion state, saved SQL, and fail counts still persist.
+let sessionTime = {}; // { [moduleId]: accumulated seconds this page load }
+
+function formatDuration(totalSeconds) {
+  const s = Math.max(0, Math.floor(totalSeconds));
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  const pad = n => String(n).padStart(2, '0');
+  return h > 0 ? `${h}:${pad(m)}:${pad(sec)}` : `${m}:${pad(sec)}`;
+}
+
+function currentElapsedSeconds() {
+  if (!currentModuleId) return 0;
+  const base = sessionTime[currentModuleId] || 0;
+  const live = moduleStartTs ? (Date.now() - moduleStartTs) / 1000 : 0;
+  return base + live;
+}
+
+function totalElapsedSeconds() {
+  let sum = 0;
+  for (const k in sessionTime) sum += sessionTime[k] || 0;
+  if (moduleStartTs) sum += (Date.now() - moduleStartTs) / 1000;
+  return sum;
+}
+
+function updateTimerDisplay() {
+  const el = document.getElementById('timer-display');
+  el.textContent = settings.showTimer ? formatDuration(currentElapsedSeconds()) : '';
+  const totalEl = document.getElementById('total-timer-display');
+  totalEl.textContent = settings.showTotalTimer ? formatDuration(totalElapsedSeconds()) : '';
+}
+
+function commitElapsedTime() {
+  if (currentModuleId && moduleStartTs) {
+    sessionTime[currentModuleId] = (sessionTime[currentModuleId] || 0) + (Date.now() - moduleStartTs) / 1000;
+  }
+  moduleStartTs = null;
+}
+
+function toggleTimerVisibility() {
+  settings.showTimer = !settings.showTimer;
+  saveSettings();
+  const btn = document.getElementById('timer-toggle-btn');
+  btn.textContent = settings.showTimer ? 'Hide Timer' : 'Show Timer';
+  btn.classList.toggle('active', settings.showTimer);
+  updateTimerDisplay();
+}
+
+function toggleTotalTimerVisibility() {
+  settings.showTotalTimer = !settings.showTotalTimer;
+  saveSettings();
+  const btn = document.getElementById('total-timer-toggle-btn');
+  btn.textContent = settings.showTotalTimer ? 'Hide Total Timer' : 'Show Total Timer';
+  btn.classList.toggle('active', settings.showTotalTimer);
+  updateTimerDisplay();
+}
+
+// ---------- SQL syntax highlighting (plain textarea + synced overlay <pre>, no external deps) ----------
+const SQL_KEYWORDS = new Set([
+  'select','from','where','join','left','right','inner','outer','full','on','group','by','order','having',
+  'as','with','union','all','case','when','then','else','end','and','or','not','in','is','null','distinct',
+  'insert','into','values','update','set','create','table','replace','qualify','over','partition','rows',
+  'range','between','like','ilike','limit','desc','asc','date','interval','recursive','pivot','using',
+  'lateral','unnest','cast','true','false','extract','desc','asc','if','exists','intersect','except',
+  'timestamp','varchar','integer','decimal','boolean','struct','array','json'
+]);
+
+function escapeHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function highlightSql(code) {
+  const escaped = escapeHtml(code);
+  const pattern = /(--[^\n]*)|('(?:[^']|'')*')|(\b\d+\.?\d*\b)|(\b[A-Za-z_][A-Za-z0-9_]*\b)/g;
+  return escaped.replace(pattern, (match, comment, str, number, word, offset, full) => {
+    if (comment !== undefined) return `<span class="tok-comment">${comment}</span>`;
+    if (str !== undefined) return `<span class="tok-string">${str}</span>`;
+    if (number !== undefined) return `<span class="tok-number">${number}</span>`;
+    if (word !== undefined) {
+      const lower = word.toLowerCase();
+      if (SQL_KEYWORDS.has(lower)) return `<span class="tok-keyword">${word}</span>`;
+      const rest = full.slice(offset + word.length);
+      if (/^\s*\(/.test(rest)) return `<span class="tok-function">${word}</span>`;
+      return word;
+    }
+    return match;
+  });
+}
+
+function refreshHighlight() {
+  const ta = document.getElementById('sql-input');
+  let code = ta.value;
+  if (code.endsWith('\n')) code += ' '; // keeps the overlay's last line in sync with the textarea
+  document.getElementById('sql-highlight-code').innerHTML = highlightSql(code) + '\n';
+}
+
+function setEditorValue(text) {
+  const ta = document.getElementById('sql-input');
+  // Always land the cursor on a fresh blank line below whatever text was loaded (starter
+  // comments or previously-saved code), rather than wherever the browser's default caret
+  // placement happens to leave it (mid-line, or inconsistent across browsers).
+  if (!text.endsWith('\n')) text += '\n';
+  ta.value = text;
+  refreshHighlight();
+  ta.focus();
+  ta.selectionStart = ta.selectionEnd = ta.value.length;
+}
+
+// ---------- DuckDB setup ----------
+function logNative(msg) {
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
+    window.webkit.messageHandlers.log.postMessage(msg);
+  }
+}
+
+let db, conn;
+async function initDuckDB() {
+  // Vendored locally (no CDN) so the app has zero runtime network dependency.
+  // Absolute URLs are required here, not relative paths: the worker below is
+  // instantiated from a Blob, and importScripts() inside a blob-URL worker
+  // can't resolve relative paths against a meaningful base directory.
+  const LOCAL_BUNDLES = {
+    mvp: {
+      mainModule: new URL('./vendor/duckdb-wasm/duckdb-mvp.wasm', document.baseURI).href,
+      mainWorker: new URL('./vendor/duckdb-wasm/duckdb-browser-mvp.worker.js', document.baseURI).href,
+    },
+    eh: {
+      mainModule: new URL('./vendor/duckdb-wasm/duckdb-eh.wasm', document.baseURI).href,
+      mainWorker: new URL('./vendor/duckdb-wasm/duckdb-browser-eh.worker.js', document.baseURI).href,
+    },
+  };
+  logNative('initDuckDB: selecting bundle...');
+  const bundle = await duckdb.selectBundle(LOCAL_BUNDLES);
+  logNative('initDuckDB: bundle selected: ' + JSON.stringify(bundle));
+  const worker_url = URL.createObjectURL(
+    new Blob([`importScripts("${bundle.mainWorker}");`], { type: 'text/javascript' })
+  );
+  logNative('initDuckDB: creating worker...');
+  const worker = new Worker(worker_url);
+  worker.onerror = (e) => {
+    logNative('initDuckDB: WORKER ERROR: ' + (e.message || e.toString()) + ' at ' + e.filename + ':' + e.lineno);
+  };
+  worker.onmessageerror = (e) => {
+    logNative('initDuckDB: worker onmessageerror: ' + JSON.stringify(e));
+  };
+  const logger = new duckdb.ConsoleLogger(duckdb.LogLevel.WARNING);
+  db = new duckdb.AsyncDuckDB(logger, worker);
+  logNative('initDuckDB: instantiating...');
+  await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+  logNative('initDuckDB: instantiate complete');
+  URL.revokeObjectURL(worker_url);
+  conn = await db.connect();
+}
+
+async function runSql(sql) {
+  const result = await conn.query(sql);
+  return result.toArray().map(row => row.toJSON());
+}
+
+async function runMultiStatement(sql) {
+  // duckdb-wasm's conn.query only runs a single statement reliably for DDL scripts;
+  // split on semicolons at statement boundaries (simple heuristic; fine for our seed scripts).
+  const statements = sql.split(';').map(s => s.trim()).filter(Boolean);
+  for (const stmt of statements) {
+    await conn.query(stmt);
+  }
+}
+
+// ---------- grading ----------
+function normalizeValue(v) {
+  if (v === null || v === undefined) return '␀NULL';
+  if (typeof v === 'bigint') return v.toString();
+  if (v instanceof Date) return v.toISOString();
+  if (typeof v === 'object') return JSON.stringify(v);
+  return String(v);
+}
+
+function signatureOf(rows) {
+  const rowSigs = rows.map(row => {
+    const vals = Object.values(row).map(normalizeValue).sort();
+    return JSON.stringify(vals);
+  });
+  rowSigs.sort();
+  return rowSigs;
+}
+
+function arraysEqual(a, b) {
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  return true;
+}
+
+// ---------- app state ----------
+let currentModuleId = null;
+const moduleById = Object.fromEntries(MODULES.map(m => [m.id, m]));
+const moduleOrder = MODULES.map(m => m.id);
+const FAIL_THRESHOLD_FOR_SOLUTION = 3;
+
+// Lessons were reordered/renumbered to group by difficulty (easy, then medium, then hard);
+// module ids shifted along with them (e.g. the old "6.1" is now "13.1"). This maps each old
+// lesson number to its new one so anyone with progress already saved under the old ids
+// (completed flags, saved SQL, fail counts) doesn't silently lose it — old lesson 1 and 2
+// happened to keep the same numbers, everything else moved.
+//
+// Because the renumbering reuses the same 1-20 id space rather than extending it, an old id
+// like "6.2" can coincidentally match a DIFFERENT module's new id (new lesson 6 is a totally
+// different topic than old lesson 6) — so this must always remap through the table below, never
+// short-circuit on "does this id still exist". It must also run at most ONCE ever: applying the
+// same table a second time to already-migrated ids would permute them a second time and corrupt
+// them, hence the one-time flag in localStorage guarding it.
+const LESSON_RENUMBER_MAP = {1:1,2:2,11:3,12:4,13:5,14:6,3:7,4:8,5:9,15:10,16:11,17:12,6:13,7:14,8:15,9:16,10:17,18:18,19:19,20:20};
+const MIGRATION_FLAG_KEY = 'sqlDojoMigratedToDifficultyOrder.v1';
+
+function migrateLegacyProgress() {
+  if (localStorage.getItem(MIGRATION_FLAG_KEY)) return; // already migrated (or nothing to migrate) — never reapply
+  let changed = false;
+  const migrated = {};
+  for (const oldId in progress) {
+    const [oldLessonPart, suffix] = oldId.split('.');
+    const newLesson = LESSON_RENUMBER_MAP[Number(oldLessonPart)];
+    if (newLesson === undefined) {
+      migrated[oldId] = progress[oldId]; // unrecognized id — keep as-is rather than silently drop it
+      continue;
+    }
+    const newId = `${newLesson}.${suffix}`;
+    migrated[newId] = progress[oldId];
+    if (newId !== oldId) changed = true;
+  }
+  progress = migrated;
+  if (changed) saveProgress();
+  localStorage.setItem(MIGRATION_FLAG_KEY, '1');
+}
+
+// The exercise assigned to a given module id has changed more than once across curriculum
+// edits (reordering, content rewrites) — a browser that had this app open earlier can still
+// have saved code/completed/failCount under an id that now points at a completely different
+// exercise. Editor content prefers saved code over the starter, so a stale save silently shows
+// the WRONG exercise's leftover text under the CURRENT exercise's prompt. A one-time full reset
+// clears out anything saved before this fix existed (correctness beats preserving old drafts
+// here); the fingerprint check below then guards against this ever silently recurring again.
+const CONTENT_RESET_FLAG_KEY = 'sqlDojoContentReset.v1';
+
+function resetProgressIfPreDatesContentTracking() {
+  if (localStorage.getItem(CONTENT_RESET_FLAG_KEY)) return; // already done — never reapply
+  progress = {};
+  saveProgress();
+  localStorage.setItem(CONTENT_RESET_FLAG_KEY, '1');
+}
+
+function discardStaleProgressIfContentChanged(id, mod, state) {
+  const fingerprint = mod.solutionSql;
+  if (state.contentFingerprint !== undefined && state.contentFingerprint !== fingerprint) {
+    state.completed = false;
+    state.code = '';
+    state.failCount = 0;
+  }
+  state.contentFingerprint = fingerprint;
+  saveProgress();
+}
+
+function completedCount() {
+  return moduleOrder.filter(id => progress[id] && progress[id].completed).length;
+}
+
+function renderProgressBar() {
+  const n = completedCount();
+  document.getElementById('progress-bar-fill').style.width = `${(n / MODULES.length) * 100}%`;
+  document.getElementById('progress-label').textContent = `${n} / ${MODULES.length} complete`;
+}
+
+function simpleMarkdown(text) {
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/```sql\n([\s\S]*?)```/g, (m, code) => `<pre style="background:#12151d;border:1px solid #2a2f3a;border-radius:6px;padding:10px;overflow-x:auto;"><code>${code}</code></pre>`)
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br/>');
+}
+
+function renderSidebar() {
+  const container = document.getElementById('lesson-list');
+  container.innerHTML = '';
+  for (const lesson of LESSONS) {
+    const mods = MODULES.filter(m => m.lesson === lesson.id);
+    const group = document.createElement('div');
+    group.className = 'lesson-group';
+    group.dataset.lesson = lesson.id;
+
+    const head = document.createElement('div');
+    head.className = 'lesson-head';
+    const doneInLesson = mods.filter(m => progress[m.id] && progress[m.id].completed).length;
+    head.innerHTML = `
+      <span class="diff-dot" style="background:var(--${lesson.difficulty})"></span>
+      <span class="lesson-title">${lesson.id}. ${lesson.title}</span>
+      <span class="lesson-count">${doneInLesson}/${mods.length}</span>
+      <span class="chev">▶</span>
+    `;
+    head.addEventListener('click', () => {
+      group.classList.toggle('open');
+    });
+    group.appendChild(head);
+
+    const list = document.createElement('div');
+    list.className = 'module-list';
+    for (const m of mods) {
+      const item = document.createElement('div');
+      item.className = 'module-item';
+      item.dataset.id = m.id;
+      const done = progress[m.id] && progress[m.id].completed;
+      item.innerHTML = `<span class="check">${done ? '✓' : '○'}</span><span class="m-title">${m.id} ${m.title}</span>`;
+      item.addEventListener('click', () => selectModule(m.id));
+      list.appendChild(item);
+    }
+    group.appendChild(list);
+    container.appendChild(group);
+  }
+}
+
+function highlightActiveInSidebar() {
+  document.querySelectorAll('.module-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.id === currentModuleId);
+  });
+  document.querySelectorAll('.lesson-group').forEach(g => {
+    const mod = moduleById[currentModuleId];
+    if (mod && Number(g.dataset.lesson) === mod.lesson) g.classList.add('open');
+  });
+}
+
+function refreshModuleCheckmarks() {
+  document.querySelectorAll('.module-item').forEach(el => {
+    const done = progress[el.dataset.id] && progress[el.dataset.id].completed;
+    el.querySelector('.check').textContent = done ? '✓' : '○';
+  });
+  document.querySelectorAll('.lesson-group').forEach(g => {
+    const lessonId = Number(g.dataset.lesson);
+    const mods = MODULES.filter(m => m.lesson === lessonId);
+    const doneInLesson = mods.filter(m => progress[m.id] && progress[m.id].completed).length;
+    g.querySelector('.lesson-count').textContent = `${doneInLesson}/${mods.length}`;
+  });
+  renderProgressBar();
+}
+
+function renderResults(rows, error) {
+  const wrap = document.getElementById('results-wrap');
+  if (error) {
+    wrap.innerHTML = `<div id="results-empty" style="color:#ff8a8a; text-align:left; font-family:var(--mono); white-space:pre-wrap;">${error}</div>`;
+    return;
+  }
+  if (!rows || rows.length === 0) {
+    wrap.innerHTML = `<div id="results-empty">Query ran successfully — 0 rows returned.</div>`;
+    return;
+  }
+  const cols = Object.keys(rows[0]);
+  let html = '<table class="result-table"><thead><tr>';
+  for (const c of cols) html += `<th>${c}</th>`;
+  html += '</tr></thead><tbody>';
+  for (const row of rows.slice(0, 500)) {
+    html += '<tr>';
+    for (const c of cols) html += `<td>${normalizeValue(row[c])}</td>`;
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function setFeedback(kind, text) {
+  const el = document.getElementById('feedback');
+  el.className = kind || '';
+  el.textContent = text || '';
+  // Clear any previously-set inline display so the CSS class (e.g. #feedback.success)
+  // actually takes effect — an inline style always beats a class selector, so leaving
+  // a stale 'none' here would keep the confirmation banner invisible forever.
+  el.style.display = kind ? '' : 'none';
+  if (kind) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function updateSolutionAvailability() {
+  if (!currentModuleId) return;
+  const state = getModuleState(currentModuleId);
+  const wrap = document.getElementById('solution-wrap');
+  wrap.style.display = (state.failCount || 0) >= FAIL_THRESHOLD_FOR_SOLUTION ? 'block' : 'none';
+}
+
+async function selectModule(id) {
+  // persist current editor content and elapsed time before switching
+  if (currentModuleId) {
+    getModuleState(currentModuleId).code = document.getElementById('sql-input').value;
+    commitElapsedTime();
+    saveProgress();
+  }
+  currentModuleId = id;
+  moduleStartTs = Date.now(); // the timer begins as soon as this module is opened
+  updateTimerDisplay();
+  const m = moduleById[id];
+  const lesson = LESSONS.find(l => l.id === m.lesson);
+
+  document.getElementById('crumb').textContent = `Lesson ${m.lesson} · ${lesson.title}`;
+  document.getElementById('mod-title').textContent = `${m.id}  ${m.title}`;
+  const badge = document.getElementById('mod-badge');
+  badge.textContent = m.difficulty;
+  badge.className = 'badge ' + m.difficulty;
+  document.getElementById('mod-concept').textContent = m.concept;
+  document.getElementById('prompt-box').innerHTML = simpleMarkdown(m.prompt);
+  document.getElementById('tables-text').textContent = m.tables;
+
+  const hintText = document.getElementById('hint-text');
+  hintText.style.display = 'none';
+  hintText.textContent = m.hint;
+  document.getElementById('hint-btn').textContent = 'Show hint';
+
+  const solutionText = document.getElementById('solution-text');
+  solutionText.style.display = 'none';
+  solutionText.innerHTML = '';
+  document.getElementById('solution-btn').textContent = 'Show solution';
+  updateSolutionAvailability();
+
+  const state = getModuleState(id);
+  discardStaleProgressIfContentChanged(id, m, state);
+  setEditorValue(state.code || m.starter || '');
+  setFeedback(null, '');
+  document.getElementById('results-wrap').innerHTML = '<div id="results-empty">Run your query to see results here.</div>';
+
+  highlightActiveInSidebar();
+
+  const idx = moduleOrder.indexOf(id);
+  document.getElementById('prev-btn').disabled = idx <= 0;
+  document.getElementById('next-btn').disabled = idx >= moduleOrder.length - 1;
+
+  location.hash = id;
+}
+
+async function ensureSeeded(mod) {
+  await runMultiStatement(mod.schemaSql);
+}
+
+async function handleRun() {
+  const mod = moduleById[currentModuleId];
+  const userSql = document.getElementById('sql-input').value;
+  setFeedback(null, '');
+  try {
+    await ensureSeeded(mod);
+    const rows = await runSql(userSql);
+    renderResults(rows, null);
+  } catch (e) {
+    renderResults(null, e.message || String(e));
+  }
+}
+
+async function handleCheck() {
+  const mod = moduleById[currentModuleId];
+  const userSql = document.getElementById('sql-input').value;
+  try {
+    await ensureSeeded(mod);
+    const userRows = await runSql(userSql);
+    renderResults(userRows, null);
+
+    await ensureSeeded(mod);
+    const expectedRows = await runSql(mod.solutionSql);
+
+    const userSig = signatureOf(userRows);
+    const expectedSig = signatureOf(expectedRows);
+
+    if (arraysEqual(userSig, expectedSig)) {
+      const state = getModuleState(mod.id);
+      state.completed = true;
+      state.code = userSql;
+      state.failCount = 0;
+      saveProgress();
+      refreshModuleCheckmarks();
+      updateSolutionAvailability();
+      setFeedback('success', `✓ Correct! ${expectedRows.length} row(s) matched.`);
+    } else {
+      const state = getModuleState(mod.id);
+      state.failCount = (state.failCount || 0) + 1;
+      saveProgress();
+      updateSolutionAvailability();
+      const stuckHint = state.failCount >= FAIL_THRESHOLD_FOR_SOLUTION ? ' Stuck? Try "Show solution" on the left.' : '';
+      setFeedback('fail', `Not quite — expected ${expectedRows.length} row(s), got ${userRows.length}. Check column selection, filters, and row values.${stuckHint}`);
+    }
+  } catch (e) {
+    renderResults(null, e.message || String(e));
+    setFeedback('error', `SQL error: ${e.message || e}`);
+  }
+}
+
+function handleReset() {
+  const mod = moduleById[currentModuleId];
+  setEditorValue(mod.starter || '');
+  setFeedback(null, '');
+}
+
+function navigate(delta) {
+  const idx = moduleOrder.indexOf(currentModuleId);
+  const next = idx + delta;
+  if (next >= 0 && next < moduleOrder.length) selectModule(moduleOrder[next]);
+}
+
+function wireEvents() {
+  // A missing element here must never abort the rest of wireEvents() — otherwise a single
+  // bad id (or a future markup edit) would silently leave later buttons (like Check answer)
+  // completely unwired, with no visible error.
+  function on(id, event, handler) {
+    const el = document.getElementById(id);
+    if (!el) {
+      console.error(`SQL Dojo: expected #${id} in the DOM but it was missing; "${event}" handler not attached.`);
+      return;
+    }
+    el.addEventListener(event, handler);
+  }
+
+  on('run-btn', 'click', handleRun);
+  on('check-btn', 'click', handleCheck);
+  on('reset-btn', 'click', handleReset);
+  on('prev-btn', 'click', () => navigate(-1));
+  on('next-btn', 'click', () => navigate(1));
+
+  on('hint-btn', 'click', () => {
+    const el = document.getElementById('hint-text');
+    const showing = el.style.display === 'block';
+    el.style.display = showing ? 'none' : 'block';
+    document.getElementById('hint-btn').textContent = showing ? 'Show hint' : 'Hide hint';
+  });
+
+  on('solution-btn', 'click', () => {
+    const mod = moduleById[currentModuleId];
+    const el = document.getElementById('solution-text');
+    const btn = document.getElementById('solution-btn');
+    const showing = el.style.display === 'block';
+    if (!showing) {
+      el.innerHTML = `<div class="solution-note">One reference solution (yours can differ and still be correct):</div><pre class="solution-code">${highlightSql(mod.solutionSql)}</pre>`;
+    }
+    el.style.display = showing ? 'none' : 'block';
+    btn.textContent = showing ? 'Show solution' : 'Hide solution';
+  });
+
+  on('timer-toggle-btn', 'click', toggleTimerVisibility);
+  on('total-timer-toggle-btn', 'click', toggleTotalTimerVisibility);
+
+  let saveTimer = null;
+  on('sql-input', 'input', () => {
+    refreshHighlight();
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      if (!currentModuleId) return;
+      getModuleState(currentModuleId).code = document.getElementById('sql-input').value;
+      saveProgress();
+    }, 400);
+  });
+
+  on('sql-input', 'scroll', () => {
+    const ta = document.getElementById('sql-input');
+    const hl = document.getElementById('sql-highlight');
+    hl.scrollTop = ta.scrollTop;
+    hl.scrollLeft = ta.scrollLeft;
+  });
+
+  function saveEverythingNow() {
+    if (currentModuleId) {
+      getModuleState(currentModuleId).code = document.getElementById('sql-input').value;
+    }
+    commitElapsedTime();
+    saveProgress();
+  }
+
+  // beforeunload alone is unreliable (Safari in particular can skip it, e.g. for
+  // back/forward-cache-eligible navigations), so pagehide and visibilitychange are used
+  // as more robust save points. visibilitychange also does double duty as the actual
+  // "pause the timer" mechanism: while the tab/window is hidden (backgrounded, minimized,
+  // or on its way to being closed) time is committed and stops accruing; it only resumes
+  // once the page is visible again, so elapsed time never counts time spent away.
+  window.addEventListener('beforeunload', saveEverythingNow);
+  window.addEventListener('pagehide', saveEverythingNow);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      saveEverythingNow(); // pause: commits elapsed time and stops the clock
+    } else if (currentModuleId) {
+      moduleStartTs = Date.now(); // resume: timer restarts from now, skipping the time away
+      updateTimerDisplay();
+    }
+  });
+
+  on('export-btn', 'click', () => {
+    const blob = new Blob([JSON.stringify(progress, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'sql-dojo-progress.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  on('import-btn', 'click', () => {
+    document.getElementById('import-file').click();
+  });
+  on('import-file', 'change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const text = await file.text();
+    try {
+      const imported = JSON.parse(text);
+      progress = imported;
+      saveProgress();
+      renderSidebar();
+      highlightActiveInSidebar();
+      refreshModuleCheckmarks();
+      if (currentModuleId) selectModule(currentModuleId);
+    } catch (err) {
+      alert('Could not import that file — not valid progress JSON.');
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+      e.preventDefault();
+      handleCheck();
+    }
+  });
+}
+
+async function main() {
+  document.getElementById('loading-msg').textContent = 'Loading SQL engine (DuckDB-Wasm)…';
+  await initDuckDB();
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+
+  resetProgressIfPreDatesContentTracking();
+  migrateLegacyProgress();
+  renderSidebar();
+  wireEvents();
+
+  const timerBtn = document.getElementById('timer-toggle-btn');
+  timerBtn.textContent = settings.showTimer ? 'Hide Timer' : 'Show Timer';
+  timerBtn.classList.toggle('active', settings.showTimer);
+
+  const totalTimerBtn = document.getElementById('total-timer-toggle-btn');
+  totalTimerBtn.textContent = settings.showTotalTimer ? 'Hide Total Timer' : 'Show Total Timer';
+  totalTimerBtn.classList.toggle('active', settings.showTotalTimer);
+
+  setInterval(updateTimerDisplay, 1000);
+
+  const hashId = location.hash.replace('#', '');
+  const startId = moduleById[hashId] ? hashId : moduleOrder[0];
+  await selectModule(startId);
+  refreshModuleCheckmarks();
+}
+
+main().catch(err => {
+  const message = 'Failed to load: ' + (err && err.message ? err.message : err);
+  document.getElementById('loading-msg').textContent = message;
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
+    window.webkit.messageHandlers.log.postMessage('main() failed: ' + message);
+  }
+});
+
+window.addEventListener('error', (event) => {
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
+    window.webkit.messageHandlers.log.postMessage('window.onerror: ' + (event.message || event));
+  }
+});
+</script>
+</body>
+</html>
