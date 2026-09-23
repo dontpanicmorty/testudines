@@ -83,7 +83,16 @@
 
   #tables-box { margin-top: 18px; padding: 12px; background: var(--panel2); border-radius: 8px; border: 1px solid var(--border); }
   #tables-box .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
-  #tables-box pre { margin: 0; font-family: var(--mono); font-size: 12px; color: #b9c4e0; white-space: pre-wrap; }
+  #tables-box pre.tables-fallback { margin: 0; font-family: var(--mono); font-size: 12px; color: #b9c4e0; white-space: pre-wrap; }
+  .sample-table-block { margin-bottom: 14px; }
+  .sample-table-block:last-child { margin-bottom: 0; }
+  .sample-table-name { font-family: var(--mono); font-size: 12px; color: #b9c4e0; margin-bottom: 4px; }
+  .sample-table-scroll { overflow-x: auto; border-radius: 6px; border: 1px solid var(--border); }
+  table.sample-data-table { border-collapse: collapse; width: 100%; font-size: 11.5px; font-family: var(--mono); }
+  table.sample-data-table th, table.sample-data-table td { padding: 4px 8px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+  table.sample-data-table th { background: rgba(255,255,255,.03); color: var(--muted); font-weight: 600; }
+  table.sample-data-table tr:last-child td { border-bottom: none; }
+  .sample-table-truncated { font-size: 10.5px; color: var(--muted); padding: 3px 8px; }
 
   #hint-wrap { margin-top: 14px; }
   #hint-btn { font-size: 12px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 6px 10px; border-radius: 6px; cursor: pointer; }
@@ -146,6 +155,76 @@
   @keyframes spin { to { transform: rotate(360deg); } }
   #loading-screen .msg { color: var(--muted); font-size: 13px; }
 
+  /* Home screen: user picker + path picker, shown on every launch and via the Home button */
+  #home-screen { position: fixed; inset: 0; background: var(--bg); display: none; align-items: center; justify-content: center; z-index: 150; padding: 24px; }
+  .home-view { width: 100%; display: flex; justify-content: center; }
+  .home-card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 32px; width: 380px; max-width: 100%; text-align: center; }
+  .home-card-wide { width: 640px; text-align: left; }
+  .home-card h1 { margin: 0 0 6px; font-size: 22px; }
+  .home-sub { color: var(--muted); font-size: 13px; margin: 0 0 18px; }
+  #home-user-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; max-height: 240px; overflow-y: auto; }
+  .home-user-btn { background: var(--panel2); color: var(--text); border: 1px solid var(--border); padding: 10px 14px; border-radius: 8px; font-size: 14px; text-align: left; }
+  .home-user-btn:hover { border-color: var(--accent); }
+  .home-new-user-row { display: flex; gap: 8px; }
+  #home-new-user-input { flex: 1; background: var(--panel2); border: 1px solid var(--border); color: var(--text); padding: 9px 12px; border-radius: 8px; font-size: 13px; }
+  #home-new-user-btn { background: var(--accent); color: #fff; padding: 9px 16px; }
+
+  .home-path-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 22px; }
+  .home-path-header h1 { font-size: 22px; }
+  #home-switch-user-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-size: 11px; padding: 6px 10px; }
+  #home-switch-user-btn:hover { color: var(--text); border-color: var(--accent); }
+  .home-path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 26px; }
+  .home-path-tile { background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .home-tile-title { font-size: 14px; font-weight: 700; }
+  .home-tile-sub { font-size: 12px; color: var(--muted); flex: 1; }
+  .home-tile-actions { display: flex; gap: 8px; }
+  .home-path-tile button { flex: 1; font-size: 12px; }
+  .home-path-tile > button { background: var(--accent); color: #fff; }
+  #home-tile-practice-continue-btn, #home-tile-randomizer-continue-btn { background: var(--accent); color: #fff; }
+  #home-tile-practice-new-btn, #home-tile-randomizer-new-btn { background: none; border: 1px solid var(--border); color: var(--muted); }
+  #home-tile-practice-new-btn:hover, #home-tile-randomizer-new-btn:hover { color: var(--text); border-color: var(--accent); }
+  .home-quick-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 10px; }
+  .home-quick-row { display: flex; gap: 10px; }
+  .home-quick-btn { flex: 1; padding: 12px; font-size: 13px; font-weight: 700; border: 1px solid; }
+  .home-quick-btn.easy { background: rgba(62,207,142,.12); border-color: var(--easy); color: var(--easy); }
+  .home-quick-btn.medium { background: rgba(245,166,35,.12); border-color: var(--medium); color: var(--medium); }
+  .home-quick-btn.hard { background: rgba(239,91,91,.12); border-color: var(--hard); color: var(--hard); }
+  #home-btn { font-size: 11px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 5px 10px; border-radius: 6px; cursor: pointer; }
+  #home-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  /* Practice Session controls + setup modal */
+  #practice-btn, #randomizer-btn, #end-session-btn { font-size: 11px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 6px 10px; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 8px; }
+  #practice-btn:hover, #randomizer-btn:hover, #end-session-btn:hover { color: var(--text); border-color: var(--accent); }
+  #session-banner { display: none; align-items: center; gap: 8px; padding: 6px 24px; background: rgba(91,140,255,.12); border-bottom: 1px solid var(--border); font-size: 12px; color: #9db8ff; }
+  #session-banner button { font-size: 11px; padding: 4px 10px; background: none; border: 1px solid rgba(157,184,255,.4); color: #9db8ff; }
+
+  .modal-overlay { position: fixed; inset: 0; background: rgba(5,6,10,.7); display: none; align-items: center; justify-content: center; z-index: 200; }
+  .modal-overlay.open { display: flex; }
+  .modal-box { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 24px; width: 360px; max-width: 90vw; }
+  .modal-box h3 { margin: 0 0 16px; font-size: 16px; }
+  .modal-field { margin-bottom: 16px; }
+  .modal-field label.field-label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+  .diff-check-row { display: flex; gap: 14px; }
+  .diff-check-row label { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+  #session-count-input { width: 100%; background: var(--panel2); border: 1px solid var(--border); color: var(--text); padding: 8px 10px; border-radius: 6px; font-size: 13px; }
+  .toggle-row { display: flex; align-items: center; gap: 8px; }
+  .toggle-row label { font-size: 13px; cursor: pointer; }
+  #session-pool-count { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+  .modal-actions button { flex: 1; }
+  #session-cancel-btn { background: none; border: 1px solid var(--border); color: var(--muted); }
+  #session-start-btn { background: var(--accent); color: #fff; }
+  #session-start-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+  /* Pause overlay: fully blocks the working screen, no peeking at prompt/editor/results */
+  #pause-overlay { position: fixed; inset: 0; background: var(--bg); backdrop-filter: blur(20px); display: none; align-items: center; justify-content: center; flex-direction: column; gap: 16px; z-index: 300; }
+  #pause-overlay.open { display: flex; }
+  #pause-overlay .pause-icon { font-size: 40px; }
+  #pause-overlay .pause-msg { font-size: 15px; color: var(--muted); }
+  #resume-btn { background: var(--accent); color: #fff; padding: 10px 22px; font-size: 14px; }
+  #pause-btn { font-size: 11px; background: none; border: 1px solid var(--border); color: var(--muted); padding: 5px 10px; border-radius: 6px; cursor: pointer; }
+  #pause-btn:hover { color: var(--text); border-color: var(--accent); }
+
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
 </style>
@@ -155,6 +234,57 @@
 <div id="loading-screen">
   <div class="spinner"></div>
   <div class="msg" id="loading-msg">Loading SQL engine (DuckDB-Wasm)…</div>
+</div>
+
+<div id="home-screen">
+  <div id="home-user-view" class="home-view">
+    <div class="home-card">
+      <h1>SQL Dojo</h1>
+      <p class="home-sub">Who's practicing?</p>
+      <div id="home-user-list"></div>
+      <div class="home-new-user-row">
+        <input type="text" id="home-new-user-input" placeholder="New name…" />
+        <button id="home-new-user-btn">Continue</button>
+      </div>
+    </div>
+  </div>
+  <div id="home-path-view" class="home-view" style="display:none;">
+    <div class="home-card home-card-wide">
+      <div class="home-path-header">
+        <h1>Welcome, <span id="home-username-display"></span></h1>
+        <button id="home-switch-user-btn">Switch user</button>
+      </div>
+      <div class="home-path-grid">
+        <div class="home-path-tile">
+          <div class="home-tile-title">Track</div>
+          <div class="home-tile-sub" id="home-tile-track-sub"></div>
+          <button id="home-tile-track-btn"></button>
+        </div>
+        <div class="home-path-tile">
+          <div class="home-tile-title">Practice Session</div>
+          <div class="home-tile-sub" id="home-tile-practice-sub"></div>
+          <div class="home-tile-actions">
+            <button id="home-tile-practice-continue-btn" style="display:none;">Continue</button>
+            <button id="home-tile-practice-new-btn">Start new…</button>
+          </div>
+        </div>
+        <div class="home-path-tile">
+          <div class="home-tile-title">Randomizer</div>
+          <div class="home-tile-sub" id="home-tile-randomizer-sub"></div>
+          <div class="home-tile-actions">
+            <button id="home-tile-randomizer-continue-btn" style="display:none;">Continue</button>
+            <button id="home-tile-randomizer-new-btn">Start new…</button>
+          </div>
+        </div>
+      </div>
+      <div class="home-quick-label">Quick start by difficulty (full catalog, Practice Session style)</div>
+      <div class="home-quick-row">
+        <button class="home-quick-btn easy" id="home-quick-easy">Easy</button>
+        <button class="home-quick-btn medium" id="home-quick-medium">Medium</button>
+        <button class="home-quick-btn hard" id="home-quick-hard">Hard</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="app" style="display:none;">
@@ -170,14 +300,23 @@
       </div>
     </div>
     <div id="lesson-list"></div>
-    <div id="sidebar-footer">
-      <button id="export-btn" title="Download your progress as JSON">Export</button>
-      <button id="import-btn" title="Load progress from a JSON file">Import</button>
-      <input type="file" id="import-file" accept="application/json" style="display:none;" />
+    <div id="sidebar-footer" style="flex-direction: column; align-items: stretch;">
+      <div style="display:flex; gap:8px;">
+        <button id="export-btn" title="Download your progress as JSON">Export</button>
+        <button id="import-btn" title="Load progress from a JSON file">Import</button>
+        <input type="file" id="import-file" accept="application/json" style="display:none;" />
+      </div>
+      <button id="practice-btn">Practice Session…</button>
+      <button id="randomizer-btn">Randomizer…</button>
     </div>
   </div>
 
   <div id="main">
+    <div id="session-banner">
+      <span id="session-banner-text"></span>
+      <div style="flex:1;"></div>
+      <button id="end-session-btn">End Session</button>
+    </div>
     <div id="topbar">
       <div class="crumb" id="crumb"></div>
       <div class="title-row">
@@ -186,6 +325,8 @@
         <div id="timer-wrap">
           <span id="timer-display"></span>
           <button id="timer-toggle-btn">Show Timer</button>
+          <button id="pause-btn">Pause</button>
+          <button id="home-btn">Home</button>
         </div>
       </div>
       <div class="concept" id="mod-concept"></div>
@@ -199,7 +340,7 @@
         </div>
         <div id="tables-box">
           <div class="label">Sample tables</div>
-          <pre id="tables-text"></pre>
+          <div id="tables-text"></div>
         </div>
         <div id="hint-wrap">
           <button id="hint-btn">Show hint</button>
@@ -233,6 +374,51 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="session-modal">
+  <div class="modal-box">
+    <h3>Start a Practice Session</h3>
+    <div class="modal-field">
+      <label class="field-label">Difficulty</label>
+      <div class="diff-check-row">
+        <label><input type="checkbox" id="diff-easy" checked /> Easy</label>
+        <label><input type="checkbox" id="diff-medium" checked /> Medium</label>
+        <label><input type="checkbox" id="diff-hard" checked /> Hard</label>
+      </div>
+    </div>
+    <div class="modal-field">
+      <label class="field-label" for="session-count-input">Number of modules</label>
+      <input type="number" id="session-count-input" min="1" value="10" />
+      <div id="session-pool-count"></div>
+    </div>
+    <div class="modal-actions">
+      <button id="session-cancel-btn">Cancel</button>
+      <button id="session-start-btn">Start Session</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="randomizer-modal">
+  <div class="modal-box">
+    <h3>Start the Randomizer</h3>
+    <p style="font-size:12.5px; color:var(--muted); margin-top:-8px;">Pulls from the full 300-module catalog (track + practice modules combined), in random order, with difficulty and module numbers hidden. The side panel is collapsed while it's active.</p>
+    <div class="modal-field">
+      <label class="field-label" for="randomizer-count-input">Number of modules</label>
+      <input type="number" id="randomizer-count-input" min="1" value="10" />
+      <div id="randomizer-pool-count"></div>
+    </div>
+    <div class="modal-actions">
+      <button id="randomizer-cancel-btn">Cancel</button>
+      <button id="randomizer-start-btn">Start Randomizer</button>
+    </div>
+  </div>
+</div>
+
+<div id="pause-overlay">
+  <div class="pause-icon">⏸</div>
+  <div class="pause-msg">Paused — the exercise is hidden until you resume.</div>
+  <button id="resume-btn">Resume</button>
+</div>
+
 <script>
 // Registered before the module script below, and with useCapture:true,
 // specifically to catch resource-load failures (e.g. a module import
@@ -250,24 +436,74 @@ window.addEventListener('error', (event) => {
 }, true);
 </script>
 <script type="module">
-import { LESSONS, MODULES } from './curriculum.js';
+import { LESSONS, MODULES, EXTRA_MODULES } from './curriculum.js';
 import * as duckdb from './vendor/duckdb-wasm/duckdb-browser.mjs';
 
-const STORAGE_KEY = 'sqlDojoProgress.v1';
+// ---------- Multi-user persistence ----------
+// Each named user gets one JSON blob holding everything about their state: track
+// progress, display settings, where they left off in the track, and the exact
+// module set + position of any in-progress Practice Session / Randomizer (so
+// "Continue" from the home screen reopens the identical session, not a fresh one).
+const LEGACY_STORAGE_KEY = 'sqlDojoProgress.v1'; // pre-multi-user global key, read once for migration
+const LEGACY_SETTINGS_KEY = 'sqlDojoSettings.v1';
+const USERS_LIST_KEY = 'sqlDojo.users.v1';
 
-// ---------- progress persistence ----------
-function loadProgress() {
+function userStorageKey(name) {
+  return 'sqlDojo.user.' + name + '.v1';
+}
+
+function defaultUserData() {
+  return {
+    progress: {}, // { [moduleId]: { completed: bool, code: string, failCount: number, contentFingerprint } }
+    settings: { showTimer: true, showTotalTimer: false },
+    lastTrackModuleId: null,
+    savedPractice: null, // { activeQueue: [id...], currentModuleId, difficulties: [...], count }
+    savedRandomizer: null, // { activeQueue: [id...], currentModuleId, count }
+  };
+}
+
+function loadUserData(name) {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
+    const raw = localStorage.getItem(userStorageKey(name));
+    if (raw) {
+      const defaults = defaultUserData();
+      const parsed = JSON.parse(raw);
+      const merged = Object.assign(defaults, parsed);
+      merged.settings = Object.assign(defaults.settings, parsed.settings || {});
+      return merged;
+    }
+  } catch (e) {}
+  return defaultUserData();
+}
+
+function loadUsersList() {
+  try {
+    const raw = localStorage.getItem(USERS_LIST_KEY);
+    return raw ? JSON.parse(raw) : [];
   } catch (e) {
-    return {};
+    return [];
   }
 }
-let progress = loadProgress(); // { [moduleId]: { completed: bool, code: string, failCount: number } }
+
+function saveUsersList(list) {
+  localStorage.setItem(USERS_LIST_KEY, JSON.stringify(list));
+}
+
+let currentUser = null;
+let userData = defaultUserData();
+// `progress`/`settings` are the SAME objects as `userData.progress`/`userData.settings`
+// (by reference) — mutating them mutates userData directly, so saveProgress/saveSettings
+// just need to persist the whole userData blob back out.
+let progress = userData.progress;
+let settings = userData.settings;
+
+function saveUserData() {
+  if (!currentUser) return;
+  localStorage.setItem(userStorageKey(currentUser), JSON.stringify(userData));
+}
 
 function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  saveUserData();
 }
 
 function getModuleState(id) {
@@ -276,22 +512,58 @@ function getModuleState(id) {
   return progress[id];
 }
 
-// ---------- timer ----------
-const SETTINGS_KEY = 'sqlDojoSettings.v1';
-
-function loadSettings() {
-  try {
-    const raw = localStorage.getItem(SETTINGS_KEY);
-    return raw ? JSON.parse(raw) : { showTimer: true, showTotalTimer: false };
-  } catch (e) {
-    return { showTimer: true, showTotalTimer: false };
-  }
-}
-let settings = loadSettings();
-if (settings.showTotalTimer === undefined) settings.showTotalTimer = false;
-
 function saveSettings() {
-  localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+  saveUserData();
+}
+
+// One-time migration of the pre-multi-user global progress/settings (if any) into a
+// default "My Progress" user, so upgrading this app doesn't silently discard history.
+// Re-runs the same historical one-time fixups this data already went through (guarded
+// by their own existing flags) directly against the legacy blob before handing it off,
+// in case this machine's data predates one or both of those fixes.
+const LESSON_RENUMBER_MAP = {1:1,2:2,11:3,12:4,13:5,14:6,3:7,4:8,5:9,15:10,16:11,17:12,6:13,7:14,8:15,9:16,10:17,18:18,19:19,20:20};
+const LEGACY_CONTENT_RESET_FLAG_KEY = 'sqlDojoContentReset.v1';
+const LEGACY_LESSON_MIGRATION_FLAG_KEY = 'sqlDojoMigratedToDifficultyOrder.v1';
+const LEGACY_TO_MULTIUSER_FLAG_KEY = 'sqlDojo.legacyMigratedToMultiUser.v1';
+
+function migrateLegacyDataToDefaultUserOnce() {
+  if (localStorage.getItem(LEGACY_TO_MULTIUSER_FLAG_KEY)) return;
+  const oldRaw = localStorage.getItem(LEGACY_STORAGE_KEY);
+  if (oldRaw) {
+    let legacyProgress;
+    try { legacyProgress = JSON.parse(oldRaw); } catch (e) { legacyProgress = {}; }
+
+    if (!localStorage.getItem(LEGACY_CONTENT_RESET_FLAG_KEY)) {
+      legacyProgress = {};
+      localStorage.setItem(LEGACY_CONTENT_RESET_FLAG_KEY, '1');
+    }
+    if (!localStorage.getItem(LEGACY_LESSON_MIGRATION_FLAG_KEY)) {
+      const migrated = {};
+      for (const oldId in legacyProgress) {
+        const [oldLessonPart, suffix] = oldId.split('.');
+        const newLesson = LESSON_RENUMBER_MAP[Number(oldLessonPart)];
+        if (newLesson === undefined) { migrated[oldId] = legacyProgress[oldId]; continue; }
+        migrated[`${newLesson}.${suffix}`] = legacyProgress[oldId];
+      }
+      legacyProgress = migrated;
+      localStorage.setItem(LEGACY_LESSON_MIGRATION_FLAG_KEY, '1');
+    }
+
+    const users = loadUsersList();
+    const name = 'My Progress';
+    if (!users.includes(name)) {
+      const data = defaultUserData();
+      data.progress = legacyProgress;
+      try {
+        const oldSettingsRaw = localStorage.getItem(LEGACY_SETTINGS_KEY);
+        if (oldSettingsRaw) Object.assign(data.settings, JSON.parse(oldSettingsRaw));
+      } catch (e) {}
+      localStorage.setItem(userStorageKey(name), JSON.stringify(data));
+      users.push(name);
+      saveUsersList(users);
+    }
+  }
+  localStorage.setItem(LEGACY_TO_MULTIUSER_FLAG_KEY, '1');
 }
 
 let moduleStartTs = null; // Date.now() when the current module began being worked on
@@ -494,61 +766,27 @@ function arraysEqual(a, b) {
 
 // ---------- app state ----------
 let currentModuleId = null;
-const moduleById = Object.fromEntries(MODULES.map(m => [m.id, m]));
-const moduleOrder = MODULES.map(m => m.id);
+// EXTRA_MODULES ids ("extra-1".."extra-200") are disjoint from track ids ("1.1" etc.),
+// so both pools can safely share one lookup table and one `progress` store.
+const moduleById = Object.fromEntries([...MODULES, ...EXTRA_MODULES].map(m => [m.id, m]));
+const moduleOrder = MODULES.map(m => m.id); // the fixed, sequential 100-module track — never mutated
+
+// The queue actually being navigated with Prev/Next right now: the full track by default,
+// a configured subset of the combined 300-module catalog during a Practice Session, or a
+// randomized subset during the Randomizer. These are two separate, sibling options (not one
+// feature with a checkbox) — only the Randomizer hides difficulty/ids and collapses the
+// sidebar. Track mode's progress bar/sidebar always reflect `moduleOrder` regardless of what's
+// active here.
+let activeQueue = moduleOrder.slice();
+let queueMode = 'track'; // 'track' | 'practice' | 'randomizer'
 const FAIL_THRESHOLD_FOR_SOLUTION = 3;
-
-// Lessons were reordered/renumbered to group by difficulty (easy, then medium, then hard);
-// module ids shifted along with them (e.g. the old "6.1" is now "13.1"). This maps each old
-// lesson number to its new one so anyone with progress already saved under the old ids
-// (completed flags, saved SQL, fail counts) doesn't silently lose it — old lesson 1 and 2
-// happened to keep the same numbers, everything else moved.
-//
-// Because the renumbering reuses the same 1-20 id space rather than extending it, an old id
-// like "6.2" can coincidentally match a DIFFERENT module's new id (new lesson 6 is a totally
-// different topic than old lesson 6) — so this must always remap through the table below, never
-// short-circuit on "does this id still exist". It must also run at most ONCE ever: applying the
-// same table a second time to already-migrated ids would permute them a second time and corrupt
-// them, hence the one-time flag in localStorage guarding it.
-const LESSON_RENUMBER_MAP = {1:1,2:2,11:3,12:4,13:5,14:6,3:7,4:8,5:9,15:10,16:11,17:12,6:13,7:14,8:15,9:16,10:17,18:18,19:19,20:20};
-const MIGRATION_FLAG_KEY = 'sqlDojoMigratedToDifficultyOrder.v1';
-
-function migrateLegacyProgress() {
-  if (localStorage.getItem(MIGRATION_FLAG_KEY)) return; // already migrated (or nothing to migrate) — never reapply
-  let changed = false;
-  const migrated = {};
-  for (const oldId in progress) {
-    const [oldLessonPart, suffix] = oldId.split('.');
-    const newLesson = LESSON_RENUMBER_MAP[Number(oldLessonPart)];
-    if (newLesson === undefined) {
-      migrated[oldId] = progress[oldId]; // unrecognized id — keep as-is rather than silently drop it
-      continue;
-    }
-    const newId = `${newLesson}.${suffix}`;
-    migrated[newId] = progress[oldId];
-    if (newId !== oldId) changed = true;
-  }
-  progress = migrated;
-  if (changed) saveProgress();
-  localStorage.setItem(MIGRATION_FLAG_KEY, '1');
-}
 
 // The exercise assigned to a given module id has changed more than once across curriculum
 // edits (reordering, content rewrites) — a browser that had this app open earlier can still
 // have saved code/completed/failCount under an id that now points at a completely different
 // exercise. Editor content prefers saved code over the starter, so a stale save silently shows
-// the WRONG exercise's leftover text under the CURRENT exercise's prompt. A one-time full reset
-// clears out anything saved before this fix existed (correctness beats preserving old drafts
-// here); the fingerprint check below then guards against this ever silently recurring again.
-const CONTENT_RESET_FLAG_KEY = 'sqlDojoContentReset.v1';
-
-function resetProgressIfPreDatesContentTracking() {
-  if (localStorage.getItem(CONTENT_RESET_FLAG_KEY)) return; // already done — never reapply
-  progress = {};
-  saveProgress();
-  localStorage.setItem(CONTENT_RESET_FLAG_KEY, '1');
-}
-
+// the WRONG exercise's leftover text under the CURRENT exercise's prompt. The fingerprint check
+// below guards against this per-module, on every selection, for as long as the app runs.
 function discardStaleProgressIfContentChanged(id, mod, state) {
   const fingerprint = mod.solutionSql;
   if (state.contentFingerprint !== undefined && state.contentFingerprint !== fingerprint) {
@@ -610,7 +848,20 @@ function renderSidebar() {
       item.dataset.id = m.id;
       const done = progress[m.id] && progress[m.id].completed;
       item.innerHTML = `<span class="check">${done ? '✓' : '○'}</span><span class="m-title">${m.id} ${m.title}</span>`;
-      item.addEventListener('click', () => selectModule(m.id));
+      item.addEventListener('click', () => {
+        // The sidebar only ever lists track modules — clicking one while a Practice
+        // Session or the Randomizer is active means "take me back to the track", so reset
+        // the queue first rather than leaving activeQueue pointed at a now-orphaned module.
+        // (The sidebar is hidden entirely during the Randomizer, so this only fires for
+        // Practice Session in practice, but the guard is harmless either way.)
+        if (queueMode !== 'track') {
+          activeQueue = moduleOrder.slice();
+          queueMode = 'track';
+          document.getElementById('session-banner').style.display = 'none';
+          document.getElementById('sidebar').style.display = '';
+        }
+        selectModule(m.id);
+      });
       list.appendChild(item);
     }
     group.appendChild(list);
@@ -619,11 +870,14 @@ function renderSidebar() {
 }
 
 function highlightActiveInSidebar() {
+  // The sidebar is hidden entirely during the Randomizer (its lesson-group titles and
+  // colored diff-dots would otherwise leak difficulty), but guard here too as a backstop.
+  const activeId = queueMode === 'randomizer' ? null : currentModuleId;
   document.querySelectorAll('.module-item').forEach(el => {
-    el.classList.toggle('active', el.dataset.id === currentModuleId);
+    el.classList.toggle('active', el.dataset.id === activeId);
   });
   document.querySelectorAll('.lesson-group').forEach(g => {
-    const mod = moduleById[currentModuleId];
+    const mod = activeId ? moduleById[activeId] : null;
     if (mod && Number(g.dataset.lesson) === mod.lesson) g.classList.add('open');
   });
 }
@@ -694,16 +948,31 @@ async function selectModule(id) {
   moduleStartTs = Date.now(); // the timer begins as soon as this module is opened
   updateTimerDisplay();
   const m = moduleById[id];
-  const lesson = LESSONS.find(l => l.id === m.lesson);
+  const lesson = m.lesson !== undefined ? LESSONS.find(l => l.id === m.lesson) : null;
 
-  document.getElementById('crumb').textContent = `Lesson ${m.lesson} · ${lesson.title}`;
-  document.getElementById('mod-title').textContent = `${m.id}  ${m.title}`;
+  const inRandomizer = queueMode === 'randomizer';
+
+  // A track module's lesson number indirectly reveals its difficulty (lessons are grouped
+  // easy/medium/hard), so the Randomizer must not show it either.
+  document.getElementById('crumb').textContent = inRandomizer
+    ? 'Randomizer'
+    : lesson
+      ? `Lesson ${m.lesson} · ${lesson.title}`
+      : 'Practice Session';
+  // The Randomizer also hides the module's identifying number (e.g. "20.2") — just the
+  // exercise itself, nothing that hints at where it sits in the catalog.
+  document.getElementById('mod-title').textContent = inRandomizer ? m.title : `${m.id}  ${m.title}`;
   const badge = document.getElementById('mod-badge');
-  badge.textContent = m.difficulty;
-  badge.className = 'badge ' + m.difficulty;
+  if (inRandomizer) {
+    badge.textContent = '';
+    badge.className = 'badge';
+  } else {
+    badge.textContent = m.difficulty;
+    badge.className = 'badge ' + m.difficulty;
+  }
   document.getElementById('mod-concept').textContent = m.concept;
   document.getElementById('prompt-box').innerHTML = simpleMarkdown(m.prompt);
-  document.getElementById('tables-text').textContent = m.tables;
+  renderSampleTables(m); // async; seeds + queries the real data, falls back to m.tables on any error
 
   const hintText = document.getElementById('hint-text');
   hintText.style.display = 'none';
@@ -724,15 +993,90 @@ async function selectModule(id) {
 
   highlightActiveInSidebar();
 
-  const idx = moduleOrder.indexOf(id);
+  const idx = activeQueue.indexOf(id);
   document.getElementById('prev-btn').disabled = idx <= 0;
-  document.getElementById('next-btn').disabled = idx >= moduleOrder.length - 1;
+  document.getElementById('next-btn').disabled = idx >= activeQueue.length - 1;
+
+  if (queueMode !== 'track') {
+    const label = queueMode === 'randomizer' ? 'Randomizer' : 'Practice Session';
+    document.getElementById('session-banner-text').textContent = `${label} — module ${idx + 1} of ${activeQueue.length}`;
+  }
+
+  // Remember exactly where this user left off in whichever mode is active, so the home
+  // screen's "Continue" reopens this same track position / session at this same module.
+  if (currentUser) {
+    if (queueMode === 'track') {
+      userData.lastTrackModuleId = id;
+    } else if (queueMode === 'practice' && userData.savedPractice) {
+      userData.savedPractice.currentModuleId = id;
+    } else if (queueMode === 'randomizer' && userData.savedRandomizer) {
+      userData.savedRandomizer.currentModuleId = id;
+    }
+    saveUserData();
+  }
 
   location.hash = id;
 }
 
 async function ensureSeeded(mod) {
   await runMultiStatement(mod.schemaSql);
+}
+
+// ---------- Sample tables: show the real seeded data, not just a column list, so every
+// module gives the user everything needed to reason about the answer up front. ----------
+function parseTableNames(schemaSql) {
+  const names = [];
+  const re = /CREATE\s+(?:OR\s+REPLACE\s+)?TABLE\s+(\w+)/gi;
+  let match;
+  while ((match = re.exec(schemaSql))) {
+    if (!names.includes(match[1])) names.push(match[1]);
+  }
+  return names;
+}
+
+async function renderSampleTables(mod) {
+  const container = document.getElementById('tables-text');
+  try {
+    await ensureSeeded(mod);
+    const tableNames = parseTableNames(mod.schemaSql);
+    if (tableNames.length === 0) throw new Error('no CREATE TABLE statements found');
+
+    let html = '';
+    for (const t of tableNames) {
+      const rows = await runSql(`SELECT * FROM ${t} LIMIT 30`);
+      const countRows = await runSql(`SELECT COUNT(*) AS c FROM ${t}`);
+      const total = countRows[0] ? Number(countRows[0].c) : rows.length;
+
+      html += `<div class="sample-table-block"><div class="sample-table-name">${t}</div>`;
+      if (rows.length === 0) {
+        html += `<div class="sample-table-truncated">(no rows)</div>`;
+      } else {
+        const cols = Object.keys(rows[0]);
+        html += '<div class="sample-table-scroll"><table class="sample-data-table"><thead><tr>';
+        for (const c of cols) html += `<th>${c}</th>`;
+        html += '</tr></thead><tbody>';
+        for (const row of rows) {
+          html += '<tr>';
+          for (const c of cols) html += `<td>${normalizeValue(row[c])}</td>`;
+          html += '</tr>';
+        }
+        html += '</tbody></table></div>';
+        if (total > rows.length) {
+          html += `<div class="sample-table-truncated">showing ${rows.length} of ${total} rows</div>`;
+        }
+      }
+      html += '</div>';
+    }
+    container.innerHTML = html;
+  } catch (e) {
+    // Falls back to the short column-list description if seeding/querying ever fails —
+    // never leave the panel blank.
+    const pre = document.createElement('pre');
+    pre.className = 'tables-fallback';
+    pre.textContent = mod.tables;
+    container.innerHTML = '';
+    container.appendChild(pre);
+  }
 }
 
 async function handleRun() {
@@ -792,9 +1136,306 @@ function handleReset() {
 }
 
 function navigate(delta) {
-  const idx = moduleOrder.indexOf(currentModuleId);
+  const idx = activeQueue.indexOf(currentModuleId);
   const next = idx + delta;
-  if (next >= 0 && next < moduleOrder.length) selectModule(moduleOrder[next]);
+  if (next >= 0 && next < activeQueue.length) selectModule(activeQueue[next]);
+}
+
+// ---------- Shared pool helpers (both modes draw from the combined 300-module catalog) ----------
+const ALL_MODULES = [...MODULES, ...EXTRA_MODULES];
+
+function poolForDifficulties(diffs) {
+  return ALL_MODULES.filter(m => diffs.includes(m.difficulty));
+}
+
+function shuffled(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function saveCurrentModuleState() {
+  if (currentModuleId) {
+    getModuleState(currentModuleId).code = document.getElementById('sql-input').value;
+    commitElapsedTime();
+    saveProgress();
+  }
+}
+
+function returnToTrack() {
+  saveCurrentModuleState();
+  activeQueue = moduleOrder.slice();
+  queueMode = 'track';
+  document.getElementById('session-banner').style.display = 'none';
+  document.getElementById('sidebar').style.display = '';
+  selectModule(activeQueue[0]);
+}
+
+// ---------- Home screen: who's practicing, then which path ----------
+function applyTimerButtonLabels() {
+  const timerBtn = document.getElementById('timer-toggle-btn');
+  timerBtn.textContent = settings.showTimer ? 'Hide Timer' : 'Show Timer';
+  timerBtn.classList.toggle('active', settings.showTimer);
+
+  const totalTimerBtn = document.getElementById('total-timer-toggle-btn');
+  totalTimerBtn.textContent = settings.showTotalTimer ? 'Hide Total Timer' : 'Show Total Timer';
+  totalTimerBtn.classList.toggle('active', settings.showTotalTimer);
+}
+
+function renderUserPicker() {
+  const list = document.getElementById('home-user-list');
+  list.innerHTML = '';
+  for (const name of loadUsersList()) {
+    const btn = document.createElement('button');
+    btn.className = 'home-user-btn';
+    btn.textContent = name;
+    btn.addEventListener('click', () => selectUser(name));
+    list.appendChild(btn);
+  }
+  document.getElementById('home-new-user-input').value = '';
+  document.getElementById('home-user-view').style.display = '';
+  document.getElementById('home-path-view').style.display = 'none';
+}
+
+function selectUser(name) {
+  name = (name || '').trim();
+  if (!name) return;
+  currentUser = name;
+  userData = loadUserData(name);
+  progress = userData.progress;
+  settings = userData.settings;
+
+  const users = loadUsersList();
+  if (!users.includes(name)) {
+    users.push(name);
+    saveUsersList(users);
+  }
+
+  applyTimerButtonLabels();
+  renderSidebar();
+  renderPathPicker();
+}
+
+function renderPathPicker() {
+  document.getElementById('home-user-view').style.display = 'none';
+  document.getElementById('home-path-view').style.display = '';
+  document.getElementById('home-username-display').textContent = currentUser;
+
+  const doneCount = moduleOrder.filter(id => progress[id] && progress[id].completed).length;
+  document.getElementById('home-tile-track-sub').textContent = `${doneCount} / ${moduleOrder.length} complete`;
+  document.getElementById('home-tile-track-btn').textContent = doneCount > 0 ? 'Continue' : 'Start';
+
+  const pc = userData.savedPractice;
+  const pcBtn = document.getElementById('home-tile-practice-continue-btn');
+  if (pc) {
+    const idx = pc.activeQueue.indexOf(pc.currentModuleId);
+    document.getElementById('home-tile-practice-sub').textContent = `In progress — module ${idx + 1} of ${pc.activeQueue.length}`;
+    pcBtn.style.display = '';
+  } else {
+    document.getElementById('home-tile-practice-sub').textContent = 'No session in progress';
+    pcBtn.style.display = 'none';
+  }
+
+  const rc = userData.savedRandomizer;
+  const rcBtn = document.getElementById('home-tile-randomizer-continue-btn');
+  if (rc) {
+    const idx = rc.activeQueue.indexOf(rc.currentModuleId);
+    document.getElementById('home-tile-randomizer-sub').textContent = `In progress — module ${idx + 1} of ${rc.activeQueue.length}`;
+    rcBtn.style.display = '';
+  } else {
+    document.getElementById('home-tile-randomizer-sub').textContent = 'No session in progress';
+    rcBtn.style.display = 'none';
+  }
+}
+
+function hideHomeScreen() {
+  document.getElementById('home-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+}
+
+function goHome() {
+  saveCurrentModuleState();
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('home-screen').style.display = 'flex';
+  if (currentUser) renderPathPicker();
+  else renderUserPicker();
+}
+
+async function enterTrack() {
+  activeQueue = moduleOrder.slice();
+  queueMode = 'track';
+  document.getElementById('session-banner').style.display = 'none';
+  document.getElementById('sidebar').style.display = '';
+  hideHomeScreen();
+  const startId = (userData.lastTrackModuleId && moduleOrder.includes(userData.lastTrackModuleId))
+    ? userData.lastTrackModuleId
+    : moduleOrder[0];
+  await selectModule(startId);
+  refreshModuleCheckmarks();
+}
+
+async function enterSavedPractice() {
+  const pc = userData.savedPractice;
+  if (!pc) return;
+  activeQueue = pc.activeQueue.slice();
+  queueMode = 'practice';
+  document.getElementById('sidebar').style.display = '';
+  const banner = document.getElementById('session-banner');
+  banner.style.display = 'flex';
+  hideHomeScreen();
+  await selectModule(pc.currentModuleId);
+}
+
+async function enterSavedRandomizer() {
+  const rc = userData.savedRandomizer;
+  if (!rc) return;
+  activeQueue = rc.activeQueue.slice();
+  queueMode = 'randomizer';
+  document.getElementById('sidebar').style.display = 'none';
+  const banner = document.getElementById('session-banner');
+  banner.style.display = 'flex';
+  hideHomeScreen();
+  await selectModule(rc.currentModuleId);
+}
+
+// ---------- Practice Session: difficulty + count, sequential, difficulty stays visible ----------
+function selectedDifficulties() {
+  const out = [];
+  if (document.getElementById('diff-easy').checked) out.push('easy');
+  if (document.getElementById('diff-medium').checked) out.push('medium');
+  if (document.getElementById('diff-hard').checked) out.push('hard');
+  return out;
+}
+
+function updatePoolCountDisplay() {
+  const pool = poolForDifficulties(selectedDifficulties());
+  const countInput = document.getElementById('session-count-input');
+  const label = document.getElementById('session-pool-count');
+  countInput.max = String(Math.max(pool.length, 1));
+  if (Number(countInput.value) > pool.length) countInput.value = String(Math.max(pool.length, 1));
+  label.textContent = pool.length === 0
+    ? 'No modules match this difficulty selection.'
+    : `${pool.length} module(s) available with this selection.`;
+  document.getElementById('session-start-btn').disabled = pool.length === 0;
+}
+
+function openSessionModal() {
+  updatePoolCountDisplay();
+  document.getElementById('session-modal').classList.add('open');
+}
+
+function closeSessionModal() {
+  document.getElementById('session-modal').classList.remove('open');
+}
+
+function startSession() {
+  const diffs = selectedDifficulties();
+  let pool = poolForDifficulties(diffs);
+  if (pool.length === 0) return;
+  const count = Math.max(1, Math.min(pool.length, Number(document.getElementById('session-count-input').value) || 1));
+  pool = pool.slice(0, count);
+
+  saveCurrentModuleState();
+  activeQueue = pool.map(m => m.id);
+  queueMode = 'practice';
+  userData.savedPractice = { activeQueue: activeQueue.slice(), currentModuleId: activeQueue[0], difficulties: diffs, count };
+  saveUserData();
+
+  const banner = document.getElementById('session-banner');
+  banner.style.display = 'flex';
+  document.getElementById('session-banner-text').textContent = `Practice Session — ${activeQueue.length} module(s)`;
+
+  closeSessionModal();
+  hideHomeScreen();
+  document.getElementById('sidebar').style.display = '';
+  selectModule(activeQueue[0]);
+}
+
+// One-click shortcut from the home screen: a Practice Session pre-filtered to a single
+// difficulty, using every matching module from the full catalog, no modal.
+function startQuickDifficulty(diff) {
+  const pool = poolForDifficulties([diff]);
+  if (pool.length === 0) return;
+
+  saveCurrentModuleState();
+  activeQueue = pool.map(m => m.id);
+  queueMode = 'practice';
+  userData.savedPractice = { activeQueue: activeQueue.slice(), currentModuleId: activeQueue[0], difficulties: [diff], count: pool.length };
+  saveUserData();
+
+  const banner = document.getElementById('session-banner');
+  banner.style.display = 'flex';
+  document.getElementById('session-banner-text').textContent = `Practice Session — ${activeQueue.length} module(s)`;
+
+  hideHomeScreen();
+  document.getElementById('sidebar').style.display = '';
+  selectModule(activeQueue[0]);
+}
+
+// ---------- Randomizer: its own separate option — count only, order shuffled, difficulty
+// and module ids hidden, and the track sidebar collapsed so nothing there leaks a hint either.
+function updateRandomizerCountDisplay() {
+  const countInput = document.getElementById('randomizer-count-input');
+  const label = document.getElementById('randomizer-pool-count');
+  countInput.max = String(ALL_MODULES.length);
+  if (Number(countInput.value) > ALL_MODULES.length) countInput.value = String(ALL_MODULES.length);
+  label.textContent = `${ALL_MODULES.length} module(s) available across the full catalog.`;
+}
+
+function openRandomizerModal() {
+  updateRandomizerCountDisplay();
+  document.getElementById('randomizer-modal').classList.add('open');
+}
+
+function closeRandomizerModal() {
+  document.getElementById('randomizer-modal').classList.remove('open');
+}
+
+function startRandomizer() {
+  const count = Math.max(1, Math.min(ALL_MODULES.length, Number(document.getElementById('randomizer-count-input').value) || 1));
+  const pool = shuffled(ALL_MODULES).slice(0, count);
+
+  saveCurrentModuleState();
+  activeQueue = pool.map(m => m.id);
+  queueMode = 'randomizer';
+  userData.savedRandomizer = { activeQueue: activeQueue.slice(), currentModuleId: activeQueue[0], count };
+  saveUserData();
+
+  document.getElementById('sidebar').style.display = 'none';
+  const banner = document.getElementById('session-banner');
+  banner.style.display = 'flex';
+  document.getElementById('session-banner-text').textContent = `Randomizer — ${activeQueue.length} module(s)`;
+
+  closeRandomizerModal();
+  hideHomeScreen();
+  selectModule(activeQueue[0]);
+}
+
+function endSession() {
+  returnToTrack();
+}
+
+// ---------- Pause: fully blocks the current exercise's content until resumed ----------
+let paused = false;
+
+function pauseWork() {
+  if (paused || !currentModuleId) return;
+  paused = true;
+  commitElapsedTime(); // freeze the timer, same mechanism as tab-hidden
+  document.getElementById('pause-overlay').classList.add('open');
+}
+
+function resumeWork() {
+  if (!paused) return;
+  paused = false;
+  document.getElementById('pause-overlay').classList.remove('open');
+  if (currentModuleId) {
+    moduleStartTs = Date.now(); // resume the timer from now, skipping the paused duration
+    updateTimerDisplay();
+  }
 }
 
 function wireEvents() {
@@ -837,6 +1478,37 @@ function wireEvents() {
 
   on('timer-toggle-btn', 'click', toggleTimerVisibility);
   on('total-timer-toggle-btn', 'click', toggleTotalTimerVisibility);
+
+  on('practice-btn', 'click', openSessionModal);
+  on('session-cancel-btn', 'click', closeSessionModal);
+  on('session-start-btn', 'click', startSession);
+  on('end-session-btn', 'click', endSession);
+  on('diff-easy', 'change', updatePoolCountDisplay);
+  on('diff-medium', 'change', updatePoolCountDisplay);
+  on('diff-hard', 'change', updatePoolCountDisplay);
+  on('session-count-input', 'input', updatePoolCountDisplay);
+
+  on('randomizer-btn', 'click', openRandomizerModal);
+  on('randomizer-cancel-btn', 'click', closeRandomizerModal);
+  on('randomizer-start-btn', 'click', startRandomizer);
+
+  on('pause-btn', 'click', pauseWork);
+  on('resume-btn', 'click', resumeWork);
+  on('home-btn', 'click', goHome);
+
+  on('home-new-user-btn', 'click', () => selectUser(document.getElementById('home-new-user-input').value));
+  on('home-new-user-input', 'keydown', (e) => {
+    if (e.key === 'Enter') selectUser(document.getElementById('home-new-user-input').value);
+  });
+  on('home-switch-user-btn', 'click', renderUserPicker);
+  on('home-tile-track-btn', 'click', enterTrack);
+  on('home-tile-practice-continue-btn', 'click', enterSavedPractice);
+  on('home-tile-practice-new-btn', 'click', openSessionModal);
+  on('home-tile-randomizer-continue-btn', 'click', enterSavedRandomizer);
+  on('home-tile-randomizer-new-btn', 'click', openRandomizerModal);
+  on('home-quick-easy', 'click', () => startQuickDifficulty('easy'));
+  on('home-quick-medium', 'click', () => startQuickDifficulty('medium'));
+  on('home-quick-hard', 'click', () => startQuickDifficulty('hard'));
 
   let saveTimer = null;
   on('sql-input', 'input', () => {
@@ -912,6 +1584,10 @@ function wireEvents() {
   });
 
   window.addEventListener('keydown', (e) => {
+    if (paused) {
+      if (e.key === 'Escape') resumeWork();
+      return; // block every other shortcut (including Check answer) while paused
+    }
     if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
       e.preventDefault();
       handleCheck();
@@ -923,27 +1599,15 @@ async function main() {
   document.getElementById('loading-msg').textContent = 'Loading SQL engine (DuckDB-Wasm)…';
   await initDuckDB();
   document.getElementById('loading-screen').style.display = 'none';
-  document.getElementById('app').style.display = 'flex';
 
-  resetProgressIfPreDatesContentTracking();
-  migrateLegacyProgress();
-  renderSidebar();
+  migrateLegacyDataToDefaultUserOnce();
   wireEvents();
-
-  const timerBtn = document.getElementById('timer-toggle-btn');
-  timerBtn.textContent = settings.showTimer ? 'Hide Timer' : 'Show Timer';
-  timerBtn.classList.toggle('active', settings.showTimer);
-
-  const totalTimerBtn = document.getElementById('total-timer-toggle-btn');
-  totalTimerBtn.textContent = settings.showTotalTimer ? 'Hide Total Timer' : 'Show Total Timer';
-  totalTimerBtn.classList.toggle('active', settings.showTotalTimer);
-
   setInterval(updateTimerDisplay, 1000);
 
-  const hashId = location.hash.replace('#', '');
-  const startId = moduleById[hashId] ? hashId : moduleOrder[0];
-  await selectModule(startId);
-  refreshModuleCheckmarks();
+  // The home screen (who's practicing, then which path) is the landing point on every
+  // launch — #app stays hidden until a user picks Track/Practice/Randomizer/a difficulty.
+  renderUserPicker();
+  document.getElementById('home-screen').style.display = 'flex';
 }
 
 main().catch(err => {

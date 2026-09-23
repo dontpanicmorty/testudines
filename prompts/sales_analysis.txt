@@ -1,0 +1,141 @@
+An insurance company maintains records of sales made by its employees. Each employee is assigned to a state. States are grouped under regions. The following tables contain the data:
+
+TABLE regions
+    id INTEGER PRIMARY KEY
+    name VARCHAR(50) NOT NULL
+
+TABLE states
+    id INTEGER PRIMARY KEY
+    name VARCHAR(50) NOT NULL
+    regionId INTEGER NOT NULL REFERENCES regions(id)
+
+TABLE employees
+    id INTEGER PRIMARY KEY
+    name VARCHAR(50) NOT NULL
+    stateId INTEGER NOT NULL REFERENCES states(id)
+
+TABLE sales
+    id INTEGER PRIMARY KEY
+    amount INTEGER NOT NULL
+    employeeId INTEGER NOT NULL REFERENCES employees(id)
+
+Management requires a comparative region sales analysis report.
+
+Prompt: Write a query that returns:
+    1. The region name.
+    2. Average sales per employee for the region (Average sales = Total sales made for the region / Number of employees in the region).
+    3. The difference between the average sales of the region with the highest average sales, and the average sales per employee for the region (average sales to be calculated as explained above).
+
+Note: Employees can have multiple sales. A region with no sales should be also returned. Use 0 for average sales per employee for such a region when calculating the 2nd and the 3rd column.
+
+Tags: SQL AGGREGATION LEFT JOIN SELECT PUBLIC
+
+Example case create statement:
+
+CREATE TABLE regions(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE states(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    regionId INTEGER NOT NULL REFERENCES regions(id)
+);
+
+CREATE TABLE employees (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    stateId INTEGER NOT NULL REFERENCES states(id)
+);
+
+CREATE TABLE sales (
+    id INTEGER PRIMARY KEY,
+    amount INTEGER NOT NULL,
+    employeeId INTEGER NOT NULL REFERENCES employees(id)
+);
+
+INSERT INTO regions(id, name) VALUES(1, 'North');
+INSERT INTO regions(id, name) VALUES(2, 'South');
+INSERT INTO regions(id, name) VALUES(3, 'East');
+INSERT INTO regions(id, name) VALUES(4, 'West');
+INSERT INTO regions(id, name) VALUES(5, 'Midwest');
+
+INSERT INTO states(id, name, regionId) VALUES(1, 'Minnesota', 1);
+INSERT INTO states(id, name, regionId) VALUES(2, 'Texas', 2);
+INSERT INTO states(id, name, regionId) VALUES(3, 'California', 3);
+INSERT INTO states(id, name, regionId) VALUES(4, 'Columbia', 4);
+INSERT INTO states(id, name, regionId) VALUES(5, 'Indiana', 5);
+
+INSERT INTO employees(id, name, stateId) VALUES(1, 'Jaden', 1);
+INSERT INTO employees(id, name, stateId) VALUES(2, 'Abby', 1);
+INSERT INTO employees(id, name, stateId) VALUES(3, 'Amaya', 2);
+INSERT INTO employees(id, name, stateId) VALUES(4, 'Robert', 3);
+INSERT INTO employees(id, name, stateId) VALUES(5, 'Tom', 4);
+INSERT INTO employees(id, name, stateId) VALUES(6, 'William', 5);
+
+INSERT INTO sales(id, amount, employeeId) VALUES(1, 2000, 1);
+INSERT INTO sales(id, amount, employeeId) VALUES(2, 3000, 2);
+INSERT INTO sales(id, amount, employeeId) VALUES(3, 4000, 3);
+INSERT INTO sales(id, amount, employeeId) VALUES(4, 1200, 4);
+INSERT INTO sales(id, amount, employeeId) VALUES(5, 2400, 5);
+
+For example, 'Minnesota' is the only state under the 'North' region.
+Total sales made by employees 'Jaden' and 'Abby' for the state of 'Minnesota' is 5000 (2000 + 3000).
+Total employees in the state of 'Minnesota' is 2.
+Average sales per employee for the 'North' region = Total sales made for the region (5000) / Total number of employees (2) = 2500.
+Difference between the average sales of the region with the highest average sales ('South'), and the average sales per employee for the region ('North') = 4000 - 2500 = 1500.
+
+Similarly, no sale has been made for the only state 'Indiana' under the region 'Midwest'.
+So the average sales per employee for the region is 0.
+And, the difference between the average sales of the region with the highest average sales ('South'), and the average sales per employee for the region ('Midwest') = 4000 - 0 = 4000.
+
+with employee_regions as (
+select e.id as employeeid, s.regionid
+from employees e
+left join states s on e.stateid = s.id 
+)
+, regional_sales as (
+select
+er.regionid,
+count(distinct er.employeeid) emp_count,
+coalesce(sum(s.amount), 0) total_sales
+from employee_regions er
+left join sales s on er.employeeid = s.employeeid
+group by er.regionid
+)
+, regional_sales_average as (
+select
+r.id,
+r.name,
+case
+when (rs.emp_count is null or rs.emp_count = 0) then 0
+else rs.total_sales / rs.emp_count
+end as average_sales_per_employee
+from regions r
+left join regional_sales rs on  r.id = rs.regionid
+)
+select
+name,
+average_sales_per_employee,
+(select max(average_sales_per_employee) from regional_sales_average) - average_sales_per_employee averages_sales_delta
+from regional_sales_average
+order by average_sales_per_employee desc, name
+;
+
+
+## Why each piece matters (mapping to the failing test cases in the screenshot)
+
+- **"Region-wise sales correctly calculated"** → the `region_sales` CTE sums `sales.amount` grouped by region and divides by `COUNT(DISTINCT employee_id)`, not `COUNT(*)`, so an employee with 5 sales rows doesn't inflate the denominator.
+- **"Some regions have no employees, or all employees have no sales"** → the outer `LEFT JOIN regions r ... LEFT JOIN region_sales rs` plus the `CASE` guard means a missing `region_sales` row (no employees) or a `total_sales` of `0` both resolve to `avg_sales_per_employee = 0` instead of `NULL`/error.
+- **"All regions have sales, employees have zero to many sales"** → the `LEFT JOIN sales` in `region_sales` keeps employees with zero sales rows in the `COUNT(DISTINCT ...)`, while `COALESCE(SUM(s.amount), 0)` keeps the total correct when a region's employees have no sales at all.
+- **Third column** → computed once via a scalar subquery over the already-materialized `region_avg` CTE, so it's consistent for every row without a self-join.
+
+Expected output (rows in any order):
+name average difference
+-----------------------------
+North 2500 1500
+South 4000 0
+East 1200 2800
+West 2400 1600
+Midwest 0 4000
