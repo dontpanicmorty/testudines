@@ -1,0 +1,45 @@
+The deliveries_info table summarizes deliveries:
+
+Selected fields (with data type) are the following:
+
+TABLE deliveries_info
+    delivery_id: integer [Primary key]
+    user_id: integer [Identifier of Thistle customer]
+    delivery_date: date [Date of delivery. Falls on either a Monday or Thursday]
+    delivery_week: date [Week of delivery. Always a Monday]
+    route_id: integer [Identifier for the delivery route on which delivery occurred]
+    delivery_success_flag: boolean [Marks if delivery was delivered successfully, with TRUE meaning yes]
+
+Prompt: For the following questions, assume that the data in the table has been validated (i.e. no duplicate records, no null values)
+    Each week, Thistle delivers on Mondays (known internally as our "123" cycle) and Thursdays (our "456" cycle)
+    Customers can schedule a delivery for one or both cycles.
+    For each completed week in 2026, what percentage of deliveries came from each cycle?
+
+with deliveries_info_cycle as (
+select 
+...
+case
+	when date_trunc('day', delivery_date) = 1 then 'Monday'
+  when date_trunc('day', delivery_date) = 4 then 'Thursday'
+end as cycle_day
+from deliveries_info
+)
+, total_delivery_cycles as (
+select
+delivery_week,
+cycle_day,
+count(delivery_id) over (partition by delivery_week, cycle_day) as total_cycle_deliveries
+from deliveries_info_cycle
+)
+-- Next step: CTE to calculate total delivery count (delivery_week, monday_deliveries, thursday_deliveries, total_deliveries)
+-- Then, calculate percentages for Mon/Thurs, test that date filtering successfully restricts to completed weeks
+select
+delivery_week,
+
+
+from deliveries_info
+where delivery_week < (
+	select (max(delivery_week) - 1) delivery_week as from deliveries_info
+  )
+ 
+;
