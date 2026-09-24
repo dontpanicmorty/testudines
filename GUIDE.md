@@ -12,8 +12,8 @@ own native webview (no bundled browser engine).
 
 **macOS:**
 ```bash
-apps_and_builds/sql-dojo/tauri/build.sh
-open "apps_and_builds/sql-dojo/tauri/src-tauri/target/release/bundle/macos/SQL Dojo.app"
+tauri/build.sh
+open "tauri/src-tauri/target/release/bundle/macos/SQL Dojo.app"
 ```
 The first launch may show a Gatekeeper warning since it isn't notarized —
 right-click the app and choose **Open** to bypass that once.
@@ -22,7 +22,7 @@ right-click the app and choose **Open** to bypass that once.
 [Rust toolchain](https://rustup.rs) and the
 [Tauri CLI](https://tauri.app/start/prerequisites/) installed:
 ```powershell
-cd apps_and_builds/sql-dojo/tauri/src-tauri
+cd tauri/src-tauri
 cargo tauri build
 ```
 This produces an installer (`.msi`/`.exe`) under
