@@ -420,19 +420,25 @@
 </div>
 
 <script>
-// Registered before the module script below, and with useCapture:true,
-// specifically to catch resource-load failures (e.g. a module import
-// failing to fetch) — those don't bubble to window in the default phase,
-// so a plain (non-capturing) window.onerror/addEventListener miss them
-// entirely, unlike runtime script errors.
-window.addEventListener('error', (event) => {
+// Single native-log bridge covering every shell this app can run under: the macOS
+// Swift/WKWebView shell (window.webkit.messageHandlers.log), the cross-platform Tauri
+// shell (window.__TAURI__, when the Rust side registers a `log_message` command), or
+// neither (e.g. served directly to a browser via server.py) — in which case this is a
+// harmless no-op. Defined before the module script below so the capture-phase handler
+// (also registered here, ahead of the module script, to catch resource-load failures a
+// plain non-capturing window.onerror would miss) can use it too.
+window.__sqlDojoLog = function (msg) {
   if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
-    const target = event.target;
-    const targetInfo = target && target.src ? (' src=' + target.src) : '';
-    window.webkit.messageHandlers.log.postMessage(
-      'capture-phase error: ' + (event.message || event.type) + targetInfo
-    );
+    window.webkit.messageHandlers.log.postMessage(msg);
+  } else if (window.__TAURI__ && window.__TAURI__.core && window.__TAURI__.core.invoke) {
+    window.__TAURI__.core.invoke('log_message', { message: msg });
   }
+};
+
+window.addEventListener('error', (event) => {
+  const target = event.target;
+  const targetInfo = target && target.src ? (' src=' + target.src) : '';
+  window.__sqlDojoLog('capture-phase error: ' + (event.message || event.type) + targetInfo);
 }, true);
 </script>
 <script type="module">
@@ -682,9 +688,7 @@ function setEditorValue(text) {
 
 // ---------- DuckDB setup ----------
 function logNative(msg) {
-  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
-    window.webkit.messageHandlers.log.postMessage(msg);
-  }
+  window.__sqlDojoLog(msg);
 }
 
 let db, conn;
@@ -1107,6 +1111,8 @@ async function handleCheck() {
     const expectedSig = signatureOf(expectedRows);
 
     if (arraysEqual(userSig, expectedSig)) {
+      commitElapsedTime(); // stop the clock the instant a correct answer is confirmed
+      updateTimerDisplay();
       const state = getModuleState(mod.id);
       state.completed = true;
       state.code = userSql;
@@ -1613,15 +1619,11 @@ async function main() {
 main().catch(err => {
   const message = 'Failed to load: ' + (err && err.message ? err.message : err);
   document.getElementById('loading-msg').textContent = message;
-  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
-    window.webkit.messageHandlers.log.postMessage('main() failed: ' + message);
-  }
+  window.__sqlDojoLog('main() failed: ' + message);
 });
 
 window.addEventListener('error', (event) => {
-  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.log) {
-    window.webkit.messageHandlers.log.postMessage('window.onerror: ' + (event.message || event));
-  }
+  window.__sqlDojoLog('window.onerror: ' + (event.message || event));
 });
 </script>
 </body>

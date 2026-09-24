@@ -4,12 +4,32 @@ SQL Dojo is a self-contained SQL practice app: 300 exercises, an in-app
 SQL editor, and instant grading — all running locally against a real
 database engine (DuckDB), no internet connection or server required.
 
-## Opening the app
+## Building and opening the app
 
-Launch `SQL Dojo.app` (double-click it in Finder, or `open` it from
-Terminal). The first time you open it, macOS may show a Gatekeeper warning
-since it isn't notarized — right-click the app and choose **Open** to bypass
-that once.
+SQL Dojo is built with [Tauri](https://tauri.app) — the same app (everything
+under `webapp/`) runs on both macOS and Windows, each wrapped in that OS's
+own native webview (no bundled browser engine).
+
+**macOS:**
+```bash
+apps_and_builds/sql-dojo/tauri/build.sh
+open "apps_and_builds/sql-dojo/tauri/src-tauri/target/release/bundle/macos/SQL Dojo.app"
+```
+The first launch may show a Gatekeeper warning since it isn't notarized —
+right-click the app and choose **Open** to bypass that once.
+
+**Windows:** build from a Windows machine with the
+[Rust toolchain](https://rustup.rs) and the
+[Tauri CLI](https://tauri.app/start/prerequisites/) installed:
+```powershell
+cd apps_and_builds/sql-dojo/tauri/src-tauri
+cargo tauri build
+```
+This produces an installer (`.msi`/`.exe`) under
+`src-tauri/target/release/bundle/`. Cross-compiling a Windows build from
+macOS isn't practical (Windows installer bundling needs tools that only run
+on Windows), so this step has to happen on an actual Windows machine or a
+Windows CI runner.
 
 ## The home screen
 
