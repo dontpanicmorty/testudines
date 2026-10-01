@@ -13,8 +13,21 @@ set -euo pipefail
 cd "$(dirname "$0")/src-tauri"
 
 if ! command -v cargo >/dev/null 2>&1; then
-  echo "cargo not found — install Rust first: https://rustup.rs" >&2
-  exit 1
+  echo "cargo not found. SQL Dojo needs the Rust toolchain to build." >&2
+  read -r -p 'Type "agree" to install Rust now via rustup (https://rustup.rs). Any other submission will abort the Rust installation and app setup: ' reply
+  if [ "$reply" = "agree" ]; then
+    # --no-modify-path: some setups have a root-owned/unwritable shell profile
+    # (e.g. ~/.bash_profile from a managed install) that rustup can't safely
+    # amend. This build script only needs `cargo` on PATH for the rest of this
+    # run, which `source "$HOME/.cargo/env"` below already provides — it
+    # doesn't need rustup to touch any shell startup file.
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+    # shellcheck disable=SC1090
+    source "$HOME/.cargo/env"
+  else
+    echo "Aborting: Rust installation and app setup were not agreed to." >&2
+    exit 1
+  fi
 fi
 if ! cargo tauri --version >/dev/null 2>&1; then
   echo "Installing tauri-cli (one-time)..."
