@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.classes-from-first-principles.watermark"
+title = "A watermark that only moves forward"
+difficulty = 3
+main = "solution.py"
+hints = ["Store the current value on the instance; `None` means nothing processed yet.", "ISO timestamps compare correctly as strings, so `ts > self.value` works.", "`advance` returns whether it moved. `is_new` and `advance` agree on what counts as newer."]

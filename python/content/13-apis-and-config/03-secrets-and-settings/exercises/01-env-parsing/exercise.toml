@@ -1,0 +1,8 @@
+id = "apis-and-config.secrets-and-settings.env-parsing"
+title = "Parse booleans and ints from the environment"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Normalise with .strip().lower() and compare against sets of accepted spellings.",
+  "get_int should use env.get(name); if it is None return the default, otherwise int(...) and wrap failures in ConfigError that names the variable.",
+]

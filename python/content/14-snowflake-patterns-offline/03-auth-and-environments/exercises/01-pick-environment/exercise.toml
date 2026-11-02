@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.auth-and-environments.pick-environment"
+title = "Pick an environment safely"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Return dict(ENVIRONMENTS[name]) so callers get a copy.",
+  "Catch KeyError and raise ValueError whose message includes sorted(ENVIRONMENTS).",
+  "Check name == 'prod' and allow_prod before returning; raise PermissionError if prod was not explicitly allowed.",
+]

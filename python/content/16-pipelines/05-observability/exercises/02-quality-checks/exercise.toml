@@ -1,0 +1,9 @@
+id = "pipelines.observability.quality-checks"
+title = "Data quality assertions"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Return a list of problem strings; start with an empty list and append.",
+  "Collect non-null ids first, then compare len(ids) with len(set(ids)).",
+  "Use row.get('amount') so a missing column is a problem, not a KeyError.",
+]

@@ -1,0 +1,9 @@
+id = "validation-and-contracts.pydantic-models.customer-validator"
+title = "Customer validator (debug)"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Print a validated Customer and look at the email field.",
+  "A field_validator must return the value that should be stored.",
+  "Raise ValueError inside the validator for bad input: pydantic turns it into a ValidationError.",
+]

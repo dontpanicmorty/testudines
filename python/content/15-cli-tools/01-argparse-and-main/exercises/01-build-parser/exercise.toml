@@ -1,0 +1,9 @@
+id = "cli-tools.argparse-and-main.build-parser"
+title = "Build the argument parser"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Positional arguments are added without dashes: add_argument('input').",
+  "Flags use action='store_true'. For --limit use type=int and default=None.",
+  "A short alias is passed first: add_argument('-o', '--output', default='-').",
+]

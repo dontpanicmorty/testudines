@@ -1,0 +1,6 @@
+id = "classes-dataclasses-typing.type-hints.typeddict-and-protocol"
+title = "Typed events and a Protocol sink"
+difficulty = 3
+main = "solution.py"
+timeout = 120
+hints = ["A TypedDict body is just annotated names: `user_id: int`.", "`ListSink` doesn't inherit from `Sink`; it only needs a `write` method with a matching signature. Annotate `self.events: list[Event] = []`.", "In `route`, filter first. Only call `sink.write` when something qualifies, and return its result."]

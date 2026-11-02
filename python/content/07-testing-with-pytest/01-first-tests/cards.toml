@@ -1,0 +1,39 @@
+[[card]]
+id = "47838564"
+q = "What naming rules make pytest discover a test?"
+a = "File named `test_*.py` (or `*_test.py`), function named `test_*`."
+
+[[card]]
+id = "f2a2093c"
+q = "What does `assert x == 5` do when `x` is 4?"
+a = "Raises `AssertionError`; pytest reports the test as failed and shows the actual value of `x`."
+
+[[card]]
+id = "bcef141b"
+q = "Write a test line asserting that `parse(\"abc\")` raises `ValueError`."
+a = "```python\nwith pytest.raises(ValueError):\n    parse(\"abc\")\n```"
+
+[[card]]
+id = "0de77dbe"
+q = "Why is `assert 0.1 + 0.2 == 0.3` a bad test and what do you write instead?"
+a = "Floats are binary approximations so it fails. Use `assert 0.1 + 0.2 == pytest.approx(0.3)`."
+
+[[card]]
+id = "6917bc6f"
+q = "A function has the rule `if percent > 100: raise ValueError`. Which three inputs should your tests try around it?"
+a = "100 (allowed boundary), 101 (just past, must raise) and a normal value like 50."
+
+[[card]]
+id = "08a0a699"
+q = "What does `.F.` in pytest output mean?"
+a = "Three tests: first passed, second failed, third passed."
+
+[[card]]
+id = "eded06e0"
+q = "What are the three parts of a readable test?"
+a = "Arrange (set up inputs), act (call the code), assert (check the result)."
+
+[[card]]
+id = "2b12ff11"
+q = "Why is `assert clean(\"x\")` a weak test?"
+a = "Any non-empty result is truthy, so it passes for almost any bug. Assert the exact expected value instead."

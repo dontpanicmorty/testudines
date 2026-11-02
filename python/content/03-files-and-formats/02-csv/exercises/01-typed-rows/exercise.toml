@@ -1,0 +1,8 @@
+id = "files-and-formats.csv.typed-rows"
+title = "Read and type an orders CSV"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "csv.DictReader(f) gives dict rows of strings.",
+  "Build a new dict per row with int() and float() conversions.",
+]

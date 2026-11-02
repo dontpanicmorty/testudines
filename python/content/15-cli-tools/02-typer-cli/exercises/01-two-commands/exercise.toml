@@ -1,0 +1,8 @@
+id = "cli-tools.typer-cli.two-commands"
+title = "Two Typer commands"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Decorate each function with @app.command(). Parameters without defaults become arguments.",
+  "A bool parameter with default False becomes the flag --upper. Use typer.echo for output.",
+]

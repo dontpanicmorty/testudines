@@ -1,0 +1,9 @@
+id = "shared-libraries.documenting-and-releasing.release-checks"
+title = "Pre-release consistency checks"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "tomllib.loads(path.read_text()) gives the version at ['project']['version'].",
+  "Find __version__ with a regular expression: r'__version__\\s*=\\s*[\"\\']([^\"\\']+)[\"\\']'.",
+  "Use re.search with re.M and re.escape for the changelog heading '## [version]'. Check files exist before reading them.",
+]

@@ -1,0 +1,9 @@
+id = "shared-libraries.documenting-and-releasing.doctest-slugify"
+title = "Make the docstring examples pass"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Run through each >>> example by hand and compare with the implementation.",
+  "Punctuation should be dropped, words joined with a single hyphen, and the result lowercase.",
+  "str.isalnum() helps keep only letters and digits inside each word.",
+]

@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.testing-warehouse-code.sql-contract"
+title = "Build SELECT SQL you can test"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Validate every identifier (table, columns, filter keys) with re.fullmatch before using it.",
+  "Filters become `col = %(col)s` joined with ' AND ' in dict order, and the params dict is the filters dict itself (copied).",
+  "Return a tuple (sql, params). Sort nothing: keep the caller's column and filter order.",
+]

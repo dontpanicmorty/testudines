@@ -1,0 +1,8 @@
+id = "snowflake-patterns-offline.loading-patterns.batches"
+title = "A lazy batching generator"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "itertools.islice(it, size) pulls at most `size` items from an iterator.",
+  "Call iter(items) once, then loop `while chunk := list(islice(it, size)):` and yield each chunk.",
+]

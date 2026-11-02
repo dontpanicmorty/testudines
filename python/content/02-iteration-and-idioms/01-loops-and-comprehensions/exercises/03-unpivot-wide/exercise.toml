@@ -1,0 +1,9 @@
+id = "iteration-and-idioms.loops-and-comprehensions.unpivot-wide"
+title = "Unpivot a wide export"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "For each row you need one output record per month column: two nested loops, or a comprehension with two `for` clauses.",
+  "Row keys other than the id are month columns; `row.items()` gives you both name and value.",
+  "Skip cells that are None or empty string; convert the rest to float.",
+]

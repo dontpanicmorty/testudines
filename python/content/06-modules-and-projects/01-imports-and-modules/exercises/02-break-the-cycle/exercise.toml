@@ -1,0 +1,6 @@
+id = "modules-and-projects.imports-and-modules.break-the-cycle"
+title = "Break the import cycle"
+difficulty = 2
+main = "orders.py"
+hints = ["Run `import orders` in your head: orders pauses at its first line to load customers, which pauses to load orders...", "Decide which module truly needs the other at import time. Only one of them needs it while running a function.", "Simplest fix: move one of the top-level imports into the function that uses it."]
+timeout = 120

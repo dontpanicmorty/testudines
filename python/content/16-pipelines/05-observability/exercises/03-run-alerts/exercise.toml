@@ -1,0 +1,9 @@
+id = "pipelines.observability.run-alerts"
+title = "Freshness and volume alerts"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Parse both timestamps with datetime.fromisoformat and subtract; total_seconds() / 3600 gives hours.",
+  "Skip the volume check when previous_rows is missing or zero: there is no baseline.",
+  "Order of the returned alerts: stale, then volume_drop or volume_spike, then rejects.",
+]

@@ -1,0 +1,8 @@
+id = "validation-and-contracts.schemas-at-the-boundary.partition-rows"
+title = "Partition rows into valid and rejects"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Loop with enumerate so you know each row's index. Put try/except ValidationError inside the loop.",
+  "For each error e in exc.errors(), the field is '.'.join(str(p) for p in e['loc']) and the message is e['msg'].",
+]

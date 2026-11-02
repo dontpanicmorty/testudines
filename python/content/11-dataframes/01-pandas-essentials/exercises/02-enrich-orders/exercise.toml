@@ -1,0 +1,9 @@
+id = "dataframes.pandas-essentials.enrich-orders"
+title = "Enrich orders with customer names"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A LEFT JOIN keeps orders with no matching customer. Use merge(..., how='left').",
+  "validate='many_to_one' makes pandas raise if customers has duplicate ids. Let that error propagate.",
+  "assign(full_name=...) can concatenate string columns: df['first'] + ' ' + df['last'].",
+]

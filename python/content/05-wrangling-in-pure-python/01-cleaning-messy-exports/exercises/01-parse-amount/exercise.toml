@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.cleaning-messy-exports.parse-amount"
+title = "Parse an invoice amount"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Strip the text, then check for the missing markers before converting.",
+  "Remove $ and , then call Decimal(...).",
+  "decimal.InvalidOperation is what Decimal raises for bad text; convert it to ValueError.",
+]

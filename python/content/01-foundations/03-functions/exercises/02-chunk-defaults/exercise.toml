@@ -1,0 +1,8 @@
+id = "foundations.functions.chunk-defaults"
+title = "Build a query label"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Give `limit` and `schema` default values; required parameters come first.",
+  "Collect optional filters with **filters, then sort the keys so the output is deterministic.",
+]

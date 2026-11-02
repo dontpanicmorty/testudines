@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.dates-times-and-decimals.days-overdue"
+title = "Days overdue"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Due date = invoice_date + timedelta(days=terms_days).",
+  "Subtract dates to get a timedelta and use .days.",
+  "Clamp at zero with max(0, ...).",
+]

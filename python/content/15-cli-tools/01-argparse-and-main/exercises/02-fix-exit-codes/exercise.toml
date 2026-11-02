@@ -1,0 +1,9 @@
+id = "cli-tools.argparse-and-main.fix-exit-codes"
+title = "Debug: green on failure"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Run both a good and a missing file mentally: which stream does the error go to, and what is returned?",
+  "Errors belong on stderr: print(..., file=sys.stderr). Return 1 for a failed run.",
+  "main should not call sys.exit itself: tests could not capture the return value.",
+]

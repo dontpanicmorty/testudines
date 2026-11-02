@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.a-mini-etl.validate"
+title = "Validate with a reject list"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Read with csv.DictReader and enumerate(..., start=2): the header is line 1.",
+  "Collect every problem in a row, then reject the row once with the problems joined by '; '.",
+  "Valid rows get typed values: int, int, Decimal, and sku uppercased and stripped.",
+]

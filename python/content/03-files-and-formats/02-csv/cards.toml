@@ -1,0 +1,40 @@
+[[card]]
+id = "dc1bbd74"
+q = '''What does this print?
+```python
+row = next(csv.DictReader(io.StringIO("a\n10\n")))
+print(row["a"] * 2)
+```'''
+a = '''`1010`. The value is the string `"10"`, so `*` repeats text.'''
+
+[[card]]
+id = "a7cf850b"
+q = '''Why open CSV files with `newline=""`?'''
+a = '''So the csv module sees raw line endings and handles `\r\n` and newlines inside quoted fields correctly.'''
+
+[[card]]
+id = "99befedb"
+q = '''`row["Customer Name"]` raises `KeyError` although the file clearly has that column. Most likely cause?'''
+a = '''The header has hidden whitespace or different case (`"Customer Name "`). Check `reader.fieldnames` and normalise.'''
+
+[[card]]
+id = "9f4cbb45"
+q = '''Write the line that creates a DictReader for semicolon-separated data in file object `f`.'''
+a = '''```python
+csv.DictReader(f, delimiter=";")
+```'''
+
+[[card]]
+id = "7387df05"
+q = '''A DictWriter gets a row dict with a key not in `fieldnames`. What happens and how can you change it?'''
+a = '''`ValueError: dict contains fields not in fieldnames`. Pass `extrasaction="ignore"` to drop extras silently.'''
+
+[[card]]
+id = "727cb1f2"
+q = '''Why is `if row["active"]:` a bug for CSV data?'''
+a = '''Every cell is a string, so `"false"` is truthy. Compare text: `row["active"].strip().lower() == "true"`.'''
+
+[[card]]
+id = "29dfb699"
+q = '''How do you keep a CSV-filtering pipeline from loading the whole file?'''
+a = '''Iterate the `DictReader` lazily and chain generators; avoid `list()` until the end.'''

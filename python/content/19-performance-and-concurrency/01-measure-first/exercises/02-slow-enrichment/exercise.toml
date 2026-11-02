@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.measure-first.slow-enrichment"
+title = "Debug: enrichment that never finishes"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Count how many times the inner loop body runs when both tables have n rows.",
+  "Build a dict from customer_id to region once, outside the loop over orders.",
+  "Keep the behaviour identical: skip orders with unknown customers and keep order of the input.",
+]

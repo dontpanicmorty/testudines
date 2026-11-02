@@ -1,0 +1,6 @@
+id = "testing-with-pytest.first-tests.strengthen-weak-tests"
+title = "These tests pass on broken code"
+difficulty = 2
+main = "my_tests.py"
+hints = ["For each existing test ask: which wrong implementation would still pass? `assert x` and `isinstance` accept almost anything.", "Replace vague checks with exact expected values, one behaviour per test.", "Think through the contract: case, whitespace, None, unknown values."]
+timeout = 120

@@ -1,0 +1,8 @@
+id = "pipelines.tasks-and-dags.upstream-downstream"
+title = "Impact analysis: who is downstream?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Downstream means 'depends on, directly or indirectly'. A node n is downstream of target if target is in its dependencies, or any of its dependencies is downstream.",
+  "Alternatively build a reversed graph (dependency -> dependents) and walk it with a stack and a seen set.",
+]

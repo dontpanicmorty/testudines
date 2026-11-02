@@ -1,0 +1,6 @@
+id = "testing-with-pytest.fixtures-and-parametrize.tmp-path-fixture"
+title = "Test a CSV reader with a fixture"
+difficulty = 2
+main = "my_tests.py"
+hints = ["Write a fixture that builds a CSV inside `tmp_path` and returns its path; request `tmp_path` as the fixture's own argument.", "Make the CSV awkward on purpose: a `free` customer in different cases, padded whitespace, a paid customer in the first and last row.", "Assert the whole returned list (order included), not just its length."]
+timeout = 120

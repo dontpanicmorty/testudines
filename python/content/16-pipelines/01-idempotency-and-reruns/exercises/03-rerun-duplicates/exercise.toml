@@ -1,0 +1,9 @@
+id = "pipelines.idempotency-and-reruns.rerun-duplicates"
+title = "Debug: the rerun doubles revenue"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Run the loader twice for the same date in your head. What is in the table afterwards?",
+  "The slice you are about to write must be cleared first, but only that slice.",
+  "Delete rows for load_date, then insert, both inside one `with conn:` block.",
+]

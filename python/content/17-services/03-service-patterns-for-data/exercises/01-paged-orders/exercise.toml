@@ -1,0 +1,9 @@
+id = "services.service-patterns-for-data.paged-orders"
+title = "Paged orders API"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Open the connection in a get_db dependency with yield and close it in finally.",
+  "OFFSET is (page - 1) * page_size. Count the total with a separate select count(*), and include an ORDER BY.",
+  "Bound page >= 1 and 1 <= page_size <= 50 with Query so bad values give 422.",
+]

@@ -1,0 +1,5 @@
+id = "code-quality.readable-code.flatten-with-early-returns"
+title = "Flatten the nested ifs"
+difficulty = 1
+main = "solution.py"
+hints = ["Turn each `else` branch into an early return placed before the main path.", "Order the checks: missing order, not complete, empty total, then country.", "After the last guard, the remaining code can sit at one level of indentation."]

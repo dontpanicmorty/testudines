@@ -1,0 +1,34 @@
+[[card]]
+id = "ae5adbde"
+q = '''What are the four stages of the mini ETL and which two do I/O?'''
+a = '''Extract, validate, transform, load. Extract and load touch the outside world.'''
+
+[[card]]
+id = "816c6447"
+q = '''Why `enumerate(reader, start=2)` for line numbers in a CSV with a header?'''
+a = '''The header is line 1, so the first data row is line 2, which matches what an editor shows.'''
+
+[[card]]
+id = "5b05d0bf"
+q = '''What makes a database load idempotent?'''
+a = '''Replacing by a key (`INSERT OR REPLACE` / `MERGE` / delete-then-insert for the batch) so a re-run yields the same table.'''
+
+[[card]]
+id = "cdb4a669"
+q = '''Why `conn.execute("INSERT ... VALUES (?, ?)", row)` instead of an f-string?'''
+a = '''Parameters keep data separate from SQL: no quoting bugs and no SQL injection.'''
+
+[[card]]
+id = "6289b49d"
+q = '''What does `with conn:` do for a sqlite3 connection?'''
+a = '''Wraps the block in a transaction: commit on success, rollback if an exception occurs.'''
+
+[[card]]
+id = "29b2bf9e"
+q = '''Why write a rejects file even when no rows were rejected?'''
+a = '''A header-only file proves the job ran and found none; a missing file is ambiguous.'''
+
+[[card]]
+id = "67015011"
+q = '''Which invariant do you log at the end of a run?'''
+a = '''`read == loaded + rejected`.'''

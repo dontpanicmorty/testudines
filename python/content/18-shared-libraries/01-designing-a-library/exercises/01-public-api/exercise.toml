@@ -1,0 +1,9 @@
+id = "shared-libraries.designing-a-library.public-api"
+title = "Define the public API"
+difficulty = 1
+main = "fmtkit/__init__.py"
+hints = [
+  "The implementations live in fmtkit/core.py. Re-export them in __init__.py with a from-import.",
+  "Add __all__ = [...] listing only the two public functions.",
+  "The helper normalize in core.py should be private: rename it with a leading underscore and update its caller.",
+]

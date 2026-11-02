@@ -1,0 +1,9 @@
+id = "services.fastapi-basics.store-dependency"
+title = "Debug: the ignored fake"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The tests replace get_store using app.dependency_overrides. That only works if the handler receives the store through Depends.",
+  "Look for any place that reaches the store or the key without going through a dependency.",
+  "Make require_api_key a dependency too (Header). Use Depends(...) on the route or the router.",
+]

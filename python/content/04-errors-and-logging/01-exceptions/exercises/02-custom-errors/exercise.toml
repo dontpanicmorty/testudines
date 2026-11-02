@@ -1,0 +1,9 @@
+id = "errors-and-logging.exceptions.custom-errors"
+title = "Domain errors with causes"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "class RowError(Exception) with row_number and a message.",
+  "Catch ValueError inside parse_row and raise RowError(...) from e.",
+  "Set self.row_number in __init__ and call super().__init__(message).",
+]

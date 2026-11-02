@@ -1,0 +1,9 @@
+id = "sql-from-python.duckdb-for-analytics.running-totals"
+title = "Running totals with a window"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Create a table in an in-memory DuckDB connection and executemany the rows into it.",
+  "SUM(amount) OVER (PARTITION BY account ORDER BY day) is the running total per account.",
+  "Return Python tuples ordered by account, day.",
+]

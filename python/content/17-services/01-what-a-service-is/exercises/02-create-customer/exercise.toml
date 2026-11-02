@@ -1,0 +1,9 @@
+id = "services.what-a-service-is.create-customer"
+title = "Debug: create customer"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Compare what the code checks for duplicates against what the prompt says makes a duplicate.",
+  "Check the status codes: a successful create is not 200. Also check which validations run before the duplicate check.",
+  "Normalise the email (strip, lowercase) before both validating and comparing.",
+]

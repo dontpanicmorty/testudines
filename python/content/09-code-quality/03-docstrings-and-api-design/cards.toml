@@ -1,0 +1,39 @@
+[[card]]
+id = "3b2abb85"
+q = "What is the first-line style for a docstring?"
+a = "A one-line imperative summary that fits on one line, e.g. `\"\"\"Return the normalised e-mail address, or None if invalid.\"\"\"`."
+
+[[card]]
+id = "883f60b5"
+q = "What is the point of `>>>` examples in a docstring?"
+a = "They are doctests: `doctest` runs them and compares the output, so examples can't silently go stale."
+
+[[card]]
+id = "c37d82ed"
+q = "Write a signature where `strict` can only be passed by keyword."
+a = "```python\ndef load(path, *, strict=True): ...\n```"
+
+[[card]]
+id = "7d715d79"
+q = "How do you mark a function as internal and list the public ones?"
+a = "Prefix internals with an underscore (`_parse_line`) and list public names in `__all__ = [...]`."
+
+[[card]]
+id = "06b43f87"
+q = "Why define `class LoadError(Exception)` and subclass it for specific failures?"
+a = "Callers can catch broadly (`except LoadError`) or narrowly (`except RowError`), while the library's errors stay distinguishable from other exceptions."
+
+[[card]]
+id = "3b8bcd59"
+q = "Why does `warnings.warn(msg, DeprecationWarning, stacklevel=2)` use `stacklevel=2`?"
+a = "It attributes the warning to the *caller's* line, which is the code that needs to change."
+
+[[card]]
+id = "499ba415"
+q = "Return `-1` on failure or raise an exception: which is better API design, and why?"
+a = "Raise. Callers can forget to check a sentinel and carry bad data forward; an exception can't be ignored by accident."
+
+[[card]]
+id = "e55897f0"
+q = "How do you keep the original error when wrapping it in your own exception?"
+a = "`raise MyError(\"context\") from exc`, which sets `__cause__`."

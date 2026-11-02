@@ -1,0 +1,9 @@
+id = "services.service-patterns-for-data.error-envelope"
+title = "One error envelope"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Register handlers with app.add_exception_handler or the @app.exception_handler decorator inside install_error_handlers(app).",
+  "HTTPException handlers should use the Starlette HTTPException class (FastAPI's subclasses it) so 404s for unknown routes are covered too.",
+  "For unexpected errors register a handler for Exception, and build the TestClient with raise_server_exceptions=False in your own checks. Never put str(exc) in the body.",
+]

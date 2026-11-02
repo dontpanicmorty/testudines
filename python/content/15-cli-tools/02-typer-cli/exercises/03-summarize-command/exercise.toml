@@ -1,0 +1,9 @@
+id = "cli-tools.typer-cli.summarize-command"
+title = "A summarize command with clean failures"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Keep the logic in a plain function summarize_csv(path, column) -> (rows, total) that raises ValueError for a missing column; the command only adapts it.",
+  "Use csv.DictReader. Catch FileNotFoundError and ValueError in the command, echo 'error: ...' with err=True and raise typer.Exit(code=1).",
+  "Print rows=N then sum=X on separate lines to stdout. Format the sum with f'{total:.2f}'.",
+]

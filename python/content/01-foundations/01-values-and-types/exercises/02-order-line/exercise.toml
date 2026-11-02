@@ -1,0 +1,5 @@
+id = "foundations.values-and-types.order-line"
+title = "Format an order line"
+difficulty = 1
+main = "solution.py"
+hints = ["Use an f-string. Inside the braces you can compute: {qty * price}.", "Format spec for two decimals with thousands separator: {value:,.2f}."]

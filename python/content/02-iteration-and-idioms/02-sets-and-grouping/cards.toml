@@ -1,0 +1,34 @@
+[[card]]
+id = "e67091fd"
+q = "What is the type of `{}` and how do you create an empty set?"
+a = "`{}` is an empty `dict`. An empty set is `set()`."
+
+[[card]]
+id = "e6fdb13e"
+q = "Given sets `a` and `b`, write expressions for UNION, INTERSECT and EXCEPT (a minus b)."
+a = "`a | b`, `a & b`, `a - b`"
+
+[[card]]
+id = "5145723f"
+q = "Write the one-liner to find ids present in `source` but missing from `target` (both lists)."
+a = "```python\nset(source) - set(target)\n```"
+
+[[card]]
+id = "67d9d4c0"
+q = "What does `Counter([\"a\", \"b\", \"a\"]).most_common(1)` return?"
+a = "`[('a', 2)]`"
+
+[[card]]
+id = "adb92cd7"
+q = "Write code that groups `rows` (dicts) into lists by `row[\"region\"]` using `defaultdict`."
+a = "```python\nfrom collections import defaultdict\ng = defaultdict(list)\nfor r in rows:\n    g[r[\"region\"]].append(r)\n```"
+
+[[card]]
+id = "5b201128"
+q = "Sort `rows = [(\"ada\", 80), (\"grace\", 95), (\"linus\", 80)]` by score descending, then name ascending."
+a = "```python\nsorted(rows, key=lambda r: (-r[1], r[0]))\n```"
+
+[[card]]
+id = "05e1872c"
+q = "What gotcha does `defaultdict` have when you look up a missing key?"
+a = "Reading `d[\"missing\"]` creates the entry with the default value, so typos silently add keys."

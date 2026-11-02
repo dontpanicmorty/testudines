@@ -1,0 +1,9 @@
+id = "sql-from-python.parameters-and-injection.safe-product-search"
+title = "Safe product search"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Values (category, min_price) go through placeholders. The column and direction cannot, so validate them.",
+  "Build the WHERE clause as a list of condition strings plus a parallel list of params, then ' AND '.join(conditions).",
+  "Only add a condition when its argument is not None. Raise ValueError for a bad sort column or direction before running anything.",
+]

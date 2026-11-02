@@ -1,0 +1,9 @@
+id = "pipelines.retries-checkpoints-and-failure.reject-file"
+title = "Quarantine bad rows"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Wrap each parse call in try/except ValueError and collect rejects in a list.",
+  "Write one JSON object per line: {'row': raw, 'error': str(exc)}.",
+  "After the loop, compare len(rejects) / len(rows) with max_reject_rate and raise TooManyRejects.",
+]

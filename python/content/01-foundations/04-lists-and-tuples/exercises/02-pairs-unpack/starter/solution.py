@@ -1,0 +1,3 @@
+def split_export(lines):
+    # TODO: header, *body = ...
+    pass

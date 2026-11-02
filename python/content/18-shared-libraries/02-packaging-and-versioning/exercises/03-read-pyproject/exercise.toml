@@ -1,0 +1,9 @@
+id = "shared-libraries.packaging-and-versioning.read-pyproject"
+title = "Summarise a pyproject"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "tomllib.loads(text) returns nested dicts. Dependencies may be missing, so use .get with defaults.",
+  "Entry point specs look like 'pkg.cli:main'. Use str.split(':') to get (module, function).",
+  "Raise ValueError if [project] has no name or version, or an entry point has no colon.",
+]

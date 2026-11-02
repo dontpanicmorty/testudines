@@ -1,0 +1,34 @@
+[[card]]
+id = "602c8053"
+q = "What is idempotency, written as an equation, and why do pipelines care?"
+a = "`f(f(x)) == f(x)`. Pipelines get retried and back-filled, so running a step twice must not change the result."
+
+[[card]]
+id = "4127b5a7"
+q = "Why seed `random.Random(42)` in a randomized test?"
+a = "So every run uses the same inputs and a failure can be reproduced."
+
+[[card]]
+id = "4e1a7907"
+q = "Why sort a group-by result before comparing it to the expected frame?"
+a = "Group-by output order isn't guaranteed, so an order-dependent comparison is flaky."
+
+[[card]]
+id = "e3387a27"
+q = "Which polars helper compares two DataFrames with a readable diff?"
+a = "`from polars.testing import assert_frame_equal`, then `assert_frame_equal(actual, expected)`."
+
+[[card]]
+id = "b8f383e3"
+q = "What problem does a golden-file test solve, and what is its main danger?"
+a = "It compares large or fiddly text output against a saved file and shows a diff. Danger: regenerating the file without reviewing the diff makes the test meaningless."
+
+[[card]]
+id = "7797fb2f"
+q = "Name three schema-drift problems a contract test should report."
+a = "A missing column, an unexpected new column, and a changed column type."
+
+[[card]]
+id = "833bc017"
+q = "How do you check that a transformation doesn't mutate its input?"
+a = "Copy the input first (`before = copy.deepcopy(rows)`), call the function, then `assert rows == before`."

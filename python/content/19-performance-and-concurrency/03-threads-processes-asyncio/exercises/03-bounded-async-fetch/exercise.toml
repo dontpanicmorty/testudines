@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.threads-processes-asyncio.bounded-async-fetch"
+title = "Debug: async that isn't concurrent"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Each `await` in the loop completes before the next iteration starts.",
+  "Create the awaitables first and let asyncio.gather run them together.",
+  "Create one asyncio.Semaphore(limit) inside fetch_many (not at import time) and wrap each fetch call in `async with sem:`.",
+]

@@ -1,0 +1,34 @@
+[[card]]
+id = "cb542756"
+q = "Why should `load_config` collect all problems before raising, rather than raising on the first?"
+a = "The operator can fix every misconfiguration in one go instead of rerunning once per error."
+
+[[card]]
+id = "7361499b"
+q = "What is an error budget in a data job, and what does the job do when it is exceeded?"
+a = "The maximum tolerated fraction of bad rows (say 10%). Within it the job succeeds with rejects quarantined; beyond it the job exits non-zero."
+
+[[card]]
+id = "76a6e083"
+q = "Why quarantine rejected rows with a reason instead of dropping them or crashing?"
+a = "Crashing wastes the run; dropping silently loses data. A rejects file with reasons lets you fix and replay them."
+
+[[card]]
+id = "acc09443"
+q = "Why does calling `setup_logging()` twice print each message twice, and what is the fix?"
+a = "Each call adds another handler to the same logger. Clear or replace the handlers (or check for an existing one) first."
+
+[[card]]
+id = "513dacdd"
+q = "Where should logs and the job's summary go: stdout or stderr?"
+a = "Logs and errors to stderr; the machine-readable result/summary to stdout."
+
+[[card]]
+id = "28038c01"
+q = "Why prefer `log.info(\"loaded %d rows\", n)` to `log.info(f\"loaded {n} rows\")`?"
+a = "Formatting is deferred until the record is actually emitted, so disabled levels cost almost nothing."
+
+[[card]]
+id = "3c173c59"
+q = "Which exceptions should `main` catch and map to exit codes, and which should it let escape?"
+a = "Expected ones (`ConfigError`, `FileNotFoundError`, domain errors) become a message plus a code; unexpected bugs should surface as a traceback."

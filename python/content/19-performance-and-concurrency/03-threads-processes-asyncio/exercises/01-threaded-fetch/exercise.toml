@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.threads-processes-asyncio.threaded-fetch"
+title = "Threaded fetch"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "ThreadPoolExecutor(max_workers=...) as a context manager, then pool.map(fetch, ids).",
+  "pool.map is lazy about errors: they surface when you iterate the results. Wrapping with list() inside the with block is fine.",
+  "Raise ValueError if max_workers < 1 before creating the pool.",
+]

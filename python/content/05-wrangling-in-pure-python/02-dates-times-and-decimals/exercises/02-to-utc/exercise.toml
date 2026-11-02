@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.dates-times-and-decimals.to-utc"
+title = "Normalise timestamps to UTC"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "datetime.fromisoformat handles both 'T' separators and +HH:MM offsets (also a trailing Z on Python 3.11+).",
+  "If result.tzinfo is None, attach UTC with replace(tzinfo=timezone.utc).",
+  "Otherwise convert with astimezone(timezone.utc).",
+]

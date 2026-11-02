@@ -1,0 +1,3 @@
+title = "SQL from Python"
+summary = "Run SQL safely from Python: sqlite3, parameters, DuckDB for analytics, and SQL as a repeatable pipeline step."
+stage = "Stage 4 · Data tooling and integration"

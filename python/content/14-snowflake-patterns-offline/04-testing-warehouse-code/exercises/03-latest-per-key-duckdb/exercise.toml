@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.testing-warehouse-code.latest-per-key-duckdb"
+title = "Latest record per key, tested on DuckDB"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Rank rows per key: ROW_NUMBER() OVER (PARTITION BY <key> ORDER BY <ts> DESC).",
+  "QUALIFY filters on a window function directly: QUALIFY ROW_NUMBER() OVER (...) = 1. DuckDB and Snowflake both support it.",
+  "Break ties deterministically by adding a second ORDER BY column. Build dicts from cursor.description names.",
+]

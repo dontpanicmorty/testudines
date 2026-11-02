@@ -1,0 +1,34 @@
+[[card]]
+id = "b672d328"
+q = "Which two commands make up ruff's linter and formatter?"
+a = "`python -m ruff check` (lint) and `python -m ruff format` (format)."
+
+[[card]]
+id = "c306d061"
+q = "Why is `def add(item, bucket=[])` flagged (B006) and what do you write instead?"
+a = "The default list is created once and shared by every call. Use `bucket=None` and `if bucket is None: bucket = []` inside."
+
+[[card]]
+id = "defbe723"
+q = "What is wrong with a bare `except:` (E722)?"
+a = "It catches everything, including `KeyboardInterrupt` and typos, hiding real errors. Catch specific exceptions."
+
+[[card]]
+id = "ecfda6ab"
+q = "Fix: `if value == None:`"
+a = "`if value is None:` (E711). `None` is a singleton; test identity, not equality."
+
+[[card]]
+id = "7aa2e387"
+q = "What does ruff rule family `F` cover, with two examples?"
+a = "pyflakes errors: unused imports (`F401`) and unused variables (`F841`), undefined names."
+
+[[card]]
+id = "95705495"
+q = "How do you make CI fail when code isn't formatted, without changing files?"
+a = "`python -m ruff format --check .`"
+
+[[card]]
+id = "37a07e05"
+q = "Where do you keep shared ruff settings so everyone and CI use the same rules?"
+a = "In `pyproject.toml` under `[tool.ruff]` and `[tool.ruff.lint]`."

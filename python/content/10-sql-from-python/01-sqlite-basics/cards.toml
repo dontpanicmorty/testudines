@@ -1,0 +1,46 @@
+[[card]]
+id = "9b89463a"
+q = '''What does the second print show?
+```python
+cur = conn.execute("SELECT 1")
+print(cur.fetchall())
+print(cur.fetchall())
+```'''
+a = "`[(1,)]` then `[]`. A cursor is consumed as you read from it."
+
+[[card]]
+id = "dd63e752"
+q = "Write the two lines that make `row[\"name\"]` work for sqlite3 results."
+a = '''```python
+conn.row_factory = sqlite3.Row
+row = conn.execute("SELECT ...").fetchone()
+```'''
+
+[[card]]
+id = "f33e78c2"
+q = "What does `with conn:` do when the block raises an exception, and what does it NOT do?"
+a = "It rolls back the transaction (commits on success). It does not close the connection."
+
+[[card]]
+id = "76e3fe58"
+q = "How do you guarantee the connection is closed AND the transaction is managed?"
+a = '''```python
+with closing(sqlite3.connect(path)) as conn:
+    with conn:
+        ...
+```'''
+
+[[card]]
+id = "cfb0df58"
+q = "You inserted rows, no error, but another process sees an empty table. Why?"
+a = "No `commit()`. The insert is in an open transaction. Commit or use `with conn:`."
+
+[[card]]
+id = "84b2bb2d"
+q = "How do you turn a `sqlite3.Row` into a plain dict?"
+a = "`dict(row)`"
+
+[[card]]
+id = "3bec8bef"
+q = "Why write `CREATE TABLE IF NOT EXISTS` in setup code?"
+a = "So setup is idempotent: running it again does not fail or recreate the table."

@@ -1,0 +1,9 @@
+id = "pipelines.tasks-and-dags.topo-sort"
+title = "Write a topological sort"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Copy dependencies into sets: remaining = {n: set(deps) ...}.",
+  "Each round, find nodes with no remaining dependencies. Pick the alphabetically first for determinism.",
+  "If remaining is non-empty but nothing is ready, raise ValueError with the word 'cycle'.",
+]

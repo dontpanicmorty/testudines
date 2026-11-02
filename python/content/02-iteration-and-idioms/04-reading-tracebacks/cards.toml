@@ -1,0 +1,34 @@
+[[card]]
+id = "54aa30f2"
+q = "In which order do you read a Python traceback, and why?"
+a = "Last line first (exception type + message), then the line just above it (where it failed), then upward through the callers. The bottom frame is nearest the crash."
+
+[[card]]
+id = "aee57e3f"
+q = "What usually causes `AttributeError: 'NoneType' object has no attribute 'strip'`?"
+a = "A value you expected to be a string is `None`: a NULL, a failed lookup, or a function missing a `return`. Find where the `None` came from."
+
+[[card]]
+id = "48e8e81b"
+q = "What is the difference between `ValueError` and `TypeError`? Give an example of each."
+a = "`TypeError`: wrong type for the operation (`\"a\" + 1`). `ValueError`: right type, unusable content (`int(\"abc\")`)."
+
+[[card]]
+id = "3d3bfacc"
+q = "Why use `print(repr(x))` instead of `print(x)` when debugging?"
+a = "`repr` reveals quotes, trailing whitespace and `None`, so `5` vs `\"5\"` vs `\"5 \"` look different."
+
+[[card]]
+id = "8f48fccf"
+q = "Write code that returns `None` instead of crashing when `float(text)` fails, catching only the right error."
+a = "```python\ntry:\n    return float(text)\nexcept ValueError:\n    return None\n```"
+
+[[card]]
+id = "c749c799"
+q = "Which line of code opens the debugger at the current point, and what are two commands at its prompt?"
+a = "`breakpoint()`. At `(Pdb)`: `p expr` prints a value, `n` runs the next line (also `s`, `c`, `w`, `q`)."
+
+[[card]]
+id = "446aee0c"
+q = "A traceback has frames in `site-packages` and in your `pipeline.py`. Where do you start looking?"
+a = "At the lowest (nearest the error) frame in your own code. The library is rarely the bug."

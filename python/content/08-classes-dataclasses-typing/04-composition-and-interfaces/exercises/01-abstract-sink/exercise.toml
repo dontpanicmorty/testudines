@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.composition-and-interfaces.abstract-sink"
+title = "A sink contract that enforces itself"
+difficulty = 1
+main = "solution.py"
+hints = ["Make `Sink` inherit from `ABC` and decorate `write` with `@abstractmethod`.", "`MemorySink` stores rows in a list attribute `rows`.", "`CsvSink.write` uses `csv.DictWriter` with the keys of the first row as the header. Empty input writes nothing."]

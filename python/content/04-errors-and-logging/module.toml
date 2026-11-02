@@ -1,0 +1,3 @@
+title = "Errors, validation and logging"
+summary = "Handle failure on purpose: exceptions, defensive boundaries and logs you can debug at 3 a.m."
+stage = "Stage 2 · Working with data in plain Python"

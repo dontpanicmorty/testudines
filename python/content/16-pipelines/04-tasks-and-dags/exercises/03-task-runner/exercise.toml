@@ -1,0 +1,9 @@
+id = "pipelines.tasks-and-dags.task-runner"
+title = "A tiny task runner"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Write (or reuse from the lesson) a topological sort first; the runner is a loop over its result.",
+  "Keep a status dict. Before running a task, check that every dependency has status 'success'.",
+  "Catch Exception around the task call: record 'failed' and keep going with other tasks.",
+]

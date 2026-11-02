@@ -1,0 +1,3 @@
+title = "Performance and concurrency"
+summary = "Measure before optimising, stream data instead of hoarding it, and choose threads, processes or asyncio for the right kind of work."
+stage = "Stage 5 · Production"

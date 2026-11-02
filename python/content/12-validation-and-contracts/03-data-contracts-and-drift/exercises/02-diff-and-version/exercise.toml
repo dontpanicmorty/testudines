@@ -1,0 +1,9 @@
+id = "validation-and-contracts.data-contracts-and-drift.diff-and-version"
+title = "Diff schemas and bump the version"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Dict keys support set operations: new.keys() - old.keys() gives added columns.",
+  "Retyped columns are those in both schemas whose type name differs. int -> float is a widening and is still compatible.",
+  "next_version: breaking -> major+1.0.0; otherwise any added column or widening -> minor+1.0; otherwise unchanged.",
+]

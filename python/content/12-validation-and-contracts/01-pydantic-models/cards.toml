@@ -1,0 +1,37 @@
+[[card]]
+id = "b8a51835"
+q = "What does this print?\n```python\nclass R(BaseModel):\n    qty: int\nprint(R(qty=\"3\").qty + 1)\n```"
+a = "`4`. Lax mode converts the string `\"3\"` to the int 3."
+
+[[card]]
+id = "db9af611"
+q = "Write a model field that means `amount >= 0`, and one that means one of `\"a\"`, `\"b\"`."
+a = '''```python
+amount: float = Field(ge=0)
+kind: Literal["a", "b"]
+```'''
+
+[[card]]
+id = "0f075222"
+q = "A field is `None` after validation although the input was `\" Ada \"`. Likely cause of your validator?"
+a = "It does not `return` the cleaned value."
+
+[[card]]
+id = "5b16f188"
+q = "How do you make a model refuse `\"3\"` for an `int` field?"
+a = "`model_config = ConfigDict(strict=True)` (or `Field(strict=True)` on one field)."
+
+[[card]]
+id = "b7f6b640"
+q = "How do you read the problems from a caught `ValidationError`?"
+a = "`exc.errors()`: a list of dicts with `loc`, `type`, `msg`."
+
+[[card]]
+id = "40e39ff1"
+q = "What happens to unexpected extra keys by default, and how do you reject them?"
+a = "They are ignored. Use `ConfigDict(extra=\"forbid\")`."
+
+[[card]]
+id = "29784da2"
+q = "What does `mode=\"before\"` change for a `field_validator`?"
+a = "It runs on the raw input before type conversion (e.g. strip `$` from a string before it becomes a float)."

@@ -1,0 +1,8 @@
+id = "iteration-and-idioms.loops-and-comprehensions.normalise-names"
+title = "Normalise a column"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "One list comprehension: [expression for x in values].",
+  "Add `if` at the end to drop entries that are blank after stripping.",
+]

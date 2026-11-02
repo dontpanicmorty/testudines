@@ -1,0 +1,9 @@
+id = "sql-from-python.duckdb-for-analytics.top-customers"
+title = "Top customers by revenue"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Create views over the two CSVs with read_csv_auto, then write the CTE exactly like you would in Snowflake.",
+  "Join orders and order_items USING (order_id), filter status <> 'cancelled', SUM(quantity * unit_price) per customer_id.",
+  "Use ORDER BY revenue DESC, customer_id and LIMIT ?. ROUND the revenue to 2 places in SQL or Python.",
+]

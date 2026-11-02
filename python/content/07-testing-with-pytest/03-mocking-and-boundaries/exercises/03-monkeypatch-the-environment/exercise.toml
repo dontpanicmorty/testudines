@@ -1,0 +1,6 @@
+id = "testing-with-pytest.mocking-and-boundaries.monkeypatch-the-environment"
+title = "Test config loading with monkeypatch"
+difficulty = 3
+main = "my_tests.py"
+hints = ["Use `monkeypatch.setenv(name, value)` per test. Start each test from a clean slate with `monkeypatch.delenv(name, raising=False)` for the variables it cares about.", "Cover each rule: required warehouse (missing and blank), default schema, default timeout, bad timeout text, and the timeout boundary at 0.", "`pytest.raises(ConfigError)` for the rule violations."]
+timeout = 120

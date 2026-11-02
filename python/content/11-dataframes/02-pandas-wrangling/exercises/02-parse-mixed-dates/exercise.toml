@@ -1,0 +1,9 @@
+id = "dataframes.pandas-wrangling.parse-mixed-dates"
+title = "Parse three date formats"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "pd.to_datetime(s, format=fmt, errors='coerce') gives NaT where the format does not match.",
+  "Series.fillna(other) fills missing values from another Series with the same index. Try each format in turn.",
+  "Return a datetime64 Series; ambiguous slash dates are month-first (05/26/2025 is May 26).",
+]

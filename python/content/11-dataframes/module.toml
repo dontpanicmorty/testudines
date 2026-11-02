@@ -1,0 +1,3 @@
+title = "DataFrames: pandas and polars"
+summary = "Do the table work you know from SQL with pandas and polars, and learn when each of DuckDB, pandas, polars or plain Python is the right tool."
+stage = "Stage 4 · Data tooling and integration"

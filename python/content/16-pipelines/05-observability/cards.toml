@@ -1,0 +1,29 @@
+[[card]]
+id = "6400649d"
+q = "Why prefer one JSON object per log line over a free-text message?"
+a = "Machines can filter and aggregate it by field (`run_id`, `table`, `rows`); free text needs fragile parsing."
+
+[[card]]
+id = "b63ce257"
+q = "What question should a run metadata table let you answer in one query?"
+a = "When did pipeline X last succeed, for which logical date, and how many rows did it write?"
+
+[[card]]
+id = "f3eff895"
+q = "Why return a list of problems from a quality check instead of raising on the first?"
+a = "You report everything wrong at once, and the caller decides which problems block the run and which only warn."
+
+[[card]]
+id = "557fba5b"
+q = "Which dbt tests correspond to 'no null ids' and 'no duplicate ids'?"
+a = "`not_null` and `unique`."
+
+[[card]]
+id = "67f5591b"
+q = "What does a freshness check measure and what does a volume check measure?"
+a = "Freshness: age of the newest record against a maximum. Volume: today's row count relative to a baseline such as yesterday's."
+
+[[card]]
+id = "50ee901a"
+q = "Why is an empty successful run suspicious?"
+a = "The job did not error but wrote nothing, usually because upstream data was missing or a filter dropped everything. Check rows written, not just status."

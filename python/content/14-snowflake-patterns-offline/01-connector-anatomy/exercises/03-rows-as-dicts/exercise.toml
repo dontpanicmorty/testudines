@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.connector-anatomy.rows-as-dicts"
+title = "Debug: every row looks the same"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Print the result for two rows. Is each dict a separate object or the same one repeated?",
+  "Create the dict inside the loop. A comprehension with dict(zip(names, row)) does this naturally.",
+  "Remember the other contract: description is None for statements without a result set, and names are lower-cased.",
+]

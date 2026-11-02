@@ -1,0 +1,9 @@
+id = "files-and-formats.yaml-and-config-files.connection-settings"
+title = "Secrets from the environment"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The YAML holds the *name* of the variable (password_env), not the secret.",
+  "Missing secret: raise a clear RuntimeError that mentions the variable name, not its value.",
+  "describe() is what gets logged. It must never contain the password.",
+]

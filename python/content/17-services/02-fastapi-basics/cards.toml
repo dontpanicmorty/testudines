@@ -1,0 +1,34 @@
+[[card]]
+id = "ed83c601"
+q = "A route has `order_id: int` and the caller requests `/orders/abc`. What status comes back and does your function run?"
+a = "`422`. FastAPI validates before calling; your function does not run. The body's `detail` lists `loc` and `msg`."
+
+[[card]]
+id = "cc2cb4b5"
+q = "Write a query parameter `limit` that must be between 1 and 100, default 10."
+a = "```python\nfrom typing import Annotated\nfrom fastapi import Query\n\ndef f(limit: Annotated[int, Query(ge=1, le=100)] = 10): ...\n```"
+
+[[card]]
+id = "2ad1ac4e"
+q = "Why does `Depends(get_db)` make testing easier than calling `get_db()` inside the handler?"
+a = "`app.dependency_overrides[get_db] = fake` swaps it for tests without editing the handler. A direct call cannot be overridden."
+
+[[card]]
+id = "2ec2475c"
+q = "What does `response_model=CustomerOut` do to a returned dict that has extra keys?"
+a = "It drops the keys not declared on `CustomerOut`, so internal fields do not leak."
+
+[[card]]
+id = "2961d8f8"
+q = "Write the pydantic field for a quantity that must be a positive int."
+a = "```python\nquantity: int = Field(gt=0)\n```"
+
+[[card]]
+id = "9c0076ed"
+q = "How do you return a 404 from inside a handler?"
+a = "`raise HTTPException(status_code=404, detail=\"...\")`"
+
+[[card]]
+id = "ae205908"
+q = "Why test with `TestClient(app)` instead of starting uvicorn?"
+a = "It calls the app in-process: no ports, no startup time, deterministic, and the failure points at your code."

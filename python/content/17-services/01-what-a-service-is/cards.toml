@@ -1,0 +1,29 @@
+[[card]]
+id = "153d374d"
+q = "A caller POSTs a customer whose email already exists. Which status code do you return, and why not 400 or 500?"
+a = "`409 Conflict`. The request is well-formed (not 400) and it is not our bug (not 500); it clashes with existing state."
+
+[[card]]
+id = "9bc6549f"
+q = "What is the difference between a 4xx and a 5xx response, in terms of who must act?"
+a = "4xx: the caller must change the request. 5xx: the server has the problem and the caller should not need to change anything."
+
+[[card]]
+id = "2d199223"
+q = "What does this print?\n```python\nimport json\nprint(json.loads(json.dumps({\"k\": (1, 2)})))\n```"
+a = "`{'k': [1, 2]}`. JSON has no tuples, so the tuple comes back as a list."
+
+[[card]]
+id = "a7696b8e"
+q = "Write a plain handler `get_customer(store, cid)` returning `(status, body)` for a found and a missing id."
+a = "```python\ndef get_customer(store, cid):\n    row = store.get(cid)\n    if row is None:\n        return 404, {\"error\": \"not found\"}\n    return 200, row\n```"
+
+[[card]]
+id = "1aa6d4fe"
+q = "Name two ways a service differs from a scheduled job in how it treats failure."
+a = "A service must survive one bad request (convert expected errors to 4xx, unexpected to a clean 500) and keep running; a job can simply fail and be retried later."
+
+[[card]]
+id = "541e010f"
+q = "Why is it a bug to answer `200 {\"error\": \"not found\"}`?"
+a = "Clients, retries and monitoring key off the status code. A 200 says success, so failures become invisible. Use 404."

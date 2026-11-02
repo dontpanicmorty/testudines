@@ -1,0 +1,9 @@
+id = "services.running-in-production.request-id-middleware"
+title = "Request-id middleware"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Use @app.middleware('http') inside add_request_id(app). Read request.headers.get('x-request-id') or make uuid.uuid4().hex.",
+  "Store the id on request.state so handlers can read request.state.request_id, and set response.headers['X-Request-ID'] after call_next.",
+  "Log with logging.getLogger('access').info('request', extra={'fields': {...}}). Time with time.perf_counter(). If call_next raises, still log with status 500 and re-raise.",
+]

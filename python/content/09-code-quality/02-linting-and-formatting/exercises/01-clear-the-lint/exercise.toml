@@ -1,0 +1,6 @@
+id = "code-quality.linting-and-formatting.clear-the-lint"
+title = "Clear the lint warnings"
+difficulty = 1
+main = "solution.py"
+timeout = 120
+hints = ["Run the lint rules in your head: unused imports, bare except, comparisons to None, unused variables, `typing.List`.", "Imports must be sorted alphabetically and one per line; remove any that aren't used.", "A lambda assigned to a name (E731) becomes a normal `def`. A function that ends `if cond: return False / return True` can return the condition."]

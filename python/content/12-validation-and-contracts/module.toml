@@ -1,0 +1,3 @@
+title = "Validation and data contracts"
+summary = "Turn untyped rows into trusted objects with pydantic, handle bad rows without stopping a pipeline, and detect schema drift with contracts."
+stage = "Stage 4 · Data tooling and integration"

@@ -1,0 +1,9 @@
+id = "dataframes.pandas-essentials.top-n-per-region"
+title = "Top N per region (debug)"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Compare len(result) with n * number_of_regions. What does head(n) apply to?",
+  "head(n) after a sort is global. You want it applied inside each group: groupby(...).head(n).",
+  "Sort by region ascending and amount descending first, then groupby('region').head(n), then reset_index(drop=True).",
+]

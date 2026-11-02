@@ -1,0 +1,29 @@
+[[card]]
+id = "39f141fb"
+q = "What are the next versions after `2.3.9` for a patch, minor and major change?"
+a = "`2.3.10`, `2.4.0`, `3.0.0`. Lower parts reset to zero on a bump."
+
+[[card]]
+id = "fba94a49"
+q = "Why does `\"1.10.0\" < \"1.9.0\"` evaluate to True, and what do you do instead?"
+a = "Strings compare character by character (`'1' < '9'`). Convert to int tuples: `(1, 10, 0) < (1, 9, 0)` is False."
+
+[[card]]
+id = "7e5906fd"
+q = "What is a wheel file, in one sentence?"
+a = "A zip archive containing the package's files plus a `*.dist-info/` metadata folder; installing it mostly unzips it into site-packages."
+
+[[card]]
+id = "54b53641"
+q = "How do you list what is inside `pkg-1.0-py3-none-any.whl`?"
+a = "```python\nimport zipfile\nzipfile.ZipFile(\"pkg-1.0-py3-none-any.whl\").namelist()\n```"
+
+[[card]]
+id = "57a4f816"
+q = "What does `[project.scripts] datakit = \"acme_datakit.cli:main\"` create?"
+a = "A `datakit` command that imports `acme_datakit.cli` and calls `main()`."
+
+[[card]]
+id = "808f14d9"
+q = "What is an extra, and how does a user request one?"
+a = "A named group of optional dependencies under `[project.optional-dependencies]`. Install with `pip install \"pkg[extra]\"`."

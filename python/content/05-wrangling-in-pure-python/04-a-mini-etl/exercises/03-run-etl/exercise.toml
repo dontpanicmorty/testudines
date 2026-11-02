@@ -1,0 +1,10 @@
+id = "wrangling-in-pure-python.a-mini-etl.run-etl"
+title = "Wire the ETL: load and rejects"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Dedupe valid rows by (order_id, sku) first using a dict; later rows replace earlier ones.",
+  "Create both tables with CREATE TABLE IF NOT EXISTS, then INSERT OR REPLACE inside 'with conn:'.",
+  "For customer_totals, delete the old content and re-insert so the table always matches the current file.",
+  "Write the rejects CSV (columns line,reason) even when empty, and return the three counts.",
+]

@@ -1,0 +1,9 @@
+id = "errors-and-logging.defensive-code.quarantine"
+title = "Quarantine bad rows with a threshold"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Loop with enumerate(rows, start=1); call validate in try/except ValueError.",
+  "Rejected entries are dicts with row, reason and raw.",
+  "After the loop, compare len(rejected) / total to max_reject_rate; raise TooManyRejects.",
+]

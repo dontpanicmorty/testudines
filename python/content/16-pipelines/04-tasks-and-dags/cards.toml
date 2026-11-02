@@ -1,0 +1,29 @@
+[[card]]
+id = "e5f6824a"
+q = "In `graph = {\"b\": [\"a\"], \"a\": []}`, which node is upstream of which?"
+a = "`a` is upstream of `b`: `b` depends on `a`, so `a` must run first."
+
+[[card]]
+id = "401868a9"
+q = "What does Kahn's algorithm do each round?"
+a = "Take a node whose dependencies have all been emitted, append it to the order, and remove it from everyone's dependency sets."
+
+[[card]]
+id = "eafd5d63"
+q = "How does topological sort detect a cycle?"
+a = "Nodes remain but none is ready (every remaining node waits on another remaining node), so raise an error."
+
+[[card]]
+id = "889cb3b0"
+q = "Why use `sorted(ready)` before picking the next node?"
+a = "It makes the order deterministic: set/dict iteration order must not decide which of several valid orders you get."
+
+[[card]]
+id = "c966abb6"
+q = "Task `b` depends on `a`, and `a` failed. What status does `b` get and what is the rule?"
+a = "`skipped`. A task runs only if all its dependencies succeeded; otherwise it is skipped. Unrelated branches still run."
+
+[[card]]
+id = "25e3f4bd"
+q = "Which dbt selector idea corresponds to an `upstream(graph, node)` walk?"
+a = "`+model_name`: the model and everything it depends on."

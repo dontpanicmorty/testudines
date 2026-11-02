@@ -1,0 +1,9 @@
+id = "foundations.decisions-and-booleans.row-status"
+title = "Classify an order row"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Early returns: handle the invalid cases first, one `if` each.",
+  "Normalise the status with .strip().lower() before comparing; `in` with a tuple covers the groups.",
+  "Check `row is None` before touching the row's keys.",
+]

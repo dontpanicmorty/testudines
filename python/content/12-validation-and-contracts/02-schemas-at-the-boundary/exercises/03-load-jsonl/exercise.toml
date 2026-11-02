@@ -1,0 +1,9 @@
+id = "validation-and-contracts.schemas-at-the-boundary.load-jsonl"
+title = "Load JSONL with quarantine and a breaker"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Handle three outcomes per line: JSON decode error, JSON that is not an object, and a validation error. Each becomes a reject with a reason string.",
+  "Skip blank lines entirely: they are neither valid nor rejected, and they should not count towards the total.",
+  "After the loop compute the rate rejected / (valid + rejected) and raise TooManyRejects if it is strictly greater than max_reject_rate. Define the exception class yourself.",
+]

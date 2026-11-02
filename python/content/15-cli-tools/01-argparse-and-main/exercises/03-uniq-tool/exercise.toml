@@ -1,0 +1,9 @@
+id = "cli-tools.argparse-and-main.uniq-tool"
+title = "A testable uniq tool"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Signature: main(argv=None, *, stdin=None, stdout=None, stderr=None) -> int. Default each stream to the sys one inside the function.",
+  "Use a dict (insertion-ordered) mapping the normalised key to [first_line, count]. --ignore-case means the key is line.lower().",
+  "Input path '-' means read stdin; an unreadable file prints 'error: ...' to stderr and returns 1.",
+]

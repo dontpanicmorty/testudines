@@ -1,0 +1,9 @@
+id = "shared-libraries.documenting-and-releasing.render-changelog"
+title = "Render a changelog"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Group entries by version, preserving the order versions first appear (newest first).",
+  "Within a version, emit kind sections in the fixed order Added, Changed, Deprecated, Removed, Fixed, skipping empty ones.",
+  "Build a list of lines and join with newlines; end the text with a single trailing newline.",
+]

@@ -1,0 +1,10 @@
+id = "capstones.capstone-data-service.build-the-service"
+title = "Build the revenue data service"
+difficulty = 3
+main = "revenue_api/app.py"
+timeout = 60
+hints = [
+  "Order of work: settings.py and db.py (small), errors.py (copy the envelope idea from the services lesson), models.py constraints, then the read routes, then POST /customers with idempotency.",
+  "Share pagination between routes with one dependency that returns (page, size) and reads default/max from get_settings. To reject a page_size above the configured maximum with the standard 422 envelope, raise RequestValidationError([...]) with loc ('query', 'page_size').",
+  "Store idempotency keys in the same DuckDB database (table idempotency_keys: key, fingerprint, response) and write the customer and the key in ONE transaction, so a replay works across app instances and a failed attempt leaves nothing behind.",
+]

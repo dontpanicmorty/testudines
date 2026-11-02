@@ -1,0 +1,9 @@
+id = "services.service-patterns-for-data.idempotent-payments"
+title = "Idempotent payments"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Keep a dict mapping key -> (fingerprint_of_body, stored_response). Look the key up before doing any work.",
+  "Same key and same body: replay the stored status and body. Same key and a different body: 409.",
+  "Only store the key after the payment was created successfully, so a rejected request (422) does not poison the key.",
+]

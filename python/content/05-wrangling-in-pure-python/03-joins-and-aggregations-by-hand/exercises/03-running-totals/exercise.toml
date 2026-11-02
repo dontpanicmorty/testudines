@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.joins-and-aggregations-by-hand.running-totals"
+title = "Running totals and LAG"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Sort by (customer, day) first. Python sorts tuples element by element.",
+  "Walk the sorted rows; when the customer changes, reset the running total and previous amount to 0 / None.",
+  "Output rows are the original fields plus 'running_total' and 'prev_amount'; return them in sorted order.",
+]

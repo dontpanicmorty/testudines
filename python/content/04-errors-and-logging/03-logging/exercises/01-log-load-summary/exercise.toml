@@ -1,0 +1,9 @@
+id = "errors-and-logging.logging.log-load-summary"
+title = "Log a load summary"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Create the logger once at module level with logging.getLogger(__name__).",
+  "Use %-style arguments: log.info('...%d', n).",
+  "Choose WARNING for the rejected case.",
+]

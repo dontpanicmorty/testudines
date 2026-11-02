@@ -1,0 +1,40 @@
+[[card]]
+id = "7c3c10e6"
+q = "Write the DuckDB line that gives you a list of tuples from `SELECT 1`, using an in-memory database."
+a = '''```python
+duckdb.connect().execute("SELECT 1").fetchall()
+```'''
+
+[[card]]
+id = "abf4aa79"
+q = "What does `QUALIFY rnk <= 3` do and where have you seen it?"
+a = "It filters on window function results after they are computed (no wrapping subquery). Same as Snowflake's QUALIFY."
+
+[[card]]
+id = "de34f7ea"
+q = "How do you query `customers.csv` at `path` without loading it first?"
+a = '''```python
+con.execute("SELECT * FROM read_csv_auto(?)", [path])
+```'''
+
+[[card]]
+id = "28859b32"
+q = "How do you get column names for a DuckDB result so you can make dicts?"
+a = "`[d[0] for d in cur.description]`, then `dict(zip(cols, row))`."
+
+[[card]]
+id = "7b74d935"
+q = "Write the statement that saves table `t` to Parquet at `out`."
+a = '''```python
+con.execute(f"COPY t TO '{out}' (FORMAT PARQUET)")
+```'''
+
+[[card]]
+id = "7bbb473a"
+q = "Why is `ORDER BY` still needed even if DuckDB 'usually' returns rows in file order?"
+a = "Order is not guaranteed without it, and parallel scans can reorder. Deterministic output needs an explicit total ORDER BY."
+
+[[card]]
+id = "d62750bc"
+q = "`duckdb.sql(\"SELECT * FROM df\")` works when `df` is a pandas DataFrame in scope. What is this called, and when does it fail?"
+a = "A replacement scan. It fails (Catalog Error) if no variable named `df` is visible where the query runs."

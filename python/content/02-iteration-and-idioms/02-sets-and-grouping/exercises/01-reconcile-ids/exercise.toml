@@ -1,0 +1,8 @@
+id = "iteration-and-idioms.sets-and-grouping.reconcile-ids"
+title = "Reconcile source and target"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Convert both lists to sets, then use the - operator for 'in one but not the other'.",
+  "Return sorted lists so the result is deterministic.",
+]

@@ -1,0 +1,6 @@
+id = "testing-with-pytest.first-tests.test-the-amount-parser"
+title = "Test a money parser"
+difficulty = 3
+main = "my_tests.py"
+hints = ["Turn the contract into a table: one row per format (plain, `$`, commas, parentheses, blank, `N/A`, `None`, garbage).", "`pytest.mark.parametrize(\"raw, expected\", [...])` keeps a table of cases in one test, the next lesson covers it in depth.", "None results need `is None`; garbage input needs `pytest.raises(ValueError)`."]
+timeout = 120

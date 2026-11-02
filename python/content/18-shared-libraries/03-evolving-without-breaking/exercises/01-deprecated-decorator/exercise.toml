@@ -1,0 +1,9 @@
+id = "shared-libraries.evolving-without-breaking.deprecated-decorator"
+title = "Write a deprecation decorator"
+difficulty = 2
+main = "datakit/deprecation.py"
+hints = [
+  "A decorator factory returns a decorator, which returns a wrapper that calls fn.",
+  "warnings.warn(message, DeprecationWarning, stacklevel=2) inside wrapper points at the caller.",
+  "functools.wraps(fn) keeps the original name and docstring.",
+]

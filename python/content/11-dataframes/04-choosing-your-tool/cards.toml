@@ -1,0 +1,29 @@
+[[card]]
+id = "98f7bc3b"
+q = "You have a 40 GB set of Parquet files and a SQL-fluent team. Which tool and why?"
+a = "DuckDB: queries Parquet directly, out-of-core, and the team already writes SQL."
+
+[[card]]
+id = "2e8af94a"
+q = "You need to hand a transformed table to a plotting library that expects pandas. What do you do at the boundary?"
+a = "Keep the transform in your tool of choice and convert once: polars `.to_pandas()` or DuckDB `.fetchdf()`."
+
+[[card]]
+id = "795a68cf"
+q = "State the first rule of tool choice when the data lives in Snowflake."
+a = "Move the compute to the data: aggregate in SQL there and pull only the small result into Python."
+
+[[card]]
+id = "1f663157"
+q = "Two tools return the same top-3 customers but your equality assert fails. Name two likely causes."
+a = "Unsorted ties (no tie-breaker) and unrounded floats or numpy types (`numpy.int64` vs `int`)."
+
+[[card]]
+id = "7e2ef2aa"
+q = "Why prefer `ORDER BY revenue DESC, customer_id` over `ORDER BY revenue DESC`?"
+a = "A total order: ties are broken deterministically so every tool and every run returns the same rows in the same order."
+
+[[card]]
+id = "8ec02cc0"
+q = "Name one reason to still use plain Python dicts and loops."
+a = "Small or deeply nested data (API payloads), no dependency, easiest to test and debug."
