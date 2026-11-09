@@ -143,7 +143,13 @@ STAGE="$TMP/dmg"
 mkdir -p "$STAGE"
 cp -R "$APP" "$STAGE/"
 ln -s /Applications "$STAGE/Applications"
-hdiutil create -quiet -volname "Testudines" -srcfolder "$STAGE" -ov -format UDZO "$DMG"
+# hdiutil fails now and then with "Resource busy" (often on CI machines), so try a few times
+for attempt in 1 2 3 4 5; do
+  if hdiutil create -volname "Testudines" -srcfolder "$STAGE" -ov -format UDZO "$DMG"; then break; fi
+  [ "$attempt" = 5 ] && { echo "Creating the disk image failed 5 times" >&2; exit 1; }
+  echo "Disk image attempt $attempt failed; retrying in 10 seconds"
+  sleep 10
+done
 rm -rf "$TMP"
 echo
 echo "Built:"
