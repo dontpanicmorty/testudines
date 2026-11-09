@@ -1,3 +1,4 @@
+import socketserver
 import http.server
 import threading
 
@@ -31,8 +32,8 @@ def serve(monkeypatch):
             def log_message(self, *args):
                 pass
 
-        server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
-        threading.Thread(target=server.serve_forever, daemon=True).start()
+        server = _LocalServer(("127.0.0.1", 0), Handler)
+        threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.05}, daemon=True).start()
         servers.append(server)
         return "http://127.0.0.1:%d" % server.server_address[1]
 
@@ -43,6 +44,15 @@ def serve(monkeypatch):
 
 
 from solution import download
+
+
+class _LocalServer(http.server.ThreadingHTTPServer):
+    """A test web server on 127.0.0.1. It skips the network-name lookup that HTTPServer does when it
+    starts, which can stall for seconds on some machines, and the tests only ever use the address."""
+
+    def server_bind(self):
+        socketserver.TCPServer.server_bind(self)
+        self.server_name, self.server_port = self.server_address[:2]
 
 PAYLOAD = b"\x89PNG\r\n\x1a\n" + bytes(range(256)) * 8 + b"\x00\xff"
 

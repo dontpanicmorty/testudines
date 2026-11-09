@@ -1,3 +1,4 @@
+import socketserver
 import json
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -5,6 +6,15 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import pytest
 
 from solution import collect_items, make_request_url
+
+
+class _LocalServer(HTTPServer):
+    """A test web server on 127.0.0.1. It skips the network-name lookup that HTTPServer does when it
+    starts, which can stall for seconds on some machines, and the tests only ever use the address."""
+
+    def server_bind(self):
+        socketserver.TCPServer.server_bind(self)
+        self.server_name, self.server_port = self.server_address[:2]
 
 
 def test_url_has_key_last():
@@ -43,9 +53,9 @@ def server():
         def log_message(self, *args):
             pass
 
-    httpd = HTTPServer(("127.0.0.1", 0), Handler)
+    httpd = _LocalServer(("127.0.0.1", 0), Handler)
     state["base"] = f"http://127.0.0.1:{httpd.server_port}"
-    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+    thread = threading.Thread(target=httpd.serve_forever, kwargs={"poll_interval": 0.05}, daemon=True)
     thread.start()
     yield state["base"]
     httpd.shutdown()

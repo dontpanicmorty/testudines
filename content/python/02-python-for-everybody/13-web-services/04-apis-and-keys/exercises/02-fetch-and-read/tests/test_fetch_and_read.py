@@ -1,3 +1,4 @@
+import socketserver
 import json
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -5,6 +6,15 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import pytest
 
 from solution import stations_with_bikes
+
+
+class _LocalServer(HTTPServer):
+    """A test web server on 127.0.0.1. It skips the network-name lookup that HTTPServer does when it
+    starts, which can stall for seconds on some machines, and the tests only ever use the address."""
+
+    def server_bind(self):
+        socketserver.TCPServer.server_bind(self)
+        self.server_name, self.server_port = self.server_address[:2]
 
 PAYLOAD = {"results": [
     {"name": "Mill Lane", "bikes": 4},
@@ -27,8 +37,8 @@ def base_url():
         def log_message(self, *args):
             pass
 
-    server = HTTPServer(("127.0.0.1", 0), Handler)
-    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    server = _LocalServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.05}, daemon=True)
     thread.start()
     yield f"http://127.0.0.1:{server.server_port}/stations"
     server.shutdown()
