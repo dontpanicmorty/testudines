@@ -69,7 +69,7 @@ def test_non_serialisable_values_become_strings(logger_and_stream):
     log, stream = logger_and_stream
     log.info("x", extra={"fields": {"day": date(2025, 1, 2), "path": Path("/tmp/a")}})
     out = last(stream)
-    assert out["day"] == "2025-01-02" and out["path"] == "/tmp/a"
+    assert out["day"] == "2025-01-02" and out["path"] == str(Path("/tmp/a"))  # "\\tmp\\a" on Windows
 
 
 def test_newlines_in_message_stay_one_line(logger_and_stream):

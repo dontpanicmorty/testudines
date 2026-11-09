@@ -6,10 +6,11 @@ from solution import build_wheel
 def make_pkg(root):
     pkg = root / "src" / "acme_datakit"
     (pkg / "sub").mkdir(parents=True)
-    (pkg / "__init__.py").write_text("X = 1\n")
-    (pkg / "core.py").write_text("def f(): return 1\n")
+    # newline="\n": the same file bytes on every system (Windows would otherwise write "\r\n")
+    (pkg / "__init__.py").write_text("X = 1\n", newline="\n")
+    (pkg / "core.py").write_text("def f(): return 1\n", newline="\n")
     (pkg / "sub" / "__init__.py").write_text("")
-    (pkg / "sub" / "deep.py").write_text("Y = 2\n")
+    (pkg / "sub" / "deep.py").write_text("Y = 2\n", newline="\n")
     (pkg / "data.txt").write_text("not python")
     (pkg / "__pycache__").mkdir()
     (pkg / "__pycache__" / "core.cpython-312.py").write_text("junk")

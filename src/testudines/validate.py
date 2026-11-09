@@ -41,10 +41,14 @@ def check_python(only: str | None = None) -> int:
                     ok_ref = r["ok"]
                     ok_start = False
                 else:
-                    ok_ref = runner.check(ref, tests, e.timeout, e.memory_mb or None)["passed"]
+                    r = runner.check(ref, tests, e.timeout, e.memory_mb or None)
+                    ok_ref = r["passed"]
                     ok_start = runner.check(e.starter(), tests, e.timeout, e.memory_mb or None)["passed"]
                 if not ok_ref:
                     print(f"REFERENCE FAILS: {e.id}"); bad += 1
+                    # the end of its output, so a failure on another machine (e.g. CI) can be diagnosed
+                    for line in r["output"].strip().splitlines()[-15:]:
+                        print(f"    {line}")
                 if ok_start:
                     print(f"STARTER ALREADY PASSES: {e.id}"); bad += 1
     print(f"Python: {len(mods)} modules, {sum(len(m.lessons) for m in mods)} lessons, {n} exercises, {bad} problems")

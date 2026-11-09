@@ -18,4 +18,5 @@ def test_idempotent(tmp_path):
 
 def test_unicode(tmp_path):
     p = write_daily_report(tmp_path, "d", ["Zoë"])
-    assert p.read_bytes() == "Zoë\n".encode("utf-8")
+    # UTF-8 bytes; Windows writes "\r\n" line endings in text mode, which is fine
+    assert p.read_bytes().replace(b"\r\n", b"\n") == "Zoë\n".encode("utf-8")
