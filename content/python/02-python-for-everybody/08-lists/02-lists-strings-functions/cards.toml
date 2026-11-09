@@ -1,0 +1,25 @@
+[[card]]
+id = "c22ea1b3"
+q = '''How do you compute the average of the numbers in `nums`?'''
+a = '''`sum(nums) / len(nums)`, after checking the list is not empty.'''
+
+[[card]]
+id = "7b273ae0"
+q = '''What does `"a,b".split(",")` do?'''
+a = '''It splits at the delimiter `,` and returns `["a", "b"]`.'''
+
+[[card]]
+id = "b2b2b1ff"
+q = '''What does `"-".join(["a", "b", "c"])` return?'''
+a = '''`"a-b-c"`.'''
+
+[[card]]
+id = "220c8c6b"
+q = '''What does `list("hey")` return?'''
+a = '''`["h", "e", "y"]`: a list of characters.'''
+
+[[card]]
+id = "d3185e2e"
+q = '''Why do pieces from `split` need `int()` before adding them?'''
+a = '''They are strings, and adding strings joins them instead of adding numbers.'''
+

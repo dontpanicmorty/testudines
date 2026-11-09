@@ -1,0 +1,6 @@
+id = "modules-and-projects.project-layout.fix-sibling-imports"
+title = "Fix imports that only work from one folder"
+difficulty = 2
+main = "mylib/transform.py"
+hints = ["`import mylib.transform` makes the *package* the import root, so a bare `cleaning` isn't found.", "Siblings inside a package are reached with a leading dot.", "Check `mylib/transform.py` for every import of a sibling module."]
+timeout = 120

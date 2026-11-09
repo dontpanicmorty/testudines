@@ -1,0 +1,6 @@
+id = "extra-97"
+title = "Department with the highest average salary"
+difficulty = "hard"
+concept = "aggregation / LIMIT"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "GROUP BY department, AVG(salary), ORDER BY ... DESC LIMIT 1."

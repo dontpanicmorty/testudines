@@ -1,0 +1,1 @@
+-- deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)

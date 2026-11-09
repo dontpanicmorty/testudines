@@ -1,0 +1,6 @@
+id = "20.3"
+title = "Conditional Aggregation with a Grouping Column"
+difficulty = "hard"
+concept = "SUM(CASE WHEN...) with GROUP BY"
+tables = "orders(order_id, customer_id, channel, amount)"
+hint = "`group by customer_id` with two `sum(case when channel = '<x>' then amount else 0 end)` columns."

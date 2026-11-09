@@ -1,0 +1,1 @@
+-- subscriptions(subscription_id, status)

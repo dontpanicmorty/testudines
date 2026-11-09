@@ -1,0 +1,9 @@
+id = "apis-and-config.secrets-and-settings.parse-dotenv"
+title = "Parse a .env file by hand"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Walk text.splitlines() with enumerate(..., start=1) so errors can include the line number.",
+  "line.partition('=') splits on the first '=' only. Strip key and value, and remove an optional leading 'export '.",
+  "Strip matching surrounding quotes only when the value starts and ends with the same quote character.",
+]

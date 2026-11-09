@@ -1,0 +1,25 @@
+[[card]]
+id = "e9552134"
+q = '''How do you keep only the lines of a file that begin with `WARN`?'''
+a = '''Loop over the handle and test `line.startswith("WARN")` inside an `if`.'''
+
+[[card]]
+id = "b68b15ee"
+q = '''What does `continue` do inside a loop over file lines?'''
+a = '''It skips the rest of the work for the current line and moves on to the next one.'''
+
+[[card]]
+id = "cd612857"
+q = '''What does `"91%".rstrip("%")` return?'''
+a = '''`"91"`. Given a character, `rstrip` removes that character from the end.'''
+
+[[card]]
+id = "0b043910"
+q = '''How do you stop a program crashing when a file name is wrong?'''
+a = '''Wrap `open` in `try` and catch `FileNotFoundError` in an `except` block.'''
+
+[[card]]
+id = "15f3bab4"
+q = '''Why wrap only the `open` call in `try`?'''
+a = '''So that other bugs in the loop are not accidentally hidden by the `except` block.'''
+

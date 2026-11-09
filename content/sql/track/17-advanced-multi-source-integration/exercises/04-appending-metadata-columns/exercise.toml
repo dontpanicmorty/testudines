@@ -1,0 +1,6 @@
+id = "17.4"
+title = "Appending metadata columns"
+difficulty = "hard"
+concept = "This repo's habit of appending table_owner / load_date in the final select"
+tables = "same as 10.3"
+hint = "Reuse 17.3 and append , 'analytics_eng' AS table_owner and , DATE '2024-06-01' AS load_date to the final select list."

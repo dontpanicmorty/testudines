@@ -1,0 +1,8 @@
+id = "everybody.conditional-execution.try-and-except.careful-division"
+title = "Share without crashing"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Dividing by zero raises a specific exception.",
+  "Return None when the division cannot be done.",
+]

@@ -1,0 +1,6 @@
+id = "extra-68"
+title = "Course average grade points"
+difficulty = "medium"
+concept = "CASE WHEN / AVG"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "CASE grade_letter WHEN 'A' THEN 4 ... END inside an AVG(), grouped by courseId."

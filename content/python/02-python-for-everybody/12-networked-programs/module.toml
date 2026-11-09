@@ -1,0 +1,3 @@
+title = "Networked programs"
+summary = "See how the web works underneath, fetch pages and files with sockets and urllib, and pull data out of HTML with patterns and BeautifulSoup, politely."
+stage = "Part 4 \u00b7 The network"

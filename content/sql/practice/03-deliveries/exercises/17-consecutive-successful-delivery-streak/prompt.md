@@ -1,0 +1,1 @@
+For each user ordered by delivery_date, return delivery_id, delivery_date, delivery_success_flag, and a running count of consecutive successful deliveries ending at that row (resets to 0 on a failure), ordered by user_id then delivery_date.

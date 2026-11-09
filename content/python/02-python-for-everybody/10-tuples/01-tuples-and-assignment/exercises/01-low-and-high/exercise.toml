@@ -1,0 +1,8 @@
+id = "everybody.tuples.tuples-and-assignment.low-and-high"
+title = "Smallest and largest"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "A function can return two values separated by a comma.",
+  "Handle the empty list before asking for a smallest value.",
+]

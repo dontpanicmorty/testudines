@@ -1,0 +1,1 @@
+Summarize `orders` as a single row (not one row per region) with a separate column for each region's total: `west_total`, `east_total`, and `north_total`, each holding the total `amount` for that region.

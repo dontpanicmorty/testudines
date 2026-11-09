@@ -1,0 +1,6 @@
+id = "extra-22"
+title = "Students in a grade"
+difficulty = "easy"
+concept = "WHERE"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "A simple WHERE grade = 9."

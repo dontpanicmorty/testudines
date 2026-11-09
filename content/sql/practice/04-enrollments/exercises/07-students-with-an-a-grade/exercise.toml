@@ -1,0 +1,6 @@
+id = "extra-67"
+title = "Students with an A grade"
+difficulty = "medium"
+concept = "WHERE / DISTINCT"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "DISTINCT studentId filtered to grade_letter = 'A'."

@@ -1,0 +1,6 @@
+id = "extra-189"
+title = "Add an assigned_at column with a default"
+difficulty = "medium"
+concept = "CREATE TABLE / DEFAULT"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Add assigned_at DATE DEFAULT CURRENT_DATE alongside the composite PRIMARY KEY."

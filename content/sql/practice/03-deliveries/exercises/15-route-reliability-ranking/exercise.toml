@@ -1,0 +1,6 @@
+id = "extra-55"
+title = "Route reliability ranking"
+difficulty = "hard"
+concept = "RANK / aggregation"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Compute per-route success rate in a CTE, then RANK() OVER (ORDER BY success_rate DESC)."

@@ -1,0 +1,46 @@
+[[card]]
+id = "b5abcfee"
+q = '''What does this print?
+```python
+try:
+    int("x")
+except ValueError:
+    print("a")
+else:
+    print("b")
+finally:
+    print("c")
+```'''
+a = '''`a` then `c`. `else` is skipped because the try raised.'''
+
+[[card]]
+id = "d3bcdf8f"
+q = '''Why is `except Exception: return None` around a long block dangerous?'''
+a = '''It also swallows unrelated bugs (typos, wrong types), so failures become silent wrong data.'''
+
+[[card]]
+id = "d9a78783"
+q = '''Write the line that wraps a caught `ValueError` `e` in a `LoadError` while keeping the cause.'''
+a = '''```python
+raise LoadError("bad amount") from e
+```'''
+
+[[card]]
+id = "d7a24ded"
+q = '''Why give a library's exceptions a common base class?'''
+a = '''Callers can catch all of them with one `except PipelineError`, or catch specific subclasses for finer handling.'''
+
+[[card]]
+id = "b379e4b3"
+q = '''When does `finally` run?'''
+a = '''Always: after success, after an exception, even after a `return` in the try block.'''
+
+[[card]]
+id = "cd2994db"
+q = '''Which built-in should `discount(price, pct)` raise for `pct=120`: `TypeError` or `ValueError`?'''
+a = '''`ValueError`: the type is right but the value is out of range.'''
+
+[[card]]
+id = "c5cc0a2a"
+q = '''Where in the code should you catch an exception?'''
+a = '''Where you can act on it (retry, skip, default, translate). Otherwise let it propagate.'''

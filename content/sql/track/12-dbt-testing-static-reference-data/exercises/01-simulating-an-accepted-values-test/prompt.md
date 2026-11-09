@@ -1,0 +1,1 @@
+dbt's `accepted_values` generic test would flag any `status` outside `('active', 'trialing', 'cancelled', 'past_due')`. Simulate that test yourself: return the `subscription_id` and `status` of every row that would fail the test. Order by `subscription_id`.

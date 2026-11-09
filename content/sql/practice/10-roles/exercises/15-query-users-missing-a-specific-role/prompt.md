@@ -1,0 +1,1 @@
+Create and populate a users_roles table so alice(1) is admin(1) and bob(2) is editor(2); then return the userName of every user who does NOT have the 'viewer' role (roleId 3), including carol who has no roles at all.

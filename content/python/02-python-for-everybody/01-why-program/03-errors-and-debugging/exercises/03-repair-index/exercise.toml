@@ -1,0 +1,9 @@
+id = "everybody.why-program.errors-and-debugging.repair-index"
+title = "Repair the body index"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Work one example on paper: 70 kg and 175 cm should give about 22.86.",
+  "Height must be turned into metres first, and then squared, before dividing the weight by it.",
+  "Python works out ** before / and *, so brackets matter.",
+]

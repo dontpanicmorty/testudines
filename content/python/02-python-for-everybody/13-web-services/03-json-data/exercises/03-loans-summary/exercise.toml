@@ -1,0 +1,8 @@
+id = "everybody.web-services.json-data.loans-summary"
+title = "Loans per member"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The data is an array of objects; loop over it.",
+  "Return the text with sorted keys so the output is predictable."
+]

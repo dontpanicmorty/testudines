@@ -1,0 +1,6 @@
+id = "extra-197"
+title = "Auto-incrementing surrogate key via sequence"
+difficulty = "hard"
+concept = "CREATE SEQUENCE / DEFAULT nextval"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "CREATE SEQUENCE ... START 1, then DEFAULT nextval('seq_users_roles_id') on the id column."

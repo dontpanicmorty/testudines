@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.data-pipeline-and-maps.tidy-rows"
+title = "Keep the good rows"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Each line has three parts separated by commas.",
+  "Anything that cannot be turned into valid numbers should be dropped.",
+  "Valid latitudes and longitudes have limits."
+]

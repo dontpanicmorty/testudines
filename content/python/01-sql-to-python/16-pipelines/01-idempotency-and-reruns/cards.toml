@@ -1,0 +1,29 @@
+[[card]]
+id = "50396beb"
+q = "Define idempotent in one sentence, and say whether `table.extend(rows)` is idempotent."
+a = "Running it N times leaves the same state as running it once. `extend` is not: each run adds the rows again."
+
+[[card]]
+id = "c846f0fa"
+q = "Why must delete-then-insert for a partition happen in one transaction?"
+a = "A crash between the two statements would leave the partition empty. One transaction makes both steps succeed or neither."
+
+[[card]]
+id = "545636e5"
+q = "Write the sqlite3 idiom that commits on success and rolls back on exception."
+a = "```python\nwith conn:\n    conn.execute(...)\n```"
+
+[[card]]
+id = "67a8924a"
+q = "How do you write `daily.csv` so readers never see a half-written file?"
+a = "Write to a temp file in the same directory, then `os.replace(tmp, target)`."
+
+[[card]]
+id = "e44f54fa"
+q = "Why must the temp file live in the same directory as the target?"
+a = "A rename across filesystems is a copy and not atomic (and may fail with `Invalid cross-device link`)."
+
+[[card]]
+id = "881677a6"
+q = "Why shouldn't a transform call `datetime.now()` to pick its partition?"
+a = "A rerun or backfill would write to today's partition. Pass the logical date in as an argument."

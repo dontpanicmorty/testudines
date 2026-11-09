@@ -1,0 +1,8 @@
+id = "everybody.conditional-execution.short-circuit-and-tracebacks.more-than-double"
+title = "Is it more than double?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A guard that checks the divisor goes on the left.",
+  "Return a proper True or False, never raise an error.",
+]

@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.beautifulsoup-and-etiquette.polite-links"
+title = "Only the pages we may visit"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Fetch /robots.txt from the same server first and collect the Disallow prefixes.",
+  "A link is off limits when its address starts with any disallowed prefix.",
+  "If robots.txt does not exist, nothing is disallowed.",
+]

@@ -1,0 +1,6 @@
+id = "extra-90"
+title = "Employees earning more than their manager"
+difficulty = "medium"
+concept = "self JOIN / WHERE"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "Self JOIN on managerId = id, then filter e.salary > m.salary."

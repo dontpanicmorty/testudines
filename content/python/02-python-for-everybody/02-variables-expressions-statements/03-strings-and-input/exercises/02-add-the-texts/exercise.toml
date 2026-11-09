@@ -1,0 +1,8 @@
+id = "everybody.variables-expressions-statements.strings-and-input.add-the-texts"
+title = "Sum of two answers"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Both inputs are text; convert them before adding.",
+  "float() accepts text with a decimal point as well as whole numbers.",
+]

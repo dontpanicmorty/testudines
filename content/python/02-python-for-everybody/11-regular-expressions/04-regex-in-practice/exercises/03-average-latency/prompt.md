@@ -1,0 +1,1 @@
+Each line of a server log may contain a duration like `took 120 ms` (the word `took`, a space, whole number, a space, `ms`). Write `average_ms(path)` that returns the average of those durations across the file as a float. Lines without that phrase are ignored. If no line has one, return `0.0`. If a line holds two durations, use only the first.

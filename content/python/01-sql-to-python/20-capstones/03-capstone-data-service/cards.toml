@@ -1,0 +1,34 @@
+[[card]]
+id = "1f62897a"
+q = "How does `response_model` protect a column such as `email` even if the query selects it?"
+a = "FastAPI serialises the returned data through the model and drops fields the model does not declare, so undeclared columns never reach the client."
+
+[[card]]
+id = "4f710fc3"
+q = "Why is the app built by a `create_app()` factory rather than a module-level `app`?"
+a = "Each call gives an isolated app, so tests can override dependencies per instance without leaking state between tests."
+
+[[card]]
+id = "4ebbdbd7"
+q = "A page-size limit comes from settings at runtime. How do you reject too-large values with the same 422 envelope?"
+a = "Inside a dependency, `raise RequestValidationError([{\"type\": ..., \"loc\": (\"query\", \"page_size\"), \"msg\": ..., \"input\": ...}])`; the registered validation handler formats it."
+
+[[card]]
+id = "8ccc9537"
+q = "Write the formulas for the offset and `has_next` in a paginated query."
+a = "`offset = (page - 1) * page_size`; `has_next = page * page_size < total`, where `total` counts all filtered rows."
+
+[[card]]
+id = "6e113756"
+q = "Why store idempotency keys in the database in the same transaction as the insert?"
+a = "Replays then work across restarts and workers, and the key and the customer are created atomically: both exist or neither does."
+
+[[card]]
+id = "47731c78"
+q = "Same `Idempotency-Key`, different body: what status and why?"
+a = "`409 Conflict`. It is a client bug (key reuse); replaying the old response would hide it."
+
+[[card]]
+id = "ef7930b7"
+q = "Why must a failed (422 or duplicate-email 409) request not record its idempotency key?"
+a = "Otherwise the client's corrected retry with the same key would be blocked or answered with the old failure."

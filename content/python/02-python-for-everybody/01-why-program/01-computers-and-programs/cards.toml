@@ -1,0 +1,29 @@
+[[card]]
+id = "5ae584c1"
+q = '''What does the CPU do?'''
+a = '''It is the computer's brain: it follows instructions one after another, very quickly. It does not store things for long.'''
+
+[[card]]
+id = "f3258a64"
+q = '''What is the difference between main memory and secondary memory?'''
+a = '''Main memory is fast and holds what the computer is working on now, but it is erased when the power goes off. Secondary memory (a hard drive or flash storage) is slower but keeps data permanently.'''
+
+[[card]]
+id = "d552861c"
+q = '''Name two input devices and two output devices.'''
+a = '''Input: keyboard, mouse, touch screen, microphone. Output: screen, speakers, printer.'''
+
+[[card]]
+id = "fcdd5565"
+q = '''What is a program?'''
+a = '''A list of instructions, written in a programming language, that a computer can follow.'''
+
+[[card]]
+id = "973c3015"
+q = '''Why does a computer need a programming language like Python?'''
+a = '''Computers only understand very simple operations. A language lets people write bigger ideas in readable form, and that is then turned into the simple operations.'''
+
+[[card]]
+id = "d30a3fbc"
+q = '''What does the word `return` do inside a function?'''
+a = '''It hands an answer back to whoever called the function.'''

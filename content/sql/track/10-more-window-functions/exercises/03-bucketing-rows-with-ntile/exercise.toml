@@ -1,0 +1,6 @@
+id = "10.3"
+title = "Bucketing Rows with NTILE"
+difficulty = "medium"
+concept = "NTILE"
+tables = "customers(customer_id, lifetime_value)"
+hint = "`ntile(4) over (order by lifetime_value desc)` splits the ordered rows into 4 roughly equal buckets."

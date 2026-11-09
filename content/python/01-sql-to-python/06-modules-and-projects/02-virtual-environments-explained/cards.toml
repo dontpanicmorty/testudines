@@ -1,0 +1,34 @@
+[[card]]
+id = "0f6fc260"
+q = "What physically is a virtual environment?"
+a = "A folder containing a `pyvenv.cfg`, a link to the interpreter and its own `site-packages` where packages are installed."
+
+[[card]]
+id = "422d925f"
+q = "Write one line that tells you whether your code is running inside a venv."
+a = "```python\nimport sys\nsys.prefix != sys.base_prefix\n```"
+
+[[card]]
+id = "bf36e263"
+q = "What does \"activating\" a venv actually change?"
+a = "Your shell's `PATH`, so that `python` and `pip` resolve to the ones inside the environment folder."
+
+[[card]]
+id = "019b1266"
+q = "You `pip install pandas` and then get `No module named 'pandas'`. What is the most likely cause, and the habit that prevents it?"
+a = "pip installed into a different Python than the one running your code. Use `python -m pip install ...` with the interpreter you intend to run."
+
+[[card]]
+id = "d37ed5df"
+q = "Requirements file versus lock file: which states exact versions of everything installed, and which should a deployed pipeline use?"
+a = "The lock file records exact versions (including transitive dependencies); deploy pipelines from it. Requirements express loose intent like `pandas>=2.0`."
+
+[[card]]
+id = "79d0b432"
+q = "Why shouldn't `.venv/` be committed to git?"
+a = "It is machine and OS specific and fully rebuildable from the lock file."
+
+[[card]]
+id = "bfe065eb"
+q = "Why is `pandas>=2.0` fine in a library's metadata but risky as the only thing an ETL job deploys with?"
+a = "A new release (or a new transitive dependency version) can change behaviour between runs. Jobs need exact, locked versions for reproducibility."

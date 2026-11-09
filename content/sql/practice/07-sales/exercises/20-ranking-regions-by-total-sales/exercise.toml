@@ -1,0 +1,6 @@
+id = "extra-140"
+title = "Ranking Regions by Total Sales"
+difficulty = "hard"
+concept = "DENSE_RANK"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Aggregate region totals via LEFT JOINs, then DENSE_RANK() OVER (ORDER BY total_sales DESC)."

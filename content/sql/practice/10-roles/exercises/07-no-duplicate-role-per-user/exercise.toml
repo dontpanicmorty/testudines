@@ -1,0 +1,6 @@
+id = "extra-187"
+title = "No duplicate role per user"
+difficulty = "medium"
+concept = "CREATE TABLE / UNIQUE"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "A table-level UNIQUE (userId, roleId) constraint."

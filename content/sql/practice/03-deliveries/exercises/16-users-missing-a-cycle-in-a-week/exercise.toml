@@ -1,0 +1,6 @@
+id = "extra-56"
+title = "Users missing a cycle in a week"
+difficulty = "hard"
+concept = "NOT EXISTS / CTE"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Label cycle_day in a CTE, then NOT EXISTS a matching Thursday row for the same user/week."

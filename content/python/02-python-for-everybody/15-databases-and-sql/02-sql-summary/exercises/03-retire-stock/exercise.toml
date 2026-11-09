@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.sql-summary.retire-stock"
+title = "Clear out the shelf"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Find out how many rows qualify, or let the database tell you.",
+  "The change must be saved so a second connection sees it."
+]

@@ -1,0 +1,9 @@
+id = "foundations.dicts-as-rows.enrich-orders"
+title = "Join orders to customers"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Turn the customers list into a dict keyed by customer_id first; lookups by key are what a join needs.",
+  "Merge with {**order, ...} so the original order dict is not modified.",
+  "Use .get on the lookup for customers that are missing (a LEFT JOIN keeps the order).",
+]

@@ -1,0 +1,9 @@
+id = "iteration-and-idioms.reading-tracebacks.first-failure"
+title = "Find the first bad row"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Loop with enumerate and call parse(row) inside try/except Exception as exc.",
+  "Return a tuple (index, type(exc).__name__, str(exc)) as soon as one raises.",
+  "If the loop finishes with no exception, return None.",
+]

@@ -1,0 +1,8 @@
+id = "everybody.networked-programs.scraping-html-with-regex.href-values"
+title = "List the link targets"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "The address sits between double quotes after href=.",
+  "Take as little text as possible between the quotes.",
+]

@@ -1,0 +1,1 @@
+Write `hrefs_in(html)` that uses BeautifulSoup (`from bs4 import BeautifulSoup`, parser `"html.parser"`) to return the list of link addresses from every `<a>` tag that **has** an `href` attribute, in page order. Anchors without `href` are skipped. Single-quoted and double-quoted attributes both work.

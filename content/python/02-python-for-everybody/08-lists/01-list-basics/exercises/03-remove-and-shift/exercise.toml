@@ -1,0 +1,8 @@
+id = "everybody.lists.list-basics.remove-and-shift"
+title = "Take out the unwanted"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Removing while looping forwards skips elements. Think about building a result instead, or looping backwards.",
+  "The function must change the very list it receives.",
+]

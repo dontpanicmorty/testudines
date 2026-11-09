@@ -1,0 +1,1 @@
+SELECT delivery_id, delivery_date, DATE_DIFF('day', LAG(delivery_date) OVER (PARTITION BY user_id ORDER BY delivery_date), delivery_date) AS days_since_prev FROM deliveries_info ORDER BY user_id, delivery_date;

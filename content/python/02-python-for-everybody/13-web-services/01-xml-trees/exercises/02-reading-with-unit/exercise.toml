@@ -1,0 +1,8 @@
+id = "everybody.web-services.xml-trees.reading-with-unit"
+title = "Value and its unit"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "One piece of information is stored as text, the other as an attribute.",
+  "Convert the text to a float before returning it."
+]

@@ -1,0 +1,8 @@
+id = "everybody.strings.parsing-and-f-strings.domain-of"
+title = "Where does this address live?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Find the position of the @ sign.",
+  "Slice from just after it to the end.",
+]

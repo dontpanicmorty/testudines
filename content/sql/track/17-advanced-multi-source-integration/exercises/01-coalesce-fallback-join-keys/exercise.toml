@@ -1,0 +1,6 @@
+id = "17.1"
+title = "COALESCE fallback join keys"
+difficulty = "hard"
+concept = "Joining when neither side reliably has a single populated key"
+tables = "accounts_multi(account_key, accountid_a, accountid_b, account_name)\nterritory_plan(plan_id, accountid_a, accountid_b, territory, priority)"
+hint = "JOIN territory_plan t ON COALESCE(t.accountid_a, t.accountid_b) = COALESCE(a.accountid_a, a.accountid_b)"

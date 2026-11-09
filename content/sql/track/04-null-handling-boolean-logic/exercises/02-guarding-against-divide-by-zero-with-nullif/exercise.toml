@@ -1,0 +1,6 @@
+id = "4.2"
+title = "Guarding Against Divide-by-Zero with NULLIF"
+difficulty = "easy"
+concept = "NULLIF"
+tables = "campaigns(campaign_id, clicks, impressions)"
+hint = "`nullif(impressions, 0)` turns a 0 into null, so dividing by it yields null instead of an error."

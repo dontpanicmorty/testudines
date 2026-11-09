@@ -1,0 +1,6 @@
+id = "extra-112"
+title = "Breed popularity combined"
+difficulty = "medium"
+concept = "GROUP BY across UNION ALL"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Wrap a UNION ALL of just the breed column in a subquery, then GROUP BY breed."

@@ -1,0 +1,6 @@
+id = "7.5"
+title = "Capstone: staging + CASE tier"
+difficulty = "medium"
+concept = "CTEs + JOIN + CASE"
+tables = "source_subscriptions(sub_id, account_id, plan_code, mrr, is_trial)\nsource_accounts(account_id, account_name, segment)"
+hint = "Join the two CTEs, then add CASE WHEN is_trial THEN 'trial' ELSE 'paid' END AS plan_tier."

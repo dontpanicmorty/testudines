@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.memory-and-streaming.batched-insert"
+title = "Debug: the insert that eats memory"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Look at what happens to `rows` before anything is inserted.",
+  "Pull at most batch_size rows at a time from the iterator (itertools.islice on iter(rows) in a loop).",
+  "Commit after every batch and keep a running total to return.",
+]

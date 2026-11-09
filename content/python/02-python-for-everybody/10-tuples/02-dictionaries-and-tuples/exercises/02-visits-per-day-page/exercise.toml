@@ -1,0 +1,8 @@
+id = "everybody.tuples.dictionaries-and-tuples.visits-per-day-page"
+title = "Visits per day and page"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A pair of values can be used as one dictionary key.",
+  "Use the usual counting pattern with the pair as the key.",
+]

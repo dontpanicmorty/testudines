@@ -1,0 +1,6 @@
+id = "extra-39"
+title = "Above overall median GPA count per grade"
+difficulty = "hard"
+concept = "subquery / MEDIAN"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "Filter with a scalar subquery computing the overall MEDIAN(gpa), then GROUP BY grade."

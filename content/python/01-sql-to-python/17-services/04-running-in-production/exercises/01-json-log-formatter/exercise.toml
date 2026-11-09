@@ -1,0 +1,9 @@
+id = "services.running-in-production.json-log-formatter"
+title = "JSON log formatter"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Subclass logging.Formatter and override format(self, record). Return json.dumps(dict).",
+  "record.getMessage() gives the formatted message; extra fields passed via extra={'fields': {...}} appear as record.fields.",
+  "Use getattr(record, 'fields', {}) so records without fields still work, and include exception text under 'exc' when record.exc_info is set (self.formatException(record.exc_info)).",
+]

@@ -1,0 +1,1 @@
+CREATE TABLE users_roles (userId INTEGER NOT NULL REFERENCES users(id), roleId INTEGER NOT NULL REFERENCES roles(id), assigned_at DATE NOT NULL DEFAULT CURRENT_DATE, PRIMARY KEY (userId, roleId));

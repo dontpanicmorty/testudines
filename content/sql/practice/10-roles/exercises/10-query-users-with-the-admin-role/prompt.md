@@ -1,0 +1,1 @@
+Given a users_roles(userId, roleId) mapping table with one row (1,1) meaning alice is admin, return the userName of every user with the 'admin' role. First create and populate users_roles, then write the SELECT.

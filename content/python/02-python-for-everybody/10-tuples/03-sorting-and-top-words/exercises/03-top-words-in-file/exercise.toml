@@ -1,0 +1,9 @@
+id = "everybody.tuples.sorting-and-top-words.top-words-in-file"
+title = "Favourite words"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Count the cleaned words first, then rank them.",
+  "str.maketrans('', '', string.punctuation) builds a deleting table.",
+  "Rank with a (-count, word) rule, then slice.",
+]

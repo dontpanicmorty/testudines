@@ -1,0 +1,6 @@
+id = "extra-7"
+title = "Average duration for repeat users"
+difficulty = "medium"
+concept = "HAVING"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "GROUP BY with a HAVING COUNT(*) > 1 filter."

@@ -1,0 +1,9 @@
+id = "shared-libraries.evolving-without-breaking.contract-check"
+title = "Run a consumer contract"
+difficulty = 2
+main = "contract.py"
+hints = [
+  "Each case is (args, kwargs, expected). Call func(*args, **kwargs) inside try/except.",
+  "Report the case index in the message so the failure is easy to find.",
+  "An exception raised by func is a contract failure too: include its type name.",
+]

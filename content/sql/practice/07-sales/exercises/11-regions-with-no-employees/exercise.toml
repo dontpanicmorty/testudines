@@ -1,0 +1,6 @@
+id = "extra-131"
+title = "Regions with no employees"
+difficulty = "medium"
+concept = "LEFT JOIN / IS NULL"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Chain LEFT JOINs from regions through states to employees, filter WHERE e.id IS NULL."

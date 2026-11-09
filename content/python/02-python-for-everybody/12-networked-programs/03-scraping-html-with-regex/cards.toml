@@ -1,0 +1,25 @@
+[[card]]
+id = "6ddba75b"
+q = '''What is an attribute in HTML?'''
+a = '''A `name="value"` pair inside an opening tag, such as `href="/news.html"` or `src="/tulip.png"`.'''
+
+[[card]]
+id = "06aa5812"
+q = '''Which pattern extracts the address from every `<a href="...">`?'''
+a = '''`re.findall(r'href="(.*?)"', html)`, using a non-greedy group.'''
+
+[[card]]
+id = "da0b50ad"
+q = '''Why is a regular expression a fragile way to read HTML?'''
+a = '''The same tag can be written many ways (single quotes, capitals, other attributes, line breaks), and the pattern only matches the ones you thought of.'''
+
+[[card]]
+id = "f8d519ed"
+q = '''Why must you decode the bytes before using a string pattern on them?'''
+a = '''`re` cannot mix a string pattern with bytes data; that raises a `TypeError`.'''
+
+[[card]]
+id = "2ba97b0c"
+q = '''When are regex scrapers good enough?'''
+a = '''For a quick, one-off job on a page you have looked at yourself; for anything lasting use a real HTML reader.'''
+

@@ -1,0 +1,30 @@
+[[card]]
+id = "a8d9ebc8"
+q = '''Why does a maximum loop usually start with `largest = None`?'''
+a = '''Because no value is a safe starting point for all data. The first item always replaces `None`, even if every number is negative.'''
+
+[[card]]
+id = "9450ca50"
+q = '''How do you test whether a variable holds no value?'''
+a = '''Write `x is None`.'''
+
+[[card]]
+id = "88aa2af7"
+q = '''What is the pattern for summing a list?'''
+a = '''Set `total = 0` before the loop, then `total += item` inside it.'''
+
+[[card]]
+id = "ac315d83"
+q = '''What goes wrong if `total = 0` is written inside the loop?'''
+a = '''The total is reset to 0 on every iteration, so only the last item counts.'''
+
+[[card]]
+id = "c7bfb057"
+q = '''What is debugging by bisection?'''
+a = '''Checking the middle of the program to learn which half contains the bug, then repeating inside that half.'''
+
+[[card]]
+id = "e8cb8497"
+q = '''What is a flag variable?'''
+a = '''A boolean set to `False` before a loop and changed to `True` if the loop sees what it is looking for.'''
+

@@ -1,0 +1,6 @@
+id = "extra-94"
+title = "Total team cost per manager"
+difficulty = "hard"
+concept = "recursive-free rollup"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "SUM(salary) grouped by managerId, filtering out top-level employees."

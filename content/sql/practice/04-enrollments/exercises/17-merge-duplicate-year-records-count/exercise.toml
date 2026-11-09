@@ -1,0 +1,6 @@
+id = "extra-77"
+title = "Merge duplicate-year records count"
+difficulty = "hard"
+concept = "GROUP BY / HAVING"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "GROUP BY studentId, courseId HAVING COUNT(*) > 1."

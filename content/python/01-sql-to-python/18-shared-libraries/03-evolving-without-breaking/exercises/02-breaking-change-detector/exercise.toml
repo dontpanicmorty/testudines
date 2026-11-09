@@ -1,0 +1,9 @@
+id = "shared-libraries.evolving-without-breaking.breaking-change-detector"
+title = "Detect breaking signature changes"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "inspect.signature(fn).parameters is an ordered mapping name -> Parameter with .kind and .default.",
+  "Breaking if: an old parameter is gone; a new parameter has no default; the old positional parameters are not a prefix, in order, of the new ones; an old positional-or-keyword parameter became keyword-only; an old default was removed.",
+  "Compare lists of names for positional-or-keyword parameters to check the prefix rule.",
+]

@@ -1,0 +1,6 @@
+id = "extra-173"
+title = "Users by join year, most recent first per sex"
+difficulty = "medium"
+concept = "window function"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "ROW_NUMBER() OVER (PARTITION BY sex ORDER BY joinYear DESC); NULL sex is its own partition."

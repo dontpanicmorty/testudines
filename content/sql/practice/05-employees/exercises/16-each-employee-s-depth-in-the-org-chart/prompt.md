@@ -1,0 +1,1 @@
+For every employee, compute their depth in the org chart: 0 for an employee with no manager, and one more than their own manager's depth otherwise. Return id, name, and depth for every employee, ordered by depth then id.

@@ -1,0 +1,2 @@
+-- employees(employee_id, employee_name, manager_id)
+  -- payroll_records(employee_id, salary)

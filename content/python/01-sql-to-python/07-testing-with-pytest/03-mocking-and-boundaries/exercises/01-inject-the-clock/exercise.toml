@@ -1,0 +1,5 @@
+id = "testing-with-pytest.mocking-and-boundaries.inject-the-clock"
+title = "Make lateness testable"
+difficulty = 1
+main = "solution.py"
+hints = ["Default `now` to `None` and compute the real time only when it is None.", "`now` is a zero-argument callable: call it with `now()`.", "minutes late = whole minutes (floor) between expected_by and now, never negative."]

@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.dates-times-and-decimals.invoice-total"
+title = "Debug: totals that are off by a cent"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Print the intermediate values with repr(). Where does a float appear?",
+  "Build Decimals from strings and multiply Decimals only.",
+  "Quantise once at the end with ROUND_HALF_UP; the builtin round() does something else.",
+]

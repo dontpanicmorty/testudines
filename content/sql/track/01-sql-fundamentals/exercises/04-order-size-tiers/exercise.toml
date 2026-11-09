@@ -1,0 +1,6 @@
+id = "1.4"
+title = "Order Size Tiers"
+difficulty = "easy"
+concept = "CASE WHEN ... ELSE ... END"
+tables = "orders(order_id, customer_id, order_date, amount, status)"
+hint = "CASE WHEN amount >= 100 THEN ... WHEN amount >= 50 THEN ... ELSE ... END AS business_tier"

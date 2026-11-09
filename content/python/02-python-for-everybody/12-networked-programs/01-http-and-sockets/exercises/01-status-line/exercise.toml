@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.http-and-sockets.status-line"
+title = "What did the server say"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "socket.create_connection((host, port)) opens the connection.",
+  "Send a request ending in a blank line, then read until recv gives empty bytes.",
+  "The status line is the first line of the reply.",
+]

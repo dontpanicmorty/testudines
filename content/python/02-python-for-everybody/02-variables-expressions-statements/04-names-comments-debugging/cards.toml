@@ -1,0 +1,29 @@
+[[card]]
+id = "4d08fe6b"
+q = '''What does "mnemonic variable name" mean?'''
+a = '''A name that helps you remember what the variable holds, such as `hourly_rate` instead of `b`.'''
+
+[[card]]
+id = "99160c13"
+q = '''What is a good comment, and what is a bad one?'''
+a = '''A good comment explains why something is done. A bad one just repeats what the code already says.'''
+
+[[card]]
+id = "e2d08d15"
+q = '''What does `NameError: name 'x' is not defined` usually mean?'''
+a = '''You used a name that has no value yet: a typo, or the line that creates it runs later.'''
+
+[[card]]
+id = "915b9169"
+q = '''`0.1 + 0.2` gives `0.30000000000000004`. Why?'''
+a = '''Computers store decimals in binary and cannot hold some exactly. It is normal; compare floats by closeness.'''
+
+[[card]]
+id = "9b1133b5"
+q = '''What does "commenting out" a line mean?'''
+a = '''Putting `#` in front of it so Python ignores it, usually while testing.'''
+
+[[card]]
+id = "ad086725"
+q = '''What is a good habit when a calculation gives a wrong answer?'''
+a = '''Print the in-between values and check a simple example by hand.'''

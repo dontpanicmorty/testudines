@@ -1,0 +1,1 @@
+SELECT * FROM sessions QUALIFY ROW_NUMBER() OVER (PARTITION BY userId ORDER BY sessionDate ASC) = 1 ORDER BY userId;

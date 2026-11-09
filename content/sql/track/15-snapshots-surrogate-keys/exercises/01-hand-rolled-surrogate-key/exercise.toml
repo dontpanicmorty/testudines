@@ -1,0 +1,6 @@
+id = "15.1"
+title = "Hand-rolled surrogate key"
+difficulty = "hard"
+concept = "md5(concat(coalesce(...))) -- the mechanics behind dbt_utils.generate_surrogate_key"
+tables = "daily_feed_day1(employee_id, department, salary)"
+hint = "md5(COALESCE(employee_id::VARCHAR,'') || '-' || COALESCE(department,'')) AS surrogate_key"

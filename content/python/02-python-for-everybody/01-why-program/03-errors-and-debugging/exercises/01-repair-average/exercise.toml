@@ -1,0 +1,8 @@
+id = "everybody.why-program.errors-and-debugging.repair-average"
+title = "Repair the average"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Python does division before addition.",
+  "Wrap the sum in brackets before dividing.",
+]

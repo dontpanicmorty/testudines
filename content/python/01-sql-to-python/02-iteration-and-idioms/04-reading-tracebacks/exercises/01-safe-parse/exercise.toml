@@ -1,0 +1,8 @@
+id = "iteration-and-idioms.reading-tracebacks.safe-parse"
+title = "Parse with an error report"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Wrap the float() conversion in try/except and catch only ValueError (and TypeError for None).",
+  "Collect rejects in a second list as (index, original_value) tuples.",
+]

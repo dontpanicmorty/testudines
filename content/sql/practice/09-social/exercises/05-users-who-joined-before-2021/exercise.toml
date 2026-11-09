@@ -1,0 +1,6 @@
+id = "extra-165"
+title = "Users who joined before 2021"
+difficulty = "easy"
+concept = "WHERE"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "WHERE joinYear < 2021."

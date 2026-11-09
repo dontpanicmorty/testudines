@@ -1,0 +1,9 @@
+id = "files-and-formats.csv.split-by-region"
+title = "Split a CSV by region"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Keep a dict mapping region -> list of rows while you read.",
+  "Write each region file with DictWriter using reader.fieldnames as the header.",
+  "Open output files with newline='' and encoding utf-8.",
+]

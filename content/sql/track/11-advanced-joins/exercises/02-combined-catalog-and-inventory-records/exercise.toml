@@ -1,0 +1,6 @@
+id = "11.2"
+title = "Combined Catalog and Inventory Records"
+difficulty = "medium"
+concept = "FULL OUTER JOIN"
+tables = "product_catalog(product_id, product_name)\ninventory(product_id, quantity_on_hand)"
+hint = "`full outer join` keeps unmatched rows from both sides; `coalesce(c.product_id, i.product_id)` picks whichever side has a value."

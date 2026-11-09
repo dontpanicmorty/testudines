@@ -1,0 +1,6 @@
+id = "extra-12"
+title = "Above-average sessions"
+difficulty = "medium"
+concept = "subquery"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "Compare duration to a scalar subquery computing the overall AVG(duration)."

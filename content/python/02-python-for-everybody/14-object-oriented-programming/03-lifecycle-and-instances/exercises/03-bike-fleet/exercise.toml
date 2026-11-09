@@ -1,0 +1,9 @@
+id = "everybody.object-oriented-programming.lifecycle-and-instances.bike-fleet"
+title = "Renting from the fleet"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Two kinds of object: single items and a collection that holds them.",
+  "Make sure a unit cannot be rented twice, and that unknown ids are handled.",
+  "Sorted output keeps results predictable."
+]

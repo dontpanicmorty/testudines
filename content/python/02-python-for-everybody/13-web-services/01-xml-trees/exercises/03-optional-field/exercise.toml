@@ -1,0 +1,8 @@
+id = "everybody.web-services.xml-trees.optional-field"
+title = "Handle the gaps"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "find returns None when a child is missing.",
+  "An element can exist with no text; its .text is then None too."
+]

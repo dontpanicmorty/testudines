@@ -1,0 +1,2 @@
+-- source_a(id, name, amount, created_at)
+-- source_b(id, name, amount_usd, created_ts)

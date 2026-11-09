@@ -1,0 +1,6 @@
+id = "extra-169"
+title = "Friend names for a specific user"
+difficulty = "medium"
+concept = "self JOIN-style / OR"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "JOIN friends to users matching whichever side isn't the target user id."

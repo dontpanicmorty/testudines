@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.sql-summary.mark-up"
+title = "Change some prices"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Only some rows should change, so restrict them.",
+  "The database can report how many rows it changed."
+]

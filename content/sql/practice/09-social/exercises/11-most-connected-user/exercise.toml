@@ -1,0 +1,6 @@
+id = "extra-171"
+title = "Most-connected user"
+difficulty = "medium"
+concept = "OR / GROUP BY / LIMIT"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "JOIN with an OR condition, GROUP BY name, ORDER BY count DESC LIMIT 1."

@@ -1,0 +1,6 @@
+id = "10.4"
+title = "Grabbing Endpoints with FIRST_VALUE/LAST_VALUE"
+difficulty = "medium"
+concept = "FIRST_VALUE/LAST_VALUE"
+tables = "orders(order_id, customer_id, order_date, amount)"
+hint = "`first_value` works with the default frame, but `last_value` needs `rows between unbounded preceding and unbounded following` to see the whole partition."

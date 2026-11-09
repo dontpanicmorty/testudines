@@ -1,0 +1,6 @@
+id = "extra-117"
+title = "Age difference between same-named pets"
+difficulty = "hard"
+concept = "JOIN / arithmetic"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "JOIN on name, then ABS(d.age - c.age)."

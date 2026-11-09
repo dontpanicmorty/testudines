@@ -1,0 +1,6 @@
+id = "extra-86"
+title = "Distinct departments"
+difficulty = "easy"
+concept = "DISTINCT"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "SELECT DISTINCT department."

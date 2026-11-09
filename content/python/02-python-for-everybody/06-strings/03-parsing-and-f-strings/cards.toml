@@ -1,0 +1,25 @@
+[[card]]
+id = "8a8d2a32"
+q = '''What does an f-string look like and what does it do?'''
+a = '''A string with `f` before the opening quote, like `f"{x} items"`. Expressions in braces are worked out and inserted.'''
+
+[[card]]
+id = "214923ce"
+q = '''How do you show a number with exactly two decimal places in an f-string?'''
+a = '''Use a format after a colon: `f"{value:.2f}"`.'''
+
+[[card]]
+id = "f703a9fc"
+q = '''How can you take out the text between `[` and `]` in `s`?'''
+a = '''`start = s.find("[")`, `end = s.find("]", start)`, then `s[start + 1:end]`.'''
+
+[[card]]
+id = "32b5e389"
+q = '''What does `"a b c d".split(" ", 1)` return?'''
+a = '''`["a", "b c d"]`: only one cut is made.'''
+
+[[card]]
+id = "e0a77875"
+q = '''Why is `repr` useful when debugging text?'''
+a = '''It shows quotes and hidden characters like newlines and stray spaces, which `print` hides.'''
+

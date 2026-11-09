@@ -1,0 +1,6 @@
+id = "extra-18"
+title = "Users whose every session is mobile"
+difficulty = "hard"
+concept = "NOT EXISTS"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "NOT EXISTS a correlated subquery checking for any non-mobile session by the same user."

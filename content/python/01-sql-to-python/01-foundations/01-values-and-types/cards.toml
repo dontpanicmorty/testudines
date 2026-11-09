@@ -1,0 +1,29 @@
+[[card]]
+id = "2ba6f61c"
+q = "What does this print?\n```python\nprint(7 // 2, 7 % 2)\n```"
+a = "`3 1`: floor division gives 3, remainder gives 1."
+
+[[card]]
+id = "4fd7af26"
+q = "`rows = [\"10\", \"20\"]`. Why does `rows[0] + rows[1]` give `\"1020\"`, and how do you get 30?"
+a = "Both are `str`, and `+` joins text. Convert first: `int(rows[0]) + int(rows[1])`."
+
+[[card]]
+id = "a3f2acb0"
+q = "Does `name.strip()` change `name`?"
+a = "No. Strings are immutable; `strip()` returns a new string. You must assign it: `name = name.strip()`."
+
+[[card]]
+id = "07afdf5e"
+q = "Write an f-string that shows `total = 1234.5` as `$1,234.50`."
+a = "```python\nf\"${total:,.2f}\"\n```"
+
+[[card]]
+id = "9f8663b0"
+q = "How should you test whether `x` is `None`, and what is the SQL analogue?"
+a = "`x is None` (analogue of `IS NULL`). Don't use `==` for this."
+
+[[card]]
+id = "5ed540b7"
+q = "Why is `0.1 + 0.2 == 0.3` False, and what do you use for money?"
+a = "Floats are binary approximations. For money use integer cents or `decimal.Decimal`."

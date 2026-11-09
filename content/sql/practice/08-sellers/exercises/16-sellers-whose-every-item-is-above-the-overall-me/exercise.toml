@@ -1,0 +1,6 @@
+id = "extra-156"
+title = "Sellers whose every item is above the overall median price"
+difficulty = "hard"
+concept = "NOT EXISTS"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "NOT EXISTS a below-median item for that seller, plus an EXISTS check that they have at least one item at all."

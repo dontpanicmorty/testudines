@@ -1,0 +1,8 @@
+id = "foundations.dicts-as-rows.flatten-user"
+title = "Flatten an event"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Chain .get(key, {}) for the nested levels so missing levels do not raise.",
+  "Build and return a new dict with the four keys.",
+]

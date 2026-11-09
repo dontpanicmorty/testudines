@@ -1,0 +1,6 @@
+id = "extra-126"
+title = "Total sales per employee name"
+difficulty = "medium"
+concept = "JOIN / GROUP BY"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "JOIN employees to sales, GROUP BY employee name, SUM(amount)."

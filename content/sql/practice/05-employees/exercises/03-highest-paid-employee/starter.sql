@@ -1,0 +1,1 @@
+-- employees(id, managerId, name, department, salary)

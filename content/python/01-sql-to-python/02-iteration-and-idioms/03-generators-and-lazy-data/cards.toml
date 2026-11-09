@@ -1,0 +1,34 @@
+[[card]]
+id = "81b6a16e"
+q = "What does this print?\n```python\nit = iter([1, 2, 3])\nprint(sum(it), sum(it))\n```"
+a = "`6 0`. An iterator is single-use; the second `sum` sees it already exhausted."
+
+[[card]]
+id = "dd67e7dd"
+q = "What is the difference between `[x*x for x in xs]` and `(x*x for x in xs)`?"
+a = "The list is built immediately and held in memory; the parenthesised generator expression computes values lazily, on demand."
+
+[[card]]
+id = "6efe0a4d"
+q = "When does the body of a generator function start running?"
+a = "On the first `next()` (or first loop iteration), not when the function is called. It pauses at each `yield`."
+
+[[card]]
+id = "0eb77260"
+q = "Write a generator function `positives(xs)` that lazily yields only items greater than 0."
+a = "```python\ndef positives(xs):\n    for x in xs:\n        if x > 0:\n            yield x\n```"
+
+[[card]]
+id = "425770a7"
+q = "Why can't you do `gen[0:5]` on a generator, and what do you use instead?"
+a = "Generators are not subscriptable. Use `list(itertools.islice(gen, 5))`."
+
+[[card]]
+id = "e2a42869"
+q = "What must be true of the input to `itertools.groupby` for it to behave like `GROUP BY`?"
+a = "It must already be sorted by the grouping key, because `groupby` only groups adjacent items."
+
+[[card]]
+id = "cf93a5dd"
+q = "Name two reasons to stream a file with a generator instead of `list(csv.DictReader(f))`."
+a = "Constant memory regardless of file size, and results can start flowing (or stop early) without reading the whole file."

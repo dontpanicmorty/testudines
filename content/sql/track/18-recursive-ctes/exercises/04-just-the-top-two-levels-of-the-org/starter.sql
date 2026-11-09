@@ -1,0 +1,1 @@
+-- employees(employee_id, employee_name, manager_id)

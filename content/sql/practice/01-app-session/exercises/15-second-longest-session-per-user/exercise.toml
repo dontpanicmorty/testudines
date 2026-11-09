@@ -1,0 +1,6 @@
+id = "extra-15"
+title = "Second-longest session per user"
+difficulty = "hard"
+concept = "window function / QUALIFY"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "ROW_NUMBER() OVER (PARTITION BY userId ORDER BY duration DESC) = 2."

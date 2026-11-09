@@ -1,0 +1,8 @@
+id = "everybody.conditional-execution.boolean-expressions.within-limits"
+title = "Inside the lines"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Comparison operators give a boolean answer directly.",
+  "Python allows low <= value <= high in one expression.",
+]

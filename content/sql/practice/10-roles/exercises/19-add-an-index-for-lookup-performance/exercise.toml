@@ -1,0 +1,6 @@
+id = "extra-199"
+title = "Add an index for lookup performance"
+difficulty = "hard"
+concept = "CREATE INDEX"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "CREATE TABLE first, then a separate CREATE INDEX ... ON users_roles (roleId) statement."

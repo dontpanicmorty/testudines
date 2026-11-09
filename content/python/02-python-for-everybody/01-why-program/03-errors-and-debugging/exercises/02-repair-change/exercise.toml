@@ -1,0 +1,8 @@
+id = "everybody.why-program.errors-and-debugging.repair-change"
+title = "Repair the change calculator"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Compare the function with the example by working through the numbers on paper.",
+  "The change is what you hand over minus what you owe, not the other way around.",
+]

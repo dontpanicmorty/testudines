@@ -1,0 +1,9 @@
+id = "validation-and-contracts.data-contracts-and-drift.infer-schema"
+title = "Infer a schema from rows"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Collect, per column, the set of type names of the non-None values: type(v).__name__.",
+  "Columns can appear in only some rows. Keep first-appearance order of the columns in the result.",
+  "Rules: no values -> 'null'; one type -> that name; {'int','float'} -> 'float'; any other mix -> 'str'.",
+]

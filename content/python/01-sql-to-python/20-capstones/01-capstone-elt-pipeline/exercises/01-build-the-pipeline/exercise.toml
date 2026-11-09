@@ -1,0 +1,10 @@
+id = "capstones.capstone-elt-pipeline.build-the-pipeline"
+title = "Build the ELT pipeline"
+difficulty = 3
+main = "pipeline/cli.py"
+timeout = 60
+hints = [
+  "Work bottom-up and run Check often: schema.py first (pure functions), then transform.py, then load.py, then run.py and cli.py. Each file's tests only need the layers beneath it.",
+  "For idempotent loads use a transaction (`with conn:`) and delete the affected days before inserting. For quarantine use a key made from a hash of the row so INSERT OR REPLACE never duplicates.",
+  "In run_pipeline read all three CSVs before opening the database, filter orders with placed_at[:10] >= watermark when incremental, and only advance the watermark when rows were produced.",
+]

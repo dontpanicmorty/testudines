@@ -1,0 +1,6 @@
+id = "extra-17"
+title = "Percent of total duration per user"
+difficulty = "hard"
+concept = "window function / SUM OVER ()"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "Aggregate SUM(duration) per user, then divide by SUM(SUM(duration)) OVER () for the grand total."

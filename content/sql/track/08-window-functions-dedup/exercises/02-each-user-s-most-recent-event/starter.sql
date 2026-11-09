@@ -1,0 +1,1 @@
+-- events(event_id, user_id, event_type, event_ts, session_id)

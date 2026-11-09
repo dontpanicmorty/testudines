@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.searching-with-patterns.ticket-codes"
+title = "Valid ticket codes"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The whole text must fit, so anchor both ends.",
+  "[A-Z] matches one capital letter; + means one or more.",
+  "A leading or trailing extra character must make it fail.",
+]

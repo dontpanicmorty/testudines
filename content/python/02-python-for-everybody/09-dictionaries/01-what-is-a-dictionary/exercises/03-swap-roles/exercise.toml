@@ -1,0 +1,9 @@
+id = "everybody.dictionaries.what-is-a-dictionary.swap-roles"
+title = "Who owns what"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Build a new dictionary whose keys are the old values.",
+  "Each value in the new dictionary is a list; create it the first time you see that key.",
+  "Sort each list before returning.",
+]

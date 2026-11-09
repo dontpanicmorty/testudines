@@ -1,0 +1,6 @@
+id = "extra-21"
+title = "Case-sensitive name match"
+difficulty = "easy"
+concept = "WHERE / string equality"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "String comparison with = is case-sensitive by default in DuckDB."

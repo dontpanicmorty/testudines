@@ -1,0 +1,6 @@
+id = "extra-174"
+title = "Users sharing a join year"
+difficulty = "medium"
+concept = "self JOIN"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Self JOIN users on matching joinYear, with a name1 < name2 guard to avoid mirrored duplicates."

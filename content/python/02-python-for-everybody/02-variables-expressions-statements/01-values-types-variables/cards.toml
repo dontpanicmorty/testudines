@@ -1,0 +1,29 @@
+[[card]]
+id = "a796b7ee"
+q = '''What are the types of `5`, `5.0` and `"5"`?'''
+a = '''`int`, `float` and `str`.'''
+
+[[card]]
+id = "bd426df8"
+q = '''What does `cups = cups + 1` do?'''
+a = '''It takes the current value of `cups`, adds 1, and stores the result back under the name `cups`.'''
+
+[[card]]
+id = "5fa6c017"
+q = '''List the rules for variable names.'''
+a = '''Letters, digits and underscores only; cannot start with a digit; no spaces; not a reserved word; capital letters matter.'''
+
+[[card]]
+id = "d352a90e"
+q = '''What is the difference between `7` and `"7"` in Python?'''
+a = '''`7` is an int you can do arithmetic on; `"7"` is text.'''
+
+[[card]]
+id = "f37fc463"
+q = '''What is an assignment statement?'''
+a = '''A statement like `price = 2.5` that stores a value under a name. It does not display anything.'''
+
+[[card]]
+id = "ad16c137"
+q = '''What does the built-in `type` function tell you?'''
+a = '''The type of a value, for example `int`, `float` or `str`.'''

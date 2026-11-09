@@ -1,0 +1,40 @@
+[[card]]
+id = "f43edde2"
+q = '''Which JSON-to-Python mapping is wrong: `null` -> `None`, `true` -> `True`, array -> `tuple`?'''
+a = '''Array maps to `list`, not `tuple`.'''
+
+[[card]]
+id = "ca1aea58"
+q = '''`d = {"props": None}`. Why does `d.get("props", {}).get("x")` fail, and what is the fix?'''
+a = '''The key exists, so the default `{}` is not used and `None.get` raises `AttributeError`. Use `(d.get("props") or {}).get("x")`.'''
+
+[[card]]
+id = "20f0b3bd"
+q = '''What is the difference between `json.load` and `json.loads`?'''
+a = '''`load` reads from a file object; `loads` parses a string.'''
+
+[[card]]
+id = "8d151c92"
+q = '''Write the loop body that parses a JSONL line but skips bad lines and counts them.'''
+a = '''```python
+try:
+    rec = json.loads(line)
+except json.JSONDecodeError:
+    bad += 1
+    continue
+```'''
+
+[[card]]
+id = "911a950a"
+q = '''`json.dumps({"d": datetime.date(2025, 1, 1)})` raises what, and what is the proper fix?'''
+a = '''`TypeError: Object of type date is not JSON serializable`. Convert to an ISO string (`d.isoformat()`) before dumping.'''
+
+[[card]]
+id = "bc559f90"
+q = '''Why does an ancestor walk over a dbt manifest keep a `seen` set?'''
+a = '''To avoid revisiting shared ancestors (duplicate work) and to stop infinite recursion if there were a cycle.'''
+
+[[card]]
+id = "6dd6dadd"
+q = '''Why is JSONL better than one big JSON array for event logs?'''
+a = '''You can append and stream line by line without parsing the whole file, and one corrupt line only loses that line.'''

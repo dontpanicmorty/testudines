@@ -1,0 +1,9 @@
+id = "validation-and-contracts.data-contracts-and-drift.check-rows"
+title = "Check rows against a contract"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Walk rows with enumerate; for each contract column check missing, then type; then look for columns not in the contract.",
+  "Compare exact type names, type(v).__name__ == expected, so True does not pass as an int. An int is allowed where the contract says float.",
+  "None is allowed in every column (null checks are a separate concern). Sort violations by (row, column, problem) at the end.",
+]

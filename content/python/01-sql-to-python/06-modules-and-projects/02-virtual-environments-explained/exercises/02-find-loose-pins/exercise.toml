@@ -1,0 +1,5 @@
+id = "modules-and-projects.virtual-environments-explained.find-loose-pins"
+title = "Audit a requirements file"
+difficulty = 2
+main = "solution.py"
+hints = ["Handle line types one at a time: blank, comment, option (`-r`, `--index-url`), real requirement.", "Strip any inline `# comment` before analysing the line. The name ends at the first of `[ < > = ! ~ ; space`.", "A requirement is pinned only if it uses `==`. `>=`, `~=`, `<` and bare names are not pinned."]

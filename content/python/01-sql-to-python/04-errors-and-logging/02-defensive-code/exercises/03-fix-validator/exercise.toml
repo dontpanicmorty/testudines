@@ -1,0 +1,9 @@
+id = "errors-and-logging.defensive-code.fix-validator"
+title = "Debug: the validator that lets bad data through"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Try cleaning an order with quantity '0' and with an empty status. What comes back?",
+  "assert statements vanish under python -O, and failed ones raise AssertionError.",
+  "The mutable default argument keeps state between calls.",
+]

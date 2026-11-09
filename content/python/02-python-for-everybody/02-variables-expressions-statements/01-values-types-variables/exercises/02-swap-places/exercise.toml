@@ -1,0 +1,9 @@
+id = "everybody.variables-expressions-statements.values-types-variables.swap-places"
+title = "Trade places"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Variables can be reassigned, but you must not lose the first value.",
+  "Use a third variable to hold one value while you move the other.",
+  "Python also lets you return two values separated by a comma.",
+]

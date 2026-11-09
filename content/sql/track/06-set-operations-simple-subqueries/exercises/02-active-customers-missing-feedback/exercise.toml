@@ -1,0 +1,6 @@
+id = "6.2"
+title = "Active Customers Missing Feedback"
+difficulty = "easy"
+concept = "EXCEPT"
+tables = "active_customers(customer_id)\nfeedback_submitters(customer_id)"
+hint = "`select ... from active_customers except select ... from feedback_submitters`."

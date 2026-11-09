@@ -1,0 +1,39 @@
+[[card]]
+id = "7d088e0b"
+q = "How does a test get the value produced by a fixture named `orders`?"
+a = "List `orders` as a parameter: `def test_x(orders): ...`. pytest calls the fixture and passes in its return value."
+
+[[card]]
+id = "3b48fa03"
+q = "Write the decorator that runs one test body with the pairs (\"a\", 1) and (\"b\", 2) as `key, value`."
+a = "```python\n@pytest.mark.parametrize(\"key, value\", [(\"a\", 1), (\"b\", 2)])\ndef test_x(key, value): ...\n```"
+
+[[card]]
+id = "e56bef93"
+q = "What does `tmp_path` give you?"
+a = "A fresh empty `pathlib.Path` folder, unique to the test and cleaned up automatically."
+
+[[card]]
+id = "22edd1f8"
+q = "A fixture returns a module-level list that tests append to. What symptom do you see?"
+a = "Order-dependent failures: tests pass alone but fail together, because they share and mutate one object. Create the list inside the fixture."
+
+[[card]]
+id = "13241003"
+q = "What does a fixture do with code after `yield`?"
+a = "It runs after the test finishes (pass or fail), so it's the teardown/cleanup step."
+
+[[card]]
+id = "0819bef8"
+q = "What is `xfail(strict=True)` for?"
+a = "Marks a test as a known failure, and makes it fail loudly if it starts passing so you remember to remove the marker."
+
+[[card]]
+id = "2b62d42e"
+q = "How do you run every test except those marked `slow`?"
+a = "`python -m pytest -m \"not slow\"`"
+
+[[card]]
+id = "c8dc4619"
+q = "Where do fixtures shared by several test files go?"
+a = "In `conftest.py` in the tests folder. pytest loads it automatically."

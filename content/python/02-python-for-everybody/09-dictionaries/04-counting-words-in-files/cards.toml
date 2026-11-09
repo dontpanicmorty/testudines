@@ -1,0 +1,25 @@
+[[card]]
+id = "ac2e8885"
+q = '''What does `line.split()` do when called with no argument?'''
+a = '''It breaks the line at any run of whitespace and drops the newline, returning a list of words.'''
+
+[[card]]
+id = "44385c45"
+q = '''How do you create a table that deletes every punctuation character?'''
+a = '''`table = str.maketrans('', '', string.punctuation)` after `import string`. The third argument lists characters to delete.'''
+
+[[card]]
+id = "3f08bf52"
+q = '''Why must you write `line = line.lower()` instead of just `line.lower()`?'''
+a = '''Strings cannot be changed; `.lower()` returns a new string, which you have to store.'''
+
+[[card]]
+id = "253c6836"
+q = '''Why lowercase and strip punctuation before counting words?'''
+a = '''Otherwise `Tea`, `tea` and `tea!` are counted as three different words.'''
+
+[[card]]
+id = "206064c7"
+q = '''What is a good way to debug a word counter that gives wrong numbers?'''
+a = '''Run it on a tiny file whose answer you know, print the dictionary as it grows, and check that the counts add up to the number of words.'''
+

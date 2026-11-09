@@ -1,0 +1,6 @@
+id = "10.1"
+title = "Running Totals with SUM() OVER"
+difficulty = "medium"
+concept = "SUM() OVER (running total)"
+tables = "payments(payment_id, account_id, paid_at, amount)"
+hint = "`sum(amount) over (partition by account_id order by paid_at)` -- the default frame accumulates rows so far."

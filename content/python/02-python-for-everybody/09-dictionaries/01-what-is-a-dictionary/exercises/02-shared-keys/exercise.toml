@@ -1,0 +1,8 @@
+id = "everybody.dictionaries.what-is-a-dictionary.shared-keys"
+title = "Names on both lists"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Loop over the keys of one dictionary and test each against the other.",
+  "Return the result in alphabetical order with sorted().",
+]

@@ -1,0 +1,1 @@
+-- daily_sales(sale_date, region, amount)

@@ -1,0 +1,8 @@
+id = "everybody.functions.built-in-functions.spread-of-three"
+title = "How far apart?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "There are built-in functions for the biggest and smallest of several values.",
+  "Subtract the smallest from the biggest.",
+]

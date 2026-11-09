@@ -1,0 +1,9 @@
+id = "everybody.dictionaries.counting-words-in-files.lines-per-word"
+title = "Which words span the lines"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "For each line, collect its cleaned words first, without duplicates.",
+  "Then add one to each of those words' counts.",
+  "A set (or checking a list with in) removes repeats within one line.",
+]

@@ -1,0 +1,25 @@
+[[card]]
+id = "4af4ba47"
+q = '''Rewrite `r = []; for n in nums: r.append(n + 1)` as a comprehension.'''
+a = '''`r = [n + 1 for n in nums]`'''
+
+[[card]]
+id = "c67cbe00"
+q = '''Where does the filter go in a list comprehension?'''
+a = '''At the end: `[n for n in nums if n > 2]`.'''
+
+[[card]]
+id = "c33573d3"
+q = '''How do you get the second column of `table = [[1, 2], [3, 4]]`?'''
+a = '''`[row[1] for row in table]`, which gives `[2, 4]`.'''
+
+[[card]]
+id = "81346f2b"
+q = '''What does 'too many values to unpack' tell you about your data?'''
+a = '''The item being unpacked has more pieces than you gave names; the data's shape is not what you assumed.'''
+
+[[card]]
+id = "159c16a4"
+q = '''Give two quick habits for debugging shape errors.'''
+a = '''Print `type(x)` and `len(x)` (or one sample item) before unpacking or indexing, and test with a tiny input.'''
+

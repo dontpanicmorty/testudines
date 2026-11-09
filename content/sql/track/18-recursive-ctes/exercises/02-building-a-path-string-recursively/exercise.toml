@@ -1,0 +1,6 @@
+id = "18.2"
+title = "Building a Path String Recursively"
+difficulty = "hard"
+concept = "recursive CTE + path building"
+tables = "employees(employee_id, employee_name, manager_id)"
+hint = "Anchor `path = employee_name`; recursive step concatenates `o.path || ' > ' || e.employee_name`."

@@ -1,0 +1,1 @@
+-- subscriptions(subscription_id, plan_name, status, is_trial)

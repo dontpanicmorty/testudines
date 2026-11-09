@@ -1,0 +1,36 @@
+[[card]]
+id = "8fa59fdb"
+q = "Where must the `try/except ValidationError` go to keep a pipeline running past bad rows?"
+a = "Inside the loop, around each single `model_validate` call, appending to a rejects list."
+
+[[card]]
+id = "1356e2c6"
+q = "What three things should a reject record contain?"
+a = "The row's position (index), the original raw row, and all the error reasons (field + message)."
+
+[[card]]
+id = "daa55ae4"
+q = "Write the expression that turns a pydantic error's `loc` tuple into a field name string."
+a = '''```python
+".".join(str(p) for p in e["loc"])
+```'''
+
+[[card]]
+id = "6458fba0"
+q = "Why catch `ValidationError` and not `Exception` in the loop?"
+a = "`Exception` also swallows genuine bugs in your own code, turning them into 'bad data'."
+
+[[card]]
+id = "79d60a42"
+q = "Why add a maximum reject rate to a quarantining load?"
+a = "If most rows fail, the source changed; loading the few survivors would hide that. Fail the run instead."
+
+[[card]]
+id = "b92c377c"
+q = "What are the two ways a JSONL line can be bad, and how do you detect each?"
+a = "Not JSON: `json.JSONDecodeError`. Wrong shape: parsed value is not a `dict` or fails model validation."
+
+[[card]]
+id = "511cd46f"
+q = "40 rejects all fail on the same field. What does that suggest compared with 40 different failures?"
+a = "A systematic upstream change (format or schema) rather than random dirty data."

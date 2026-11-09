@@ -1,0 +1,6 @@
+id = "20.2"
+title = "Refund Totals by Category, One Row"
+difficulty = "hard"
+concept = "single-row category totals"
+tables = "product_returns(return_id, product_category, refund_amount)"
+hint = "DuckDB's `pivot (select product_category, refund_amount from product_returns) on product_category using sum(refund_amount)` does this directly -- leaving out `return_id` from the inner select matters, since any source column not named in `on`/`using` is otherwise treated as an extra grouping column. A `sum(case when product_category = '<x>' then refund_amount else 0 end)` per category in a plain select works too."

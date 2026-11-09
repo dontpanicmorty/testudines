@@ -1,0 +1,6 @@
+id = "extra-195"
+title = "Query users missing a specific role"
+difficulty = "hard"
+concept = "NOT IN / three tables"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Create/populate the junction table, then id NOT IN (SELECT userId FROM users_roles WHERE roleId = 3)."

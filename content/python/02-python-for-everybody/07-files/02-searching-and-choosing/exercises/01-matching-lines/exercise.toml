@@ -1,0 +1,8 @@
+id = "everybody.files.searching-and-choosing.matching-lines"
+title = "Lines that begin a certain way"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Remove the ending of each line first.",
+  "Collect the matching lines in a list.",
+]

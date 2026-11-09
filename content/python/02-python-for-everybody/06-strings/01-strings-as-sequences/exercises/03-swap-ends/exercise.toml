@@ -1,0 +1,8 @@
+id = "everybody.strings.strings-as-sequences.swap-ends"
+title = "Rotate the edges"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Slices can cut off the first and last characters: text[1:-1].",
+  "Strings need to be rebuilt, since they cannot be changed in place.",
+]

@@ -1,0 +1,6 @@
+id = "classes-dataclasses-typing.type-hints.fix-the-type-errors"
+title = "Make mypy pass"
+difficulty = 2
+main = "solution.py"
+timeout = 120
+hints = ["Run mypy mentally on each function: what type does the expression give, and what did the signature promise?", "`dict.get` may return `None`. Unknown ids should return `None`, so the return annotation must say so.", "`/` always gives a float. And `sum` over text isn't numeric: is the parameter type wrong, or the caller?"]

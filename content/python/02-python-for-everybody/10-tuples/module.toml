@@ -1,0 +1,3 @@
+title = "Tuples"
+summary = "Use tuples for fixed groups of values, pair them with dictionaries, sort by value, find the most common words and write list comprehensions."
+stage = "Part 3 \u00b7 Data structures"

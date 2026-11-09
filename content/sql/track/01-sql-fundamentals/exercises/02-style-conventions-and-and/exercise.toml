@@ -1,0 +1,6 @@
+id = "1.2"
+title = "Style conventions: != and AND"
+difficulty = "easy"
+concept = "!= over <>, compound WHERE"
+tables = "customers(customer_id, first_name, last_name, region, signup_date, is_active)"
+hint = "Use != instead of <>, and combine two conditions with AND. Try DATE '2023-01-01' for the date literal."

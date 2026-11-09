@@ -1,0 +1,1 @@
+SELECT DISTINCT breed FROM cats ORDER BY breed;

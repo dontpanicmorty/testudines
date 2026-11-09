@@ -1,0 +1,8 @@
+id = "everybody.conditional-execution.try-and-except.number-or-default"
+title = "A safe conversion"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Put the conversion in a try block.",
+  "Catch the specific error that a failed conversion raises, and return the fallback.",
+]

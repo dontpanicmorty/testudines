@@ -1,0 +1,1 @@
+Produce a full hierarchy report: for every employee, return `employee_id`, `employee_name`, `depth` (0 at the top, incrementing per level down from the person with no manager), and `path` (names joined with `' > '` from the top down to that employee). Also attach each employee's `manager_name` (null at the top). Order by `path`.

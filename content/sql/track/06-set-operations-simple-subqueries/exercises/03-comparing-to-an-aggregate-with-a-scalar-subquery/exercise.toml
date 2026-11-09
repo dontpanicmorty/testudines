@@ -1,0 +1,6 @@
+id = "6.3"
+title = "Comparing to an Aggregate with a Scalar Subquery"
+difficulty = "easy"
+concept = "scalar subquery in WHERE"
+tables = "orders(order_id, customer_id, amount)"
+hint = "`where amount > (select avg(amount) from orders)` -- the subquery returns a single number."

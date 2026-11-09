@@ -1,0 +1,29 @@
+[[card]]
+id = "6b327cfa"
+q = '''Which three details of an `if` statement do beginners most often forget?'''
+a = '''The colon at the end of the line, the indentation of the block, and `==` (not `=`) in the condition.'''
+
+[[card]]
+id = "c5ec0eb0"
+q = '''In an `if / elif / elif / else` chain, how many blocks run?'''
+a = '''Exactly one: the first whose condition is true, or the `else` block if none is.'''
+
+[[card]]
+id = "5881396a"
+q = '''Why does the order of `elif` tests matter?'''
+a = '''Python stops at the first true test, so an early broad test can swallow cases meant for later ones.'''
+
+[[card]]
+id = "37bc276d"
+q = '''Does `else` take a condition?'''
+a = '''No. `else` catches everything left over. Use `elif` when you need a condition.'''
+
+[[card]]
+id = "231e5571"
+q = '''What does indentation do in Python?'''
+a = '''It shows which lines belong to a block, such as the body of an `if`.'''
+
+[[card]]
+id = "ff807260"
+q = '''How can you avoid a nested `if` inside an `if`?'''
+a = '''Combine the two conditions with `and`, or use early `return` statements in a function.'''

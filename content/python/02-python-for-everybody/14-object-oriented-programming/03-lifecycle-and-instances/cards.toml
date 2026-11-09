@@ -1,0 +1,25 @@
+[[card]]
+id = "3b96dd39"
+q = '''What are the three stages of an object's life?'''
+a = '''Created (constructor `__init__`), used (methods and attributes), and thrown away (destructor `__del__`, if any).'''
+
+[[card]]
+id = "da4e11f1"
+q = '''What is `__del__` and why should you not depend on it?'''
+a = '''The destructor, run just before an object is discarded. Python decides when, so do cleanup with an explicit method or `with` instead.'''
+
+[[card]]
+id = "527d6d4e"
+q = '''Why is `def __init__(self, tracks=[])` a bug?'''
+a = '''The default list is created once and shared by every instance. Use `None` and create a new list inside.'''
+
+[[card]]
+id = "4ad4f5e2"
+q = '''After `b = a`, are there two objects?'''
+a = '''No. Both names refer to the same object. Use `a is b` to check.'''
+
+[[card]]
+id = "2fded6aa"
+q = '''When a program has many instances, where does each one's data live?'''
+a = '''On the instance itself, in its own attributes.'''
+

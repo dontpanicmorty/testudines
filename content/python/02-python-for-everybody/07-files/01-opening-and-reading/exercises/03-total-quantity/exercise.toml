@@ -1,0 +1,8 @@
+id = "everybody.files.opening-and-reading.total-quantity"
+title = "Add up the pantry"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Each line has a name and a number separated by a blank.",
+  "Convert the number text with int before adding.",
+]

@@ -1,0 +1,1 @@
+A file lists stock, one item per line, as a name followed by a whole number, for example `rice 5`. Write `total_stock(path)` that returns the sum of all the numbers. Names never contain spaces. Blank lines may appear and must be ignored. An empty file gives 0.

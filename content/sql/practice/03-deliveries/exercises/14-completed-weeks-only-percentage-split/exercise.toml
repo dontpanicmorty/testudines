@@ -1,0 +1,6 @@
+id = "extra-54"
+title = "Completed weeks only percentage split"
+difficulty = "hard"
+concept = "CTE / date filter"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Filter delivery_week < (SELECT MAX(delivery_week) ...) before the CASE/aggregation from the previous exercise."

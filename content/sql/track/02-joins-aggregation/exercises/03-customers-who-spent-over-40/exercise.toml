@@ -1,0 +1,6 @@
+id = "2.3"
+title = "Customers Who Spent Over $40"
+difficulty = "easy"
+concept = "GROUP BY / SUM / HAVING"
+tables = "orders(order_id, customer_id, order_date, amount, status)"
+hint = "Filter WHERE status = 'completed' before grouping, then GROUP BY customer_id HAVING SUM(amount) > 40."

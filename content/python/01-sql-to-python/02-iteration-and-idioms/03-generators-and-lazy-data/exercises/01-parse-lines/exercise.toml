@@ -1,0 +1,8 @@
+id = "iteration-and-idioms.generators-and-lazy-data.parse-lines"
+title = "Lazy row parser"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Use `yield` inside a for loop over the lines; do not build a list.",
+  "Skip blank lines and comment lines starting with '#'. Split on the first comma only.",
+]

@@ -1,0 +1,8 @@
+id = "everybody.files.searching-and-choosing.average-load"
+title = "Average of the readings"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Lines of interest start with a marker; the value is the last blank-separated piece.",
+  "Decide what to return when no readings were found, to avoid dividing by zero.",
+]

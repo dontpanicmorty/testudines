@@ -1,0 +1,6 @@
+id = "extra-128"
+title = "Employees with no sales"
+difficulty = "medium"
+concept = "LEFT JOIN / IS NULL"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "LEFT JOIN employees to sales, then filter WHERE s.id IS NULL."

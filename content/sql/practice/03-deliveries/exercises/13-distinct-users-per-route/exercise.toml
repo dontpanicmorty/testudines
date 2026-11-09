@@ -1,0 +1,6 @@
+id = "extra-53"
+title = "Distinct users per route"
+difficulty = "medium"
+concept = "COUNT DISTINCT / GROUP BY"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "COUNT(DISTINCT user_id) grouped by route_id."

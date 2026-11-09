@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.regex-in-practice.ip-addresses"
+title = "Find the addresses"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Four groups of digits are joined by dots.",
+  "The dot needs escaping.",
+  "Collect the matches from every line, keeping their order.",
+]

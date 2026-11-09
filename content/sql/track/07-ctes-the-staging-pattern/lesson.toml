@@ -1,0 +1,4 @@
+id = "sql-lesson-7"
+number = 7
+title = "CTEs & the Staging Pattern"
+difficulty = "medium"

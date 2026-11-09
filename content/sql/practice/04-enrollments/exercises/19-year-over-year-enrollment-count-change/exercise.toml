@@ -1,0 +1,6 @@
+id = "extra-79"
+title = "Year-over-year enrollment count change"
+difficulty = "hard"
+concept = "LAG"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "Aggregate per year in a CTE, then LAG(enrollment_count) OVER (ORDER BY year)."

@@ -1,0 +1,8 @@
+id = "everybody.lists.lists-strings-functions.mean-or-none"
+title = "Typical value"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "A built-in function can total the list.",
+  "An empty list has nothing to average.",
+]

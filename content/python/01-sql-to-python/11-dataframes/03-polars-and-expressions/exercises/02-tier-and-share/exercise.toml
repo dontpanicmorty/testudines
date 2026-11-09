@@ -1,0 +1,9 @@
+id = "dataframes.polars-and-expressions.tier-and-share"
+title = "Tiers and share of region"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "with_columns can take several expressions at once.",
+  "pl.when(...).then(pl.lit(...)).when(...).otherwise(...) builds the tier.",
+  "share = amount / amount.sum().over('region'); round it with .round(3).",
+]

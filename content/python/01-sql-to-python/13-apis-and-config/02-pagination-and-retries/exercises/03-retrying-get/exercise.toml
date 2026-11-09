@@ -1,0 +1,9 @@
+id = "apis-and-config.pagination-and-retries.retrying-get"
+title = "A GET that survives a flaky server"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Loop attempt in range(max_attempts). Inside, call client.get in a try that catches httpx.TransportError.",
+  "Retry on 429 and status >= 500. For 429 with a Retry-After header, sleep float(header); otherwise sleep 0.5 * 2**attempt.",
+  "Any other non-2xx should call raise_for_status() immediately (no retry). Don't sleep after the final attempt; raise RetryExhausted instead.",
+]

@@ -1,0 +1,8 @@
+id = "wrangling-in-pure-python.joins-and-aggregations-by-hand.group-sum"
+title = "GROUP BY with SUM and COUNT"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "defaultdict, or dict.get(key, 0), keeps the loop simple.",
+  "Return a dict of dicts: {key: {'count': n, 'total': t}}.",
+]

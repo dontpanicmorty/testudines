@@ -1,0 +1,6 @@
+id = "14.3"
+title = "Array length"
+difficulty = "hard"
+concept = "len() on a cast JSON array"
+tables = "raw_payloads(id, account_id, payload)"
+hint = "len(CAST(payload::JSON->'features' AS VARCHAR[])) AS feature_count"

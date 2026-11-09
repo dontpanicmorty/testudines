@@ -1,0 +1,6 @@
+id = "extra-110"
+title = "Combined pet list with type label"
+difficulty = "medium"
+concept = "UNION ALL / literal column"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "UNION ALL two SELECTs, each adding a literal pet_type column."

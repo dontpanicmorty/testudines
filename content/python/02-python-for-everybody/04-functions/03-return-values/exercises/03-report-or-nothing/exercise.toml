@@ -1,0 +1,9 @@
+id = "everybody.functions.return-values.report-or-nothing"
+title = "Answer, or admit there is none"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Some inputs have no answer; those paths should return None explicitly.",
+  "A triangle needs the two shorter sides to add up to more than the longest.",
+  "Return the perimeter only for real triangles.",
+]

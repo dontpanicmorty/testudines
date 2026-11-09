@@ -1,0 +1,6 @@
+id = "3.5"
+title = "Redact Placeholder Text with REPLACE"
+difficulty = "easy"
+concept = "REPLACE"
+tables = "support_tickets(ticket_id, description)"
+hint = "Nest the calls: `upper(replace(description, '{{customer}}', 'the customer'))`."

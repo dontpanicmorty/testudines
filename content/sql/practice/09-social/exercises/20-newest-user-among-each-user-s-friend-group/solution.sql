@@ -1,0 +1,1 @@
+WITH f_all AS (SELECT user1 AS a, user2 AS b FROM friends UNION SELECT user2, user1 FROM friends) SELECT u1.name AS user_name, u2.name AS newest_friend, u2.joinYear FROM f_all f JOIN users u1 ON u1.id = f.a JOIN users u2 ON u2.id = f.b QUALIFY ROW_NUMBER() OVER (PARTITION BY f.a ORDER BY u2.joinYear DESC) = 1 ORDER BY user_name;

@@ -1,0 +1,6 @@
+id = "4.4"
+title = "Filtering Lists with IN / NOT IN"
+difficulty = "easy"
+concept = "IN / NOT IN"
+tables = "events(event_id, event_type)"
+hint = "`where event_type in ('signup', 'upgrade', 'renewal')`."

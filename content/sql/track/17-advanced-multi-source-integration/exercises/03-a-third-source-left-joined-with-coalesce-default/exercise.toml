@@ -1,0 +1,6 @@
+id = "17.3"
+title = "A third source, LEFT JOINed with COALESCE defaults"
+difficulty = "hard"
+concept = "Multi-CTE layered joins across three sources"
+tables = "accounts_multi, territory_plan, web_contracts(contract_id, accountid_a, contract_value)"
+hint = "Three CTEs (acct, territory, contracts), two LEFT JOINs off acct, COALESCE(contracts.contract_value, 0)."

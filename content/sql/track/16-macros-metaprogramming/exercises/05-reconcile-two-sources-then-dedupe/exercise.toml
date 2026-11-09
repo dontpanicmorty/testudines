@@ -1,0 +1,6 @@
+id = "16.5"
+title = "Reconcile Two Sources, Then Dedupe"
+difficulty = "hard"
+concept = "UNION reconciliation (16.2) + QUALIFY dedup (lesson 8/13)"
+tables = "source_a, source_b"
+hint = "Put the 16.2 UNION ALL in a combined CTE, then QUALIFY ROW_NUMBER() OVER (PARTITION BY id ORDER BY created_at DESC) = 1 in the outer select."

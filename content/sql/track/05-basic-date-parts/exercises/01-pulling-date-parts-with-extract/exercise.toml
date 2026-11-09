@@ -1,0 +1,6 @@
+id = "5.1"
+title = "Pulling Date Parts with EXTRACT"
+difficulty = "easy"
+concept = "EXTRACT(part FROM date)"
+tables = "orders(order_id, order_date)"
+hint = "`extract(year from order_date)` and `extract(month from order_date)`."

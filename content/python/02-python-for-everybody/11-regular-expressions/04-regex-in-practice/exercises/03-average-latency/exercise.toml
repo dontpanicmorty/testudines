@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.regex-in-practice.average-latency"
+title = "Average response time"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "A line is relevant only if it contains a number followed by ms.",
+  "Capture just the digits with brackets and convert them.",
+  "Guard against zero matching lines.",
+]

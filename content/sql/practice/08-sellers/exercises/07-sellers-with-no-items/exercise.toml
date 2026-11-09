@@ -1,0 +1,6 @@
+id = "extra-147"
+title = "Sellers with no items"
+difficulty = "medium"
+concept = "LEFT JOIN / IS NULL"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "LEFT JOIN sellers to items, filter WHERE i.id IS NULL."

@@ -1,0 +1,3 @@
+class LendingDesk:
+    # TODO
+    pass

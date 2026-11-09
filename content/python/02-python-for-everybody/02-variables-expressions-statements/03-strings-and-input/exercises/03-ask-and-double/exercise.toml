@@ -1,0 +1,9 @@
+id = "everybody.variables-expressions-statements.strings-and-input.ask-and-double"
+title = "Ask, then answer"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Call input() once with the prompt the tests will not check.",
+  "input() gives text: convert it to a number before doing arithmetic.",
+  "The function takes no arguments; the answer comes from input().",
+]

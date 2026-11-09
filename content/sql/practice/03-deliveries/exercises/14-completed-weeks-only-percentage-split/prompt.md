@@ -1,0 +1,1 @@
+Only counting weeks strictly before the maximum delivery_week in the table (i.e. 'completed' weeks), return delivery_week and the percentage of Monday vs Thursday deliveries in that week as monday_pct and thursday_pct, ordered by delivery_week.

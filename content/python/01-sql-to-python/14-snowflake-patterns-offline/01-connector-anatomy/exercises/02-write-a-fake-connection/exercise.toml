@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.connector-anatomy.write-a-fake-connection"
+title = "Write a FakeConnection"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "FakeConnection keeps `script` (a list of result sets) and `executed` (a list of (sql, params)). The cursor consumes the next result set on each execute.",
+  "Derive cursor.description from the first row's keys: [(name, None, None, None, None, None, None), ...]. Empty result set means description is None.",
+  "Keep a position counter inside the cursor for fetchone/fetchmany/fetchall so successive fetches continue where the last one stopped.",
+]

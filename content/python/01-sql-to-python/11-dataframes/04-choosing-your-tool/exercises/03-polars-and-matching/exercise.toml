@@ -1,0 +1,9 @@
+id = "dataframes.choosing-your-tool.polars-and-matching"
+title = "Same task: polars, and make results match"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "For top_polars: pl.DataFrame(orders).filter(...).join(pl.DataFrame(items), on='order_id'), then group_by and agg with a computed expression.",
+  "normalise(rows) should accept pairs whose first element may be a numpy integer, and whose second may be a numpy float or Decimal-like: use int() and float().",
+  "Sort normalise's output by (-revenue, customer_id) after rounding, so two tools that tie in a different order compare equal.",
+]

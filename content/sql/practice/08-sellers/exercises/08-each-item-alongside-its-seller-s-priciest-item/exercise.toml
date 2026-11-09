@@ -1,0 +1,6 @@
+id = "extra-148"
+title = "Each Item Alongside Its Seller's Priciest Item"
+difficulty = "medium"
+concept = "window function"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "MAX(price) OVER (PARTITION BY sellerId), joined to get the seller name."

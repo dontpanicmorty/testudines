@@ -1,0 +1,30 @@
+[[card]]
+id = "aeacee8c"
+q = '''What is the difference between `soup.find('a')` and `soup.find_all('a')`?'''
+a = '''`find` returns the first matching tag (or `None`); `find_all` returns a list of every matching tag.'''
+
+[[card]]
+id = "e52e6a8b"
+q = '''Why use `tag.get('href')` instead of `tag['href']`?'''
+a = '''`get` returns `None` (or a default) if the attribute is missing, while `[]` raises a `KeyError`.'''
+
+[[card]]
+id = "6e28036a"
+q = '''What is `robots.txt`?'''
+a = '''A text file at a site's root that lists paths the site asks robots not to visit, via `User-agent` and `Disallow` lines.'''
+
+[[card]]
+id = "db11d6c7"
+q = '''Why is BeautifulSoup more reliable than a regular expression for HTML?'''
+a = '''It understands HTML structure, so single quotes, capital letters, extra attributes and line breaks do not break it.'''
+
+[[card]]
+id = "772cbbac"
+q = '''Name two ways to be a polite scraper.'''
+a = '''Obey `robots.txt` and the terms of use, and pause between requests (or use an official data download instead).'''
+
+[[card]]
+id = "61fa52fe"
+q = '''How do you read the text out of a table cell tag?'''
+a = '''`cell.get_text(strip=True)`.'''
+

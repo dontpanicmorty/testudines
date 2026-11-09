@@ -1,0 +1,6 @@
+id = "14.5"
+title = "Capstone: flatten + top-level field + CASE"
+difficulty = "hard"
+concept = "Combining JSON extraction, array flattening, and CASE"
+tables = "raw_payloads(id, account_id, payload)"
+hint = "Reuse the exploded CTE from 14.2, add payload::JSON->>'plan', and a CASE on team.seats."

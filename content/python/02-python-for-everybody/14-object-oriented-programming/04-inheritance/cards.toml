@@ -1,0 +1,30 @@
+[[card]]
+id = "716aebab"
+q = '''How do you make `Student` inherit from `Member`?'''
+a = '''`class Student(Member):` with the parent's name in parentheses.'''
+
+[[card]]
+id = "2501f29a"
+q = '''What does overriding a method mean?'''
+a = '''Defining a method in the child with the same name as the parent's, so Python uses the child's version.'''
+
+[[card]]
+id = "491dc79c"
+q = '''What is `super()` used for?'''
+a = '''To reach the parent class's version of a method, usually `super().__init__(...)` or `super().method()`.'''
+
+[[card]]
+id = "48a42c89"
+q = '''What happens if a child defines `__init__` but never calls `super().__init__`?'''
+a = '''The parent's setup does not run, so attributes it normally creates will be missing.'''
+
+[[card]]
+id = "50fa4b68"
+q = '''What test tells you inheritance is a good fit?'''
+a = '''Does "a Child is a Parent" sound right? If the relationship is "has a", use an attribute holding another object.'''
+
+[[card]]
+id = "b959e918"
+q = '''What is polymorphism in one sentence?'''
+a = '''The same method call does different things depending on the type of the object it is called on.'''
+

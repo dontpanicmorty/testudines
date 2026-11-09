@@ -1,0 +1,9 @@
+id = "pipelines.retries-checkpoints-and-failure.retry-helper"
+title = "Write a retry helper"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Loop over range(attempts) and try fn() each time.",
+  "Re-raise immediately if the error is not retryable or this was the last attempt.",
+  "Otherwise call sleep(base_delay * 2 ** n) before the next try.",
+]

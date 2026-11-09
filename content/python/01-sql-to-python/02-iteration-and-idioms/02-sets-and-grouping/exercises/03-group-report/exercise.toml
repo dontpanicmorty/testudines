@@ -1,0 +1,9 @@
+id = "iteration-and-idioms.sets-and-grouping.group-report"
+title = "Group-by report"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Group amounts into lists keyed by (region, plan) with a defaultdict(list).",
+  "Each group then yields count, sum, and average; round the average to 2 decimals.",
+  "Sort the final list by key: sorted(groups) works because tuples sort element by element.",
+]

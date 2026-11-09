@@ -1,0 +1,6 @@
+id = "extra-47"
+title = "Success rate per route"
+difficulty = "medium"
+concept = "CASE WHEN / aggregation"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "SUM(CASE WHEN delivery_success_flag THEN 1 ELSE 0 END) / COUNT(*) * 100."

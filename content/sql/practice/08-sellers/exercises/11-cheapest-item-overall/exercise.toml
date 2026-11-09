@@ -1,0 +1,6 @@
+id = "extra-151"
+title = "Cheapest item overall"
+difficulty = "medium"
+concept = "ORDER BY / LIMIT"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "JOIN, then ORDER BY price ASC LIMIT 1."

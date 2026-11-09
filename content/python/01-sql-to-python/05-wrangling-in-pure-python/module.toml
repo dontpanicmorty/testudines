@@ -1,0 +1,3 @@
+title = "Wrangling data in plain Python"
+summary = "Clean messy exports, handle dates and money correctly, join and aggregate by hand, then build a small ETL."
+stage = "Stage 2 · Working with data in plain Python"

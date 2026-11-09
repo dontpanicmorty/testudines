@@ -1,0 +1,6 @@
+id = "extra-40"
+title = "First and last student name alphabetically per grade"
+difficulty = "hard"
+concept = "window function"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "MIN(lastName) and MAX(lastName) work alphabetically on strings too."

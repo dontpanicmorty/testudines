@@ -1,0 +1,9 @@
+id = "iteration-and-idioms.generators-and-lazy-data.batches"
+title = "Batch rows for bulk insert"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Collect items into a list; when it reaches `size`, yield it and start a new one.",
+  "After the loop, yield any leftover partial batch (if it is not empty).",
+  "Or use itertools.islice(it, size) repeatedly on one iterator.",
+]

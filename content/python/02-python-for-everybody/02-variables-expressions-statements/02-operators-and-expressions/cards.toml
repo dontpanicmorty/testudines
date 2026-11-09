@@ -1,0 +1,29 @@
+[[card]]
+id = "126b2c7c"
+q = '''What are the operator and operands in `8 - 3`?'''
+a = '''The operator is `-`; the operands are `8` and `3`.'''
+
+[[card]]
+id = "a542bb1a"
+q = '''What is `17 % 5` and what does it mean?'''
+a = '''`2`: the remainder when 17 is divided by 5.'''
+
+[[card]]
+id = "07a849a0"
+q = '''What is the difference between `/` and `//`?'''
+a = '''`/` gives a float with the exact answer (`7 / 2` is `3.5`); `//` drops the fraction (`7 // 2` is `3`).'''
+
+[[card]]
+id = "43c89e9d"
+q = '''What is `2 + 3 * 4`, and why?'''
+a = '''`14`, because multiplication is done before addition.'''
+
+[[card]]
+id = "99d24745"
+q = '''How do you test whether `n` is even?'''
+a = '''`n % 2 == 0`'''
+
+[[card]]
+id = "a2bbcf06"
+q = '''What does PEMDAS stand for?'''
+a = '''Parentheses, Exponents, Multiplication and Division, Addition and Subtraction: the order Python works in.'''

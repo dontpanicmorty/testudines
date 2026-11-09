@@ -1,0 +1,9 @@
+id = "dataframes.polars-and-expressions.lazy-daily-revenue"
+title = "Lazy pipeline over a file"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "pl.scan_csv(path) returns a LazyFrame; nothing runs until .collect().",
+  "Parse the timestamp with pl.col('placed_at').str.to_datetime() (or str.slice(0, 10) to get the date text), then group by the day.",
+  "Revenue is quantity * unit_price summed per day; filter out status == 'cancelled' before aggregating. Join orders to items with lazy join.",
+]

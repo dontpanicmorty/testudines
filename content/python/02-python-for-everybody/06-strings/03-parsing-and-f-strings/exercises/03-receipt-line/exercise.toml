@@ -1,0 +1,8 @@
+id = "everybody.strings.parsing-and-f-strings.receipt-line"
+title = "Format a receipt line"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "An f-string can format each value inside braces.",
+  "Use :.2f for money and :>N to right-align in a field of N characters.",
+]

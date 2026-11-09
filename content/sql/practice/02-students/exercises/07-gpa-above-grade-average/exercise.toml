@@ -1,0 +1,6 @@
+id = "extra-27"
+title = "GPA above grade average"
+difficulty = "medium"
+concept = "subquery / correlated"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "A correlated subquery computing AVG(gpa) filtered to the same grade."

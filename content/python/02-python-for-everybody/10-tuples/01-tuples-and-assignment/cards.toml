@@ -1,0 +1,25 @@
+[[card]]
+id = "2ddacade"
+q = '''What does 'immutable' mean for a tuple?'''
+a = '''Once created it cannot be changed: no item assignment, `append`, `sort` or `remove`. You make a new tuple instead.'''
+
+[[card]]
+id = "6453ff22"
+q = '''How do you write a tuple that holds only the number 5?'''
+a = '''`(5,)`. The trailing comma is required; `(5)` is just the number 5.'''
+
+[[card]]
+id = "f4d411e8"
+q = '''How does Python compare `(2, 'a')` and `(2, 'b')`?'''
+a = '''Position by position from the left: the first items are equal, so it compares the second ones; `'a' < 'b'`, so the first tuple is smaller.'''
+
+[[card]]
+id = "6690c70b"
+q = '''How do you swap variables `a` and `b` in one line?'''
+a = '''`a, b = b, a`'''
+
+[[card]]
+id = "16968cbb"
+q = '''What error appears for `x, y = (1, 2, 3)`?'''
+a = '''A `ValueError` saying there are too many values to unpack; the number of names must match the number of values.'''
+

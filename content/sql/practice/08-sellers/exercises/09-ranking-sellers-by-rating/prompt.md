@@ -1,0 +1,1 @@
+Rank every seller by rating, highest first, where 1 is the best-rated seller. Sellers tied on rating should share the same rank, and the rank after a tie should skip ahead by the number of tied sellers (e.g. two sellers tied for rank 1 means the next seller is rank 3, not rank 2). Return seller name, rating, and that rank as rating_rank, ordered by rating_rank.

@@ -1,0 +1,5 @@
+id = "modules-and-projects.imports-and-modules.load-plugin"
+title = "Load a plugin from a folder"
+difficulty = 3
+main = "solution.py"
+hints = ["`importlib.import_module(name)` imports by name using `sys.path`, so make the folder visible first.", "Use try/finally so `sys.path` is restored even if the plugin fails to import.", "Two plugin folders may both contain `plugin.py`. Python caches by name, so remove the name from `sys.modules` before and after."]

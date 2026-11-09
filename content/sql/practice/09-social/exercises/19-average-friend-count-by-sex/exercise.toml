@@ -1,0 +1,6 @@
+id = "extra-179"
+title = "Average friend count by sex"
+difficulty = "hard"
+concept = "CTE / GROUP BY"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Build a per-user friend-count CTE (including zero-friend users via LEFT JOIN), then GROUP BY sex."

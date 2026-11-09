@@ -1,0 +1,45 @@
+[[card]]
+id = "c050fd27"
+q = '''What does the second call print?
+```python
+def f(x, acc=[]):
+    acc.append(x)
+    return acc
+f(1)
+print(f(2))
+```'''
+a = '''`[1, 2]`. The default list is created once and shared. Use `acc=None`.'''
+
+[[card]]
+id = "cc880f0c"
+q = '''When should a pipeline fail loudly instead of quarantining bad rows?'''
+a = '''When bad data signals a broken source (wrong columns, spike in rejects) or correctness outweighs freshness.'''
+
+[[card]]
+id = "34353a40"
+q = '''Why is `assert user_input.isdigit()` the wrong way to validate input?'''
+a = '''Asserts are stripped under `python -O` and raise `AssertionError`. Use `if not ...: raise ValueError(...)`.'''
+
+[[card]]
+id = "e2f0b2e9"
+q = '''What three things should a quarantined row record?'''
+a = '''Its position or id, the reason it failed, and the raw data.'''
+
+[[card]]
+id = "5a6ec24e"
+q = '''Rewrite as a guard clause: `if x is not None:` followed by a long block, else `raise`.'''
+a = '''```python
+if x is None:
+    raise ValueError("x is required")
+# long block continues unindented
+```'''
+
+[[card]]
+id = "7b8dcbb7"
+q = '''Why collect all validation errors in a row instead of raising on the first?'''
+a = '''The person fixing the data sees every problem at once instead of one per run.'''
+
+[[card]]
+id = "d17ea294"
+q = '''Why is `amount = int(raw) if raw else 0` risky?'''
+a = '''It turns missing data into a plausible zero, hiding the problem. Decide explicitly whether missing is zero or unknown.'''

@@ -1,0 +1,25 @@
+[[card]]
+id = "b1fa75ad"
+q = '''What is the difference between `x.sort()` and `sorted(x)`?'''
+a = '''`x.sort()` changes the list in place and returns `None`; `sorted(x)` returns a new sorted list and leaves `x` alone.'''
+
+[[card]]
+id = "aa78cda8"
+q = '''What does the bug `nums = nums.sort()` do?'''
+a = '''It stores `None` in `nums`, because `.sort()` returns `None`.'''
+
+[[card]]
+id = "0367c0b9"
+q = '''Describe 'decorate, sort, undecorate'.'''
+a = '''Build tuples with the sort field first (decorate), sort the list, then pull the original data back out (undecorate).'''
+
+[[card]]
+id = "ac8336c9"
+q = '''How do you sort word counts biggest first, with ties alphabetical, using `key=`?'''
+a = '''`sorted(counts.items(), key=...)` where the key function returns `(-count, word)`.'''
+
+[[card]]
+id = "01135405"
+q = '''How do you take the 5 most common after sorting?'''
+a = '''Slice the sorted list: `ranked[:5]`.'''
+

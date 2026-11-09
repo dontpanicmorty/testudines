@@ -1,0 +1,6 @@
+id = "extra-159"
+title = "Rating-to-price-tier cross tab"
+difficulty = "hard"
+concept = "CASE WHEN / pivot-style aggregation"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "Label each item's tier with CASE WHEN in a CTE, then SUM(CASE WHEN tier = '...' THEN 1 ELSE 0 END) per tier."

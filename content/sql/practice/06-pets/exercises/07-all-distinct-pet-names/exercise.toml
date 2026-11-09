@@ -1,0 +1,6 @@
+id = "extra-107"
+title = "All distinct pet names"
+difficulty = "medium"
+concept = "UNION"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "UNION (not UNION ALL) automatically de-duplicates across both SELECTs."

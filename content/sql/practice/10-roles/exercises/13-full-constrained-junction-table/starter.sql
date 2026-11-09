@@ -1,0 +1,1 @@
+-- users(id PK, userName); roles(id PK, role)

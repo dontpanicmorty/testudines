@@ -1,0 +1,6 @@
+id = "extra-123"
+title = "Sales count per employee"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "GROUP BY employeeId, COUNT(*)."

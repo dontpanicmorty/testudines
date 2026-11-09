@@ -1,0 +1,1 @@
+-- customers(customer_id, lifetime_value)

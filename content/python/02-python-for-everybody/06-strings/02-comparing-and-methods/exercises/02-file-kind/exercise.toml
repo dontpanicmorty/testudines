@@ -1,0 +1,8 @@
+id = "everybody.strings.comparing-and-methods.file-kind"
+title = "What kind of file?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Look at how the name ends, ignoring case.",
+  "A name can match several rules, so decide the order of your checks.",
+]

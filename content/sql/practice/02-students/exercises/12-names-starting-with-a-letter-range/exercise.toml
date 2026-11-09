@@ -1,0 +1,6 @@
+id = "extra-32"
+title = "Names starting with a letter range"
+difficulty = "medium"
+concept = "LIKE / comparison"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "String range comparison: lastName >= 'A' AND lastName < 'M'."

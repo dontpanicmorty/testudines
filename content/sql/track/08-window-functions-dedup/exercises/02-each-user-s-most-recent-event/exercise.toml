@@ -1,0 +1,6 @@
+id = "8.2"
+title = "Each User's Most Recent Event"
+difficulty = "medium"
+concept = "Snowflake's QUALIFY clause"
+tables = "events(event_id, user_id, event_type, event_ts, session_id)"
+hint = "SELECT ... FROM events QUALIFY ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY event_ts DESC) = 1"

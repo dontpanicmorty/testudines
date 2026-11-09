@@ -1,0 +1,8 @@
+id = "everybody.web-services.json-data.titles-from-json"
+title = "Pick out the titles"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Parse the text first; the result is an ordinary dictionary.",
+  "One of the values is a list you can loop over."
+]

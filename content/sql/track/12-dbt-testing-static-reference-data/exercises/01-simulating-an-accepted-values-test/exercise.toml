@@ -1,0 +1,6 @@
+id = "12.1"
+title = "Simulating an accepted_values Test"
+difficulty = "medium"
+concept = "accepted_values simulation"
+tables = "subscriptions(subscription_id, status)"
+hint = "A passing `accepted_values` test has zero rows returned by `where status not in (...)` -- return the failures."

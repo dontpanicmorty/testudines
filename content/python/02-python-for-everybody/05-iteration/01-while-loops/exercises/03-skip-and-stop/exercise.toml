@@ -1,0 +1,8 @@
+id = "everybody.iteration.while-loops.skip-and-stop"
+title = "Read until the stop word"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Walk through the list with an index in a while loop.",
+  "Use continue for blank entries and break for the stop word. Make sure the index goes up before continue.",
+]

@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.groups-and-escapes.email-hosts"
+title = "Where do the messages come from"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Put round brackets around only the part you want.",
+  "A domain is made of letters, digits and dots.",
+  "findall with one group returns just the group.",
+]

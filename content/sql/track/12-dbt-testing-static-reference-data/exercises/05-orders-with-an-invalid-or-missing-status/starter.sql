@@ -1,0 +1,2 @@
+-- orders(order_id, status_code, amount)
+  -- status_lookup(status_code, status_label, is_valid_status)

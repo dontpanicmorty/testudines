@@ -1,0 +1,8 @@
+id = "everybody.dictionaries.dictionaries-as-counters.add-up-counts"
+title = "Combine two tallies"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Start from a copy of the first dictionary, then walk the second.",
+  "dict(first) makes a copy so the original stays untouched.",
+]

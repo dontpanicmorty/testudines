@@ -1,0 +1,9 @@
+id = "files-and-formats.json-and-jsonl.read-jsonl"
+title = "Read JSONL, skip corrupt lines"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Loop over the file; skip lines that are blank after strip().",
+  "Catch json.JSONDecodeError specifically.",
+  "Return both the good records and the count of bad lines as a tuple.",
+]

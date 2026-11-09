@@ -1,0 +1,1 @@
+For each course, number its enrollment rows 1, 2, 3, ... in order of id (id is unique, so there are never ties). Return courseId, studentId, id, and that sequence number as row_num, ordered by courseId then row_num.

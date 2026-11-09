@@ -1,0 +1,6 @@
+id = "extra-37"
+title = "Ranking Students by GPA Within Their Grade"
+difficulty = "hard"
+concept = "DENSE_RANK"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "DENSE_RANK() OVER (PARTITION BY grade ORDER BY gpa DESC)."

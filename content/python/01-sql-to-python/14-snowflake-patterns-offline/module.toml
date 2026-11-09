@@ -1,0 +1,3 @@
+title = "Snowflake from Python, offline"
+summary = "The Python side of Snowflake work: connection lifecycle, loading, auth and environments, and testing it all without a warehouse."
+stage = "Stage 4 · Data tooling and integration"

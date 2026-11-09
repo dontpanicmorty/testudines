@@ -1,0 +1,5 @@
+id = "code-quality.readable-code.split-the-long-function"
+title = "Split the long function"
+difficulty = 2
+main = "solution.py"
+hints = ["Find the three jobs inside `process`: parse the CSV text, total the paid amounts per customer, format the report lines.", "Write one small function per job and let `process` call them in order.", "Keep behaviour identical: same rounding, same ordering (highest total first, then name)."]

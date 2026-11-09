@@ -1,0 +1,1 @@
+SELECT r.name, ROUND(AVG(sa.amount), 0) AS avg_sale FROM regions r JOIN states st ON st.regionId = r.id JOIN employees e ON e.stateId = st.id JOIN sales sa ON sa.employeeId = e.id GROUP BY r.name ORDER BY r.name;

@@ -1,0 +1,6 @@
+id = "16.1"
+title = "Hand-expanding a type-aware casting macro"
+difficulty = "hard"
+concept = "What a Jinja for-loop over columns would generate"
+tables = "source_a(id, name, amount, created_at)"
+hint = "SELECT id, name, amount, created_at::VARCHAR AS created_at FROM source_a"

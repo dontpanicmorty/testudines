@@ -1,0 +1,42 @@
+[[card]]
+id = "35395b73"
+q = '''What does this print?
+```python
+from datetime import date
+print((date(2025, 3, 1) - date(2025, 2, 1)).days)
+```'''
+a = '''`28` (2025 is not a leap year).'''
+
+[[card]]
+id = "d3636f4f"
+q = '''Why does `aware - naive` raise `TypeError`, and what is the fix?'''
+a = '''Without a zone the naive value is not a defined instant. Attach one with `naive.replace(tzinfo=timezone.utc)` (if you know it is UTC).'''
+
+[[card]]
+id = "0e99d783"
+q = '''Write the code that converts aware `dt` to UTC.'''
+a = '''```python
+dt.astimezone(timezone.utc)
+```'''
+
+[[card]]
+id = "94239d54"
+q = '''Why build `Decimal` from a string, not a float?'''
+a = '''`Decimal(0.1)` carries the float's binary error. `Decimal("0.1")` is exact.'''
+
+[[card]]
+id = "c52ae327"
+q = '''Round `Decimal("2.675")` to cents, rounding halves up.'''
+a = '''```python
+Decimal("2.675").quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)  # 2.68
+```'''
+
+[[card]]
+id = "1c391558"
+q = '''Why should a function take `now` as a parameter instead of calling `datetime.now()` inside?'''
+a = '''So tests can pass a fixed value and the result is deterministic.'''
+
+[[card]]
+id = "b157efa7"
+q = '''Why is there no `timedelta(months=1)`?'''
+a = '''Months have different lengths. Compute with `year`/`month` arithmetic instead.'''

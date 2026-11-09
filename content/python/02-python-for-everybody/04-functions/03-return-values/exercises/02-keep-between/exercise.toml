@@ -1,0 +1,8 @@
+id = "everybody.functions.return-values.keep-between"
+title = "Keep it between the limits"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Check the low side, then the high side, then fall through.",
+  "If the value is already inside, return it unchanged.",
+]

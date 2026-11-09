@@ -1,0 +1,6 @@
+id = "extra-145"
+title = "Average item price"
+difficulty = "easy"
+concept = "AVG"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "AVG(price) with ROUND."

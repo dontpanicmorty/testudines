@@ -1,0 +1,34 @@
+[[card]]
+id = "ac56d458"
+q = "A module has `print('hi')` at top level. You `import` it three times in one program. How many times is `hi` printed?"
+a = "Once. The first import runs the file and caches it in `sys.modules`; later imports reuse the cache."
+
+[[card]]
+id = "d15aba86"
+q = "What is the value of `__name__` inside a file you run with `python report.py`, and inside the same file when another file imports it?"
+a = "`\"__main__\"` when run directly; `\"report\"` (the module name) when imported."
+
+[[card]]
+id = "1db45785"
+q = "Write the guard that makes `main()` run only when the file is executed as a script."
+a = "```python\nif __name__ == \"__main__\":\n    main()\n```"
+
+[[card]]
+id = "64df6390"
+q = "You created `csv.py` next to your script and now `csv.reader` fails with `AttributeError`. Why?"
+a = "Your folder is first on `sys.path`, so `import csv` finds your file instead of the standard library module. Rename your file."
+
+[[card]]
+id = "be48ca53"
+q = "`a.py` does `from b import f` and `b.py` does `from a import g` at top level. What error appears and what is the cleanest fix?"
+a = "`ImportError: cannot import name ... from partially initialized module ... (most likely due to a circular import)`. Move the shared code into a third module both import."
+
+[[card]]
+id = "5d85a63b"
+q = "Which data structure holds the folders Python searches when you import, and which entry wins?"
+a = "`sys.path` (a list). It is searched in order; the first match wins."
+
+[[card]]
+id = "f285bafa"
+q = "Why is `from module import *` discouraged?"
+a = "It pulls unknown names into your namespace, so readers and linters can't tell where a name came from, and it can silently overwrite your own names."

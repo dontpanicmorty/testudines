@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.first-database.create-and-store"
+title = "Put the readings away"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Open the file, make the table if needed, add the rows, then save.",
+  "Close the connection when you are done."
+]

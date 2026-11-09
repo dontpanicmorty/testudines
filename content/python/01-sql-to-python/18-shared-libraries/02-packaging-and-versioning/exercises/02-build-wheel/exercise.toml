@@ -1,0 +1,9 @@
+id = "shared-libraries.packaging-and-versioning.build-wheel"
+title = "Build a toy wheel"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "zipfile.ZipFile(path, 'w') then zf.write(file, arcname) for each .py file.",
+  "arcname should be relative to the package's parent directory so the zip contains pkg/__init__.py, not an absolute path.",
+  "zf.writestr(f'{name}-{version}.dist-info/METADATA', text) adds a file from a string.",
+]

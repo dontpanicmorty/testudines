@@ -1,0 +1,6 @@
+id = "extra-154"
+title = "Best-rated seller among sellers with more than one item"
+difficulty = "hard"
+concept = "CTE / HAVING"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "Filter to sellers with more than one item in a CTE first, then ORDER BY rating DESC LIMIT 1."

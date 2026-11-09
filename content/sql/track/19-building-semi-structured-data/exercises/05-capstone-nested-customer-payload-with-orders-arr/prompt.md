@@ -1,0 +1,1 @@
+Build one JSON payload per customer containing their nested list of orders. Join `customers` to `orders`, group by `customer_id` and `customer_name`, and return `customer_id`, `customer_name`, and `orders_json` — a JSON array where each element has that order's `order_id` and `amount`, ordered by `order_id` within each customer. Order by `customer_id`.

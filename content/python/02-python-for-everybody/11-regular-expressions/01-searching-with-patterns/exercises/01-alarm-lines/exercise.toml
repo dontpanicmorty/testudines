@@ -1,0 +1,8 @@
+id = "everybody.regular-expressions.searching-with-patterns.alarm-lines"
+title = "Spot the alarm lines"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Anchor the pattern to the start of the line.",
+  "re.search returns None when nothing matches; turn that into True or False.",
+]

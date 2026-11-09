@@ -1,0 +1,32 @@
+{
+  "page": 1,
+  "total_pages": 3,
+  "results": [
+    {
+      "id": 1,
+      "name": "Frances Clarke",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Margaret Thompson",
+      "active": false
+    },
+    {
+      "id": 3,
+      "name": "Ken Shannon",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Claude Lamarr",
+      "active": false
+    },
+    {
+      "id": 5,
+      "name": "Tim Hamilton",
+      "active": true
+    }
+  ],
+  "next": 2
+}

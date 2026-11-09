@@ -1,0 +1,9 @@
+id = "validation-and-contracts.pydantic-models.clean-on-the-way-in"
+title = "Clean on the way in"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Use @field_validator('amount', mode='before') so you can strip '$' and ',' before pydantic converts to float.",
+  "Mark validators with @classmethod and give them (cls, value).",
+  "For status: strip and lowercase, and map an empty string or None to 'unknown' (include 'unknown' in the Literal).",
+]

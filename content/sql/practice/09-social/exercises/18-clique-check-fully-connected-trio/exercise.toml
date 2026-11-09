@@ -1,0 +1,6 @@
+id = "extra-178"
+title = "Clique check: fully-connected trio"
+difficulty = "hard"
+concept = "self JOIN triple"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Chain three self-joins on the symmetric friends CTE looking for a-b, b-c, c-a all connected, with id ordering to avoid duplicate permutations."

@@ -1,0 +1,25 @@
+[[card]]
+id = "c65005bd"
+q = '''What does the grep tool do, and how do you imitate it in Python?'''
+a = '''It prints lines that match a pattern. In Python, loop over a file's lines and keep those where `re.search(pattern, line)` is not `None`.'''
+
+[[card]]
+id = "794fc9ff"
+q = '''Why call `.rstrip()` on a line read from a file before matching with `$`?'''
+a = '''The line still ends with a newline, which can interfere with `$` and with comparisons.'''
+
+[[card]]
+id = "93ed3758"
+q = '''Why guard an average with `if count:`?'''
+a = '''If no line matched, `count` is zero and dividing by it would raise `ZeroDivisionError`.'''
+
+[[card]]
+id = "8e972fbe"
+q = '''Name three things to check when a pattern matches nothing.'''
+a = '''Anchors (`^`, `$`), unescaped special characters like `.` or `$`, and whether the sample text really looks as you expect (print it).'''
+
+[[card]]
+id = "15d97952"
+q = '''When is a plain string method better than a regex?'''
+a = '''For simple jobs like `startswith`, `endswith`, `split` or `in`, which are clearer than a pattern.'''
+

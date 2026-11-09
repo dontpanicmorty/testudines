@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.using-objects.type-names"
+title = "What kind of thing?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Every object can report its type, and the type has a name.",
+  "Build a list with a loop or a comprehension."
+]

@@ -1,0 +1,6 @@
+id = "1.5"
+title = "Distinct values"
+difficulty = "easy"
+concept = "SELECT DISTINCT"
+tables = "customers(customer_id, first_name, last_name, region, signup_date, is_active)"
+hint = "SELECT DISTINCT region ... ORDER BY region."

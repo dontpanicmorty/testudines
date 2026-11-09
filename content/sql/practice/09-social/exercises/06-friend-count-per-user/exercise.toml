@@ -1,0 +1,6 @@
+id = "extra-166"
+title = "Friend count per user"
+difficulty = "medium"
+concept = "OR condition / GROUP BY"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "LEFT JOIN friends ON users.id = friends.user1 OR users.id = friends.user2, filter sex='f', GROUP BY."

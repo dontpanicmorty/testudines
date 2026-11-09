@@ -1,0 +1,6 @@
+id = "extra-184"
+title = "Not-null columns"
+difficulty = "easy"
+concept = "CREATE TABLE / NOT NULL"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Add NOT NULL to both column definitions."

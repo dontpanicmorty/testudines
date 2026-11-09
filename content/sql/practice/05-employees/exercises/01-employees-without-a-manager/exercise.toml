@@ -1,0 +1,6 @@
+id = "extra-81"
+title = "Employees without a manager"
+difficulty = "easy"
+concept = "WHERE / IS NULL"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "WHERE managerId IS NULL."

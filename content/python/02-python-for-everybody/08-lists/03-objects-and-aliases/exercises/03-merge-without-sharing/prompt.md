@@ -1,0 +1,1 @@
+Write `merge_tables(a, b)`. Each argument is a list of rows, and each row is itself a list of numbers. Return a new list containing the rows of `a` followed by the rows of `b`. The rows in the result must be copies: changing a row of the result later must not change any row in `a` or `b`. Neither argument may be modified.

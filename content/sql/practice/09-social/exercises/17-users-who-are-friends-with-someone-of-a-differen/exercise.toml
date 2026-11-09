@@ -1,0 +1,6 @@
+id = "extra-177"
+title = "Users who are friends with someone of a different sex"
+difficulty = "hard"
+concept = "JOIN / comparison"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Symmetric friends CTE, join both sides to users, compare sex columns (excluding NULLs)."

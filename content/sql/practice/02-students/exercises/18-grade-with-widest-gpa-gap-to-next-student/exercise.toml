@@ -1,0 +1,6 @@
+id = "extra-38"
+title = "Grade with widest GPA gap to next student"
+difficulty = "hard"
+concept = "window function / LEAD"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "LEAD(gpa) OVER (PARTITION BY grade ORDER BY gpa DESC), subtracted from the current row's gpa."

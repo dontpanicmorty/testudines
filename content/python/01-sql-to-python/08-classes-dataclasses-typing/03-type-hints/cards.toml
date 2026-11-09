@@ -1,0 +1,39 @@
+[[card]]
+id = "2b95ef56"
+q = "Annotate: a function `parse(raw)` taking a str and returning an int or None."
+a = "```python\ndef parse(raw: str) -> int | None:\n```"
+
+[[card]]
+id = "ca71f696"
+q = "Does `def f(x: int) -> int` stop `f(\"a\")` from running?"
+a = "No. Python ignores hints at runtime; mypy reports the mistake before you run the code."
+
+[[card]]
+id = "26ea6658"
+q = "mypy says `Item \"None\" of \"str | None\" has no attribute \"upper\"`. What is the fix?"
+a = "Handle the None first: `if name is None: return ...` then call `name.upper()` (mypy narrows the type after the check)."
+
+[[card]]
+id = "f3873c62"
+q = "`rows.get(key)` is declared to return `int`. Why does mypy complain?"
+a = "`dict.get` returns `int | None` when the key may be missing. Check for None, give a default (`rows.get(key, 0)`), or change the return type."
+
+[[card]]
+id = "d9ebc679"
+q = "Write a `TypedDict` for a row with `user_id: int` and `name: str`."
+a = "```python\nclass Row(TypedDict):\n    user_id: int\n    name: str\n```"
+
+[[card]]
+id = "fb527ce8"
+q = "What does a `Protocol` let you do that a base class doesn't?"
+a = "Accept any object with the right methods without it inheriting from anything (structural typing), while mypy still checks the shape."
+
+[[card]]
+id = "e0db4de1"
+q = "Why is `# type: ignore` or `Any` a poor way to make mypy pass?"
+a = "They hide the problem instead of fixing it, and `Any` disables checking for everything it touches."
+
+[[card]]
+id = "8d1256c9"
+q = "Command to type-check with all annotations required?"
+a = "`python -m mypy --strict yourfile.py`"

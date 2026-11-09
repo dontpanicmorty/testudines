@@ -1,0 +1,30 @@
+[[card]]
+id = "aafb2c4a"
+q = '''What do you get when you write `for x in d` and `d` is a dictionary?'''
+a = '''The keys, one at a time.'''
+
+[[card]]
+id = "1d6b6da2"
+q = '''How do you loop over keys and values together?'''
+a = '''`for key, value in d.items():`'''
+
+[[card]]
+id = "195d308d"
+q = '''How do you print a dictionary's entries in alphabetical key order?'''
+a = '''`for key in sorted(d): print(key, d[key])`'''
+
+[[card]]
+id = "2e08abbe"
+q = '''Why can `d.sort()` not be used?'''
+a = '''Dictionaries have no `.sort()` method; it belongs to lists. Use `sorted(d)`, which returns a new sorted list of keys.'''
+
+[[card]]
+id = "d2e2c9b8"
+q = '''Why is it risky to add keys to a dictionary while looping over it?'''
+a = '''Python raises a `RuntimeError` because the dictionary changed size during the loop. Build a new dictionary or loop over a copy.'''
+
+[[card]]
+id = "00184274"
+q = '''What starting value suits a 'find the largest' loop over positive counts?'''
+a = '''A value below any real count, such as `-1` (or `None` with a check), so the first entry wins.'''
+

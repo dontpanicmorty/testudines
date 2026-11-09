@@ -1,0 +1,6 @@
+id = "extra-102"
+title = "Dogs of a breed"
+difficulty = "easy"
+concept = "WHERE"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "WHERE breed = 'Labrador'."

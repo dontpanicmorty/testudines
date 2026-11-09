@@ -1,0 +1,9 @@
+id = "apis-and-config.http-with-httpx.serve-bundled-pages"
+title = "Serve the bundled pages from a fake API"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Inside the handler, read int(request.url.params['page']) and look for api_users_page{n}.json in the data directory.",
+  "Return httpx.Response(200, json=json.loads(text)) when the file exists, else a 404 with a JSON error body.",
+  "For active_names, loop: fetch page, collect active users, then follow the 'next' field until it is None.",
+]

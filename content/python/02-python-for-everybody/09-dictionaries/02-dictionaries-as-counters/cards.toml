@@ -1,0 +1,25 @@
+[[card]]
+id = "5e514075"
+q = '''Write the one-line counter update for a dictionary `counts` and a variable `item`.'''
+a = '''`counts[item] = counts.get(item, 0) + 1`'''
+
+[[card]]
+id = "7777daed"
+q = '''What does `d.get('k', 0)` return when `'k'` is not a key?'''
+a = '''It returns `0`, the default you supplied. It does not raise an error and does not add the key.'''
+
+[[card]]
+id = "da897b57"
+q = '''Why does `counts[item] += 1` fail the first time an item is seen?'''
+a = '''The key does not exist yet, so reading it raises a `KeyError`. A starting value must be created first.'''
+
+[[card]]
+id = "58e938be"
+q = '''What is a quick sanity check on a dictionary of counts?'''
+a = '''The values should add up to the number of items you counted: `sum(counts.values()) == len(items)`.'''
+
+[[card]]
+id = "68918331"
+q = '''What default would you use with `.get()` when each value is a list?'''
+a = '''An empty list: `d.get(key, [])`.'''
+

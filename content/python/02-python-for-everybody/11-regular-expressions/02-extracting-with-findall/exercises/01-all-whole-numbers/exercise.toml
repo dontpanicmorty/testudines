@@ -1,0 +1,8 @@
+id = "everybody.regular-expressions.extracting-with-findall.all-whole-numbers"
+title = "Every number in the text"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Find all runs of digits at once.",
+  "findall returns strings; convert them.",
+]

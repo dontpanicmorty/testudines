@@ -1,0 +1,9 @@
+id = "sql-from-python.sql-as-a-pipeline-step.late-arriving-upsert"
+title = "Late-arriving upsert (debug)"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Run the same batch twice, then run an older version of a record after a newer one. Which row survives with INSERT OR REPLACE?",
+  "Use INSERT ... ON CONFLICT (id) DO UPDATE SET ... instead.",
+  "Add WHERE excluded.updated_at > customers.updated_at to the DO UPDATE so older records change nothing.",
+]

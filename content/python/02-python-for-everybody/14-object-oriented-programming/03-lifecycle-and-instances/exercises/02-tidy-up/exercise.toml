@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.lifecycle-and-instances.tidy-up"
+title = "Tidy up after yourself"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "There is a special method that runs just before an object is discarded.",
+  "Write to the log list you were given, not to the screen."
+]

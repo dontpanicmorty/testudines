@@ -1,0 +1,1 @@
+This is the inverse of flattening: building nested structure out of flat rows. Return `customer_id` and a single nested column, aliased `contact_info`, that packs together each customer's `first_name`, `last_name`, and `email` into one struct-like value. Order by `customer_id`.

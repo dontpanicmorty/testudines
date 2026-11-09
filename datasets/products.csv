@@ -1,0 +1,13 @@
+product_id,name,category,unit_price
+P001,Notebook,office,55.56
+P002,Desk Lamp,office,168.87
+P003,Standing Desk,furniture,264.62
+P004,Chair,furniture,296.82
+P005,Keyboard,electronics,371.31
+P006,Mouse,electronics,20.12
+P007,Monitor,electronics,397.71
+P008,Webcam,electronics,399.07
+P009,Headphones,electronics,209.03
+P010,Whiteboard,office,33.18
+P011,Bookshelf,furniture,375.04
+P012,Cable Kit,electronics,43.33

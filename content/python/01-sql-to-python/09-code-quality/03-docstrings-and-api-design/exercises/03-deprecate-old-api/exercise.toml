@@ -1,0 +1,5 @@
+id = "code-quality.docstrings-and-api-design.deprecate-old-api"
+title = "A reusable deprecation decorator"
+difficulty = 3
+main = "solution.py"
+hints = ["A decorator is a function that takes a function and returns a wrapper. Because it takes an argument (`replacement`), you need one more level: `deprecated(replacement)` returns the decorator.", "Inside the wrapper call `warnings.warn(message, DeprecationWarning, stacklevel=2)` and then return `func(*args, **kwargs)`.", "Decorate the wrapper with `functools.wraps(func)` so the name and docstring are kept."]

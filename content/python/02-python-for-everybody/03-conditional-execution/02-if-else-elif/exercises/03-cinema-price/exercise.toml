@@ -1,0 +1,9 @@
+id = "everybody.conditional-execution.if-else-elif.cinema-price"
+title = "Cinema ticket price"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Decide the age group first, then think about members within it.",
+  "A nested decision, or one decision per group, will both work.",
+  "Children under 12 pay 5, with no member discount.",
+]

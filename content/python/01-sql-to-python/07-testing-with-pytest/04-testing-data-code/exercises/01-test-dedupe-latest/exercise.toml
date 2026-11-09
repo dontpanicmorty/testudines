@@ -1,0 +1,6 @@
+id = "testing-with-pytest.testing-data-code.test-dedupe-latest"
+title = "Test a dedupe transform"
+difficulty = 2
+main = "my_tests.py"
+hints = ["Use small input lists where the winning row is NOT the first one and the ids are NOT already sorted.", "Include a tie on `updated_at` and a row whose `updated_at` is None.", "To check the input isn't modified, take a copy before calling (`copy.deepcopy`) and compare afterwards."]
+timeout = 120

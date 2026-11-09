@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.loading-patterns.batch-loader"
+title = "All-or-nothing batch loader"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Build the INSERT once: placeholders = ', '.join(['%s'] * len(columns)).",
+  "Loop over batches (itertools.islice on one iterator works) and call cur.executemany(sql, batch) for each.",
+  "Wrap the loop in try/except Exception: call conn.rollback() and re-raise. Call conn.commit() only after every batch succeeds.",
+]

@@ -1,0 +1,6 @@
+id = "extra-150"
+title = "Items priced above their seller's average"
+difficulty = "medium"
+concept = "correlated subquery"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "Correlated subquery computing AVG(price) for the same sellerId."

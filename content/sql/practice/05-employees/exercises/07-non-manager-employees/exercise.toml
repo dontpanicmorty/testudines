@@ -1,0 +1,6 @@
+id = "extra-87"
+title = "Non-manager employees"
+difficulty = "medium"
+concept = "NOT IN / subquery"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "id NOT IN (SELECT managerId FROM employees WHERE managerId IS NOT NULL)."

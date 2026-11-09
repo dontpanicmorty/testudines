@@ -1,0 +1,9 @@
+id = "everybody.databases-and-sql.first-database.load-text-rows"
+title = "Load a messy export"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Split the text into lines and skip blank ones.",
+  "Wrap the number conversion so one bad line does not stop the load.",
+  "Count both outcomes and save at the end."
+]

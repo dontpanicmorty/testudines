@@ -1,0 +1,30 @@
+[[card]]
+id = "a63ec112"
+q = '''What is an API?'''
+a = '''A set of rules that lets one program ask another program for data or actions, often over the web, with answers in JSON or XML.'''
+
+[[card]]
+id = "f2f304b6"
+q = '''Which function builds a safe query string from a dictionary?'''
+a = '''`urllib.parse.urlencode(params)`; it escapes spaces and symbols for you.'''
+
+[[card]]
+id = "18a4e7fd"
+q = '''What does `urlopen(url).read()` return?'''
+a = '''Bytes. Decode them with `.decode("utf-8")` before parsing as text.'''
+
+[[card]]
+id = "7ed198c8"
+q = '''What is a rate limit and how do you respect it?'''
+a = '''A cap on how many requests you may make in a time window. Fetch only what you need, save results, and pause between requests.'''
+
+[[card]]
+id = "83518c5d"
+q = '''Why keep an API key out of your source file?'''
+a = '''Source files get shared; a leaked key lets others use (and exhaust) your allowance. Read it from an environment variable or a private config file instead.'''
+
+[[card]]
+id = "763aa5e8"
+q = '''In one sentence, what does OAuth do?'''
+a = '''Lets a person approve your program on the service's own site, giving it a short-lived token, and requests are signed so secrets are never sent in plain sight.'''
+

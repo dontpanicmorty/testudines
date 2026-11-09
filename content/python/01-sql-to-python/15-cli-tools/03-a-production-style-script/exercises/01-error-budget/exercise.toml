@@ -1,0 +1,8 @@
+id = "cli-tools.a-production-style-script.error-budget"
+title = "Decide: success or failure?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Handle total == 0 first so you never divide by zero.",
+  "Compute rate = rejected / total and compare with max_error_rate using > (equal is still within budget).",
+]

@@ -1,0 +1,6 @@
+id = "19.1"
+title = "Packing Columns into a Struct"
+difficulty = "hard"
+concept = "struct_pack"
+tables = "customers(customer_id, first_name, last_name, email)"
+hint = "`struct_pack(first_name := first_name, last_name := last_name, email := email)` -- the `:=` names each struct field."

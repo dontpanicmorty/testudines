@@ -1,0 +1,6 @@
+id = "13.3"
+title = "Simulating a Merge on a Unique Key"
+difficulty = "hard"
+concept = "incremental_strategy = 'merge'"
+tables = "existing_target + raw_usage_events, both same shape"
+hint = "UNION ALL the two tables in a CTE, then QUALIFY ROW_NUMBER() OVER (PARTITION BY event_id ORDER BY loaded_at DESC) = 1."

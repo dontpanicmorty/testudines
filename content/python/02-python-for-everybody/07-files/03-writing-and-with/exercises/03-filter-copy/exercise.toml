@@ -1,0 +1,8 @@
+id = "everybody.files.writing-and-with.filter-copy"
+title = "Make a trimmed copy"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "You can have two files open at once: one to read and one to write.",
+  "Strip each line, then decide whether to keep it.",
+]

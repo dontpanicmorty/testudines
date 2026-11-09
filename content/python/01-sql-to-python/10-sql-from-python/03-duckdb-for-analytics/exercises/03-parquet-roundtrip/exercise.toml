@@ -1,0 +1,9 @@
+id = "sql-from-python.duckdb-for-analytics.parquet-roundtrip"
+title = "Parquet round trip"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Create a table with explicit column types, then executemany the rows into it.",
+  "COPY tbl TO 'path' (FORMAT PARQUET) writes the file. read_parquet(?) reads it back with a parameter.",
+  "Return dicts using cur.description for column names, ordered the way the rows were written (add a sequence column or ORDER BY a key).",
+]

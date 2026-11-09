@@ -1,0 +1,2 @@
+-- raw_payloads(id, account_id, payload)
+-- payload example: {"plan":"enterprise","teams":[{"team_id":10,"seats":5}],"features":["sso"]}

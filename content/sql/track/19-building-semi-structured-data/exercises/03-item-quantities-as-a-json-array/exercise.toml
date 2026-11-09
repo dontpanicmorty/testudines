@@ -1,0 +1,6 @@
+id = "19.3"
+title = "Item Quantities as a JSON Array"
+difficulty = "hard"
+concept = "array_agg + to_json (JSON array)"
+tables = "order_items(order_id, product_name, quantity)"
+hint = "`to_json(array_agg(quantity order by product_name))` -- ordering inside `array_agg` keeps the array deterministic."

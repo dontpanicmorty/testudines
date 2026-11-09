@@ -1,0 +1,30 @@
+[[card]]
+id = "cd2e121e"
+q = '''What is an object?'''
+a = '''A bundle of data plus the methods (functions attached to it) that work on that data.'''
+
+[[card]]
+id = "74f19580"
+q = '''What is a method, and how do you call one?'''
+a = '''A function that belongs to an object. Call it with a dot and parentheses, like `"abc".upper()`.'''
+
+[[card]]
+id = "1e31ba1a"
+q = '''What do `type(x)` and `dir(x)` tell you?'''
+a = '''`type` tells you what kind of object `x` is; `dir` lists the names of everything it has, including its methods.'''
+
+[[card]]
+id = "ff928324"
+q = '''Why filter out names starting with an underscore from `dir()`?'''
+a = '''They are Python's internal plumbing; the ones without underscores are the methods you normally call.'''
+
+[[card]]
+id = "bf8770c8"
+q = '''What are the three usual jobs of a program?'''
+a = '''Input (get the data), processing (work out the answer), output (present the result).'''
+
+[[card]]
+id = "2d60a1a5"
+q = '''How do you find candidate objects when designing a program?'''
+a = '''Underline the nouns in the problem description; the verbs become methods.'''
+

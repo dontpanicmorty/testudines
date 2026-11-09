@@ -1,0 +1,1 @@
+`status_lookup` is a small seed-style reference table (like a dbt seed csv) mapping raw `status_code`s to friendly labels. Join `orders` to `status_lookup` to return `order_id`, `amount`, and the human-readable `status_label`. Order by `order_id`.

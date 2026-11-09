@@ -1,0 +1,6 @@
+id = "2.5"
+title = "Capstone: join + case + aggregate"
+difficulty = "easy"
+concept = "LEFT JOIN + conditional aggregation"
+tables = "customers(customer_id, ..., region)\norders(order_id, customer_id, amount, status)"
+hint = "LEFT JOIN customers to orders, GROUP BY region, and use SUM(CASE WHEN status='completed' THEN amount END) wrapped in COALESCE."

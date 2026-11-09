@@ -1,0 +1,6 @@
+id = "extra-193"
+title = "Full constrained junction table"
+difficulty = "hard"
+concept = "CREATE TABLE / all constraints"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Combine NOT NULL, REFERENCES, DEFAULT CURRENT_DATE, and a composite PRIMARY KEY in one statement."

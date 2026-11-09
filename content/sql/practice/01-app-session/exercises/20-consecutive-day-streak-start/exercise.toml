@@ -1,0 +1,6 @@
+id = "extra-20"
+title = "Consecutive-day streak start"
+difficulty = "hard"
+concept = "window function / date arithmetic"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "sessionDate minus (ROW_NUMBER() OVER (PARTITION BY userId ORDER BY sessionDate) days) is constant within a consecutive-day run."

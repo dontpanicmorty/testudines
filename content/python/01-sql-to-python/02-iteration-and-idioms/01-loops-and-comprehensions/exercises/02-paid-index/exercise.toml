@@ -1,0 +1,8 @@
+id = "iteration-and-idioms.loops-and-comprehensions.paid-index"
+title = "Index paid orders"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A dict comprehension with a trailing `if` filters rows.",
+  "For line_numbers, enumerate(lines, start=1) gives the number and the line together; build an f-string for each.",
+]

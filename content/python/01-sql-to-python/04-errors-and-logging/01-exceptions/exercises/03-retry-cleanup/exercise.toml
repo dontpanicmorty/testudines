@@ -1,0 +1,9 @@
+id = "errors-and-logging.exceptions.retry-cleanup"
+title = "Debug: swallowed failures"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "What does the function return when the loader fails every time?",
+  "Which exceptions should be retried? Should a bug like a TypeError be retried?",
+  "After the last attempt, the error must propagate, with the original as its cause.",
+]

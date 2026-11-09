@@ -1,0 +1,6 @@
+id = "extra-91"
+title = "Department salary rank"
+difficulty = "medium"
+concept = "window function"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "RANK() OVER (PARTITION BY department ORDER BY salary DESC)."

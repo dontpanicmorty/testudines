@@ -1,0 +1,1 @@
+SELECT i.name AS item_name, s.name AS seller_name, i.price FROM items i JOIN sellers s ON i.sellerId = s.id WHERE i.price > (SELECT AVG(i2.price) FROM items i2 WHERE i2.sellerId = i.sellerId) ORDER BY s.name;

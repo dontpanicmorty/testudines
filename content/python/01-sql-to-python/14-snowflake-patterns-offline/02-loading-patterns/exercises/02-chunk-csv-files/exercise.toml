@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.loading-patterns.chunk-csv-files"
+title = "Chunk rows into stage-ready CSV files"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Walk the rows once, keeping a count of rows in the current file. Start a new file when the count reaches max_rows.",
+  "Open files with newline='' and csv.DictWriter; write the header at the top of every file. Names: f'{prefix}_{n:04d}.csv' with n starting at 1.",
+  "Don't create an empty file when there are no rows, and don't materialise rows as a list.",
+]

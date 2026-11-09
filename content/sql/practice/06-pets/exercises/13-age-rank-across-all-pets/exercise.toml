@@ -1,0 +1,6 @@
+id = "extra-113"
+title = "Age rank across all pets"
+difficulty = "medium"
+concept = "window function on combined set"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Build the combined set as a subquery first, then RANK() OVER (ORDER BY age DESC) on top of it."

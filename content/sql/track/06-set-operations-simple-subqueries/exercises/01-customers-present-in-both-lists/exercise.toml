@@ -1,0 +1,6 @@
+id = "6.1"
+title = "Customers Present in Both Lists"
+difficulty = "easy"
+concept = "INTERSECT"
+tables = "webinar_attendees(customer_id)\nemail_clickers(customer_id)"
+hint = "`select customer_id from webinar_attendees intersect select customer_id from email_clickers`."

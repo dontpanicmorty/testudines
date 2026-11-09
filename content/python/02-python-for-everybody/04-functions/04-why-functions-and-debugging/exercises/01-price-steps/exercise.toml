@@ -1,0 +1,8 @@
+id = "everybody.functions.why-functions-and-debugging.price-steps"
+title = "Price in two steps"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Work out the discount, take it off, then add the tax.",
+  "Percent means divide by 100.",
+]

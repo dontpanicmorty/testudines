@@ -1,0 +1,8 @@
+id = "everybody.functions.built-in-functions.dice-roll"
+title = "Roll the dice"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The random module can pick a whole number in a range, including both ends.",
+  "Dice have faces numbered from 1.",
+]

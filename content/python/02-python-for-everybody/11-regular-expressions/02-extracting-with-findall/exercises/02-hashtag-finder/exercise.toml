@@ -1,0 +1,8 @@
+id = "everybody.regular-expressions.extracting-with-findall.hashtag-finder"
+title = "Collect the hashtags"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A hashtag is a # followed by one or more word characters.",
+  "Use a character set containing letters, digits and underscore.",
+]

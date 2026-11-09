@@ -1,0 +1,10 @@
+id = "capstones.capstone-shared-library.build-datakit"
+title = "Build the datakit library"
+difficulty = 3
+main = "datakit/__init__.py"
+timeout = 60
+hints = [
+  "Start with errors.py (provided) and __init__.py: decide the public surface first, then fill the modules. The test_public_api tests tell you exactly what must be exported.",
+  "load_config: use dataclasses.fields(cls) and typing.get_type_hints(cls). Collect messages in a list and raise one ConfigError at the end; treat `X | None` fields without a default as optional.",
+  "SqliteConnection: keep a depth counter so nested transaction() blocks join the outer one, and only commit in execute() when depth is 0. Wrap sqlite3.Error in DatabaseError with `raise ... from exc`.",
+]

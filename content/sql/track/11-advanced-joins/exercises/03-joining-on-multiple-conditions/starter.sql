@@ -1,0 +1,2 @@
+-- shipments(shipment_id, warehouse_code, order_id, shipped_at)
+  -- warehouse_rates(warehouse_code, effective_year, rate_per_unit)

@@ -1,0 +1,39 @@
+[[card]]
+id = "7f7c68a8"
+q = "Why is `datetime.now()` inside a function hard to test, and what is the fix?"
+a = "The result depends on real time. Inject it: take `now` as a parameter (defaulting to the real clock) so tests pass a fixed value."
+
+[[card]]
+id = "0ddee0e7"
+q = "What is the difference between a fake and a mock?"
+a = "A fake is a simple working implementation (assert on results). A mock records calls and returns scripted values (assert on interactions)."
+
+[[card]]
+id = "acf92338"
+q = "Module `m` has `from time import sleep`. Which target do you patch to silence its sleeps: `time.sleep` or `m.sleep`?"
+a = "`m.sleep`. Patch the name where it's looked up; `m` holds its own reference."
+
+[[card]]
+id = "42a26220"
+q = "Write a `Mock` that raises `ConnectionError` the first call and returns `{\"ok\": True}` the second."
+a = "```python\nMock(side_effect=[ConnectionError(\"down\"), {\"ok\": True}])\n```"
+
+[[card]]
+id = "57b804a5"
+q = "How do you set an environment variable for one test only?"
+a = "Use the fixture: `monkeypatch.setenv(\"NAME\", \"value\")`; it's undone automatically after the test."
+
+[[card]]
+id = "a55427d3"
+q = "How do you test code that writes a file without touching your real disk paths?"
+a = "Take a path (or directory) argument and pass a path inside the `tmp_path` fixture."
+
+[[card]]
+id = "c1c55341"
+q = "Which `httpx` helper lets a real `httpx.Client` answer from a Python function with no network?"
+a = "`httpx.MockTransport(handler)` passed as `transport=` to the client."
+
+[[card]]
+id = "64cde513"
+q = "Why use `monkeypatch.delenv(\"X\", raising=False)`?"
+a = "Plain `delenv` raises `KeyError` when the variable isn't set; `raising=False` makes it a no-op, so the test is robust."

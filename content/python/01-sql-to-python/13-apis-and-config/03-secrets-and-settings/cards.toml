@@ -1,0 +1,34 @@
+[[card]]
+id = "14091512"
+q = "What does this print?\n```python\nprint(bool(\"false\"))\n```"
+a = "`True`. Non-empty strings are truthy; parse environment booleans explicitly."
+
+[[card]]
+id = "0c5f3184"
+q = "Why should `load_settings` take an `env` mapping argument instead of reading `os.environ` inside?"
+a = "Tests can pass a plain dict, with no monkeypatching or leaking state between tests."
+
+[[card]]
+id = "1f7ffdc5"
+q = "What is the difference between `os.environ[\"X\"]` and `os.environ.get(\"X\")` when X is unset?"
+a = "The first raises `KeyError`; the second returns `None` (or the given default)."
+
+[[card]]
+id = "5c1485f0"
+q = "Write the line that splits `KEY=a=b` into key and value correctly."
+a = "```python\nkey, _, value = line.partition(\"=\")\n```\n`partition` splits only at the first `=`, giving value `a=b`."
+
+[[card]]
+id = "344a68bc"
+q = "You committed a token and then deleted it in the next commit. Is it safe?"
+a = "No. It is still in git history. Treat it as leaked and rotate it."
+
+[[card]]
+id = "e499b7c6"
+q = "What does `print(Settings(api_token=\"abc\"))` show when the field is `SecretStr`, and how do you get the real value?"
+a = "A masked value (`**********`). Use `settings.api_token.get_secret_value()` only where needed."
+
+[[card]]
+id = "f35271c1"
+q = "Why validate all settings at startup rather than when first used?"
+a = "Fail fast: a missing or malformed setting stops the job before it does partial work, and the error can list every problem at once."

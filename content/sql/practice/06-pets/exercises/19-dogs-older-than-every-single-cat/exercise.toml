@@ -1,0 +1,6 @@
+id = "extra-119"
+title = "Dogs older than every single cat"
+difficulty = "hard"
+concept = "ALL comparison"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "age > ALL (subquery) means greater than every value the subquery returns."

@@ -1,0 +1,9 @@
+id = "shared-libraries.designing-a-library.stable-signature"
+title = "Extend a function without breaking callers"
+difficulty = 2
+main = "reportkit/summary.py"
+hints = [
+  "Existing callers use summarize(rows, key) and summarize(rows, key, ',') style positional calls. Do not touch those parameters.",
+  "A bare * in the parameter list makes everything after it keyword-only.",
+  "Slice the ranked list with [:top_n] only when top_n is not None.",
+]

@@ -1,0 +1,2 @@
+-- customers(customer_id, first_name, ...)
+-- orders(order_id, customer_id, ...)

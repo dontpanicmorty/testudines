@@ -1,0 +1,9 @@
+id = "everybody.object-oriented-programming.your-first-class.lending-desk"
+title = "The lending desk"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The desk holds a collection of loans, each remembering who has which title.",
+  "Decide what lend returns when the title is already out.",
+  "Remember to keep results in a predictable order."
+]

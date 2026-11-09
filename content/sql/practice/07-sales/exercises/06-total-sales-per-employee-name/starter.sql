@@ -1,0 +1,1 @@
+-- regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)

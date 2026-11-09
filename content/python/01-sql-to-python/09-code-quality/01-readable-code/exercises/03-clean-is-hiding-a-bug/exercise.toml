@@ -1,0 +1,5 @@
+id = "code-quality.readable-code.clean-is-hiding-a-bug"
+title = "The cleaner that misses rows"
+difficulty = 2
+main = "solution.py"
+hints = ["Trace `clean` by hand on a list where two cancelled orders sit next to each other.", "Removing items from a list while looping over it shifts the remaining items, so the loop skips one.", "Build a new list instead of mutating, and give the function and its parameter honest names."]

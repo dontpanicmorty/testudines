@@ -1,0 +1,8 @@
+id = "everybody.lists.objects-and-aliases.safe-copy"
+title = "Leave the original alone"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Make a new list before changing anything.",
+  "Returning a list is different from changing the one you were given.",
+]

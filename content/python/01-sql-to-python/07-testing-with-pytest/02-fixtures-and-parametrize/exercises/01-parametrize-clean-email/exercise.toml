@@ -1,0 +1,6 @@
+id = "testing-with-pytest.fixtures-and-parametrize.parametrize-clean-email"
+title = "A test table for clean_email"
+difficulty = 1
+main = "my_tests.py"
+hints = ["Build one `parametrize` table with `raw, expected` columns and several rows.", "Each rule in the contract deserves its own row: upper case, surrounding spaces, `None`, blank, no `@`, two `@`, missing local part, missing domain.", "Expected `None` is allowed in the table, since it's just another value."]
+timeout = 120

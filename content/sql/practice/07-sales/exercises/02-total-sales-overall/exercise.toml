@@ -1,0 +1,6 @@
+id = "extra-122"
+title = "Total sales overall"
+difficulty = "easy"
+concept = "SUM"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "SUM(amount) FROM sales."

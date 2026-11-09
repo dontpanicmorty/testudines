@@ -1,0 +1,6 @@
+id = "extra-89"
+title = "Employee and manager name pairs"
+difficulty = "medium"
+concept = "self JOIN"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "A self JOIN: employees e JOIN employees m ON e.managerId = m.id."

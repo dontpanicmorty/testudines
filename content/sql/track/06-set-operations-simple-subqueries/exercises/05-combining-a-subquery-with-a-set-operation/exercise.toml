@@ -1,0 +1,6 @@
+id = "6.5"
+title = "Combining a Subquery with a Set Operation"
+difficulty = "easy"
+concept = "subquery + EXCEPT"
+tables = "customers(customer_id, region)\norders(order_id, customer_id, amount)"
+hint = "Filter `customers` down to `region = 'west'` first, then `except` against all `orders.customer_id`."

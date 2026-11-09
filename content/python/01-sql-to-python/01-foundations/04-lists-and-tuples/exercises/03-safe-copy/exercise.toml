@@ -1,0 +1,9 @@
+id = "foundations.lists-and-tuples.safe-copy"
+title = "Debug: the snapshot that changed"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Print `snapshot` before and after calling `apply_corrections`. Is it still the same?",
+  "`b = a` and `list(a)` behave differently. Which one is `snapshot` using, and how deep does it go?",
+  "The rows are dicts inside a list; a shallow copy still shares the dicts. Copy each row too.",
+]

@@ -1,0 +1,36 @@
+[[card]]
+id = "5c0d2e0a"
+q = "A column is renamed from `cust_id` to `customer_id`. What does a schema diff report?"
+a = "One removed column (`cust_id`) and one added column (`customer_id`). A diff cannot know it is a rename."
+
+[[card]]
+id = "69350ce2"
+q = "Name two changes that are backward compatible and two that are breaking."
+a = "Compatible: adding a column; widening int to float. Breaking: removing a column; changing a type otherwise (e.g. float to int, int to str)."
+
+[[card]]
+id = "48c404cc"
+q = "Which version part does a breaking contract change bump, and what happens to the others?"
+a = "Major +1, minor and patch reset to 0 (`1.4.2` becomes `2.0.0`)."
+
+[[card]]
+id = "cbc07390"
+q = "How do you get `{field: type_name}` from a pydantic model `M`?"
+a = '''```python
+{n: f.annotation.__name__ for n, f in M.model_fields.items()}
+```'''
+
+[[card]]
+id = "56dc02a8"
+q = "Why does `type(True) is int` matter when checking a schema?"
+a = "`True` is a `bool`, a subclass of `int`. Using `isinstance(v, int)` accepts booleans; compare exact type names to keep them apart."
+
+[[card]]
+id = "1028e025"
+q = "Which dbt features correspond to a data contract and to row-level checks?"
+a = "`contract: enforced: true` (column names and types) for the contract; tests like `not_null` and `accepted_values` for row-level checks."
+
+[[card]]
+id = "5cf4ee1b"
+q = "Why infer a schema from all rows rather than the first one?"
+a = "A column can be `None` or a different type in the first row; one row hides nulls and mixed types."

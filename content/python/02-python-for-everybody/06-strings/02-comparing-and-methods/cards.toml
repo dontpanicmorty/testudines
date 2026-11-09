@@ -1,0 +1,30 @@
+[[card]]
+id = "23e973a1"
+q = '''Does `text.upper()` change `text`?'''
+a = '''No. Strings are immutable, so it returns a new string. Store it if you want to keep it.'''
+
+[[card]]
+id = "a76fb89e"
+q = '''What does `find` return when the text is not there?'''
+a = '''`-1`.'''
+
+[[card]]
+id = "5ddd6f32"
+q = '''What does `"  hi  ".strip()` return?'''
+a = '''`"hi"`: spaces at both ends are removed.'''
+
+[[card]]
+id = "3502320c"
+q = '''What does `"a,b,c".split(",")` return?'''
+a = '''The list `["a", "b", "c"]`.'''
+
+[[card]]
+id = "f04647c4"
+q = '''Why is `"Zebra" < "apple"` true?'''
+a = '''Capital letters sort before lower-case ones. Convert both to the same case first for a fair comparison.'''
+
+[[card]]
+id = "84403681"
+q = '''Which method says how many times a piece of text occurs?'''
+a = '''`count`, for example `"banana".count("an")` is 2.'''
+

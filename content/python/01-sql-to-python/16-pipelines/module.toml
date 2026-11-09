@@ -1,0 +1,3 @@
+title = "Building reliable pipelines"
+summary = "Idempotent reruns, incremental loads, retries, task graphs and observability, built from plain Python."
+stage = "Stage 5 · Production"

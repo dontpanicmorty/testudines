@@ -1,0 +1,8 @@
+id = "pipelines.retries-checkpoints-and-failure.classify-errors"
+title = "Is this error worth retrying?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "isinstance accepts a tuple of classes.",
+  "HTTP 429 and any status of 500 or more are transient; other statuses are not.",
+]

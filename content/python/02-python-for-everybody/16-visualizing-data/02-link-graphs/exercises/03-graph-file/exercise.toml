@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.link-graphs.graph-file"
+title = "Score it and export it"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Start every page with an equal share, then repeat the update the given number of times.",
+  "Round scores only at the end, when building the output.",
+  "Sort nodes by id and links by (source, target) so output is predictable."
+]

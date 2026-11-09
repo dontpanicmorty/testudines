@@ -1,0 +1,6 @@
+id = "extra-14"
+title = "Longest session gap per user"
+difficulty = "hard"
+concept = "window function / date arithmetic"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "LAG(sessionDate) OVER (PARTITION BY userId ORDER BY sessionDate), then DATE_DIFF to the current row."

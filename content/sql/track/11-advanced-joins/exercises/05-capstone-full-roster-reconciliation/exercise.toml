@@ -1,0 +1,6 @@
+id = "11.5"
+title = "Capstone: Full Roster Reconciliation"
+difficulty = "medium"
+concept = "self-join + FULL OUTER JOIN"
+tables = "employees(employee_id, employee_name, manager_id)\npayroll_records(employee_id, salary)"
+hint = "First `full outer join` employees to payroll_records and coalesce the id; then a separate `left join` back to `employees` (aliased differently) for the manager name."

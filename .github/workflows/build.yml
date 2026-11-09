@@ -1,0 +1,59 @@
+name: Build
+
+# Tests, validates and builds the app for Apple silicon Macs, Intel Macs and Windows, and self-tests each
+# build on its own kind of machine. Windows and Intel Macs can't be tested on the author's Mac, so these
+# jobs are the check that those builds work. Each build is kept as an artifact.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-latest       # Apple silicon
+            arch: arm64
+          - runner: macos-15-intel     # Intel
+            arch: x86_64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Tests
+        run: |
+          uv sync
+          QT_QPA_PLATFORM=offscreen uv run pytest -q
+      - name: Validate the curriculum
+        run: uv run testudines validate
+      - name: Build Testudines.app (${{ matrix.arch }})
+        run: ./scripts/build_macos.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: testudines-macos-${{ matrix.arch }}
+          path: dist/Testudines-*.dmg
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Tests
+        shell: pwsh
+        run: |
+          uv sync
+          $env:QT_QPA_PLATFORM = "offscreen"
+          uv run pytest -q
+      - name: Validate the curriculum
+        shell: pwsh
+        run: uv run testudines validate
+      - name: Build Testudines for Windows
+        shell: pwsh
+        run: ./scripts/build_windows.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: testudines-windows
+          path: dist/Testudines-*-windows-x64.zip

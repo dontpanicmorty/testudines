@@ -1,0 +1,6 @@
+id = "extra-6"
+title = "Earliest session per user"
+difficulty = "easy"
+concept = "MIN / GROUP BY"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "MIN(sessionDate) grouped by userId."

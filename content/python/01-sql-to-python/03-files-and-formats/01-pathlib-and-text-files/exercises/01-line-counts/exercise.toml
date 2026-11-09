@@ -1,0 +1,8 @@
+id = "files-and-formats.pathlib-and-text-files.line-counts"
+title = "Count non-empty lines"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Open the file with path.open(encoding='utf-8') and loop over it.",
+  "Strip each line; skip it if the result is an empty string.",
+]

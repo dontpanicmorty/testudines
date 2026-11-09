@@ -1,0 +1,1 @@
+Return the name of every user (other than user 1 and user 2 themselves) who is friends with BOTH user 1 and user 2 -- counting a friendship regardless of which column stores which user. Order by name.

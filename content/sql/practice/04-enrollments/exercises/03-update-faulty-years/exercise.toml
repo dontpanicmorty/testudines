@@ -1,0 +1,6 @@
+id = "extra-63"
+title = "Update faulty years"
+difficulty = "easy"
+concept = "UPDATE / WHERE"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "UPDATE ... SET year = 2015 WHERE id BETWEEN 20 AND 100."

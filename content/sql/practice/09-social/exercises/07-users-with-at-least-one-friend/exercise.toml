@@ -1,0 +1,6 @@
+id = "extra-167"
+title = "Users with at least one friend"
+difficulty = "medium"
+concept = "IN / UNION"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "id IN (SELECT user1 FROM friends UNION SELECT user2 FROM friends)."

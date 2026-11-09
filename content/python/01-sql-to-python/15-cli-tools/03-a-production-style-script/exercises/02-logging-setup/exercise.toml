@@ -1,0 +1,9 @@
+id = "cli-tools.a-production-style-script.logging-setup"
+title = "Configure logging once, safely"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Get the logger with logging.getLogger('jobrunner'). Clear its handlers before adding yours so repeated calls do not stack handlers.",
+  "Format string: '%(levelname)s %(name)s: %(message)s'. Level DEBUG when verbose else INFO.",
+  "Set logger.propagate = False so the root logger (and pytest's capture) does not print a duplicate.",
+]

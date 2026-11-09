@@ -1,0 +1,25 @@
+[[card]]
+id = "566ee6d7"
+q = '''What does it mean that lists are mutable?'''
+a = '''Their elements can be changed, added or removed in place, unlike strings.'''
+
+[[card]]
+id = "d36cf024"
+q = '''What is the difference between `append` and `extend`?'''
+a = '''`append` adds one element (even a whole list as a single item). `extend` adds each element of another list separately.'''
+
+[[card]]
+id = "9d3f3623"
+q = '''What does `nums = nums.sort()` do?'''
+a = '''It sets `nums` to `None`, because `sort` changes the list in place and returns nothing.'''
+
+[[card]]
+id = "1693d3c0"
+q = '''How does `pop` differ from `remove`?'''
+a = '''`pop(i)` removes by position and returns the element. `remove(x)` removes the first element equal to `x`.'''
+
+[[card]]
+id = "2361f991"
+q = '''What does `[0] * 3` give?'''
+a = '''`[0, 0, 0]`.'''
+

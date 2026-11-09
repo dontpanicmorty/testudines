@@ -1,0 +1,9 @@
+id = "everybody.conditional-execution.try-and-except.read-age"
+title = "Is this a sensible age?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "A bad conversion and a bad age are two different problems.",
+  "Convert in a try block; check the range after the conversion, outside it.",
+  "Return None for anything that is not a believable age from 0 to 120.",
+]

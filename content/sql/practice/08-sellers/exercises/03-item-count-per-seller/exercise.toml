@@ -1,0 +1,6 @@
+id = "extra-143"
+title = "Item count per seller"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "GROUP BY sellerId, COUNT(*)."

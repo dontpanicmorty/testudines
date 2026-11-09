@@ -1,0 +1,8 @@
+id = "everybody.web-services.apis-and-keys.make-address"
+title = "Compose the address"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "The standard library can escape a dictionary of parameters for you.",
+  "Join the base address and the query with a question mark."
+]

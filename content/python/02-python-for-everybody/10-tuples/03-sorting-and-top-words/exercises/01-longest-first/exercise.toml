@@ -1,0 +1,9 @@
+id = "everybody.tuples.sorting-and-top-words.longest-first"
+title = "Longest words first"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Build tuples with the length first.",
+  "Sort the tuples; reverse order puts the longest first but also reverses ties.",
+  "Decide how to handle ties before you sort: keep them alphabetical.",
+]

@@ -1,0 +1,9 @@
+id = "errors-and-logging.logging.pipeline-run"
+title = "Instrument a pipeline step"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Use a try/except around each row's transform; catch ValueError only.",
+  "Per-row failures are WARNING with the row number; the summary line is INFO.",
+  "log.exception is for unexpected errors; here, if the failure rate is too high, log at ERROR and raise.",
+]

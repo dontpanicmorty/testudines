@@ -1,0 +1,6 @@
+id = "extra-36"
+title = "Median GPA per grade"
+difficulty = "hard"
+concept = "MEDIAN / GROUP BY"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "MEDIAN(gpa) grouped by grade."

@@ -1,0 +1,6 @@
+id = "extra-137"
+title = "Percent of company sales per region"
+difficulty = "hard"
+concept = "window SUM OVER ()"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Aggregate region totals with LEFT JOINs (to keep zero-sale regions), then divide by SUM(...) OVER ()."

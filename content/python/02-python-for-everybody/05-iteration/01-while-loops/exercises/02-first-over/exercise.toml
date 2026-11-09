@@ -1,0 +1,8 @@
+id = "everybody.iteration.while-loops.first-over"
+title = "Savings goal"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Use a loop that keeps going while the balance is below the goal.",
+  "Add the monthly deposit, then add interest as balance * percent / 100.",
+]

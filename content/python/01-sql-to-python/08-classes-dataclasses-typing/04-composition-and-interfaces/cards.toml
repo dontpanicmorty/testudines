@@ -1,0 +1,34 @@
+[[card]]
+id = "65266489"
+q = "Composition or inheritance: a `Pipeline` that uses a source and a sink. Which relationship is that and how is it written?"
+a = "Composition (\"has-a\"): the pipeline stores the source and sink as attributes (`self.sink = sink`) and calls their methods."
+
+[[card]]
+id = "f0e6030d"
+q = "What error do you get instantiating an ABC subclass that didn't implement an abstract method?"
+a = "`TypeError: Can't instantiate abstract class X without an implementation for abstract method 'write'`."
+
+[[card]]
+id = "34adf668"
+q = "A subclass defines `__init__` but never calls `super().__init__()`. What typically breaks?"
+a = "Attributes set in the parent's `__init__` don't exist, so parent methods later fail with `AttributeError`."
+
+[[card]]
+id = "3591ef09"
+q = "What is the strategy pattern in one sentence, and the lightest Python way to write it?"
+a = "Pass the swappable behaviour in as a parameter; in Python that is usually just a function (`dedupe(rows, key, strategy)`)."
+
+[[card]]
+id = "3184bcda"
+q = "When would you choose a `Protocol` over an ABC?"
+a = "When you want a light, shape-based contract with no inheritance, especially for classes you don't control. Use an ABC to enforce a base class or share helper code."
+
+[[card]]
+id = "1241316b"
+q = "Why shouldn't `Pipeline.__init__` do `self.sink = SnowflakeSink()`?"
+a = "It hard-codes a real warehouse, so you can't test it or swap sinks. Accept the sink as a parameter instead."
+
+[[card]]
+id = "0ce5daef"
+q = "Write the decorator that makes a method mandatory for subclasses of an ABC."
+a = "```python\n@abstractmethod\ndef write(self, rows): ...\n```"

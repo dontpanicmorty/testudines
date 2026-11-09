@@ -1,0 +1,6 @@
+id = "5.2"
+title = "Rounding Timestamps with DATE_TRUNC"
+difficulty = "easy"
+concept = "DATE_TRUNC"
+tables = "events(event_id, occurred_at)"
+hint = "`date_trunc('month', occurred_at)` zeroes out the day/time down to the 1st of the month."

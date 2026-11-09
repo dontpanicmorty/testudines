@@ -1,0 +1,6 @@
+id = "extra-108"
+title = "Names used for both a dog and a cat"
+difficulty = "medium"
+concept = "INTERSECT"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "INTERSECT returns rows present in both result sets."

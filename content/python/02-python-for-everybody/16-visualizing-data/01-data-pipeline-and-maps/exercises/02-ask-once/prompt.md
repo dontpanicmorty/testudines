@@ -1,0 +1,1 @@
+The table `place(name TEXT PRIMARY KEY, lat REAL, lon REAL)` stores answers you already know. Write `locate(conn, name, geocoder)`. If the name is in the table, return its `(lat, lon)` tuple without calling `geocoder`. Otherwise call `geocoder(name)` (which returns a `(lat, lon)` tuple), store the result in the table, save it, and return it.

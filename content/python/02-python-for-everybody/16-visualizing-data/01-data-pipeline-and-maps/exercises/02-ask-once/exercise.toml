@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.data-pipeline-and-maps.ask-once"
+title = "Never ask twice"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Look in the table first.",
+  "Only call the lookup function when the table has no answer.",
+  "Store the answer so the next call finds it."
+]

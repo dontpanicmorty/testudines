@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.auth-and-environments.build-connection-params"
+title = "Assemble connection parameters"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Start from environment_params(env, allow_prod=allow_prod) (already provided), then add account/user and the auth keys.",
+  "Prefer the key pair when SF_PRIVATE_KEY_PATH is present, otherwise SF_PASSWORD, otherwise ValueError naming both variables.",
+  "session_parameters is a nested dict {'QUERY_TAG': json_string}. Use json.dumps(..., sort_keys=True, separators=(',', ':')).",
+]

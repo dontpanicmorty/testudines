@@ -1,0 +1,6 @@
+id = "extra-161"
+title = "Female users"
+difficulty = "easy"
+concept = "WHERE"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "WHERE sex = 'f'."

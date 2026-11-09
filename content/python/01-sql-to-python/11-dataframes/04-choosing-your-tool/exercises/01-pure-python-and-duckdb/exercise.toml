@@ -1,0 +1,9 @@
+id = "dataframes.choosing-your-tool.pure-python-and-duckdb"
+title = "Same task: Python and DuckDB"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Both functions take lists of dicts for orders and items and return [(customer_id, revenue)] with revenue rounded to 2.",
+  "In plain Python: a dict of order_id to customer_id for non-cancelled orders, then accumulate in a defaultdict(float).",
+  "In DuckDB: create two tables, executemany the rows, then one SELECT with JOIN, WHERE, GROUP BY, ORDER BY revenue DESC, customer_id LIMIT ?.",
+]

@@ -1,0 +1,1 @@
+Write `outside_links(url)` that downloads the HTML page at `url` and returns a sorted list, with no duplicates, of the link addresses (the values of `href="..."`) that begin with `http://` or `https://`. Relative links such as `/news.html` are ignored. The tests serve the page from a server on your own computer.

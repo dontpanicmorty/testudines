@@ -1,0 +1,6 @@
+id = "9.2"
+title = "Simulating a unique test"
+difficulty = "medium"
+concept = "What dbt's unique generic test runs under the hood"
+tables = "accounts(account_id, account_name, owner_id, region, created_at)"
+hint = "GROUP BY account_id HAVING COUNT(*) > 1"

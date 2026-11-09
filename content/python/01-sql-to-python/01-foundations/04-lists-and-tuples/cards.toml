@@ -1,0 +1,34 @@
+[[card]]
+id = "b0515f84"
+q = "What does this print?\n```python\nxs = [10, 20, 30, 40, 50]\nprint(xs[1:3], xs[-2:])\n```"
+a = "`[20, 30] [40, 50]`: stop is excluded; `-2:` is the last two."
+
+[[card]]
+id = "7f8c49da"
+q = "What are `a` and `b`?\n```python\na = [1]; a.append([2, 3])\nb = [1]; b.extend([2, 3])\n```"
+a = "`a == [1, [2, 3]]`, `b == [1, 2, 3]`."
+
+[[card]]
+id = "2ce44245"
+q = "Why is `xs = xs.sort()` a bug?"
+a = "`sort()` sorts in place and returns `None`, so `xs` becomes `None`. Use `xs.sort()` or `xs = sorted(xs)`."
+
+[[card]]
+id = "42fb02c4"
+q = "Write the Python for `ORDER BY amount DESC` on `orders = [(\"o1\", 50), (\"o2\", 90)]`."
+a = "```python\nsorted(orders, key=lambda o: o[1], reverse=True)\n```"
+
+[[card]]
+id = "e5cb5867"
+q = "After `b = a; b.append(4)` with `a = [1, 2, 3]`, what is `a` and why?"
+a = "`[1, 2, 3, 4]`. `b = a` makes a second name for the same list, not a copy. Use `a.copy()`."
+
+[[card]]
+id = "9db5d888"
+q = "What do `first` and `rest` hold after `first, *rest = [1, 2, 3, 4]`?"
+a = "`first == 1`, `rest == [2, 3, 4]`."
+
+[[card]]
+id = "a3725520"
+q = "How do you write a tuple with exactly one element?"
+a = "With a trailing comma: `(5,)`. `(5)` is just the number 5."

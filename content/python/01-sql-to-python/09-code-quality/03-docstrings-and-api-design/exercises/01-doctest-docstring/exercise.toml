@@ -1,0 +1,5 @@
+id = "code-quality.docstrings-and-api-design.doctest-docstring"
+title = "Document parse_duration with checked examples"
+difficulty = 1
+main = "solution.py"
+hints = ["Parse digits and unit letters in pairs; `re.fullmatch(r\"(\\d+[dhms])+\", text)` validates the whole string.", "Sum `int(number) * seconds_per_unit` over `re.findall(r\"(\\d+)([dhms])\", text)`.", "In the docstring add `Args:`, `Returns:`, `Raises:` sections and an `Examples:` block with at least three `>>>` lines whose outputs are correct."]

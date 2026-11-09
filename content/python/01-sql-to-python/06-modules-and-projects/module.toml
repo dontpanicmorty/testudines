@@ -1,0 +1,3 @@
+title = "Modules, packages and environments"
+summary = "How Python finds and loads code, how environments isolate it, and how to lay out a real project."
+stage = "Stage 3 · Engineering habits"

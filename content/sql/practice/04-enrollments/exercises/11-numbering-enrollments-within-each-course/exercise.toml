@@ -1,0 +1,6 @@
+id = "extra-71"
+title = "Numbering Enrollments Within Each Course"
+difficulty = "medium"
+concept = "window function"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "ROW_NUMBER() OVER (PARTITION BY courseId ORDER BY id)."

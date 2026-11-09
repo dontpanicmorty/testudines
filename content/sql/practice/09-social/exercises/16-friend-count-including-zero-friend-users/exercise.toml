@@ -1,0 +1,6 @@
+id = "extra-176"
+title = "Friend count including zero-friend users"
+difficulty = "hard"
+concept = "LEFT JOIN / OR fix"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "A symmetric friends CTE (UNION ALL both directions) LEFT JOINed from users, so zero-friend users still appear."

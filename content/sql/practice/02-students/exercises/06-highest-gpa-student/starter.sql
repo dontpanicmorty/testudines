@@ -1,0 +1,1 @@
+-- students(id, firstName, lastName, grade, gpa)

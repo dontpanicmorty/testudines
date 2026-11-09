@@ -1,0 +1,1 @@
+-- sessions(id, userId, deviceType, duration, sessionDate)

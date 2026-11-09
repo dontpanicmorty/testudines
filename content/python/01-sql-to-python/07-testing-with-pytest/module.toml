@@ -1,0 +1,3 @@
+title = "Testing with pytest"
+summary = "Write fast, deterministic tests for pure functions, files, time, network and data transformations."
+stage = "Stage 3 · Engineering habits"

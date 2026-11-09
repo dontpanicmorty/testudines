@@ -1,0 +1,9 @@
+id = "everybody.dictionaries.counting-words-in-files.plain-word-count"
+title = "Words in a file"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Open with path.open(encoding='utf-8') and loop over lines.",
+  "line.split() gives the words of a line.",
+  "Count with counts.get(word, 0) + 1.",
+]

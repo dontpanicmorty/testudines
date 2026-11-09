@@ -1,0 +1,8 @@
+id = "everybody.web-services.looping-through-xml.open-stock"
+title = "Count what is available"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Check an attribute before adding.",
+  "Text must become a number before adding."
+]

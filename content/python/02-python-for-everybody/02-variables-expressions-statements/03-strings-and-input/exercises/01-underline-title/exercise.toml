@@ -1,0 +1,9 @@
+id = "everybody.variables-expressions-statements.strings-and-input.underline-title"
+title = "Draw a rule under it"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "A string multiplied by a whole number repeats.",
+  "You can use len() to find how many characters the text has.",
+  "Join the text, a newline written as \"\\n\", and the dashes.",
+]

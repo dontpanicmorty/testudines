@@ -1,0 +1,6 @@
+id = "20.5"
+title = "Capstone: Daily Channel Totals With a Trailing Window"
+difficulty = "hard"
+concept = "conditional aggregation pivot + ROWS BETWEEN capstone"
+tables = "daily_sales(sale_date, channel, amount)"
+hint = "Build `daily_totals` as a CTE with the two conditional sums grouped by `sale_date`, then apply `sum(online_total) over (order by sale_date rows between 2 preceding and current row)` in the outer select."

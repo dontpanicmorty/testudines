@@ -1,0 +1,6 @@
+id = "14.4"
+title = "Filtering on array containment"
+difficulty = "hard"
+concept = "list_contains()"
+tables = "raw_payloads(id, account_id, payload)"
+hint = "WHERE list_contains(CAST(payload::JSON->'features' AS VARCHAR[]), 'sso')"

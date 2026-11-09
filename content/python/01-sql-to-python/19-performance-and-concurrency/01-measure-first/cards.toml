@@ -1,0 +1,29 @@
+[[card]]
+id = "77f6fbc9"
+q = "Which clock do you use to measure how long code takes, and why not `time.time()`?"
+a = "`time.perf_counter()`. It is monotonic and high resolution; `time.time()` can jump when the system clock changes."
+
+[[card]]
+id = "e13de735"
+q = "`timeit.repeat(stmt, number=1000, repeat=5)` returns a list. How do you get the best per-call time?"
+a = "`min(runs) / 1000`. Noise only adds time, so the minimum is the least-disturbed run."
+
+[[card]]
+id = "9ffbec10"
+q = "Why is `if cid in customer_ids:` inside a loop slow when `customer_ids` is a list, and what is the fix?"
+a = "A list membership test scans the list (O(n)), making the loop quadratic. Convert once: `customer_ids = set(customer_ids)`."
+
+[[card]]
+id = "cc33a9fb"
+q = "Rewrite as a linear-time join:\n```python\nfor o in orders:\n    for c in customers:\n        if c[\"id\"] == o[\"cid\"]: ...\n```"
+a = "```python\nby_id = {c[\"id\"]: c for c in customers}\nfor o in orders:\n    c = by_id.get(o[\"cid\"])\n```"
+
+[[card]]
+id = "07f9c0a0"
+q = "In a cProfile table, what is the difference between `tottime` and `cumtime`?"
+a = "`tottime` excludes sub-calls (time in the function's own code); `cumtime` includes everything it called."
+
+[[card]]
+id = "7373b6e6"
+q = "You double both tables of a nested-loop join. Roughly how much slower does it get?"
+a = "About 4x (n x n). A dict-index join gets about 2x."

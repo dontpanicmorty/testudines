@@ -1,0 +1,6 @@
+id = "12.3"
+title = "Joining a Static Lookup (Seed) Table"
+difficulty = "medium"
+concept = "static lookup table join"
+tables = "orders(order_id, status_code, amount)\nstatus_lookup(status_code, status_label)"
+hint = "A plain `inner join` on `status_code` -- treat `status_lookup` exactly like a dbt seed you'd `ref()`."

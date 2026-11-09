@@ -1,0 +1,6 @@
+id = "extra-120"
+title = "Breed count difference between dogs and cats"
+difficulty = "hard"
+concept = "FULL OUTER JOIN"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "FULL OUTER JOIN two per-table breed-count CTEs, COALESCE-ing missing sides to 0."

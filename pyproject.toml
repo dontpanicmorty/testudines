@@ -1,0 +1,43 @@
+[project]
+name = "testudines"
+version = "0.1.0"
+description = "Offline SQL and Python practice for data practitioners"
+requires-python = ">=3.12"
+dependencies = [
+  "pyside6-essentials>=6.7",  # the native desktop UI
+  "pytest>=8",                # grades Python exercises
+  "psutil>=5.9",              # watches learner code: memory cap, stopping a whole process tree
+  # duckdb (below) also grades SQL exercises
+  # learner toolbox: installed once so every lesson works offline afterwards
+  "duckdb>=1.1",
+  "polars>=1.0",
+  "pandas>=3.0,<4",
+  "pyarrow>=16",
+  "pydantic>=2.7",
+  "httpx>=0.27",
+  "beautifulsoup4>=4.12",      # HTML parsing (Python for Everybody path)
+  "fastapi>=0.111",
+  "uvicorn>=0.30",
+  "typer>=0.12",
+  "pyyaml>=6",
+  "tenacity>=8.3",
+  "ruff>=0.5",
+  "mypy>=1.10",
+  "types-PyYAML",
+]
+
+[project.optional-dependencies]
+snowflake = ["snowflake-connector-python>=3.10"]
+
+[project.scripts]
+testudines = "testudines.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/testudines"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

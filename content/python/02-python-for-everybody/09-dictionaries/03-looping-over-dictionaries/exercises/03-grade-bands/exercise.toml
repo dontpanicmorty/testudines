@@ -1,0 +1,9 @@
+id = "everybody.dictionaries.looping-over-dictionaries.grade-bands"
+title = "Sort into bands"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The result's keys are the letters; each value is a list of names.",
+  "Decide the letter with if / elif, then add the name to that letter's list.",
+  "Sort every list at the end; letters with nobody should not appear.",
+]

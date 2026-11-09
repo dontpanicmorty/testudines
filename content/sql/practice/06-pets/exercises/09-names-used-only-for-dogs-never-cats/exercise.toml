@@ -1,0 +1,6 @@
+id = "extra-109"
+title = "Names used only for dogs, never cats"
+difficulty = "medium"
+concept = "EXCEPT"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "EXCEPT returns rows in the first SELECT not present in the second."

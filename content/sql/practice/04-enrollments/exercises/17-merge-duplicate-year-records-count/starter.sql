@@ -1,0 +1,1 @@
+-- enrollments(id, year, studentId, courseId, grade_letter)

@@ -1,0 +1,6 @@
+id = "extra-191"
+title = "Prevent an unknown user id"
+difficulty = "medium"
+concept = "FOREIGN KEY / expected failure"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Just the CREATE TABLE with both REFERENCES clauses -- the constraint itself does the enforcing."

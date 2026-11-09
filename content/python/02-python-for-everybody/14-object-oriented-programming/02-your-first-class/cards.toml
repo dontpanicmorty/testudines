@@ -1,0 +1,30 @@
+[[card]]
+id = "cef6f725"
+q = '''What is the difference between a class and an instance?'''
+a = '''A class is the blueprint; an instance is one object built from it, with its own data.'''
+
+[[card]]
+id = "71152770"
+q = '''What does `__init__` do, and when does it run?'''
+a = '''It is the constructor: it runs automatically when a new instance is created and sets up its starting attributes.'''
+
+[[card]]
+id = "a86f4cb9"
+q = '''What is `self`?'''
+a = '''The particular object a method is working on. It is the first parameter of every method, and Python passes it for you.'''
+
+[[card]]
+id = "cd205ab2"
+q = '''What is an attribute?'''
+a = '''A piece of data stored on an object, like `self.title`.'''
+
+[[card]]
+id = "825c79ed"
+q = '''How do you control what `print(obj)` shows?'''
+a = '''Define a `__str__` method that returns the string to show.'''
+
+[[card]]
+id = "0bc24b03"
+q = '''What does `isinstance(obj, Book)` check?'''
+a = '''Whether `obj` is an instance of the `Book` class (or of a class derived from it).'''
+

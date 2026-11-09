@@ -1,0 +1,9 @@
+id = "pipelines.incremental-loads.state-file"
+title = "Watermark state file"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Path(path).exists() tells you whether this is a first run.",
+  "Write json to a sibling temp file, then os.replace it over the real path.",
+  "Merge with defaults: {'watermark': None, **loaded} so older state files still work.",
+]

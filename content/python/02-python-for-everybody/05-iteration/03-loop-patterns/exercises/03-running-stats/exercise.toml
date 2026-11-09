@@ -1,0 +1,8 @@
+id = "everybody.iteration.loop-patterns.running-stats"
+title = "Three numbers at once"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "One loop can update several variables.",
+  "Start the largest and smallest as None, and return an empty-data result before dividing.",
+]

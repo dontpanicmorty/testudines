@@ -1,0 +1,8 @@
+id = "everybody.strings.comparing-and-methods.word-stats"
+title = "Words, longest and shortest"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Break the sentence into a list of pieces first.",
+  "Ties go to the word that appears first, so only replace on a strictly longer word.",
+]

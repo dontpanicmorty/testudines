@@ -1,0 +1,6 @@
+id = "extra-163"
+title = "Users per join year"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "GROUP BY joinYear."

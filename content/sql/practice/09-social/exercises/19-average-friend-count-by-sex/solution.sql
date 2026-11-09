@@ -1,0 +1,1 @@
+WITH f_all AS (SELECT user1 AS a, user2 AS b FROM friends UNION ALL SELECT user2, user1 FROM friends), counts AS (SELECT u.id, u.sex, COUNT(f.b) AS friend_count FROM users u LEFT JOIN f_all f ON u.id = f.a GROUP BY u.id, u.sex) SELECT sex, ROUND(AVG(friend_count), 2) AS avg_friend_count FROM counts GROUP BY sex ORDER BY sex;

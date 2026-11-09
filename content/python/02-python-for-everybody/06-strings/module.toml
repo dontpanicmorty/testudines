@@ -1,0 +1,3 @@
+title = "Strings"
+summary = "Treat text as a sequence you can index, slice, search and reshape with methods and f-strings."
+stage = "Part 2 · Loops, strings and files"

@@ -1,0 +1,8 @@
+id = "performance-and-concurrency.measure-first.best-of-timer"
+title = "Best-of timer"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "For each of `repeat` runs: read timer(), call fn `number` times, read timer() again, and store the difference.",
+  "Return min(runs) / number.",
+]

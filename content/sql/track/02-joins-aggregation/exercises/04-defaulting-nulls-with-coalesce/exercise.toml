@@ -1,0 +1,6 @@
+id = "2.4"
+title = "Defaulting nulls with COALESCE"
+difficulty = "easy"
+concept = "COALESCE / IFNULL fallback"
+tables = "customers(customer_id, first_name, ..., referral_source)"
+hint = "COALESCE(referral_source, 'organic') AS referral_source_final"

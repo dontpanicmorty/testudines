@@ -1,0 +1,6 @@
+id = "16.2"
+title = "Reconciling schema drift before a UNION"
+difficulty = "hard"
+concept = "Macro-style force-casting mismatched columns before combining sources"
+tables = "source_a(id, name, amount, created_at)\nsource_b(id, name, amount_usd VARCHAR, created_ts)"
+hint = "Cast amount_usd::DECIMAL(10,2) AS amount and created_ts::VARCHAR AS created_at in the source_b branch, then UNION ALL with matching column names."

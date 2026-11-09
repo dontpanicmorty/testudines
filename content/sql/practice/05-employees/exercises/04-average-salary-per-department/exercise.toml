@@ -1,0 +1,6 @@
+id = "extra-84"
+title = "Average salary per department"
+difficulty = "easy"
+concept = "AVG / GROUP BY"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "AVG(salary) grouped by department, rounded."

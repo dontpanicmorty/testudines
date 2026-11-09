@@ -1,0 +1,6 @@
+id = "extra-69"
+title = "Students enrolled in multiple courses"
+difficulty = "medium"
+concept = "HAVING / COUNT DISTINCT"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "GROUP BY studentId HAVING COUNT(DISTINCT courseId) > 1."

@@ -1,0 +1,1 @@
+For every item, also show that item's seller's single most expensive item price alongside it -- each of a seller's item rows should repeat that seller's max price rather than collapsing to one row per seller. Return seller name, item name, price, and the seller's max item price as seller_max_price, ordered by seller name then price descending.

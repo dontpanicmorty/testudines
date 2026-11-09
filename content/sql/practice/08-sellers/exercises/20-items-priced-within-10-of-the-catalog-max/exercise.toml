@@ -1,0 +1,6 @@
+id = "extra-160"
+title = "Items priced within 10% of the catalog max"
+difficulty = "hard"
+concept = "subquery"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "Compare price to 0.9 * a scalar subquery computing MAX(price) FROM items."

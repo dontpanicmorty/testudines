@@ -1,0 +1,9 @@
+id = "everybody.functions.built-in-functions.ladder-length"
+title = "How long must the ladder be?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A wall, the ground and the ladder form a right-angled triangle.",
+  "The math module has a square root function.",
+  "Pythagoras: ladder squared = wall squared + distance squared.",
+]

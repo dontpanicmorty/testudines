@@ -1,0 +1,6 @@
+id = "16.3"
+title = "Introspecting column metadata"
+difficulty = "hard"
+concept = "What adapter.get_columns_in_relation() effectively surfaces"
+tables = "columns_metadata(column_name, data_type)"
+hint = "GROUP BY data_type, COUNT(*) AS column_count"

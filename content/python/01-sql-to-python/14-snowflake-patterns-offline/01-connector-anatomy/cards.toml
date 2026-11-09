@@ -1,0 +1,34 @@
+[[card]]
+id = "60ddb958"
+q = "Write the nested `with` statements that open a connection, a cursor, run `SELECT 1` and print the single row."
+a = "```python\nwith connect(**params) as conn:\n    with conn.cursor() as cur:\n        cur.execute(\"SELECT 1\")\n        print(cur.fetchone())\n```"
+
+[[card]]
+id = "22abceb1"
+q = "What does `cur.fetchone()` return when the result set is empty, and what bug does `cur.fetchone()[0]` cause?"
+a = "`None`. Then `[0]` raises `TypeError: 'NoneType' object is not subscriptable`."
+
+[[card]]
+id = "d4a40cae"
+q = "Why is `cur.execute(f\"... WHERE name = '{name}'\")` bad, and what replaces it?"
+a = "Injection and quoting bugs. Bind: `cur.execute(\"... WHERE name = %(name)s\", {\"name\": name})`."
+
+[[card]]
+id = "b5d05f3f"
+q = "Can you bind a table name as a parameter? What do you do instead?"
+a = "No, only values bind. Validate identifiers against an allow-list or strict pattern before formatting them in."
+
+[[card]]
+id = "b4859f9d"
+q = "Why is it a bug to build `d = {}` once outside a loop and `out.append(d)` per row?"
+a = "Every list item is the same dict object, so all rows equal the last row. Create a new dict per row."
+
+[[card]]
+id = "a8f5ccbf"
+q = "Which attribute of a cursor tells you the column names, and what is it for a statement with no result set?"
+a = "`cur.description` (each entry's first item is the name); it is `None` when there is no result set."
+
+[[card]]
+id = "074a29b2"
+q = "Why connect once per job rather than per query?"
+a = "Opening a session (auth, role/warehouse setup) is slow relative to a query; cursors are the cheap per-statement object."

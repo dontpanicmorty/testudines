@@ -1,0 +1,9 @@
+id = "everybody.variables-expressions-statements.names-comments-debugging.price-with-tax"
+title = "Fix the till total"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Work one example by hand: 80 plus 20 percent should be 96.",
+  "Print what the tax comes to, then add it to the price.",
+  "Percent means divided by 100.",
+]

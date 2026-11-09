@@ -1,0 +1,6 @@
+id = "extra-111"
+title = "Older than the oldest cat"
+difficulty = "medium"
+concept = "subquery across tables"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Compare dogs.age to a scalar subquery MAX(age) FROM cats."

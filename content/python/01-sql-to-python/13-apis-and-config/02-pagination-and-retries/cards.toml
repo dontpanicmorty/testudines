@@ -1,0 +1,34 @@
+[[card]]
+id = "45af0278"
+q = "Why write pagination as a generator that `yield`s records instead of returning one big list?"
+a = "It is lazy: callers who need only a few records trigger only the pages they need, and memory stays flat."
+
+[[card]]
+id = "1ab17c56"
+q = "Which of 401, 429, 503, 422 should be retried, and why not the others?"
+a = "429 and 503. 401 and 422 mean the request itself is wrong; retrying repeats the same failure."
+
+[[card]]
+id = "37022ecf"
+q = "Write the backoff ceiling for attempt `i` with `base=0.5`, `cap=8`."
+a = "```python\nmin(8, 0.5 * 2 ** i)\n```\nFull jitter then picks `random.uniform(0, ceiling)`."
+
+[[card]]
+id = "ce16e086"
+q = "What problem does jitter solve?"
+a = "Many clients that failed together would otherwise retry at the same instants (a thundering herd); randomness spreads them out."
+
+[[card]]
+id = "67a63aa6"
+q = "How do you make retry code fast and deterministic in tests?"
+a = "Inject `sleep` (pass `slept.append`) and a seeded `random.Random`, and drive failures with a scripted fake server."
+
+[[card]]
+id = "c4b9b0a6"
+q = "What does `@retry(stop=stop_after_attempt(3))` raise after three failures, and what option shows the real error instead?"
+a = "`tenacity.RetryError`. Add `reraise=True` to raise the underlying exception."
+
+[[card]]
+id = "00cfb782"
+q = "A `POST` timed out. Why is blindly retrying dangerous, and what is the standard fix?"
+a = "The first attempt may have succeeded, so you could apply it twice. Send a stable idempotency key with every attempt so the server dedupes."

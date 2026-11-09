@@ -1,0 +1,6 @@
+id = "extra-83"
+title = "Highest paid employee"
+difficulty = "easy"
+concept = "ORDER BY / LIMIT"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "ORDER BY salary DESC LIMIT 1."

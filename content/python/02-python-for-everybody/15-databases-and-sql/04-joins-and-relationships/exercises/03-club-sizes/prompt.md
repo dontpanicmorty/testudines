@@ -1,0 +1,1 @@
+Tables: `club(id, name)`, `membership(member_id, club_id)` (a member may appear with many clubs). Write `club_sizes(conn)` returning a list of `(club_name, member_count)` tuples, biggest club first, ties broken alphabetically by club name. Clubs with no members must be included with a count of 0.

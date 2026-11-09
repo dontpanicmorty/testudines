@@ -1,0 +1,6 @@
+id = "extra-136"
+title = "Top employee per region"
+difficulty = "hard"
+concept = "QUALIFY"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Aggregate total sales per region+employee in a CTE, then QUALIFY ROW_NUMBER() = 1 per region."

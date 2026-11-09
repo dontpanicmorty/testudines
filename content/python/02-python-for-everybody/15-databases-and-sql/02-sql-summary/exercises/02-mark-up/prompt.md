@@ -1,0 +1,1 @@
+Table `book(title TEXT, year INTEGER, price REAL)` is in `conn`. Write `discount_old(conn, before_year, percent)`. It reduces the price of every book published **before** `before_year` by `percent` percent (price becomes `price * (100 - percent) / 100`), saves the change, and returns the number of books changed.

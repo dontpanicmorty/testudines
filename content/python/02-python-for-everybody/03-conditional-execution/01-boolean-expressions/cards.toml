@@ -1,0 +1,29 @@
+[[card]]
+id = "ed76868f"
+q = '''What is the difference between `=` and `==`?'''
+a = '''`=` stores a value in a variable. `==` compares two values and gives `True` or `False`.'''
+
+[[card]]
+id = "9e7d31a6"
+q = '''What are the two values of the `bool` type?'''
+a = '''`True` and `False` (capital first letters).'''
+
+[[card]]
+id = "b16ed06e"
+q = '''When is `a and b` true? When is `a or b` true?'''
+a = '''`and`: only when both are true. `or`: when at least one is true.'''
+
+[[card]]
+id = "dc66ed18"
+q = '''What does `1 <= x <= 10` mean?'''
+a = '''x is between 1 and 10, including both ends. It is the same as `1 <= x and x <= 10`.'''
+
+[[card]]
+id = "87a69733"
+q = '''Why is `x == 1 or 2` a mistake?'''
+a = '''The `2` on its own counts as true, so the whole thing is always true. Write `x == 1 or x == 2`.'''
+
+[[card]]
+id = "3c5e9393"
+q = '''Is `"5" == 5` true?'''
+a = '''No. One is text and one is a number, so they are never equal.'''

@@ -1,0 +1,36 @@
+[[card]]
+id = "32e5b3f1"
+q = "Why is `INSERT INTO t SELECT ...` a bad final step for a retried pipeline job, and what are two idempotent alternatives?"
+a = "Each retry appends duplicates. Use `CREATE OR REPLACE TABLE ... AS SELECT` or an upsert (`ON CONFLICT DO UPDATE`)."
+
+[[card]]
+id = "b91e263d"
+q = "In `ON CONFLICT (id) DO UPDATE SET email = excluded.email`, what is `excluded`?"
+a = "The row that was proposed for insert and conflicted. It lets the update use the incoming values."
+
+[[card]]
+id = "b387762a"
+q = "How do you stop a late-arriving old record from overwriting a newer one in an upsert?"
+a = "Add `WHERE excluded.updated_at > table.updated_at` to the `DO UPDATE` clause."
+
+[[card]]
+id = "a3cbcf48"
+q = "Write the regex that matches `{{ ref('name') }}` with optional spaces and captures `name`."
+a = '''```python
+re.compile(r"\{\{\s*ref\(\s*'([^']+)'\s*\)\s*\}\}")
+```'''
+
+[[card]]
+id = "b63f10df"
+q = "What does `re.sub(pattern, func, text)` do with `func`?"
+a = "Calls `func(match)` for every match and replaces the match with the string it returns."
+
+[[card]]
+id = "352c3d1c"
+q = "Which stdlib class orders models so parents build before children, and what does it raise on a cycle?"
+a = "`graphlib.TopologicalSorter` (`static_order()`); it raises `graphlib.CycleError`."
+
+[[card]]
+id = "08fc8f41"
+q = "Templates substitute names; what substitutes values, and why keep them separate?"
+a = "Query parameters (`?` / `:name`). Names are structure you control; values may come from outside and must never be text-substituted."

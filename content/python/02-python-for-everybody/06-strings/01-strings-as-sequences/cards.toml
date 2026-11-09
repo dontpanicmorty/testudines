@@ -1,0 +1,25 @@
+[[card]]
+id = "b6330e4d"
+q = '''What is the index of the first character of a string?'''
+a = '''0.'''
+
+[[card]]
+id = "1be9fc4f"
+q = '''What does `word[-1]` give?'''
+a = '''The last character of `word`.'''
+
+[[card]]
+id = "092bb2b3"
+q = '''What does the slice `s[2:5]` contain?'''
+a = '''The characters at positions 2, 3 and 4. The stop position is not included.'''
+
+[[card]]
+id = "1db08123"
+q = '''Why does `s[0] = "J"` fail for a string `s`?'''
+a = '''Strings are immutable. You must build a new string instead, such as `"J" + s[1:]`.'''
+
+[[card]]
+id = "da861aac"
+q = '''What does `"an" in "banana"` return?'''
+a = '''`True`, because the text `an` appears inside `banana`.'''
+

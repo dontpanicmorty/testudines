@@ -1,0 +1,1 @@
+Write `read_page(url)` that downloads the page at `url` and returns its content as a string (the page is UTF-8 text). The tests serve pages from a small server on your own computer, so nothing touches the internet.

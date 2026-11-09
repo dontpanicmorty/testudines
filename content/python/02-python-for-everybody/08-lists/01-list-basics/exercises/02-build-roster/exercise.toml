@@ -1,0 +1,8 @@
+id = "everybody.lists.list-basics.build-roster"
+title = "Keep the roster tidy"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Check whether the name is already present before adding.",
+  "Sorting changes the list in place.",
+]

@@ -1,0 +1,9 @@
+id = "everybody.object-oriented-programming.your-first-class.reading-progress"
+title = "Page by page"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Store the starting page in the constructor.",
+  "Do not let the page pass the end.",
+  "Return a whole-number percentage using rounding."
+]

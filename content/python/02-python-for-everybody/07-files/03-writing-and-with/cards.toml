@@ -1,0 +1,25 @@
+[[card]]
+id = "632c9f91"
+q = '''What happens if you open an existing file with mode `"w"`?'''
+a = '''Its old contents are erased immediately. Use `"a"` to add to the end instead.'''
+
+[[card]]
+id = "83be94de"
+q = '''Does `write` add a newline automatically?'''
+a = '''No. Add `"\n"` yourself at the end of each line.'''
+
+[[card]]
+id = "0fe67f80"
+q = '''What does the `with` statement do for a file?'''
+a = '''It closes the file automatically when the indented block ends, even if an error occurs.'''
+
+[[card]]
+id = "23d63463"
+q = '''Which mode keeps old contents and adds to the end?'''
+a = '''`"a"`, for append.'''
+
+[[card]]
+id = "6cf83e15"
+q = '''How can you see hidden spaces and newlines in a string?'''
+a = '''Print `repr(text)`; it shows the string with quotes and escapes such as `\n`.'''
+

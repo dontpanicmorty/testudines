@@ -1,0 +1,6 @@
+id = "extra-88"
+title = "Managers and their direct report count"
+difficulty = "medium"
+concept = "GROUP BY / JOIN-free"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "GROUP BY managerId with a WHERE filtering out NULLs."

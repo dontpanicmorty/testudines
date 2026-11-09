@@ -1,0 +1,8 @@
+id = "everybody.visualizing-data.link-graphs.site-links"
+title = "Links that stay home"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Find every web address that a link points to.",
+  "Keep only addresses on the allowed list, once each."
+]

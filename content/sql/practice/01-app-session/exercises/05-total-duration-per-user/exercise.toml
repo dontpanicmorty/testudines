@@ -1,0 +1,6 @@
+id = "extra-5"
+title = "Total duration per user"
+difficulty = "easy"
+concept = "SUM / GROUP BY"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "SUM(duration) grouped by userId."

@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.lifecycle-and-instances.own-lists"
+title = "Playlists that stay apart"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A default value that is a list is shared by every call.",
+  "Copy the list you are given so the caller's list is not changed later."
+]

@@ -1,0 +1,6 @@
+id = "13.2"
+title = "The is_incremental() filter"
+difficulty = "hard"
+concept = "{% if is_incremental() %} WHERE loaded_at > max(...)"
+tables = "raw_usage_events(event_id, account_id, event_type, event_date, loaded_at)\nexisting_target(same shape, already materialized)"
+hint = "WHERE loaded_at > (SELECT MAX(loaded_at) FROM existing_target)"

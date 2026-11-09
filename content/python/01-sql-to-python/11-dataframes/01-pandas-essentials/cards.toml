@@ -1,0 +1,40 @@
+[[card]]
+id = "fc7f2852"
+q = "Write the pandas for: `SELECT * FROM df WHERE amount > 20 AND status = 'paid'`."
+a = '''```python
+df[(df["amount"] > 20) & (df["status"] == "paid")]
+```'''
+
+[[card]]
+id = "7ed6295d"
+q = "Why does `df[df.a > 1 and df.b < 5]` raise 'truth value of a Series is ambiguous'?"
+a = "`and` needs a single bool. Use `&` with parentheses around each comparison."
+
+[[card]]
+id = "2bbff63c"
+q = "Write the pandas for `SELECT region, SUM(amount) AS total FROM df GROUP BY region` with `region` kept as a column."
+a = '''```python
+df.groupby("region", as_index=False).agg(total=("amount", "sum"))
+```'''
+
+[[card]]
+id = "54372aff"
+q = "How do you stop a LEFT JOIN from silently multiplying rows when the right keys are duplicated?"
+a = "`left.merge(right, on=k, how=\"left\", validate=\"many_to_one\")` raises `MergeError` if right keys repeat."
+
+[[card]]
+id = "ac9e9dc6"
+q = "What does `df.assign(x=1)` do to `df`?"
+a = "Nothing. It returns a new DataFrame with column `x`; you must use the return value."
+
+[[card]]
+id = "9ca134e0"
+q = "How do you read a CSV so `sku` stays `\"007\"` and `shipped` is a datetime?"
+a = '''```python
+pd.read_csv(f, dtype={"sku": "string"}, parse_dates=["shipped"])
+```'''
+
+[[card]]
+id = "191dfe26"
+q = "What is the NULL equivalent in a pandas result of an unmatched left merge, and how do you test for it?"
+a = "`NaN`. Test with `df[\"col\"].isna()` (SQL: `IS NULL`)."

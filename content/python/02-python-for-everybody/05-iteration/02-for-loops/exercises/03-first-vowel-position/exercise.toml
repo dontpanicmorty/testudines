@@ -1,0 +1,8 @@
+id = "everybody.iteration.for-loops.first-vowel-position"
+title = "Where does the first vowel sit?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Keep track of the position yourself, or use range with len.",
+  "Stop as soon as you find one, and return -1 only after the loop ends.",
+]

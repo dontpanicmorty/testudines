@@ -1,0 +1,6 @@
+id = "5.3"
+title = "Counting Days Between Dates"
+difficulty = "easy"
+concept = "date subtraction"
+tables = "subscriptions(subscription_id, started_at, cancelled_at)"
+hint = "Two `date` columns subtract directly into a day count: `cancelled_at - started_at`."

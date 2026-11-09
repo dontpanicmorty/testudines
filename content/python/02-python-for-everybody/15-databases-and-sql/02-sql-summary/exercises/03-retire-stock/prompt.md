@@ -1,0 +1,1 @@
+`db_path` is a SQLite file with table `book(title TEXT, year INTEGER, price REAL)`. Write `retire(db_path, cutoff_year, max_price)`. It permanently removes every book that is **both** published before `cutoff_year` **and** priced below `max_price`. Return a tuple `(removed, remaining)` of how many books were removed and how many are left. Open and close your own connection.

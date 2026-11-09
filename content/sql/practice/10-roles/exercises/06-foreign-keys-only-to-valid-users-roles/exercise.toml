@@ -1,0 +1,6 @@
+id = "extra-186"
+title = "Foreign keys only to valid users/roles"
+difficulty = "medium"
+concept = "CREATE TABLE / FK"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "REFERENCES users(id) and REFERENCES roles(id) on the respective columns."

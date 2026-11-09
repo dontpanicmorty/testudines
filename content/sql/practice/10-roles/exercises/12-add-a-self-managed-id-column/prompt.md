@@ -1,0 +1,1 @@
+Create a users_roles table with its own surrogate id INTEGER PRIMARY KEY, plus userId INTEGER REFERENCES users(id) and roleId INTEGER REFERENCES roles(id), and a UNIQUE constraint on (userId, roleId).

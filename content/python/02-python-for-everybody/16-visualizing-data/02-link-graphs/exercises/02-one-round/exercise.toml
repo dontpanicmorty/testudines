@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.link-graphs.one-round"
+title = "One round of sharing"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Start every page with its guaranteed base score.",
+  "Each page hands out equal slices of its old score.",
+  "Pages with no links give their score to all pages equally."
+]

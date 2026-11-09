@@ -1,0 +1,9 @@
+id = "dataframes.pandas-essentials.paid-totals"
+title = "Paid totals per customer"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Filter with a boolean mask first, then group.",
+  "groupby('customer_id', as_index=False).agg(total=('amount', 'sum'))",
+  "Sort by total descending, then customer_id ascending, and reset_index(drop=True).",
+]

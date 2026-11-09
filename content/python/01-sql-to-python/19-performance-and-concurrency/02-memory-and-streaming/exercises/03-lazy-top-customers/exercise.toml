@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.memory-and-streaming.lazy-top-customers"
+title = "Lazy top customers"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "pl.scan_csv returns a LazyFrame. Scan both files, then .join(items, on='order_id').",
+  "Revenue is (pl.col('quantity') * pl.col('unit_price')).sum() per customer_id, after filtering status in ('completed', 'shipped').",
+  "Sort by revenue descending then customer_id ascending, .head(n), and return the LazyFrame WITHOUT calling collect.",
+]

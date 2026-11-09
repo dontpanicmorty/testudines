@@ -1,0 +1,6 @@
+id = "4.5"
+title = "Combining NULL Handling with Boolean Logic"
+difficulty = "easy"
+concept = "COALESCE + AND/OR + IS NULL"
+tables = "leads(lead_id, source, converted_at, is_qualified)"
+hint = "Combine `(converted_at is not null and coalesce(is_qualified, false))` with `or source = 'referral'`."

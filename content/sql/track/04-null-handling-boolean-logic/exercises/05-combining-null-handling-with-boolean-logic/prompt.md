@@ -1,0 +1,1 @@
+Return `lead_id`, `source`, and a `converted_flag` boolean that is true when the lead has actually converted AND is qualified, OR when the lead's `source` is `'referral'` (referrals always count regardless of qualification). Some `is_qualified` values are null and should be treated as not-qualified rather than unknown. Order by `lead_id`.

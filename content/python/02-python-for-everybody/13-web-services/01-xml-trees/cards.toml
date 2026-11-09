@@ -1,0 +1,30 @@
+[[card]]
+id = "f62ba8b2"
+q = '''What is serialization?'''
+a = '''Turning data held in a program into text that follows an agreed format, so it can be saved or sent. Parsing is the reverse.'''
+
+[[card]]
+id = "b4a83c6e"
+q = '''In `<bikes unit="count">12</bikes>`, what are `unit` and `12`?'''
+a = '''`unit` is an attribute (read with `.get("unit")`). `12` is the element's text (read with `.text`, and it is a string).'''
+
+[[card]]
+id = "6be39fec"
+q = '''Which call turns an XML string into a root element?'''
+a = '''`ET.fromstring(text)` after `import xml.etree.ElementTree as ET`.'''
+
+[[card]]
+id = "d8bb9a8d"
+q = '''What does `root.find("colour")` return when there is no such child?'''
+a = '''`None`. Check `is not None` before using `.text` on it.'''
+
+[[card]]
+id = "ee539cff"
+q = '''Why must you write `int(elem.text)` before adding numbers from XML?'''
+a = '''Because `.text` is always a string, even when it looks like a number.'''
+
+[[card]]
+id = "d4fb93d9"
+q = '''What error does `ET.fromstring` raise for malformed XML?'''
+a = '''`ET.ParseError`, with a line and column in its message.'''
+

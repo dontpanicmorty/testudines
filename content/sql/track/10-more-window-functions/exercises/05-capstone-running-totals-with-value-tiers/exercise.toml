@@ -1,0 +1,6 @@
+id = "10.5"
+title = "Capstone: Running Totals with Value Tiers"
+difficulty = "medium"
+concept = "running total + NTILE"
+tables = "payments(payment_id, account_id, paid_at, amount)"
+hint = "Combine two window functions in the same select: one `partition by account_id` for the running total, one unpartitioned `ntile(2)` for the tier."

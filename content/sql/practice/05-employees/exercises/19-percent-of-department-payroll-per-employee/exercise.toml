@@ -1,0 +1,6 @@
+id = "extra-99"
+title = "Percent of department payroll per employee"
+difficulty = "hard"
+concept = "window SUM OVER"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "salary / SUM(salary) OVER (PARTITION BY department) * 100."

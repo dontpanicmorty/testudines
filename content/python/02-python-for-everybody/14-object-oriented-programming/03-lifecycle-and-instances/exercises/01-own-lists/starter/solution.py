@@ -1,0 +1,3 @@
+class Playlist:
+    # TODO
+    pass

@@ -1,0 +1,1 @@
+-- subscription_history(sub_id, account_id, status, effective_date)

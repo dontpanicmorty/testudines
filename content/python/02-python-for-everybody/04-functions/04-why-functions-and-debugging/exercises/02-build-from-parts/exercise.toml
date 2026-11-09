@@ -1,0 +1,9 @@
+id = "everybody.functions.why-functions-and-debugging.build-from-parts"
+title = "Build it from small pieces"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Write two small helper functions inside your solution file, each doing one job.",
+  "Then combine them in the main function.",
+  "The tests only call the function named in the prompt.",
+]

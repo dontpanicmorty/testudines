@@ -1,0 +1,6 @@
+id = "testing-with-pytest.mocking-and-boundaries.test-pagination"
+title = "Test pagination with a fake client"
+difficulty = 2
+main = "my_tests.py"
+hints = ["Write a small `FakeClient` class in your test file that serves canned pages and records which pages were requested.", "Make the fake strict: asking for a page it doesn't have should raise `KeyError`, like a real server returning 404.", "Test the error path with a client whose `get_page` raises `ConnectionError`; assert `FetchError` and that the original error is chained (`__cause__`)."]
+timeout = 120

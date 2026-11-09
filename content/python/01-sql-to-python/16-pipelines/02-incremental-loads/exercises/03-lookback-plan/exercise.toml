@@ -1,0 +1,9 @@
+id = "pipelines.incremental-loads.lookback-plan"
+title = "Plan an incremental read with lookback"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Compute the window start as watermark minus lookback_hours using datetime.fromisoformat and timedelta.",
+  "Select rows with updated_at >= start (ISO strings compare correctly), or all rows if the watermark is None.",
+  "Dedupe by id: sort by updated_at ascending, assign into a dict, and return the values sorted by id.",
+]

@@ -1,0 +1,6 @@
+id = "8.5"
+title = "Capstone: detecting status changes"
+difficulty = "medium"
+concept = "LAG + CASE + IS DISTINCT FROM"
+tables = "subscription_history(sub_id, account_id, status, effective_date)"
+hint = "CASE WHEN LAG(status) OVER (PARTITION BY sub_id ORDER BY effective_date) IS DISTINCT FROM status THEN true ELSE false END"

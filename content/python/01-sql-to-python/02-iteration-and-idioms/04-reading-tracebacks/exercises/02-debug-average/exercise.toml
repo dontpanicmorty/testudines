@@ -1,0 +1,9 @@
+id = "iteration-and-idioms.reading-tracebacks.debug-average"
+title = "Debug: the wrong monthly average"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Run it on a tiny list in your head or with a print: [{'amount': '9'}, {'amount': '10'}]. Is the type of what you compare what you expect?",
+  "Check how many rows the loop actually visits. Does the last row get included?",
+  "There are three separate bugs: row range, string vs number, and the empty-input case.",
+]

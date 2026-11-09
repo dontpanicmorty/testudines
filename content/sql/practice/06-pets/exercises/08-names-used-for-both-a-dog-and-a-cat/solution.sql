@@ -1,0 +1,1 @@
+SELECT name FROM dogs INTERSECT SELECT name FROM cats ORDER BY name;

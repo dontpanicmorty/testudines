@@ -1,0 +1,1 @@
+"""Revenue data service."""

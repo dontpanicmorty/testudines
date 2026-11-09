@@ -1,0 +1,6 @@
+id = "extra-175"
+title = "Friend-of-friend suggestions"
+difficulty = "hard"
+concept = "self JOIN / NOT EXISTS"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Symmetric friends CTE, self-join direct friends to their friends, exclude the user and existing direct friends."

@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.dataclasses.column-spec"
+title = "Importing the module crashes"
+difficulty = 1
+main = "solution.py"
+hints = ["Read the last line of the traceback: it names the field and the fix.", "Dataclass fields with mutable defaults need `field(default_factory=...)`.", "`describe` adds ` (not null)` only for non-nullable columns."]

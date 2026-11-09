@@ -1,0 +1,1 @@
+For every user, count their total number of friends (counting a friendship regardless of which column stores which user; a user with no friendship rows at all has 0). Then, grouping by sex (a NULL sex is its own group), return the average friend count per group, rounded to 2 decimals, as avg_friend_count. Order by sex.
