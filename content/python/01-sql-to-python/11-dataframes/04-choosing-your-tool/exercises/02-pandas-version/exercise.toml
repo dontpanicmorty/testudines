@@ -1,0 +1,9 @@
+id = "dataframes.choosing-your-tool.pandas-version"
+title = "Same task: pandas"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "pd.DataFrame(list_of_dicts) builds a frame. Filter orders, merge with items on order_id.",
+  "Compute revenue = quantity * unit_price, groupby customer_id and sum, then sort_values with a tie-breaker.",
+  "Convert at the end to plain Python: (int(c), round(float(r), 2)). Watch the empty case: an empty merge still has the columns.",
+]

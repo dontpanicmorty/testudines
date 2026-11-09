@@ -1,0 +1,6 @@
+id = "extra-118"
+title = "Rank of dogs only, among the combined age distribution"
+difficulty = "hard"
+concept = "PERCENT_RANK on combined set"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Compute PERCENT_RANK() over the combined set first, then filter down to dogs only."

@@ -1,0 +1,34 @@
+[[card]]
+id = "365ca39d"
+q = "A pipeline is slow, but the CPU sits at 5%. Which kind of bound is it and which tool first?"
+a = "I/O-bound (waiting). Overlap the waits with threads (`ThreadPoolExecutor`) or asyncio."
+
+[[card]]
+id = "f1733311"
+q = "In practical terms, what does the GIL prevent?"
+a = "Two threads running Python bytecode at the same instant, so threads do not speed up CPU-bound Python code. Use processes for that."
+
+[[card]]
+id = "5110f254"
+q = "Write code that calls `fetch(p)` for p in range(20) on 8 threads and keeps input order."
+a = "```python\nwith ThreadPoolExecutor(max_workers=8) as pool:\n    results = list(pool.map(fetch, range(20)))\n```"
+
+[[card]]
+id = "4fe8104b"
+q = "Why is this sequential and what is the fix?\n```python\nfor p in pages:\n    results.append(await fetch(p))\n```"
+a = "Each `await` finishes before the next begins. Use `results = await asyncio.gather(*(fetch(p) for p in pages))`."
+
+[[card]]
+id = "c040f0b4"
+q = "A `ProcessPoolExecutor.map(lambda x: x*2, data)` fails with a PicklingError. Why and what is the fix?"
+a = "The function must be pickled to send to the worker; lambdas/nested functions cannot be. Define it at module top level."
+
+[[card]]
+id = "81b24de4"
+q = "How do you stop an async job opening 500 connections at once?"
+a = "Wrap each call in `async with asyncio.Semaphore(n):` (or use a pool with `max_workers=n`)."
+
+[[card]]
+id = "de626771"
+q = "Why must you never call `time.sleep` inside `async def`?"
+a = "It blocks the whole event loop so no other task runs. Use `await asyncio.sleep` (or run the blocking call in a thread)."

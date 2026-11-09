@@ -1,0 +1,6 @@
+id = "extra-100"
+title = "Managers whose team out-earns them combined"
+difficulty = "hard"
+concept = "subquery / SUM"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "Correlated subquery SUM(salary) of direct reports compared to the manager's own salary."

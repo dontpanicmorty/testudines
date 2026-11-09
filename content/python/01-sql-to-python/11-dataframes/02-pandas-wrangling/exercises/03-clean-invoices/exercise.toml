@@ -1,0 +1,9 @@
+id = "dataframes.pandas-wrangling.clean-invoices"
+title = "Clean the invoice export"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Normalise the column names first so the rest of your code can rely on invoice, customer_name, amount, invoice_date, status.",
+  "Build the result with one chain or step-by-step assignments. Clean text before dropping duplicates.",
+  "Drop duplicates on the whole cleaned row, then reset the index. Missing status becomes 'unknown'.",
+]

@@ -1,0 +1,1 @@
+Starting from a users_roles table already created as (userId INTEGER, roleId INTEGER), write ALTER TABLE statements to: add a new assigned_at DATE column defaulting to CURRENT_DATE, and make userId NOT NULL.

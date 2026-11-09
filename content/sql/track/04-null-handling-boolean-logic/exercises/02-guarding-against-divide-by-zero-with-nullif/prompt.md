@@ -1,0 +1,1 @@
+Some campaigns have zero impressions, which would blow up a naive click-through-rate calculation (division by zero). Return `campaign_id` and a computed `ctr` column (clicks divided by impressions) that safely comes back as null instead of erroring when impressions is zero. Order by `campaign_id`.

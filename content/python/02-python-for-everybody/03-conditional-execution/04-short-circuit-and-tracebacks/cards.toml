@@ -1,0 +1,29 @@
+[[card]]
+id = "95ec2b6b"
+q = '''What is short-circuit evaluation?'''
+a = '''Python stops evaluating `and`/`or` as soon as the answer is known, so the right-hand side may never run.'''
+
+[[card]]
+id = "fe2016a1"
+q = '''What is the guardian pattern?'''
+a = '''Putting a safety check on the left of `and`, so the risky check on the right only runs when it is safe.'''
+
+[[card]]
+id = "04f7cafe"
+q = '''Which is safe: `b != 0 and a / b > 2` or `a / b > 2 and b != 0`?'''
+a = '''The first. The guard `b != 0` must come first, otherwise the division can crash.'''
+
+[[card]]
+id = "9440809f"
+q = '''Which line of a traceback should you read first?'''
+a = '''The last line: it names the error type and gives its message. Then look at the line number above it.'''
+
+[[card]]
+id = "ebd24d7c"
+q = '''What would `len(word) > 0 and word[0] == "t"` give for an empty word?'''
+a = '''`False`, without error, because `len(word) > 0` is false and the rest is skipped.'''
+
+[[card]]
+id = "86acb2a3"
+q = '''How can you get an exception's name as text?'''
+a = '''`except Exception as problem:` then `type(problem).__name__`.'''

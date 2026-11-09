@@ -1,0 +1,29 @@
+[[card]]
+id = "afaa32e8"
+q = '''What does `def` do?'''
+a = '''It defines a new function, but does not run it. The body only runs when the function is called.'''
+
+[[card]]
+id = "926eb58b"
+q = '''What is the difference between a parameter and an argument?'''
+a = '''A parameter is the variable name in the definition; an argument is the value passed in a call.'''
+
+[[card]]
+id = "0c5a5d8a"
+q = '''What is the "flow of execution"?'''
+a = '''The order in which Python runs statements: top to bottom, with a function call jumping into the body and back.'''
+
+[[card]]
+id = "6ef7677b"
+q = '''Why must a function be defined before it is called?'''
+a = '''Python reads the file from top to bottom, so it has to learn about the function first.'''
+
+[[card]]
+id = "3570d3d4"
+q = '''What is a local variable?'''
+a = '''A name created inside a function; it only exists while the function runs and cannot be used outside.'''
+
+[[card]]
+id = "be5ecd39"
+q = '''What does `show(2, 3)` do with its two arguments?'''
+a = '''It matches them to the parameters by position: 2 goes to the first parameter and 3 to the second.'''

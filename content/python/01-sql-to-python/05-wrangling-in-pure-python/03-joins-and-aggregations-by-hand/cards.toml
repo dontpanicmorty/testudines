@@ -1,0 +1,42 @@
+[[card]]
+id = "fbdc7b73"
+q = '''Which side of a hash join should you load into the dict?'''
+a = '''The smaller (or the unique-keyed) side; probe it with each row of the other side.'''
+
+[[card]]
+id = "01c6832d"
+q = '''A left join on a non-unique right key: what happens to the row count?'''
+a = '''Each left row is repeated once per match, so rows (and sums) can be inflated.'''
+
+[[card]]
+id = "74ab2047"
+q = '''What does this print?
+```python
+d = {}
+for k in ["a", "b", "a"]:
+    d[k] = d.get(k, 0) + 1
+print(d)
+```'''
+a = '''`{'a': 2, 'b': 1}`'''
+
+[[card]]
+id = "07d68835"
+q = '''Why must you `sorted(...)` before `itertools.groupby`?'''
+a = '''`groupby` only groups adjacent equal keys; unsorted data yields the same key in several groups.'''
+
+[[card]]
+id = "b66a42b3"
+q = '''Which part of a window function is `PARTITION BY` in a hand-written loop?'''
+a = '''Resetting the carried state (running total, previous value) whenever the group key changes.'''
+
+[[card]]
+id = "7519f423"
+q = '''Customer ids are `1` in one list and `"1"` in another and no rows match. Cause and fix?'''
+a = '''Different types never compare equal. Convert one side (`int(row["id"])`) before building the lookup.'''
+
+[[card]]
+id = "d06dab0d"
+q = '''Write the Python equivalent of `COUNT(*) ... GROUP BY status` for a list `statuses`.'''
+a = '''```python
+Counter(statuses)
+```'''

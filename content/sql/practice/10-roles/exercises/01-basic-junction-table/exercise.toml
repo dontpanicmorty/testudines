@@ -1,0 +1,6 @@
+id = "extra-181"
+title = "Basic junction table"
+difficulty = "easy"
+concept = "CREATE TABLE / FOREIGN KEY"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Two REFERENCES clauses, one per column."

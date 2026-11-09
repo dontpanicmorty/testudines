@@ -1,0 +1,6 @@
+id = "extra-170"
+title = "Total number of friendships"
+difficulty = "medium"
+concept = "COUNT"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "COUNT(*) FROM friends."

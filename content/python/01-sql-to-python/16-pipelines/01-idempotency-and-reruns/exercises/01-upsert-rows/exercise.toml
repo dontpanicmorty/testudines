@@ -1,0 +1,8 @@
+id = "pipelines.idempotency-and-reruns.upsert-rows"
+title = "Upsert customer rows"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Build a dict keyed by the key column from the existing rows first.",
+  "Dicts keep insertion order, and assigning to an existing key keeps its original position. Return list(by_key.values()).",
+]

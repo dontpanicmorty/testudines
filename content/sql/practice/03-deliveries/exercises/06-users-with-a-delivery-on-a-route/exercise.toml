@@ -1,0 +1,6 @@
+id = "extra-46"
+title = "Users with a delivery on a route"
+difficulty = "easy"
+concept = "DISTINCT"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "DISTINCT user_id with a WHERE on route_id."

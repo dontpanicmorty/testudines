@@ -1,0 +1,8 @@
+id = "everybody.tuples.list-comprehensions.tidy-names"
+title = "Tidy up the names"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Remove surrounding spaces, then fix the capital letters.",
+  "Skip entries that are empty after trimming.",
+]

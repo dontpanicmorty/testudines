@@ -1,0 +1,25 @@
+[[card]]
+id = "99f7aad2"
+q = '''What type does `response.read()` return, and how do you get text from it?'''
+a = '''Bytes. Call `.decode('utf-8')` on them to get a string.'''
+
+[[card]]
+id = "fc6e6377"
+q = '''Which exception does `urlopen` raise for a 404 reply?'''
+a = '''`urllib.error.HTTPError` (a kind of `URLError`).'''
+
+[[card]]
+id = "97baf1f3"
+q = '''Why should you not decode an image as text?'''
+a = '''Images are binary data, not characters; decoding usually raises a `UnicodeDecodeError`.'''
+
+[[card]]
+id = "eb3f1710"
+q = '''Which file mode saves downloaded bytes?'''
+a = '''`"wb"`, write binary.'''
+
+[[card]]
+id = "cfc3df38"
+q = '''How do you read a big response in pieces?'''
+a = '''Loop with `response.read(4096)` and stop when it returns empty bytes, writing each chunk as you go.'''
+

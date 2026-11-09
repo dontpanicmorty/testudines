@@ -1,0 +1,30 @@
+[[card]]
+id = "da949d86"
+q = '''What are the three parts of an HTTP response?'''
+a = '''A status line (like `HTTP/1.0 200 OK`), headers, a blank line, then the body.'''
+
+[[card]]
+id = "1c61683c"
+q = '''What does the status code 404 mean?'''
+a = '''Not Found: the server has no such page.'''
+
+[[card]]
+id = "fa90c070"
+q = '''What ends an HTTP request?'''
+a = '''A blank line, written `\r\n\r\n` after the last header.'''
+
+[[card]]
+id = "6547897f"
+q = '''Why do we call `.encode()` before sending on a socket?'''
+a = '''Sockets carry bytes, not text, so text must be encoded into bytes (and received bytes decoded).'''
+
+[[card]]
+id = "ec919e57"
+q = '''How do you know a socket `recv` loop is finished?'''
+a = '''`recv` returns empty bytes when the other side has closed the connection.'''
+
+[[card]]
+id = "46f11418"
+q = '''What is a port?'''
+a = '''A number that picks which program on a computer you are talking to; web servers usually use 80 or 443.'''
+

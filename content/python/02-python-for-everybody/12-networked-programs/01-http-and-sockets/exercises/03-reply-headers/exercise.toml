@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.http-and-sockets.reply-headers"
+title = "Read the headers"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Cut the reply at the first blank line and keep the part before it.",
+  "The first line is the status line; every other line is Name: value.",
+  "Split at the first colon only, and lowercase the names.",
+]

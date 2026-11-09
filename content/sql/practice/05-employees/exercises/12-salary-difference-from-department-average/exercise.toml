@@ -1,0 +1,6 @@
+id = "extra-92"
+title = "Salary difference from department average"
+difficulty = "medium"
+concept = "window function"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "salary - AVG(salary) OVER (PARTITION BY department)."

@@ -1,0 +1,1 @@
+Write `favourites(path, n)` that reads a text file and returns the `n` most common words as a list of `(word, count)` pairs, most common first. Ignore capitalization and remove all punctuation before counting. Ties are broken alphabetically. If the file has fewer than `n` different words, return them all.

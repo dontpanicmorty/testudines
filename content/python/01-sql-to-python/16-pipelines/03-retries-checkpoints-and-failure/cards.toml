@@ -1,0 +1,29 @@
+[[card]]
+id = "cb24b1c6"
+q = "Give two transient and two permanent errors."
+a = "Transient: timeout, HTTP 503/429, connection reset. Permanent: HTTP 404/400, `ValueError` from a malformed row, bad credentials."
+
+[[card]]
+id = "5136696a"
+q = "What delays does exponential backoff with `base_delay=1` produce for attempts 0, 1, 2, 3?"
+a = "1, 2, 4, 8 seconds (`base_delay * 2 ** n`)."
+
+[[card]]
+id = "16e4db23"
+q = "Why pass `sleep` as an argument to a retry helper?"
+a = "It is a seam: tests can pass a fake (e.g. `list.append`) so no real waiting happens, and you can assert on the delays."
+
+[[card]]
+id = "cb093cf2"
+q = "What must a retry loop do after the final failed attempt?"
+a = "Re-raise the exception. Swallowing it would turn a failure into silent success."
+
+[[card]]
+id = "fd26836e"
+q = "Why do checkpoints need idempotent steps?"
+a = "A crash after the work but before the checkpoint write reruns that item, so repeating it must be harmless."
+
+[[card]]
+id = "38ac7e16"
+q = "What does a reject (dead-letter) file contain and what limit should you add?"
+a = "The bad record plus the reason, so it can be fixed and replayed. Fail the job if the reject rate passes a threshold."

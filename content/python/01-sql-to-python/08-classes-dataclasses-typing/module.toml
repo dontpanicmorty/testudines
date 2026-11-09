@@ -1,0 +1,3 @@
+title = "Classes, dataclasses and type hints"
+summary = "Model state and behaviour with classes and dataclasses, describe your code with types, and design swappable components."
+stage = "Stage 3 · Engineering habits"

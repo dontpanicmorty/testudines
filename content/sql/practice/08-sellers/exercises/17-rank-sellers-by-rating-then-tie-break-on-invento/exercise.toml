@@ -1,0 +1,6 @@
+id = "extra-157"
+title = "Rank sellers by rating then tie-break on inventory value"
+difficulty = "hard"
+concept = "ORDER BY multiple"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "LEFT JOIN so zero-item sellers are still included, then ORDER BY rating DESC, total_value DESC."

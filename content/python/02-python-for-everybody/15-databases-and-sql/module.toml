@@ -1,0 +1,3 @@
+title = "Databases and SQL"
+summary = "Store data in SQLite, model it across several tables, and join it back together."
+stage = "Part 5 \u00b7 Objects, databases and visualization"

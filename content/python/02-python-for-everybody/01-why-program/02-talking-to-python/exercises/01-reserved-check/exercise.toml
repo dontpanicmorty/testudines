@@ -1,0 +1,8 @@
+id = "everybody.why-program.talking-to-python.reserved-check"
+title = "Is it Python's own word?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "The keyword module has a function for exactly this.",
+  "import keyword, then return keyword.iskeyword(word).",
+]

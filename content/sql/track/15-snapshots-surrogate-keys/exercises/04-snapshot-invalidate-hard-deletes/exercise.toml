@@ -1,0 +1,6 @@
+id = "15.4"
+title = "Snapshot: invalidate_hard_deletes"
+difficulty = "hard"
+concept = "Rows a snapshot would mark as deleted"
+tables = "daily_feed_day1, daily_feed_day2"
+hint = "LEFT JOIN day1 to day2, WHERE d2.employee_id IS NULL."

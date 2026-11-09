@@ -1,0 +1,8 @@
+id = "everybody.lists.objects-and-aliases.merge-without-sharing"
+title = "Two lists, one result"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Combining lists with + produces a brand new list.",
+  "Elements that are themselves lists would still be shared, so copy those too.",
+]

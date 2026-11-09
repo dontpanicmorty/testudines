@@ -1,0 +1,9 @@
+id = "everybody.variables-expressions-statements.values-types-variables.legal-name"
+title = "Could it be a variable?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "str has a method that checks whether text is a valid name: isidentifier().",
+  "Reserved words are legal as identifiers but not as names; the keyword module can check them.",
+  "Combine both checks with 'and not'.",
+]

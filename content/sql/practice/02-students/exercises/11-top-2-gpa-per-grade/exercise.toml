@@ -1,0 +1,6 @@
+id = "extra-31"
+title = "Top 2 GPA per grade"
+difficulty = "medium"
+concept = "QUALIFY"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "QUALIFY ROW_NUMBER() OVER (PARTITION BY grade ORDER BY gpa DESC) <= 2."

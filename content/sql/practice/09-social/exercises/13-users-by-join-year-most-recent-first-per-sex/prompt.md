@@ -1,0 +1,1 @@
+Within each sex group (treat a NULL sex as its own group), rank users from most recently joined to least recently joined, with the most recent given rank 1. Return name, sex, joinYear, and that rank as recency_rank, ordered by sex then recency_rank.

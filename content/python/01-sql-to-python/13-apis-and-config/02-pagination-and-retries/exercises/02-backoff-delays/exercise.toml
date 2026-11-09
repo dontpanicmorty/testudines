@@ -1,0 +1,8 @@
+id = "apis-and-config.pagination-and-retries.backoff-delays"
+title = "Compute backoff delays with jitter"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The ceiling for attempt i (starting at 0) is min(cap, base * 2 ** i).",
+  "With no rng, return the ceilings themselves. With an rng, return rng.uniform(0, ceiling) for each attempt, calling it once per attempt in order.",
+]

@@ -1,0 +1,6 @@
+id = "extra-10"
+title = "Running total per user"
+difficulty = "medium"
+concept = "window function / SUM OVER"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "SUM(duration) OVER (PARTITION BY userId ORDER BY sessionDate)."

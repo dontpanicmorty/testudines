@@ -1,0 +1,6 @@
+id = "extra-192"
+title = "Add a self-managed id column"
+difficulty = "medium"
+concept = "CREATE TABLE / surrogate key"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "A surrogate id PRIMARY KEY plus a separate UNIQUE (userId, roleId) constraint."

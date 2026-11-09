@@ -1,0 +1,6 @@
+id = "extra-96"
+title = "Each Employee's Depth in the Org Chart"
+difficulty = "hard"
+concept = "recursive CTE"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "Recursive CTE: base case depth 0 for managerId IS NULL, recursive case depth+1 joining on managerId."

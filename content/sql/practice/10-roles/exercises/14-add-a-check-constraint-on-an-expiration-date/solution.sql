@@ -1,0 +1,1 @@
+CREATE TABLE users_roles (userId INTEGER REFERENCES users(id), roleId INTEGER REFERENCES roles(id), assigned_at DATE DEFAULT CURRENT_DATE, expires_at DATE, PRIMARY KEY (userId, roleId), CHECK (expires_at IS NULL OR expires_at > assigned_at));

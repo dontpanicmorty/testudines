@@ -1,0 +1,1 @@
+Return one row per `customer_id` with `online_total` and `retail_total`, each the sum of `amount` for that `channel` ('online' or 'retail' respectively), grouping by `customer_id`. Order by `customer_id`.

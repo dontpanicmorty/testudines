@@ -1,0 +1,34 @@
+[[card]]
+id = "7280a407"
+q = "This function has four nested `if` statements. What is the standard refactor, and what does the result look like?"
+a = "Use early returns (guard clauses): handle each unusual case first with `if ...: return ...`, leaving the main path unindented."
+
+[[card]]
+id = "b8d94491"
+q = "What should a comment explain: what the code does or why it does it?"
+a = "Why. Comments restating what the code does go stale; if you need to explain *what*, extract a well-named function."
+
+[[card]]
+id = "fc380628"
+q = "`if o[\"t\"] > 100:` has two problems. Name them and show the fix."
+a = "A magic number and unclear names. Fix: `MIN_LARGE_ORDER = 100` and `if order[\"total\"] > MIN_LARGE_ORDER:`."
+
+[[card]]
+id = "ee839fb7"
+q = "How should a boolean variable or function that returns a bool be named?"
+a = "As a question or state: `is_paid`, `has_refund`, `is_large_order(order)`."
+
+[[card]]
+id = "ee1e761e"
+q = "What goes wrong here and how do you fix it?\n```python\nfor x in orders:\n    if x[\"total\"] <= 0:\n        orders.remove(x)\n```"
+a = "Removing while iterating skips the element after each removal. Build a new list: `orders = [o for o in orders if o[\"total\"] > 0]`."
+
+[[card]]
+id = "f9873c0c"
+q = "Rule of thumb for how long a function should be?"
+a = "It fits on one screen (roughly 15-20 lines) and you can describe it without using \"and\"."
+
+[[card]]
+id = "d86ddd58"
+q = "Why is `total_with_tax = round(order[\"t\"] * 1.2, 2)` easier to read than `r.append(str(round(x[\"t\"] * 1.2, 2)))`?"
+a = "The intermediate name states what the value means, and each line does one thing."

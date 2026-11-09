@@ -1,0 +1,42 @@
+[[card]]
+id = "49afbb49"
+q = '''What does `norm_header("Customer Name ")` return if it strips, lowercases and replaces non-alphanumerics with `_`?'''
+a = '''`customer_name`'''
+
+[[card]]
+id = "2e76128e"
+q = '''Why must an unparseable amount raise, while a blank amount returns `None`?'''
+a = '''Blank is a known fact (no value); garbage is an error you should see. Silently using 0 corrupts totals.'''
+
+[[card]]
+id = "9408f985"
+q = '''Write the call that parses `"20 Jun 2025"` into a date.'''
+a = '''```python
+datetime.strptime("20 Jun 2025", "%d %b %Y").date()
+```'''
+
+[[card]]
+id = "edc27947"
+q = '''Why is it dangerous to list both `%d/%m/%Y` and `%m/%d/%Y` as accepted formats?'''
+a = '''Dates like `05/06/2025` match the first one tried, so the result silently depends on list order.'''
+
+[[card]]
+id = "e3453ae4"
+q = '''Write a loop that keeps the first row per `id`, preserving order.'''
+a = '''```python
+seen, out = set(), []
+for r in rows:
+    if r["id"] not in seen:
+        seen.add(r["id"])
+        out.append(r)
+```'''
+
+[[card]]
+id = "45494f81"
+q = '''`float("$1,234.50")` raises what? How do you fix the input?'''
+a = '''`ValueError: could not convert string to float`. Remove `$` and `,` first (and prefer `Decimal` for money).'''
+
+[[card]]
+id = "2d60bd56"
+q = '''Why keep the raw file untouched when cleaning?'''
+a = '''So you can re-run or audit the cleaning; cleaned output goes to a new place.'''

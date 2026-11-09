@@ -1,0 +1,3 @@
+title = "Regular expressions"
+summary = "Describe the shape of text with patterns, then search for it, extract pieces of it and debug the patterns that misbehave."
+stage = "Part 3 \u00b7 Data structures"

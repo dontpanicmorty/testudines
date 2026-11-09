@@ -1,0 +1,1 @@
+Return region name, average sales per employee for the region (total region sales / number of employees in the region, 0 if none), and the difference from the best-performing region, ordered by average descending.

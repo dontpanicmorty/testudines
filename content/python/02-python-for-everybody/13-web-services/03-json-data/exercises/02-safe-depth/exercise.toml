@@ -1,0 +1,8 @@
+id = "everybody.web-services.json-data.safe-depth"
+title = "Reach in safely"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Follow the keys one at a time.",
+  "Several different errors can mean 'the path does not exist'."
+]

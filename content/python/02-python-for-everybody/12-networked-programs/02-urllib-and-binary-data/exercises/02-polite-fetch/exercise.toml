@@ -1,0 +1,8 @@
+id = "everybody.networked-programs.urllib-and-binary-data.polite-fetch"
+title = "Fetch it, or say there is nothing"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A missing page makes urlopen raise an error.",
+  "Catch the HTTP-specific error and return None.",
+]

@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.searching-with-patterns.first-integer"
+title = "Pull out the first number"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "A number may start with an optional minus sign.",
+  "Search, then check the result is not None before asking for its text.",
+  "The text of a match is available as m.group().",
+]

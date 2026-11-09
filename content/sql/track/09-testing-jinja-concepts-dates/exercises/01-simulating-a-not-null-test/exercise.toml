@@ -1,0 +1,6 @@
+id = "9.1"
+title = "Simulating a not_null test"
+difficulty = "medium"
+concept = "What dbt's not_null generic test runs under the hood"
+tables = "accounts(account_id, account_name, owner_id, region, created_at)"
+hint = "SELECT * FROM accounts WHERE owner_id IS NULL"

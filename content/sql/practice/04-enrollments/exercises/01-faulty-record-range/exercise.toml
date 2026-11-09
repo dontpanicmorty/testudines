@@ -1,0 +1,6 @@
+id = "extra-61"
+title = "Faulty record range"
+difficulty = "easy"
+concept = "WHERE / BETWEEN"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "WHERE id BETWEEN 20 AND 100."

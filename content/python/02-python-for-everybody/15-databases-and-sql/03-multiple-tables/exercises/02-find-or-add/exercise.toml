@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.multiple-tables.find-or-add"
+title = "One row per name"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Make sure the row exists first, then ask for its number.",
+  "The same name must always give the same number."
+]

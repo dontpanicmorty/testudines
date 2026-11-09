@@ -1,0 +1,8 @@
+id = "everybody.files.writing-and-with.save-lines"
+title = "Save a list"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Open the path for writing.",
+  "Each item must end with a newline.",
+]

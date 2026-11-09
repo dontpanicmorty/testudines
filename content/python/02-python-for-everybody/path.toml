@@ -1,0 +1,3 @@
+id = "python-for-everybody"
+title = "Python for Everybody"
+summary = "Python from the very beginning, for anyone: no programming experience needed. Sixteen modules follow the chapters of Charles Severance's book Python for Everybody (py4e.com, CC BY-NC-SA 3.0), from your first program through strings, files, data structures, regular expressions, the web, objects, databases and visualization. The lessons and exercises are written for Testudines; read the book alongside them if you like."

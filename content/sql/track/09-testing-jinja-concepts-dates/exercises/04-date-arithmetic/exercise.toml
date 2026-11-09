@@ -1,0 +1,6 @@
+id = "9.4"
+title = "Date arithmetic"
+difficulty = "medium"
+concept = "INTERVAL arithmetic (DATEADD equivalent)"
+tables = "accounts(account_id, account_name, owner_id, region, created_at)"
+hint = "created_at + INTERVAL 90 DAY AS stale_after"

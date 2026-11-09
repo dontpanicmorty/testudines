@@ -1,0 +1,1 @@
+Ordering each student's enrollments by id, return studentId, id, grade_letter, and the previous grade_letter (via LAG), only for rows where the mapped points increased from the previous row. Map A=4,B=3,C=2. Order by studentId, id.

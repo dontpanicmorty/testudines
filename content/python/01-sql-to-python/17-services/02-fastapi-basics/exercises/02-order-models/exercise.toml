@@ -1,0 +1,9 @@
+id = "services.fastapi-basics.order-models"
+title = "Order models and validation"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Declare two pydantic models for the request (customer_id, items) and one for the response (order_id, customer_id, total).",
+  "Use Field(gt=0) for quantity and unit_price, and Field(min_length=1) on the items list. Invalid input then yields 422 automatically.",
+  "Compute total = round(sum(quantity * unit_price), 2). Use status_code=201 on the decorator and response_model so extra fields never leak.",
+]

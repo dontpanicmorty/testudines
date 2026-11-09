@@ -1,0 +1,6 @@
+CREATE OR REPLACE TABLE events (event_id INTEGER, occurred_at TIMESTAMP);
+INSERT INTO events VALUES
+  (1, '2025-01-05 08:30:00'),
+  (2, '2025-01-28 14:00:00'),
+  (3, '2025-02-14 09:15:00'),
+  (4, '2025-03-01 00:00:00');

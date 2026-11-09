@@ -1,0 +1,2 @@
+-- webinar_attendees(customer_id)
+  -- email_clickers(customer_id)

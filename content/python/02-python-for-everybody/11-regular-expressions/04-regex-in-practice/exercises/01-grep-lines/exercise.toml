@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.regex-in-practice.grep-lines"
+title = "Search a file for lines"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Loop over the open file's lines.",
+  "Remove the trailing newline from each line you keep.",
+  "The pattern is given to you as text.",
+]

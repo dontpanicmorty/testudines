@@ -1,0 +1,8 @@
+id = "everybody.conditional-execution.boolean-expressions.ride-rules"
+title = "Can they ride?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Say the rules out loud, one at a time, then join them.",
+  "Both conditions must hold, so think about which logical word joins them.",
+]

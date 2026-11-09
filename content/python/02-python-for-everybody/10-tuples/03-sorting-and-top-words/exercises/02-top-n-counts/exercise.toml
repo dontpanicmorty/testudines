@@ -1,0 +1,9 @@
+id = "everybody.tuples.sorting-and-top-words.top-n-counts"
+title = "The top of the table"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Turn the dictionary into a list of pairs and sort it with a rule.",
+  "A sort key can return a tuple such as (-count, word).",
+  "Slice the result to keep n items.",
+]

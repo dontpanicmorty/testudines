@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.using-objects.public-actions"
+title = "What can it do?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Ask the object for the names it has.",
+  "Leave out private names and names that are not callable."
+]

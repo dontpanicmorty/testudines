@@ -1,0 +1,6 @@
+id = "extra-105"
+title = "Average age of dogs"
+difficulty = "easy"
+concept = "AVG"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "AVG(age) with ROUND."

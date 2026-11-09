@@ -1,0 +1,8 @@
+id = "everybody.web-services.apis-and-keys.fetch-and-read"
+title = "Ask the local service"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Open the address, read the bytes, decode, then parse.",
+  "The reply is JSON with a 'results' list."
+]

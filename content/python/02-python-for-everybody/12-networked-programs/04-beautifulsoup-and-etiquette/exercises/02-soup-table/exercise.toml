@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.beautifulsoup-and-etiquette.soup-table"
+title = "A table as lists"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Each row holds cells that are either header or data cells.",
+  "Take the visible text of every cell with spaces trimmed.",
+  "Keep the rows in page order.",
+]

@@ -1,0 +1,36 @@
+[[card]]
+id = "a2036b92"
+q = '''Write one line that gives the file extension of `p = Path("data/raw/orders.csv")`, and one that gives `orders`.'''
+a = '''`p.suffix` gives `.csv`; `p.stem` gives `orders`.'''
+
+[[card]]
+id = "fe364526"
+q = '''What is the difference between opening a file with `"w"` and `"a"`?'''
+a = '''`"w"` truncates the file first (old content lost). `"a"` appends to the end.'''
+
+[[card]]
+id = "7691fc8b"
+q = '''Why pass `encoding="utf-8"` to `open` or `read_text`?'''
+a = '''Without it Python uses the platform default, so the same code behaves differently on different machines.'''
+
+[[card]]
+id = "24f5dd6a"
+q = '''You loop `for line in f:` and print `len(line)` for `"ab\n"`. What number, and how do you drop the newline?'''
+a = '''3 (the newline counts). Use `line.rstrip("\n")`.'''
+
+[[card]]
+id = "d1f00953"
+q = '''The first CSV header reads `'﻿id'`. What is the cause and the fix?'''
+a = '''A UTF-8 byte order mark from Excel. Open with `encoding="utf-8-sig"`.'''
+
+[[card]]
+id = "134d9e4c"
+q = '''Write the line that creates `out/2025/06` even if `out` does not exist and does not fail if it already exists.'''
+a = '''```python
+Path("out/2025/06").mkdir(parents=True, exist_ok=True)
+```'''
+
+[[card]]
+id = "d7d8203c"
+q = '''How should a function that writes a report be written so a pytest test can check its output?'''
+a = '''Take the output path as a parameter; the test passes `tmp_path / "report.txt"`.'''

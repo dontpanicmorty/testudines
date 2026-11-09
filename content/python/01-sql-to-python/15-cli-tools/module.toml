@@ -1,0 +1,3 @@
+title = "Command-line tools"
+summary = "Turn code into tools others can run: argparse, typer, exit codes, and a production-style job runner."
+stage = "Stage 5 · Production"

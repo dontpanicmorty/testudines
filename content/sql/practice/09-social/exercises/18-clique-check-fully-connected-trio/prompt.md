@@ -1,0 +1,1 @@
+Find every group of exactly three distinct users where all three pairs among them are friends with each other (a fully-connected trio) -- counting a friendship regardless of which column stores which user. Return each trio once (not once per ordering) as name1, name2, name3, ordered by name1.

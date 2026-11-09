@@ -1,0 +1,9 @@
+id = "files-and-formats.yaml-and-config-files.layered-config"
+title = "Layer defaults, file and environment"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Start from a copy of the defaults, deep-merge the file config on top.",
+  "Then look for variables named PREFIX + key.upper() in the env mapping.",
+  "Env values are strings: convert to the type of the existing value (int, bool, str).",
+]

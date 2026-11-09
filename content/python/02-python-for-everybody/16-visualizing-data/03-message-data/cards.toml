@@ -1,0 +1,30 @@
+[[card]]
+id = "512c8147"
+q = '''What does normalizing data mean?'''
+a = '''Converting every variant of a value (spelling, case, spacing) to one standard form so it can be counted correctly.'''
+
+[[card]]
+id = "73e5b701"
+q = '''Why clean before counting?'''
+a = '''Otherwise one real thing is counted under several spellings and the totals are wrong.'''
+
+[[card]]
+id = "48b0763e"
+q = '''How can you get the month from a `YYYY-MM-DD` text date?'''
+a = '''Slice the first seven characters: `date[:7]`.'''
+
+[[card]]
+id = "01129544"
+q = '''What are stop words?'''
+a = '''Very common words (like "the") that are removed so they do not dominate word counts.'''
+
+[[card]]
+id = "2c4fdd0a"
+q = '''What data does a word cloud need?'''
+a = '''A list of words with their counts, which you can write out as JSON.'''
+
+[[card]]
+id = "839cc7ef"
+q = '''Why sort by `(-count, word)`?'''
+a = '''Biggest counts come first and ties are alphabetical, so results are always in the same order.'''
+

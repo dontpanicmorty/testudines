@@ -1,0 +1,1 @@
+A made-up monitoring file has lines like `LOAD 0.75`, mixed with other lines such as `NOTE restarted` or blank lines. Write `average_load(path)`. Find every line that begins with `LOAD `, read the number after it, and return the average as a float. If there are no such lines, return `None`.

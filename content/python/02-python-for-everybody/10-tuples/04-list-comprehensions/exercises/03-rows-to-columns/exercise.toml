@@ -1,0 +1,9 @@
+id = "everybody.tuples.list-comprehensions.rows-to-columns"
+title = "Turn the table on its side"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Column j is made of item j from every row.",
+  "Check that all rows have the same length before building anything.",
+  "Raise ValueError with raise ValueError('...') for a ragged table.",
+]

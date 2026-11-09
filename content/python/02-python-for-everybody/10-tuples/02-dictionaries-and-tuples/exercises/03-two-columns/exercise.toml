@@ -1,0 +1,9 @@
+id = "everybody.tuples.dictionaries-and-tuples.two-columns"
+title = "Two columns from a dictionary"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Sort the keys first, then build the matching values.",
+  "Return the two lists together as a pair.",
+  "Ties are not possible: keys are unique.",
+]

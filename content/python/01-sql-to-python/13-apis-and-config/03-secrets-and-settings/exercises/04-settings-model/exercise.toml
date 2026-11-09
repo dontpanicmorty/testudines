@@ -1,0 +1,9 @@
+id = "apis-and-config.secrets-and-settings.settings-model"
+title = "A validated settings model"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Use pydantic.SecretStr for api_token so repr/str never shows it.",
+  "Only pass keys that are present: build a dict {field: env['APP_' + field.upper()]} for fields found in env, then Settings(**data).",
+  "Catch pydantic.ValidationError, collect e['loc'][0] for each error, map back to APP_<NAME> and raise ConfigError listing all of them, sorted.",
+]

@@ -1,0 +1,1 @@
+Simulate two dbt generic tests at once: `not_null` on `orders.customer_id`, and `relationships` (every `orders.customer_id` must exist in `customers.customer_id`). Return the `order_id` of every row that would fail either check. Order by `order_id`.

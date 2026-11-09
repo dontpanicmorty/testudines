@@ -1,0 +1,9 @@
+id = "iteration-and-idioms.generators-and-lazy-data.dedupe-stream"
+title = "Dedupe a stream, keep latest"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The rule is first occurrence wins, so you can decide about each row the moment you see it.",
+  "Keep a set of keys already seen; yield a row only if its key is new.",
+  "Add the key to the set immediately after checking it, before yielding.",
+]

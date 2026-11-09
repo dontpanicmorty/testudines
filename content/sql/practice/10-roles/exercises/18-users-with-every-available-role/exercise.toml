@@ -1,0 +1,6 @@
+id = "extra-198"
+title = "Users with every available role"
+difficulty = "hard"
+concept = "HAVING / COUNT DISTINCT"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "GROUP BY userName HAVING COUNT(DISTINCT roleId) equals a scalar subquery counting all roles."

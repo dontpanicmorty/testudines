@@ -1,0 +1,6 @@
+id = "extra-134"
+title = "States with above-average state sales"
+difficulty = "medium"
+concept = "CTE / HAVING"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Aggregate per-state totals in a CTE, then filter against a scalar subquery averaging that same CTE."

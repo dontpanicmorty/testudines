@@ -1,0 +1,1 @@
+A user's sessions form a 'streak' of consecutive calendar days. Return userId, sessionDate, and a streak_group number (via sessionDate minus a row number trick) for each session, ordered by userId then sessionDate.

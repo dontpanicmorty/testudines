@@ -1,0 +1,1 @@
+-- columns_metadata(column_name, data_type)

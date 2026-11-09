@@ -1,0 +1,6 @@
+id = "extra-48"
+title = "Monday vs Thursday cycle label"
+difficulty = "medium"
+concept = "CASE WHEN / DAYOFWEEK"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "CASE DAYOFWEEK(delivery_date) WHEN 1 THEN 'Monday' WHEN 4 THEN 'Thursday' END."

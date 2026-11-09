@@ -1,0 +1,1 @@
+Within each grade ordered by gpa descending, return id, firstName, grade, gpa, and the gap to the NEXT lower-gpa student in that grade (current gpa minus the next one), rounded to 2 decimals; NULL for the last student in a grade. Order by grade, gpa descending.

@@ -1,0 +1,1 @@
+-- employee_history(employee_id, department, salary, valid_from)

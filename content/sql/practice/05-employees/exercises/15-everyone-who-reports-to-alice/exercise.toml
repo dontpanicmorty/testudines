@@ -1,0 +1,6 @@
+id = "extra-95"
+title = "Everyone Who Reports to Alice"
+difficulty = "hard"
+concept = "recursive CTE"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "A recursive CTE: base case is direct reports of id=1, recursive case joins employees to the CTE on managerId."

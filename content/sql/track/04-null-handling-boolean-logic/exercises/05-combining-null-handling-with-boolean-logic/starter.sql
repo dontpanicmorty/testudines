@@ -1,0 +1,1 @@
+-- leads(lead_id, source, converted_at, is_qualified)

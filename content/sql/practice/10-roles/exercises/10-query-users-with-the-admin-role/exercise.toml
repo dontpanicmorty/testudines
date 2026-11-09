@@ -1,0 +1,6 @@
+id = "extra-190"
+title = "Query users with the admin role"
+difficulty = "medium"
+concept = "JOIN / three tables"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Create and populate the junction table, then a three-way JOIN filtered on role = 'admin'."

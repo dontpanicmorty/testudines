@@ -1,0 +1,6 @@
+id = "extra-183"
+title = "List all roles"
+difficulty = "easy"
+concept = "SELECT"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "SELECT role FROM roles ORDER BY role."

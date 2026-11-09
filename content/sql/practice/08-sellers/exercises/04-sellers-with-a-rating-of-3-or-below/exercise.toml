@@ -1,0 +1,6 @@
+id = "extra-144"
+title = "Sellers with a rating of 3 or below"
+difficulty = "easy"
+concept = "WHERE"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "WHERE rating <= 3."

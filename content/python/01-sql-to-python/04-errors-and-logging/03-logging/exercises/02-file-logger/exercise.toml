@@ -1,0 +1,9 @@
+id = "errors-and-logging.logging.file-logger"
+title = "Build a file logger"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Get the logger by name, set its level, then add one FileHandler.",
+  "Guard against duplicate handlers: calling the function twice must not double the lines.",
+  "Set propagate = False so records do not also go to the root logger.",
+]

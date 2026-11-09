@@ -1,0 +1,6 @@
+id = "extra-35"
+title = "Students without a duplicate-name sibling grade"
+difficulty = "hard"
+concept = "NOT EXISTS"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "NOT EXISTS a correlated subquery checking for a same-name student in a different grade."

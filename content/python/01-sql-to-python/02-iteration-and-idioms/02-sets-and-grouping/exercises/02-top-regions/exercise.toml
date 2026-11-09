@@ -1,0 +1,8 @@
+id = "iteration-and-idioms.sets-and-grouping.top-regions"
+title = "Top regions by customers"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Counter(...) accepts any iterable; feed it a generator over the rows.",
+  "most_common(n) sorts by count but ties come out in first-seen order; sort yourself with key=(-count, name) for a deterministic tie-break.",
+]

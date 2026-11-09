@@ -1,0 +1,8 @@
+id = "everybody.variables-expressions-statements.operators-and-expressions.clock-split"
+title = "Hours and minutes"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "How many whole hours fit in the total? And what is left?",
+  "You can return two values separated by a comma.",
+]

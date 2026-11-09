@@ -1,0 +1,1 @@
+-- daily_signups(signup_date, signup_count)

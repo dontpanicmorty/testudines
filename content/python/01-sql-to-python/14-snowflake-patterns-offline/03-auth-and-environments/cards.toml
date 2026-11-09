@@ -1,0 +1,34 @@
+[[card]]
+id = "81f5c716"
+q = "Which authentication method suits a scheduled pipeline, and which suits an analyst at a laptop?"
+a = "Pipeline: key pair (JWT) or platform identity. Analyst: SSO (`externalbrowser`), which needs a browser and so cannot run in a scheduler."
+
+[[card]]
+id = "37cbe1b1"
+q = "Why should `environment(name)` return `dict(ENVIRONMENTS[name])` rather than `ENVIRONMENTS[name]`?"
+a = "A copy stops callers from mutating the shared config; otherwise one caller's changes leak into the next."
+
+[[card]]
+id = "3109153b"
+q = "What should the default environment be for a script, and why?"
+a = "dev (or the safest one). Production should require an explicit opt-in so a typo or missing variable cannot hit prod."
+
+[[card]]
+id = "6a3d82e8"
+q = "Name two roles automation should never use and one code-level guard for it."
+a = "`ACCOUNTADMIN` and `SECURITYADMIN`. Guard: raise `ValueError` in `check_role` if the role (upper-cased) is in a forbidden set."
+
+[[card]]
+id = "1ee202d9"
+q = "What is `QUERY_TAG` for, and what format makes it most useful?"
+a = "It stamps every statement in the session so you can filter `QUERY_HISTORY` by job. Use structured JSON (job, env, run id)."
+
+[[card]]
+id = "d09c74bc"
+q = "What does this print?\n```python\nparams = {\"user\": \"svc\", \"password\": \"x\"}\nprint({k: \"***\" if k == \"password\" else v for k, v in params.items()})\n```"
+a = "`{'user': 'svc', 'password': '***'}`"
+
+[[card]]
+id = "c9795a9c"
+q = "Is `private_key_file=\"/run/secrets/key.p8\"` safe to log? What about `private_key`?"
+a = "The file path is just a location, so it is safe. `private_key` is the key material and must be redacted."

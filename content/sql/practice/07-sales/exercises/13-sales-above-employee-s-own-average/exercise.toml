@@ -1,0 +1,6 @@
+id = "extra-133"
+title = "Sales above employee's own average"
+difficulty = "medium"
+concept = "correlated subquery"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Correlated subquery computing AVG(amount) for the same employeeId."

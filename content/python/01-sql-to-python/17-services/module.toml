@@ -1,0 +1,3 @@
+title = "Services with FastAPI"
+summary = "Turn data logic into a well-behaved HTTP service: routes, validation, dependencies, data APIs and production habits, all tested without a server."
+stage = "Stage 5 · Production"

@@ -1,0 +1,6 @@
+id = "18.4"
+title = "Just the Top Two Levels of the Org"
+difficulty = "hard"
+concept = "recursive CTE with depth cutoff"
+tables = "employees(employee_id, employee_name, manager_id)"
+hint = "Add `where o.depth < 1` to the recursive member (the second half of the `union all`), not the final `select`, so recursion itself stops early."

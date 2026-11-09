@@ -1,0 +1,6 @@
+id = "extra-3"
+title = "Count sessions per user"
+difficulty = "easy"
+concept = "GROUP BY / COUNT"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "GROUP BY userId, COUNT(*)."

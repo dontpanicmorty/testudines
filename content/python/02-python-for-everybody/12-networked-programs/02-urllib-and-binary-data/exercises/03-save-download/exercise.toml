@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.urllib-and-binary-data.save-download"
+title = "Keep a copy"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Downloaded data of this kind is raw bytes: do not decode it.",
+  "A file opened for writing bytes needs a special mode letter.",
+  "Return how many bytes you saved.",
+]

@@ -1,0 +1,8 @@
+id = "everybody.files.opening-and-reading.clean-lines"
+title = "Lines without the endings"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Each line from the file carries an invisible ending.",
+  "Build a list as you loop.",
+]

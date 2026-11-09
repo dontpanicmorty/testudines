@@ -1,0 +1,8 @@
+id = "files-and-formats.json-and-jsonl.safe-get"
+title = "Safe nested access"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "A loop over the keys with try/except for KeyError, IndexError and TypeError is enough.",
+  "Return the default as soon as a step fails.",
+]

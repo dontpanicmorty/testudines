@@ -1,0 +1,9 @@
+id = "files-and-formats.json-and-jsonl.manifest-downstream"
+title = "Manifest: downstream impact"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "First invert the graph: build a dict parent -> list of children from depends_on.nodes.",
+  "Then walk from the starting node with a stack or recursion and a seen set.",
+  "Filter to unique_ids that start with 'model.' at the end, and sort.",
+]

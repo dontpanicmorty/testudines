@@ -1,0 +1,1 @@
+A text file mentions network addresses that look like four whole numbers joined by dots, for example `10.0.0.1`. Write `addresses(path)` that returns a list of every such address in the file, in the order they appear (repeats included). Do not check the number ranges; any four digit groups separated by dots count.

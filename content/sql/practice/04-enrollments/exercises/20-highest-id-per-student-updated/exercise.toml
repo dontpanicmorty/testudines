@@ -1,0 +1,6 @@
+id = "extra-80"
+title = "Highest id per student, updated"
+difficulty = "hard"
+concept = "UPDATE / subquery"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "UPDATE ... WHERE id IN (SELECT MAX(id) FROM enrollments GROUP BY studentId)."

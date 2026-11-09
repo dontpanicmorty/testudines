@@ -1,0 +1,6 @@
+id = "extra-33"
+title = "Grade GPA spread"
+difficulty = "medium"
+concept = "MAX - MIN"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "MAX(gpa) - MIN(gpa) grouped by grade."

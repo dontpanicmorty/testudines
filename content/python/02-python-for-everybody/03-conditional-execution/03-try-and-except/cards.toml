@@ -1,0 +1,29 @@
+[[card]]
+id = "72d56af6"
+q = '''What happens inside a `try` block when a line fails?'''
+a = '''Python skips the rest of the `try` block and jumps to the matching `except` block.'''
+
+[[card]]
+id = "5a410306"
+q = '''Why is naming the exception (`except ValueError:`) better than a bare `except:`?'''
+a = '''A bare `except:` also hides unrelated errors such as typos, so you never find out about real bugs.'''
+
+[[card]]
+id = "fdad7ef4"
+q = '''Which exception does `int("abc")` raise?'''
+a = '''`ValueError`'''
+
+[[card]]
+id = "1efe1ced"
+q = '''Which exception does `10 / 0` raise?'''
+a = '''`ZeroDivisionError`'''
+
+[[card]]
+id = "0e79a358"
+q = '''When is the `except` block skipped?'''
+a = '''When the `try` block finishes without an error.'''
+
+[[card]]
+id = "10848ecf"
+q = '''Why should a `try` block be short?'''
+a = '''So that only the risky line is protected, and errors in other lines are not hidden.'''

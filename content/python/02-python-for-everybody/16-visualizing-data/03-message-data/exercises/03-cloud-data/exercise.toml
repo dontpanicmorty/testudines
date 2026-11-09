@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.message-data.cloud-data"
+title = "Words by weight"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Lowercase the text and pull out the words first.",
+  "Remove the common words you were given before counting.",
+  "Order by count (largest first) and then alphabetically, and keep only the top few."
+]

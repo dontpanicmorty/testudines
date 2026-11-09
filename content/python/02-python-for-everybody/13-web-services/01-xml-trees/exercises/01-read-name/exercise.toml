@@ -1,0 +1,8 @@
+id = "everybody.web-services.xml-trees.read-name"
+title = "Read the label"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Parse the text first to get the root element.",
+  "A child element's text is stored on the element itself."
+]

@@ -1,0 +1,9 @@
+id = "everybody.databases-and-sql.joins-and-relationships.club-sizes"
+title = "How popular is each club?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Clubs nobody has joined must still appear.",
+  "Count the rows from the middle table, not the clubs themselves.",
+  "Order by count largest first, then name."
+]

@@ -1,0 +1,1 @@
+Write `save_lines(path, items)`. Create (or overwrite) the text file at `path` so that it contains each string from `items` on its own line, in order. Every line, including the last, ends with a newline. An empty list produces an empty file.

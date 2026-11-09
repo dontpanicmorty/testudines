@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.inheritance.build-on-parent"
+title = "Add to what is there"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The child's constructor must still let the parent do its setup.",
+  "Extend the description rather than rewriting it."
+]

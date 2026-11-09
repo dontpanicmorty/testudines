@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.message-data.busy-orgs-and-months"
+title = "Who and when"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Clean each sender before counting.",
+  "The organization is the last two parts of the domain.",
+  "Sort the results so that output is predictable."
+]

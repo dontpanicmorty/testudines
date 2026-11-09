@@ -1,0 +1,5 @@
+id = "code-quality.docstrings-and-api-design.error-hierarchy"
+title = "Design the loader's errors"
+difficulty = 2
+main = "solution.py"
+hints = ["Define `LoadError(Exception)`, then `SchemaError(LoadError)` and `RowError(LoadError)`.", "Store the data as attributes (`missing`, `line_number`) and build the message with `super().__init__(...)`.", "Line numbers count the header as line 1 and count blank lines too. Enumerate all lines after the header starting at 2, and skip blanks inside the loop."]

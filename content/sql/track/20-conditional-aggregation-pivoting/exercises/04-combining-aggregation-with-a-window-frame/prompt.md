@@ -1,0 +1,1 @@
+Return `sale_date`, `region`, `amount`, and a `trailing_3day_total` per `region` that sums `amount` over the current row and the 2 preceding rows, ordered by `sale_date`. Order by `region`, `sale_date`.

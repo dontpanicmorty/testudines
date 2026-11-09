@@ -1,0 +1,6 @@
+id = "15.2"
+title = "Snapshot \"check\" strategy: changed rows"
+difficulty = "hard"
+concept = "strategy='check' -- detecting column changes between two loads"
+tables = "daily_feed_day1(yesterday), daily_feed_day2(today) -- same shape"
+hint = "JOIN day2 to day1 on employee_id, WHERE d1.department IS DISTINCT FROM d2.department OR d1.salary IS DISTINCT FROM d2.salary."

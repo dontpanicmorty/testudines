@@ -1,0 +1,6 @@
+id = "extra-70"
+title = "Delete old records"
+difficulty = "medium"
+concept = "DELETE / WHERE"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "DELETE FROM enrollments WHERE year < 2000."

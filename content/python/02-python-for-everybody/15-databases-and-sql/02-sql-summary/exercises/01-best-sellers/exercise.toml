@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.sql-summary.best-sellers"
+title = "The top few"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Sort in the database, not in Python.",
+  "Limit the number of rows the database returns."
+]

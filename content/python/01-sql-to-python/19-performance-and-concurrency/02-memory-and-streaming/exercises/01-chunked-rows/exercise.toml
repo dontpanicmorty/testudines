@@ -1,0 +1,8 @@
+id = "performance-and-concurrency.memory-and-streaming.chunked-rows"
+title = "Chunked CSV reader"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Open the file once with newline='' and wrap it in csv.DictReader; yield from inside the with block.",
+  "Accumulate rows in a list; when it reaches size, yield it and start a new list. Yield the leftover at the end if it is not empty.",
+]

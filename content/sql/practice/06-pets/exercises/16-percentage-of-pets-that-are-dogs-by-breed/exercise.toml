@@ -1,0 +1,6 @@
+id = "extra-116"
+title = "Percentage of pets that are dogs by breed"
+difficulty = "hard"
+concept = "CTE / aggregation"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Build a combined CTE, then GROUP BY breed with a HAVING COUNT(DISTINCT pet_type) = 2 filter."

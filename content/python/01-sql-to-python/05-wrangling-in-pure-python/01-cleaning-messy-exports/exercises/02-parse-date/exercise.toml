@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.cleaning-messy-exports.parse-date"
+title = "Parse three date formats"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "datetime.strptime(text, fmt).date() raises ValueError when the format does not match.",
+  "Loop over the formats and return on the first success.",
+  "After the loop raise ValueError with the original text in the message.",
+]

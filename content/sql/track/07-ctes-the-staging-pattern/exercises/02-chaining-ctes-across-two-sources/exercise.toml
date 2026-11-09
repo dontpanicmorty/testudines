@@ -1,0 +1,6 @@
+id = "7.2"
+title = "Chaining CTEs across two sources"
+difficulty = "medium"
+concept = "Multiple named CTEs joined in the final select"
+tables = "source_subscriptions(sub_id, account_id, plan_code, ..., is_trial)\nsource_accounts(account_id, account_name, segment)"
+hint = "Define subs and accounts as separate CTEs, then JOIN them ON account_id in the final SELECT."

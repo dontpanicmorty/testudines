@@ -1,0 +1,1 @@
+Create a users_roles table with: userId INTEGER NOT NULL REFERENCES users(id), roleId INTEGER NOT NULL REFERENCES roles(id), assigned_at DATE NOT NULL DEFAULT CURRENT_DATE, and a composite PRIMARY KEY on (userId, roleId).

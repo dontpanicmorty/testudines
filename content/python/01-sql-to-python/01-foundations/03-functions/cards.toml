@@ -1,0 +1,34 @@
+[[card]]
+id = "9d3152c9"
+q = "What does this print?\n```python\ndef f(x):\n    x * 2\nprint(f(4))\n```"
+a = "`None`. There is no `return`, so the result of `x * 2` is discarded."
+
+[[card]]
+id = "160d19b4"
+q = "Why is `def add(x, items=[])` a bug and what is the fix?"
+a = "The default list is created once and shared by all calls. Use `items=None` and `if items is None: items = []` inside."
+
+[[card]]
+id = "5ccf41e2"
+q = "What does `def f(*args, **kwargs)` collect, and into which types?"
+a = "`*args`: extra positional arguments as a tuple. `**kwargs`: extra keyword arguments as a dict."
+
+[[card]]
+id = "8afd531a"
+q = "`nums = [1, 2, 3]`. How do you call `f(a, b, c)` using the list?"
+a = "`f(*nums)`: the star unpacks the list into separate arguments."
+
+[[card]]
+id = "c61370ff"
+q = "What error do you get from `def g(a, b): ...` called as `g(1)`?"
+a = "`TypeError: g() missing 1 required positional argument: 'b'`"
+
+[[card]]
+id = "134b63ec"
+q = "Does assigning to `rate` inside a function change the module-level `rate`?"
+a = "No. Assignment creates a new local variable. Pass the value in and return the result instead of using `global`."
+
+[[card]]
+id = "e42acce0"
+q = "What makes a function \"pure\"?"
+a = "Its output depends only on its inputs, and it changes nothing outside itself (no printing, global writes, or mutating arguments)."

@@ -1,0 +1,6 @@
+id = "extra-194"
+title = "Add a CHECK constraint on an expiration date"
+difficulty = "hard"
+concept = "CREATE TABLE / CHECK"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "A table-level CHECK (expires_at IS NULL OR expires_at > assigned_at)."

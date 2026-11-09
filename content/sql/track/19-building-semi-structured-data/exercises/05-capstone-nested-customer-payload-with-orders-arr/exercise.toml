@@ -1,0 +1,6 @@
+id = "19.5"
+title = "Capstone: Nested Customer Payload with Orders Array"
+difficulty = "hard"
+concept = "join + array_agg(struct_pack) + to_json capstone"
+tables = "customers(customer_id, customer_name)\norders(order_id, customer_id, amount)"
+hint = "Join first, then `group by customer_id, customer_name`, and wrap `array_agg(struct_pack(order_id := o.order_id, amount := o.amount) order by o.order_id)` in `to_json(...)`."

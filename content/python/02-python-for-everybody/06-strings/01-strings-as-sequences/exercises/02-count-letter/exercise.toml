@@ -1,0 +1,8 @@
+id = "everybody.strings.strings-as-sequences.count-letter"
+title = "Letter tally"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Compare in lower case so that capitals count too.",
+  "Add 1 to a counter each time the letter matches.",
+]

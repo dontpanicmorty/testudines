@@ -1,0 +1,6 @@
+id = "19.4"
+title = "Nesting Structs into a JSON Array of Objects"
+difficulty = "hard"
+concept = "array_agg(struct_pack) + to_json"
+tables = "order_items(order_id, product_name, quantity)"
+hint = "Nest three calls: `to_json(array_agg(struct_pack(product_name := product_name, quantity := quantity) order by product_name))`."

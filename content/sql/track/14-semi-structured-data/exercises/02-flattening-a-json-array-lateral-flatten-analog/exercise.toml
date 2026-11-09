@@ -1,0 +1,6 @@
+id = "14.2"
+title = "Flattening a JSON array (LATERAL FLATTEN analog)"
+difficulty = "hard"
+concept = "UNNEST as the DuckDB analog to LATERAL FLATTEN"
+tables = "raw_payloads(id, account_id, payload)"
+hint = "Put the unnest(...) AS team expression in a CTE's select list, then reference team.team_id / team.seats in the outer query."

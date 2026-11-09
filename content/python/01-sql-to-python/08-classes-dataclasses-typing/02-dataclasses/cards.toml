@@ -1,0 +1,34 @@
+[[card]]
+id = "a9e6649d"
+q = "What three methods does `@dataclass` generate by default?"
+a = "`__init__`, `__repr__` and `__eq__`, built from the annotated fields."
+
+[[card]]
+id = "7c4a0cfa"
+q = "Write a dataclass field `tags` that is a list, defaulting to a new empty list per instance."
+a = "```python\ntags: list[str] = field(default_factory=list)\n```"
+
+[[card]]
+id = "8aa1ea65"
+q = "What does `tags: list[str] = []` do in a dataclass?"
+a = "Raises `ValueError: mutable default <class 'list'> for field tags is not allowed: use default_factory`."
+
+[[card]]
+id = "62cea893"
+q = "Where do you validate field values in a dataclass, and how do you reject bad ones?"
+a = "In `__post_init__`; raise `ValueError` (with the bad value in the message) when a field is invalid."
+
+[[card]]
+id = "0d1ff033"
+q = "How do you make a modified copy of a frozen dataclass instance `e` with a new `name`?"
+a = "`dataclasses.replace(e, name=\"new\")`."
+
+[[card]]
+id = "075f9e0c"
+q = "Why can a frozen dataclass be used as a dict key or set member?"
+a = "`frozen=True` (with the default eq) makes it hashable, since its fields can't change."
+
+[[card]]
+id = "2ca9a9c1"
+q = "What does `@dataclass(order=True)` give you, and in what order are fields compared?"
+a = "Comparison operators (so `sorted` works); fields are compared in the order they are declared."

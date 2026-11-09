@@ -1,0 +1,2 @@
+-- customers(customer_id, region)
+  -- orders(order_id, customer_id, amount)

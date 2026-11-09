@@ -1,0 +1,2 @@
+-- source_subscriptions(sub_id, account_id, plan_code, ...)
+-- legacy_subscriptions(account_id, plan_code)

@@ -1,0 +1,6 @@
+id = "11.4"
+title = "Employees Who Share a Manager"
+difficulty = "medium"
+concept = "self-join with filter"
+tables = "employees(employee_id, employee_name, department, manager_id)"
+hint = "The `e1.employee_id < e2.employee_id` condition both excludes self-pairs and prevents each pair from showing up twice."

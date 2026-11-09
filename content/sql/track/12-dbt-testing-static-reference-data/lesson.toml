@@ -1,0 +1,4 @@
+id = "sql-lesson-12"
+number = 12
+title = "dbt Testing & Static Reference Data"
+difficulty = "medium"

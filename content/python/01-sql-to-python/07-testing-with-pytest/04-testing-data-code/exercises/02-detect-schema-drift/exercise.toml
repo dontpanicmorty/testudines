@@ -1,0 +1,5 @@
+id = "testing-with-pytest.testing-data-code.detect-schema-drift"
+title = "Detect schema drift"
+difficulty = 2
+main = "solution.py"
+hints = ["Loop over the sorted union of expected and actual column names, so output order is stable.", "Decide per column: missing, unexpected, changed or fine; at most one message per column.", "Message formats are exact, copy them from the prompt."]

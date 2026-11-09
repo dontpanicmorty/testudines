@@ -1,0 +1,2 @@
+-- daily_feed_day1(employee_id, department, salary)
+-- daily_feed_day2(employee_id, department, salary)

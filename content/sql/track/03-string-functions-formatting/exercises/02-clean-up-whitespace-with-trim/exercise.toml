@@ -1,0 +1,6 @@
+id = "3.2"
+title = "Clean Up Whitespace with TRIM"
+difficulty = "easy"
+concept = "TRIM"
+tables = "customers(customer_id, raw_name)"
+hint = "`trim(raw_name)` strips leading and trailing whitespace; alias it `clean_name`."

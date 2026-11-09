@@ -1,0 +1,6 @@
+id = "extra-8"
+title = "Mobile share per user"
+difficulty = "medium"
+concept = "CASE WHEN / aggregation"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "SUM(CASE WHEN deviceType='mobile' THEN 1 ELSE 0 END) / COUNT(*) * 100."

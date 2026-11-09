@@ -1,0 +1,9 @@
+id = "everybody.tuples.tuples-and-assignment.newer-release"
+title = "Which release is newer"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Split each version on the dot and turn the pieces into whole numbers.",
+  "Tuples of numbers compare position by position.",
+  "Return -1, 0 or 1.",
+]

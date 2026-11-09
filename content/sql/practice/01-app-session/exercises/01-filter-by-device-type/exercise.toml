@@ -1,0 +1,6 @@
+id = "extra-1"
+title = "Filter by device type"
+difficulty = "easy"
+concept = "WHERE"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "A single WHERE clause on deviceType."

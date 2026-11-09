@@ -1,0 +1,8 @@
+id = "foundations.values-and-types.parse-price"
+title = "Parse a price"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Strings have a .replace(old, new) method. Remove the unwanted characters first.",
+  "Call .strip() to drop whitespace, remove '$' and ',', then convert with float().",
+]

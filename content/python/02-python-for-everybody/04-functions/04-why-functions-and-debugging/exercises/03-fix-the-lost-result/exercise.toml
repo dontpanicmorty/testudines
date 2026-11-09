@@ -1,0 +1,9 @@
+id = "everybody.functions.why-functions-and-debugging.fix-the-lost-result"
+title = "Where did the answer go?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The first helper works; look at the second helper's last line.",
+  "A line that calculates something but has no return throws the answer away.",
+  "Check what each small function gives back, one at a time.",
+]

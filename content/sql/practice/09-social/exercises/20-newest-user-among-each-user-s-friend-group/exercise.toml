@@ -1,0 +1,6 @@
+id = "extra-180"
+title = "Newest user among each user's friend group"
+difficulty = "hard"
+concept = "QUALIFY"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Symmetric friends CTE, join to get both names/joinYear, QUALIFY ROW_NUMBER() = 1 partitioned per user ordered by friend's joinYear descending."

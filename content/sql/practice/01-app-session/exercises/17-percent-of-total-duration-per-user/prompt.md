@@ -1,0 +1,1 @@
+Return userId, their total duration, and the percentage (rounded to 1 decimal) of the grand total across all users their duration represents, ordered by percentage descending. Aggregate first to one row per user.

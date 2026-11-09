@@ -1,0 +1,25 @@
+[[card]]
+id = "7b2d5d8c"
+q = '''What do `m.group()` and `m.group(1)` return?'''
+a = '''`m.group()` is the whole match; `m.group(1)` is the text caught by the first pair of round brackets.'''
+
+[[card]]
+id = "59782e36"
+q = '''What does `re.findall` return when the pattern contains one group?'''
+a = '''A list of just what the group matched, not the whole matches.'''
+
+[[card]]
+id = "6bbfe4fb"
+q = '''How do you match a literal dollar sign?'''
+a = '''Escape it with a backslash: `\$`.'''
+
+[[card]]
+id = "726a6c00"
+q = '''Why is `3.11` risky as a pattern for the version 3.11?'''
+a = '''The unescaped `.` matches any character, so `3x11` would match too. Write `3\.11`.'''
+
+[[card]]
+id = "bac7497a"
+q = '''What does `\w` match?'''
+a = '''One word character: a letter, a digit or an underscore.'''
+

@@ -1,0 +1,1 @@
+For each `customer_id`, return every `order_id`, `order_date`, `amount`, the customer's `first_order_amount` (the `amount` of their earliest order), and `last_order_amount` (the `amount` of their latest order). Order by `customer_id`, `order_date`.

@@ -1,0 +1,6 @@
+id = "extra-11"
+title = "First session per user"
+difficulty = "medium"
+concept = "window function / QUALIFY"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "ROW_NUMBER() OVER (PARTITION BY userId ORDER BY sessionDate) with QUALIFY = 1."

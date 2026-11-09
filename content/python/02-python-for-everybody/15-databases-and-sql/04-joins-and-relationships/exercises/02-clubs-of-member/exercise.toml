@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.joins-and-relationships.clubs-of-member"
+title = "Where does Ines belong?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Three tables are involved; connect them in a chain.",
+  "The member is identified by name, so pass it as a parameter."
+]

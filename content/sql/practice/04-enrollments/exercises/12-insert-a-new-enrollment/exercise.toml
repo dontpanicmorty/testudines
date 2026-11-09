@@ -1,0 +1,6 @@
+id = "extra-72"
+title = "Insert a new enrollment"
+difficulty = "medium"
+concept = "INSERT"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "A plain INSERT INTO ... VALUES (...) matching the column order."

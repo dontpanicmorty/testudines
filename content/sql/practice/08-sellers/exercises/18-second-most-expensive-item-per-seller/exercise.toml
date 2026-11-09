@@ -1,0 +1,6 @@
+id = "extra-158"
+title = "Second most expensive item per seller"
+difficulty = "hard"
+concept = "QUALIFY"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "QUALIFY ROW_NUMBER() OVER (PARTITION BY sellerId ORDER BY price DESC) = 2."

@@ -1,0 +1,8 @@
+id = "everybody.dictionaries.dictionaries-as-counters.first-letters"
+title = "Starting letters"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The first character of a word is word[0], but an empty word has none.",
+  "Make the letter lowercase before counting it.",
+]

@@ -1,0 +1,8 @@
+id = "pipelines.incremental-loads.select-new-rows"
+title = "Select the new rows"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Filter on r['updated_at'] > watermark, but handle watermark is None first.",
+  "max() accepts default=... for an empty sequence.",
+]

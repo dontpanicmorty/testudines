@@ -1,0 +1,6 @@
+id = "9.3"
+title = "Orphaned Foreign Keys"
+difficulty = "medium"
+concept = "What dbt's relationships generic test runs under the hood"
+tables = "plan_accounts(plan_id, account_id)\naccounts(account_id, account_name, ...)"
+hint = "LEFT JOIN plan_accounts to accounts, then WHERE a.account_id IS NULL to find the orphans."

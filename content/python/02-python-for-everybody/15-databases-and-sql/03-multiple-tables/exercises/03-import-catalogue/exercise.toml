@@ -1,0 +1,9 @@
+id = "everybody.databases-and-sql.multiple-tables.import-catalogue"
+title = "Import a catalogue"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Create the tables only if they are missing.",
+  "Each author should be stored once however many books they wrote.",
+  "Return the new book's number from each insert's cursor."
+]

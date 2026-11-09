@@ -1,0 +1,1 @@
+Write `row_total(line)`. The argument is one line of whole numbers separated by commas, such as `"4,10,6"`. Return their sum as an integer. Spaces around numbers must be tolerated (`" 4, 10 "`). A line that is empty or only blanks has total `0`.

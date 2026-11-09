@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.dataclasses.order-line"
+title = "An order line that validates itself"
+difficulty = 2
+main = "solution.py"
+hints = ["`@dataclass(frozen=True)` and a `__post_init__` that raises `ValueError`.", "Normalising `sku` in a frozen dataclass needs `object.__setattr__(self, \"sku\", cleaned)`.", "`total_cents` can be a `@property`."]

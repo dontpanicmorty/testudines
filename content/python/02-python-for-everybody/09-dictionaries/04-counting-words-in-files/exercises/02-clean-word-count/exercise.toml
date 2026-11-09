@@ -1,0 +1,9 @@
+id = "everybody.dictionaries.counting-words-in-files.clean-word-count"
+title = "Clean word frequencies"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Make a translation table once, outside the loop.",
+  "Lowercase and translate each line before splitting it.",
+  "The string module has a ready-made list of punctuation.",
+]

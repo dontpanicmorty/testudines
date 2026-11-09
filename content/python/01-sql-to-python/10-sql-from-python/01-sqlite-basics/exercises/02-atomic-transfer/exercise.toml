@@ -1,0 +1,9 @@
+id = "sql-from-python.sqlite-basics.atomic-transfer"
+title = "Transfer that doesn't lose money"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Think about what state the database is in if an exception happens after the first UPDATE has already been committed.",
+  "Put both UPDATEs inside a single `with conn:` block so an exception rolls both back.",
+  "cursor.rowcount tells you how many rows an UPDATE touched. 0 means the account does not exist: raise ValueError inside the with block.",
+]

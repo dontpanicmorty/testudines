@@ -1,0 +1,5 @@
+id = "testing-with-pytest.testing-data-code.golden-file-helper"
+title = "Build a golden-file assertion"
+difficulty = 3
+main = "solution.py"
+hints = ["`pathlib.Path.exists()`, `read_text()`, `write_text()` are enough for the file handling.", "`difflib.unified_diff(expected_lines, actual_lines, fromfile=..., tofile=...)` builds the diff; join its lines into the error message.", "Create parent directories with `path.parent.mkdir(parents=True, exist_ok=True)` before writing."]

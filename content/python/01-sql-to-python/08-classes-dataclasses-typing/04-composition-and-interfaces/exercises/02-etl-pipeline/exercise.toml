@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.composition-and-interfaces.etl-pipeline"
+title = "Compose an extract-transform-load pipeline"
+difficulty = 2
+main = "solution.py"
+hints = ["Store the three collaborators on `self` in `__init__`; `run` just coordinates them.", "A transform returning `None` rejects the row; a transform raising `ValueError` also rejects it. Anything else should propagate.", "`load` is called exactly once with the list of good rows, even if it's empty. `rows_out` is whatever `load` returned."]

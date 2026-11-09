@@ -1,0 +1,34 @@
+[[card]]
+id = "1121f2b6"
+q = "Why is a Python loop of `cur.execute(\"INSERT ...\")` per row the wrong way to load 100k rows, and what replaces it?"
+a = "One round trip per row is very slow. Write files, `PUT` them to a stage and `COPY INTO` (or at least `executemany` in batches for small loads)."
+
+[[card]]
+id = "a8f79d7e"
+q = "What does a `write_pandas`-style helper do under the hood?"
+a = "Serialises the DataFrame to Parquet files, uploads them to a temporary stage, and runs `COPY INTO` the table."
+
+[[card]]
+id = "c3241a96"
+q = "Write a lazy `batched(items, size)` generator body using `islice`."
+a = "```python\nit = iter(items)\nwhile chunk := list(islice(it, size)):\n    yield chunk\n```"
+
+[[card]]
+id = "32546628"
+q = "A load commits after every batch and crashes on batch 7. What goes wrong on re-run, and what is the fix?"
+a = "Batches 1-6 are already in, so a re-run duplicates them. Use one transaction (rollback on error) and/or an idempotent MERGE on a business key."
+
+[[card]]
+id = "35bf5830"
+q = "Why stage into a temporary table and then MERGE instead of INSERT into the target?"
+a = "MERGE on the business key makes reruns and corrections idempotent (update or insert); INSERT would duplicate rows."
+
+[[card]]
+id = "163eb949"
+q = "What error does MERGE give when two source rows match the same target row, and what do you do beforehand?"
+a = "`Duplicate row detected during DML action` (or nondeterministic updates). Dedupe the staging data by key first."
+
+[[card]]
+id = "7d83110a"
+q = "Why split a huge extract into many files before COPY INTO?"
+a = "COPY loads files in parallel; a single giant file loads on one thread."

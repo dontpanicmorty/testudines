@@ -1,0 +1,6 @@
+id = "extra-78"
+title = "Conditional delete of low performers"
+difficulty = "hard"
+concept = "DELETE / subquery"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "DELETE ... WHERE grade_letter IS NULL AND studentId NOT IN (subquery of students with an 'A')."

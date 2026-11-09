@@ -1,0 +1,1 @@
+Return `payment_id`, `account_id`, `paid_at`, `amount`, a `running_total` per `account_id` ordered by `paid_at`, and a `payment_tier` from 1 to 2 splitting ALL payments (not partitioned) into 2 buckets ordered by `amount` descending. Order by `account_id`, `paid_at`.

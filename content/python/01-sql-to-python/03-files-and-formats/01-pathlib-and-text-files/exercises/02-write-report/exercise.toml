@@ -1,0 +1,9 @@
+id = "files-and-formats.pathlib-and-text-files.write-report"
+title = "Write a daily report file"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Build the folder with out_dir.mkdir(parents=True, exist_ok=True).",
+  "The file name is f'{day}.txt'; use mode 'w' with encoding utf-8.",
+  "Return the Path you wrote so callers can use it.",
+]

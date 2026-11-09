@@ -1,0 +1,9 @@
+id = "sql-from-python.parameters-and-injection.fetch-by-ids"
+title = "Fetch by ids (debug)"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Print the SQL string the current code builds when ids has exactly one element, and when it is empty.",
+  "str(tuple([5])) is '(5,)' which is not valid SQL. Build the placeholder list yourself.",
+  "Generate one ? per id with \", \".join(\"?\" * len(ids)), pass ids as the parameters, and return [] early for an empty list.",
+]

@@ -1,0 +1,1 @@
+`employees.manager_id` points to another employee's `employee_id`; the top of the org (the CEO) has a null `manager_id`. Return only the CEO (depth 0) and their direct reports (depth 1) -- nobody deeper. Return `employee_id`, `employee_name`, `depth`. Order by `depth`, `employee_id`.

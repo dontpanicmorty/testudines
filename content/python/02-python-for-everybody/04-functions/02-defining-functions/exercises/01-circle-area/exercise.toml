@@ -1,0 +1,8 @@
+id = "everybody.functions.defining-functions.circle-area"
+title = "Area of a circle"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "The area is pi times the radius squared.",
+  "The math module holds the value of pi.",
+]

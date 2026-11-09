@@ -1,0 +1,6 @@
+id = "extra-9"
+title = "Rank sessions by duration"
+difficulty = "medium"
+concept = "RANK / window function"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "RANK() OVER (ORDER BY duration DESC)."

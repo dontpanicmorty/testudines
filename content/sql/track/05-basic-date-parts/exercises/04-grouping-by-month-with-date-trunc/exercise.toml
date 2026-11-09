@@ -1,0 +1,6 @@
+id = "5.4"
+title = "Grouping by Month with DATE_TRUNC"
+difficulty = "easy"
+concept = "DATE_TRUNC + GROUP BY"
+tables = "orders(order_id, order_date, amount)"
+hint = "Group by the same `date_trunc('month', order_date)` expression you select, then `sum(amount)`."

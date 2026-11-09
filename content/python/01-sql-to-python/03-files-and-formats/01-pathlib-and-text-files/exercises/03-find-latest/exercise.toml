@@ -1,0 +1,9 @@
+id = "files-and-formats.pathlib-and-text-files.find-latest"
+title = "Debug: find the latest export"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Print what glob returns and compare with what you expected.",
+  "Strings compare character by character. Does 'orders_9' sort before 'orders_10'?",
+  "Pull the number out of the stem and compare it as an int.",
+]

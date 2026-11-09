@@ -1,0 +1,6 @@
+id = "extra-141"
+title = "Items from highly-rated sellers"
+difficulty = "easy"
+concept = "JOIN / WHERE"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "JOIN items to sellers, filter s.rating > 4."

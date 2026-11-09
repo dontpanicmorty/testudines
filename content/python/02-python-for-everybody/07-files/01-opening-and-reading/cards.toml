@@ -1,0 +1,25 @@
+[[card]]
+id = "415b9df4"
+q = '''What is a file handle?'''
+a = '''The object `open` returns: a connection to the file that lets you read from it. It is not the contents themselves.'''
+
+[[card]]
+id = "eb146255"
+q = '''Why does printing each line of a file leave blank lines between them?'''
+a = '''Every line ends with a newline character, and `print` adds another. Use `line.rstrip()` to remove it.'''
+
+[[card]]
+id = "fd4776c7"
+q = '''What does `handle.read()` return?'''
+a = '''The whole contents of the file as a single string, newlines included.'''
+
+[[card]]
+id = "e67d13e4"
+q = '''What exception happens when you open a file that does not exist?'''
+a = '''`FileNotFoundError`.'''
+
+[[card]]
+id = "17245176"
+q = '''What is persistence?'''
+a = '''Keeping information after a program ends, for example by saving it in a file.'''
+

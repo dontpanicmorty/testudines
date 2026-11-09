@@ -1,0 +1,6 @@
+id = "extra-132"
+title = "Employee sale count rank"
+difficulty = "medium"
+concept = "RANK"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "LEFT JOIN so zero-sale employees are included, GROUP BY name, then RANK() OVER (ORDER BY COUNT(s.id) DESC)."

@@ -1,0 +1,6 @@
+id = "extra-188"
+title = "Composite primary key"
+difficulty = "medium"
+concept = "CREATE TABLE / composite PK"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "PRIMARY KEY (userId, roleId) as a table-level constraint."

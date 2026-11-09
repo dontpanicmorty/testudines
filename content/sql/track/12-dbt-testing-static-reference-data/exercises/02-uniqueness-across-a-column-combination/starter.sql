@@ -1,0 +1,1 @@
+-- price_history(product_id, effective_date, price)

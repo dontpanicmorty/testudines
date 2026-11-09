@@ -1,0 +1,1 @@
+-- product_returns(return_id, product_category, refund_amount)

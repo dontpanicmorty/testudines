@@ -1,0 +1,9 @@
+id = "shared-libraries.packaging-and-versioning.bump-version"
+title = "Bump a semantic version"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Split on '.' and convert each part to int.",
+  "A major bump zeroes minor and patch; a minor bump zeroes patch.",
+  "Raise ValueError for an unknown part.",
+]

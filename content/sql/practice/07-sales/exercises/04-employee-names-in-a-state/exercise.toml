@@ -1,0 +1,6 @@
+id = "extra-124"
+title = "Employee names in a state"
+difficulty = "easy"
+concept = "JOIN"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "JOIN employees to states on stateId = id, filter state name."

@@ -1,0 +1,1 @@
+-- subscriptions(subscription_id, started_at, cancelled_at)

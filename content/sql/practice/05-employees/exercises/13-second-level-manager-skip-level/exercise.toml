@@ -1,0 +1,6 @@
+id = "extra-93"
+title = "Second-level manager (skip-level)"
+difficulty = "hard"
+concept = "self JOIN twice"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "Chain two self JOINs: employee -> manager -> manager's manager."

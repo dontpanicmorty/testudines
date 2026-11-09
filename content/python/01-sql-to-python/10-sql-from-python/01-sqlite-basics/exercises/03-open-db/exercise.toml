@@ -1,0 +1,9 @@
+id = "sql-from-python.sqlite-basics.open-db"
+title = "Open the pipeline database"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "sqlite3.connect accepts a str or a Path. Set row_factory on the connection right after connecting.",
+  "Use CREATE TABLE IF NOT EXISTS so a second call does not fail, and commit the schema creation.",
+  "PRAGMA foreign_keys = ON is per connection; run it with conn.execute.",
+]

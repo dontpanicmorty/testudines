@@ -1,0 +1,6 @@
+id = "extra-29"
+title = "Name length filter"
+difficulty = "medium"
+concept = "string function"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "LENGTH(lastName) > 5."

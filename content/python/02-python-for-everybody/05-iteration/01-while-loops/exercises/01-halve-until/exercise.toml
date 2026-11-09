@@ -1,0 +1,8 @@
+id = "everybody.iteration.while-loops.halve-until"
+title = "How many steps?"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Start a counter at 0 and a loop that runs while the number is above 1.",
+  "Use // 2 to halve with whole numbers.",
+]

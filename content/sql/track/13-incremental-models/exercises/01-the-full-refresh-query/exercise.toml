@@ -1,0 +1,6 @@
+id = "13.1"
+title = "The full-refresh query"
+difficulty = "hard"
+concept = "incremental model config, baseline"
+tables = "raw_usage_events(event_id, account_id, event_type, event_date, loaded_at)"
+hint = "A plain SELECT * (or explicit column list) FROM raw_usage_events ORDER BY event_id."

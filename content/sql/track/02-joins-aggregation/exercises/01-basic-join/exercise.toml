@@ -1,0 +1,6 @@
+id = "2.1"
+title = "Basic join"
+difficulty = "easy"
+concept = "JOIN ... ON"
+tables = "customers(customer_id, first_name, last_name, region, signup_date, is_active, referral_source)\norders(order_id, customer_id, order_date, amount, status)"
+hint = "JOIN orders o ON c.customer_id = o.customer_id, then filter on o.status."

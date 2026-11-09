@@ -1,0 +1,8 @@
+id = "everybody.iteration.for-loops.shout-list"
+title = "Add an exclamation"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Make an empty list, then loop through the words.",
+  "Add each changed word to the new list at the end of each iteration.",
+]

@@ -1,0 +1,1 @@
+For every individual sale row, also show that same employee's single largest sale amount alongside it -- so each of an employee's rows repeats their max instead of collapsing down to one row per employee. Return employeeId, id, amount, and that employee's largest sale amount as employee_max_sale, ordered by employeeId then amount descending.

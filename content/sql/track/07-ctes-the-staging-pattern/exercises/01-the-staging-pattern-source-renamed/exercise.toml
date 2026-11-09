@@ -1,0 +1,6 @@
+id = "7.1"
+title = "The staging pattern: source -> renamed"
+difficulty = "medium"
+concept = "WITH ... AS staging CTEs"
+tables = "source_subscriptions(sub_id, account_id, plan_code, start_date, end_date, mrr, is_trial)"
+hint = "WITH source AS (SELECT * FROM source_subscriptions), renamed AS (SELECT sub_id AS subscription_id, account_id, plan_code, mrr AS monthly_recurring_revenue FROM source) SELECT * FROM renamed ..."

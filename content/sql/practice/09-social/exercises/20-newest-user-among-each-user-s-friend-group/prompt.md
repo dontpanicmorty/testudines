@@ -1,0 +1,1 @@
+For each user who has at least one friend, find their single most recently joined friend (counting a friendship regardless of which column stores which user). Return the user's name as user_name, that friend's name as newest_friend, and the friend's joinYear. Order by user_name.

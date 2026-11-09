@@ -1,0 +1,6 @@
+id = "extra-57"
+title = "Consecutive successful delivery streak"
+difficulty = "hard"
+concept = "window function"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Use a running SUM of failures as a grouping key, then ROW_NUMBER() within each group for successful rows."

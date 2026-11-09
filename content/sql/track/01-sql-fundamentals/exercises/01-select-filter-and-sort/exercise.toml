@@ -1,0 +1,6 @@
+id = "1.1"
+title = "Select, filter, and sort"
+difficulty = "easy"
+concept = "SELECT / WHERE / ORDER BY"
+tables = "customers(customer_id, first_name, last_name, region, signup_date, is_active)"
+hint = "A basic WHERE clause on region, then ORDER BY last_name."

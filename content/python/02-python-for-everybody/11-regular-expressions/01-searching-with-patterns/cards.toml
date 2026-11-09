@@ -1,0 +1,30 @@
+[[card]]
+id = "7706466b"
+q = '''What does `re.search(pattern, text)` return?'''
+a = '''A match object for the first place the pattern fits, or `None` if there is no match.'''
+
+[[card]]
+id = "4db7b7b1"
+q = '''What do `^` and `$` match?'''
+a = '''`^` is the start of the line and `$` is the end of the line. Together they force a whole-line match.'''
+
+[[card]]
+id = "d1bf2581"
+q = '''What is the difference between `*`, `+` and `?`'''
+a = '''`*` is zero or more, `+` is one or more, `?` is zero or one (optional).'''
+
+[[card]]
+id = "eaf645b9"
+q = '''What does `[^0-9]` match?'''
+a = '''One character that is not a digit.'''
+
+[[card]]
+id = "cc9eebd8"
+q = '''Why should you write regex patterns as raw strings like `r'\d+'`?'''
+a = '''A raw string keeps backslashes as typed, so the regex module receives `\d` unchanged.'''
+
+[[card]]
+id = "2163e260"
+q = '''How do you get the text that matched from `m = re.search(...)`?'''
+a = '''`m.group()`, after checking that `m` is not `None`.'''
+

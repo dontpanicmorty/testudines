@@ -1,0 +1,9 @@
+id = "everybody.web-services.apis-and-keys.signed-url-and-pages"
+title = "Keys, pages and the whole story"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Read the key from the mapping you are given, not from the code.",
+  "Keep following the link to the next page until there is none.",
+  "Build each first request address with the key added to the parameters."
+]

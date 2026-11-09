@@ -1,0 +1,6 @@
+id = "4.1"
+title = "Finding Missing Values"
+difficulty = "easy"
+concept = "IS NULL / IS NOT NULL"
+tables = "accounts(account_id, plan_name, cancelled_at)"
+hint = "Filter with `where cancelled_at is null` -- never `= null`, which always evaluates to unknown."

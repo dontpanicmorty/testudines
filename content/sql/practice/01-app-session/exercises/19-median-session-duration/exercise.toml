@@ -1,0 +1,6 @@
+id = "extra-19"
+title = "Median session duration"
+difficulty = "hard"
+concept = "MEDIAN / aggregate function"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "DuckDB has a built-in MEDIAN() aggregate function."

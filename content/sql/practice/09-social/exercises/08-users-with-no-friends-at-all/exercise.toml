@@ -1,0 +1,6 @@
+id = "extra-168"
+title = "Users with no friends at all"
+difficulty = "medium"
+concept = "NOT IN / UNION"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "id NOT IN (SELECT user1 FROM friends UNION SELECT user2 FROM friends)."

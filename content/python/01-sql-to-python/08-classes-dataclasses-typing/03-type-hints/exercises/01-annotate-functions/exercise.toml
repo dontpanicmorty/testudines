@@ -1,0 +1,6 @@
+id = "classes-dataclasses-typing.type-hints.annotate-functions"
+title = "Annotate three helpers"
+difficulty = 1
+main = "solution.py"
+timeout = 120
+hints = ["Parameters get `name: type`; returns get `-> type`. `total_cents` takes a list of floats and returns an int.", "`first_or_none` works for any element type: write it with a type variable, `def first_or_none[T](items: list[T]) -> T | None`.", "`group_by_region` builds a dict from region to a list of customer ids; annotate the empty dict you start with: `groups: dict[str, list[str]] = {}`."]

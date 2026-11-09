@@ -1,0 +1,36 @@
+[[card]]
+id = "71a2597e"
+q = '''Your `log.info("done")` prints nothing. What is the most likely reason?'''
+a = '''The effective level is the default WARNING. Configure it, e.g. `logging.basicConfig(level=logging.INFO)`.'''
+
+[[card]]
+id = "f0bd9b44"
+q = '''What is the first line of every module that logs?'''
+a = '''```python
+log = logging.getLogger(__name__)
+```'''
+
+[[card]]
+id = "44345020"
+q = '''Why `log.info("rows=%d", n)` instead of `log.info(f"rows={n}")`?'''
+a = '''Formatting happens only if the record is emitted, and tools can group records by the constant template.'''
+
+[[card]]
+id = "00303874"
+q = '''What is the difference between a logger, a handler and a formatter?'''
+a = '''Logger creates records, handler sends them to a destination, formatter turns a record into text.'''
+
+[[card]]
+id = "3e460fa3"
+q = '''Which call logs an ERROR with the traceback inside an `except` block?'''
+a = '''`log.exception("message")`'''
+
+[[card]]
+id = "900a4225"
+q = '''Should a reusable library call `logging.basicConfig()`? Why?'''
+a = '''No. Configuration belongs to the application entry point; libraries only create loggers and emit records.'''
+
+[[card]]
+id = "900dcca5"
+q = '''Name two reasons `print` is not a logging strategy for a pipeline.'''
+a = '''No severity or timestamp, and callers cannot filter, redirect or silence it without editing code.'''

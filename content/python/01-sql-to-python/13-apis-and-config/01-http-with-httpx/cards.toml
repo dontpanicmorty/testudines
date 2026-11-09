@@ -1,0 +1,34 @@
+[[card]]
+id = "e662a6de"
+q = "A fake server returns `httpx.Response(404)`. Does `client.get(...)` raise?"
+a = "No. A 404 is a normal response. You get an exception only if you call `resp.raise_for_status()` (then `httpx.HTTPStatusError`)."
+
+[[card]]
+id = "e5415484"
+q = "Write the one-liner that builds a client whose requests are answered by a function `handler`, with a base URL."
+a = "```python\nhttpx.Client(transport=httpx.MockTransport(handler), base_url=\"https://api.example.test\")\n```"
+
+[[card]]
+id = "b9185b21"
+q = "Why should a function take `client` as a parameter instead of creating `httpx.Client()` inside?"
+a = "So tests can inject a client with a `MockTransport`; the function becomes testable offline."
+
+[[card]]
+id = "637a7cf3"
+q = "Which exception class covers read/connect timeouts, and which covers `raise_for_status()` failures?"
+a = "`httpx.TimeoutException` for timeouts; `httpx.HTTPStatusError` for bad statuses. Both are `httpx.HTTPError` subclasses."
+
+[[card]]
+id = "2c7797c9"
+q = "How do you make a fake handler simulate a timeout?"
+a = "Raise it:\n```python\nraise httpx.ReadTimeout(\"slow\", request=request)\n```"
+
+[[card]]
+id = "f9b52361"
+q = "What is wrong with `client.get(\"/users?name=\" + name)`, and what is the fix?"
+a = "The value is not URL-encoded (spaces, `&` break it). Use `client.get(\"/users\", params={\"name\": name})`."
+
+[[card]]
+id = "a887b8a5"
+q = "Which status ranges mean: your request was wrong / their server failed / slow down?"
+a = "4xx / 5xx / 429 (a 4xx that signals rate limiting)."

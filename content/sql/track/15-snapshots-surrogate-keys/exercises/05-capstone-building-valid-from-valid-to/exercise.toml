@@ -1,0 +1,6 @@
+id = "15.5"
+title = "Capstone: building valid_from / valid_to"
+difficulty = "hard"
+concept = "LEAD() to construct SCD2-style validity windows"
+tables = "employee_history(employee_id, department, salary, valid_from)"
+hint = "LEAD(valid_from) OVER (PARTITION BY employee_id ORDER BY valid_from) AS valid_to"

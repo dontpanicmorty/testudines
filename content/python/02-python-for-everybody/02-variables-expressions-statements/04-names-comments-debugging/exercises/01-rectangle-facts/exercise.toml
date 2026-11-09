@@ -1,0 +1,8 @@
+id = "everybody.variables-expressions-statements.names-comments-debugging.rectangle-facts"
+title = "Rectangle facts"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Area is length times width; perimeter is twice the sum of the sides.",
+  "Use meaningful variable names inside your function.",
+]

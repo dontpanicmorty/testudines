@@ -1,0 +1,1 @@
+-- payments(payment_id, account_id, paid_at, amount)

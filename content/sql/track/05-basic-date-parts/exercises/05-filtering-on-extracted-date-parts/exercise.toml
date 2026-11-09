@@ -1,0 +1,6 @@
+id = "5.5"
+title = "Filtering on Extracted Date Parts"
+difficulty = "easy"
+concept = "EXTRACT + WHERE"
+tables = "orders(order_id, order_date, amount)"
+hint = "Filter with `where extract(month from order_date) = 4` -- no year comparison needed."

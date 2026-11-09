@@ -1,0 +1,6 @@
+id = "extra-13"
+title = "Users active on multiple days"
+difficulty = "medium"
+concept = "GROUP BY / COUNT DISTINCT"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "COUNT(DISTINCT sessionDate) with a HAVING clause."

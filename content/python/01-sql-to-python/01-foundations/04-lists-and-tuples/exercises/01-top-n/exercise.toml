@@ -1,0 +1,8 @@
+id = "foundations.lists-and-tuples.top-n"
+title = "Top N orders"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "sorted(..., key=..., reverse=True) gives ORDER BY ... DESC.",
+  "Slice the sorted result with [:n] for LIMIT n.",
+]

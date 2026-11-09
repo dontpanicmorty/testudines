@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.scraping-html-with-regex.outside-links"
+title = "Links that leave the site"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "First download the page, then search the text.",
+  "Outside links start with http:// or https://; relative ones do not.",
+  "A set removes duplicates; sort the result.",
+]

@@ -1,0 +1,6 @@
+id = "code-quality.linting-and-formatting.lint-found-real-bugs"
+title = "Lint warnings that are real bugs"
+difficulty = 2
+main = "solution.py"
+timeout = 120
+hints = ["Call `add_tag('a')` twice with no list passed. What does the second call return, and why?", "Create the default list inside the function when the argument is `None`.", "In `make_filters`, all the lambdas look up `t` when they are *called*, by which time the loop finished. Bind the current value at creation."]

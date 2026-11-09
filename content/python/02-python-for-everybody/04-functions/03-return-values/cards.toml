@@ -1,0 +1,29 @@
+[[card]]
+id = "788add89"
+q = '''What is the difference between a fruitful and a void function?'''
+a = '''A fruitful function returns a value to the caller. A void function does not; it just does something, such as printing.'''
+
+[[card]]
+id = "61607a1d"
+q = '''What does a function return if it has no `return` statement?'''
+a = '''`None`.'''
+
+[[card]]
+id = "29a909a0"
+q = '''What does `return` do the moment Python reaches it?'''
+a = '''It ends the function and hands the value back to where the function was called.'''
+
+[[card]]
+id = "4c39faa8"
+q = '''Why does `add_printing(2, 3) + 10` crash when `add_printing` only prints?'''
+a = '''The call gives `None`, and you cannot add a number to `None` (a `TypeError`).'''
+
+[[card]]
+id = "c374698f"
+q = '''What is a simple way to return a yes/no answer such as "is this a teenager?"'''
+a = '''Return the comparison directly: `return 13 <= age <= 19`.'''
+
+[[card]]
+id = "6057fec7"
+q = '''What goes wrong if one branch of an `if` chain has no `return`?'''
+a = '''That path returns `None` by accident.'''

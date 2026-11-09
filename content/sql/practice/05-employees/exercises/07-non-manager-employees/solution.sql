@@ -1,0 +1,1 @@
+SELECT name FROM employees WHERE id NOT IN (SELECT managerId FROM employees WHERE managerId IS NOT NULL) ORDER BY name;

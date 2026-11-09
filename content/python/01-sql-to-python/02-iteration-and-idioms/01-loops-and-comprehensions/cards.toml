@@ -1,0 +1,34 @@
+[[card]]
+id = "d8de91c7"
+q = "Write a list comprehension equivalent to `SELECT amount * 2 FROM orders WHERE status = 'paid'` (orders is a list of dicts)."
+a = "```python\n[o[\"amount\"] * 2 for o in orders if o[\"status\"] == \"paid\"]\n```"
+
+[[card]]
+id = "f9fadd59"
+q = "What do these give for `xs = [-1, 2, -3]`?\n```python\n[x for x in xs if x > 0]\n[x if x > 0 else 0 for x in xs]\n```"
+a = "`[2]` (filter drops items) and `[0, 2, 0]` (conditional expression replaces them)."
+
+[[card]]
+id = "f03d6ac1"
+q = "Write a loop header that gives both position (starting at 1) and value of `names`."
+a = "```python\nfor i, name in enumerate(names, start=1):\n```"
+
+[[card]]
+id = "1a9afa1d"
+q = "What does `dict(zip([\"a\", \"b\"], [1, 2, 3]))` return and what is the hazard?"
+a = "`{'a': 1, 'b': 2}`. `zip` silently truncates to the shortest input; use `zip(..., strict=True)` to raise on mismatched lengths."
+
+[[card]]
+id = "19f5a685"
+q = "Build a lookup from `id` to row for `rows` in one expression."
+a = "```python\n{r[\"id\"]: r for r in rows}\n```"
+
+[[card]]
+id = "9c574d9c"
+q = "When does a `for ... else` block's `else` run?"
+a = "Only when the loop finishes without hitting `break`."
+
+[[card]]
+id = "21fce141"
+q = "Write `SELECT DISTINCT region FROM customers` over a list of dicts."
+a = "```python\n{c[\"region\"] for c in customers}\n```"

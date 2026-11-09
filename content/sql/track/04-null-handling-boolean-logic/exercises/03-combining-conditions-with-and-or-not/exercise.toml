@@ -1,0 +1,6 @@
+id = "4.3"
+title = "Combining Conditions with AND/OR/NOT"
+difficulty = "easy"
+concept = "AND/OR/NOT"
+tables = "subscriptions(subscription_id, plan_name, status, is_trial)"
+hint = "Group the first condition in parentheses: `(status = 'active' and not is_trial) or plan_name = 'enterprise'`."

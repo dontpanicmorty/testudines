@@ -1,0 +1,8 @@
+id = "everybody.dictionaries.looping-over-dictionaries.keep-the-big-ones"
+title = "Keep the big ones"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Loop over the pairs and build a fresh dictionary.",
+  "Include an entry only when its value reaches the minimum.",
+]

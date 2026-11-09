@@ -1,0 +1,29 @@
+[[card]]
+id = "a9fa4db9"
+q = '''What is a reserved word? Give three examples.'''
+a = '''A word Python keeps for its own meaning, so you cannot use it as your own name. Examples: `if`, `while`, `def`, `return`, `True`.'''
+
+[[card]]
+id = "b76fa42f"
+q = '''What is the difference between a compiler and an interpreter?'''
+a = '''A compiler translates the whole program into a separate machine-code file first. An interpreter reads the program and carries out its instructions directly.'''
+
+[[card]]
+id = "facb6f53"
+q = '''What does `>>>` mean in Python examples?'''
+a = '''It is the interactive prompt: Python is waiting for you to type a line. You do not type it yourself.'''
+
+[[card]]
+id = "4ad2f5a9"
+q = '''Name the six building blocks of programs.'''
+a = '''Input, output, sequential execution, conditional execution, repeated execution and reuse.'''
+
+[[card]]
+id = "2722444c"
+q = '''Why does `print(price)` followed by `price = 5` fail?'''
+a = '''Python runs lines top to bottom, so `price` does not exist yet when the first line runs.'''
+
+[[card]]
+id = "dea2315e"
+q = '''What file ending do Python programs use?'''
+a = '''`.py`'''

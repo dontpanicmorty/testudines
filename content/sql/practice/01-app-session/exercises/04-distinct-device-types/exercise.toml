@@ -1,0 +1,6 @@
+id = "extra-4"
+title = "Distinct device types"
+difficulty = "easy"
+concept = "DISTINCT"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "SELECT DISTINCT ... ORDER BY."

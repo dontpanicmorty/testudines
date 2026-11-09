@@ -1,0 +1,25 @@
+[[card]]
+id = "a32836c0"
+q = '''What is the difference between `find` and `findall`?'''
+a = '''`find` returns the first matching element (or `None`). `findall` returns a list of all matches, which is empty if there are none.'''
+
+[[card]]
+id = "1131451d"
+q = '''What does the path `".//bikes"` mean?'''
+a = '''Every `bikes` element anywhere below the current element, at any depth.'''
+
+[[card]]
+id = "900bb2b7"
+q = '''How do you loop over zones and then the stations inside each zone?'''
+a = '''A nested loop: `for z in root.findall("zone"): for s in z.findall("station"): ...`'''
+
+[[card]]
+id = "14b3c305"
+q = '''What does `root.iter("bikes")` do?'''
+a = '''Walks the whole tree and yields each element called `bikes`.'''
+
+[[card]]
+id = "f6bb9533"
+q = '''You loop with `findall` and nothing prints. What do you check first?'''
+a = '''Print `root.tag` and `len(root.findall(...))`; the path may be one level off, so try `.//tag`.'''
+

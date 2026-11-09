@@ -1,0 +1,3 @@
+id = "sql-to-python"
+title = "From SQL to Python"
+summary = "For data and analytics engineers who already think in SQL: from zero Python to production-grade work, through files, wrangling, testing, DataFrames, APIs, pipelines and services."

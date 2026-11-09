@@ -1,0 +1,1 @@
+Create a sequence named seq_users_roles_id starting at 1, then a users_roles table whose id column defaults to nextval of that sequence, plus userId INTEGER REFERENCES users(id) and roleId INTEGER REFERENCES roles(id).

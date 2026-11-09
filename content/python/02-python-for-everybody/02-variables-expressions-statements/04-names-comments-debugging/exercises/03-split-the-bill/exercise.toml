@@ -1,0 +1,9 @@
+id = "everybody.variables-expressions-statements.names-comments-debugging.split-the-bill"
+title = "Share the bill"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Add the tip as a percentage of the bill first.",
+  "Divide the final total by the number of people.",
+  "Use good variable names for each step.",
+]

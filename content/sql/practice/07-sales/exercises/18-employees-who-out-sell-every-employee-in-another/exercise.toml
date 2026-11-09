@@ -1,0 +1,6 @@
+id = "extra-138"
+title = "Employees who out-sell every employee in another region"
+difficulty = "hard"
+concept = "NOT EXISTS-style comparison"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Build a per-employee totals CTE, then compare to a scalar subquery averaging just the South region's employees."

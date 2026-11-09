@@ -1,0 +1,6 @@
+id = "2.2"
+title = "Customers With No Orders"
+difficulty = "easy"
+concept = "LEFT JOIN + IS NULL"
+tables = "customers(customer_id, first_name, ...)\norders(order_id, customer_id, ...)"
+hint = "LEFT JOIN orders, then filter WHERE o.order_id IS NULL to find rows with no match."

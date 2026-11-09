@@ -1,0 +1,9 @@
+id = "validation-and-contracts.schemas-at-the-boundary.error-report"
+title = "Summarise rejects"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "collections.Counter counts hashable items; feed it a generator of field names.",
+  "Counter.most_common() sorts by count descending but ties keep insertion order. Sort explicitly by (-count, field) for determinism.",
+  "A row with two errors on the same field should count that row once for the field in rows_affected; count every error in error_count.",
+]

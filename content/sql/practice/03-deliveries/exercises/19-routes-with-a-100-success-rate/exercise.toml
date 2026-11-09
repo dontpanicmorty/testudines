@@ -1,0 +1,6 @@
+id = "extra-59"
+title = "Routes with a 100% success rate"
+difficulty = "hard"
+concept = "HAVING"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "GROUP BY route_id HAVING no failed rows (SUM of a failure indicator = 0)."

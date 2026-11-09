@@ -1,0 +1,8 @@
+id = "everybody.iteration.loop-patterns.smallest-or-none"
+title = "Lowest reading"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Start with a variable that has no value yet.",
+  "Replace it whenever it is empty or the new reading is lower.",
+]

@@ -1,0 +1,6 @@
+id = "extra-82"
+title = "Employees per department"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "GROUP BY department."

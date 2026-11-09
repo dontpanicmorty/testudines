@@ -1,0 +1,25 @@
+[[card]]
+id = "1ee42e8a"
+q = '''What is the difference between `==` and `is`?'''
+a = '''`==` asks whether two values are equal. `is` asks whether they are the very same object.'''
+
+[[card]]
+id = "6e287c04"
+q = '''What is aliasing?'''
+a = '''Two names referring to the same object, so a change made through one name is visible through the other.'''
+
+[[card]]
+id = "72e20eef"
+q = '''How do you make an independent copy of a list `x`?'''
+a = '''`x[:]` or `list(x)`.'''
+
+[[card]]
+id = "6e342907"
+q = '''If a function does `items.append(1)` on its parameter, what happens to the caller's list?'''
+a = '''It is changed, because the parameter is an alias of the caller's list.'''
+
+[[card]]
+id = "d0daa919"
+q = '''What is the difference between `items.append(1)` and `items = items + [1]` inside a function?'''
+a = '''`append` modifies the shared list. The second line makes a new list and rebinds only the local name.'''
+

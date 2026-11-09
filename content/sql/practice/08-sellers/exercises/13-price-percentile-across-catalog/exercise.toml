@@ -1,0 +1,6 @@
+id = "extra-153"
+title = "Price percentile across catalog"
+difficulty = "medium"
+concept = "PERCENT_RANK"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "PERCENT_RANK() OVER (ORDER BY price)."

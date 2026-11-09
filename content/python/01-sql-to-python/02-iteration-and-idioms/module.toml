@@ -1,0 +1,3 @@
+title = "Iteration and idioms"
+summary = "Loops, comprehensions, sets, grouping, generators and reading tracebacks: the idioms that make Python code look like Python."
+stage = "Stage 1 · Foundations"

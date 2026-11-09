@@ -1,0 +1,1 @@
+Extend the org-chart recursion to also build a `path` string showing the chain of names from the top down, e.g. `'Priya > Sam > Noor'`. Return `employee_id`, `employee_name`, and `path`. Order by `path`.

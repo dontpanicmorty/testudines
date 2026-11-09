@@ -1,0 +1,8 @@
+id = "everybody.networked-programs.urllib-and-binary-data.read-page"
+title = "Bring the page home"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "urllib.request.urlopen opens a URL.",
+  "What you read is bytes; the page is UTF-8 text.",
+]

@@ -1,0 +1,6 @@
+id = "12.5"
+title = "Orders With an Invalid or Missing Status"
+difficulty = "medium"
+concept = "lookup join + accepted_values"
+tables = "orders(order_id, status_code, amount)\nstatus_lookup(status_code, status_label, is_valid_status)"
+hint = "After a `left join`, an unmatched row has `l.status_code is null`; combine that with `not coalesce(l.is_valid_status, false)`."

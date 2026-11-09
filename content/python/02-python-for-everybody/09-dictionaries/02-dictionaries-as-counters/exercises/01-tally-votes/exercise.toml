@@ -1,0 +1,8 @@
+id = "everybody.dictionaries.dictionaries-as-counters.tally-votes"
+title = "Tally the votes"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Start with an empty dictionary and loop over the votes.",
+  "For each vote, new count = old count (or 0) + 1.",
+]

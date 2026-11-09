@@ -1,0 +1,34 @@
+[[card]]
+id = "d12bd217"
+q = "Why must a paginated query include `ORDER BY`?"
+a = "Without a stable order the database may return rows in different orders per call, so pages overlap or skip rows."
+
+[[card]]
+id = "70c65784"
+q = "Write a `get_db` dependency that always closes its sqlite connection."
+a = "```python\ndef get_db():\n    conn = sqlite3.connect(path)\n    try:\n        yield conn\n    finally:\n        conn.close()\n```"
+
+[[card]]
+id = "302f3483"
+q = "What status should `/health` return when the database is unreachable, and why not 200?"
+a = "`503 Service Unavailable`. Load balancers and orchestrators decide from the status code; 200 would keep sending traffic."
+
+[[card]]
+id = "2deb69d0"
+q = "A client retries `POST /payments` with the same `Idempotency-Key`. What should happen and what is stored?"
+a = "Return the original response; create nothing new. The service stores key -> response after the first success."
+
+[[card]]
+id = "f7503b90"
+q = "Why install handlers for `HTTPException` and `RequestValidationError` together?"
+a = "Their default bodies differ (`detail` string vs list). Handlers give every error one envelope so clients parse one shape."
+
+[[card]]
+id = "9edd54ac"
+q = "Why read `os.environ` in a `get_settings` dependency instead of inside handlers?"
+a = "One place to change and override: tests use `dependency_overrides[get_settings]` instead of patching the environment."
+
+[[card]]
+id = "52459fc5"
+q = "You see `ProgrammingError: SQLite objects created in a thread can only be used in that same thread`. What is the fix?"
+a = "Do not share one connection across requests. Open one per request in a dependency (or use `check_same_thread=False` with care)."

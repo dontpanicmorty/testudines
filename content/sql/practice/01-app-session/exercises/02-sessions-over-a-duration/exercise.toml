@@ -1,0 +1,6 @@
+id = "extra-2"
+title = "Sessions over a duration"
+difficulty = "easy"
+concept = "WHERE / comparison"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "duration > 15, then ORDER BY duration DESC."

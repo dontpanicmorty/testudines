@@ -1,0 +1,9 @@
+id = "everybody.object-oriented-programming.inheritance.shapes-total"
+title = "Add up different shapes"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Give every kind of shape the same method name.",
+  "A square is a special rectangle.",
+  "The base type should refuse to give an area on its own."
+]

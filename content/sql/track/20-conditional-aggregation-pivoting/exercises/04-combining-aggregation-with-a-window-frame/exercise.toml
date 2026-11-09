@@ -1,0 +1,6 @@
+id = "20.4"
+title = "Combining Aggregation with a Window Frame"
+difficulty = "hard"
+concept = "ROWS BETWEEN window frame"
+tables = "daily_sales(sale_date, region, amount)"
+hint = "`sum(amount) over (partition by region order by sale_date rows between 2 preceding and current row)`."

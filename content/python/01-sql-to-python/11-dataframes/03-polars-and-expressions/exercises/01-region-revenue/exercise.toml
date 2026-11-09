@@ -1,0 +1,9 @@
+id = "dataframes.polars-and-expressions.region-revenue"
+title = "Revenue by region"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "filter first, then group_by('region').agg(...).",
+  "pl.col('amount').sum().alias('total') and pl.len().alias('n_orders').",
+  "Finish with .sort('total', descending=True) and tie-break with 'region'.",
+]

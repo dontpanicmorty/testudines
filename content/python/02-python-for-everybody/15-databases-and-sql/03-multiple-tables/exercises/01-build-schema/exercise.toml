@@ -1,0 +1,8 @@
+id = "everybody.databases-and-sql.multiple-tables.build-schema"
+title = "Lay out the tables"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Two tables, each with its own automatic number.",
+  "One column needs to refuse repeated values."
+]

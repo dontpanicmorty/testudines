@@ -1,0 +1,6 @@
+id = "extra-23"
+title = "Average GPA"
+difficulty = "easy"
+concept = "AVG"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "AVG(gpa) with ROUND."

@@ -1,0 +1,9 @@
+id = "everybody.why-program.computers-and-programs.download-time"
+title = "Waiting for the network"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "File sizes are in megabytes (MB) but connection speeds are in megabits per second (Mbps).",
+  "One byte is 8 bits, so size in megabits = megabytes * 8.",
+  "Time = megabits divided by speed.",
+]

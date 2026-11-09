@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.testing-warehouse-code.inject-the-connection"
+title = "Make the job testable"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Add a parameter `connect` (a zero-argument callable) and call it to get the connection instead of the module-level open_real_connection().",
+  "Use try/finally so conn.close() runs even if the query fails.",
+  "SUM over zero rows is NULL: row[0] may be None. Return 0.0 in that case.",
+]

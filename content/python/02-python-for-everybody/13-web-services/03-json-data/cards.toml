@@ -1,0 +1,30 @@
+[[card]]
+id = "986d910a"
+q = '''Which Python types do a JSON object and a JSON array become?'''
+a = '''An object becomes a `dict`; an array becomes a `list`.'''
+
+[[card]]
+id = "d87954ba"
+q = '''What do `true`, `false` and `null` become after `json.loads`?'''
+a = '''`True`, `False` and `None`.'''
+
+[[card]]
+id = "012bdc8a"
+q = '''What is the difference between `json.loads` and `json.dumps`?'''
+a = '''`loads` turns JSON text into Python data (parsing); `dumps` turns Python data into JSON text (serializing).'''
+
+[[card]]
+id = "a82d9a83"
+q = '''What error does broken JSON raise?'''
+a = '''`json.JSONDecodeError`.'''
+
+[[card]]
+id = "0511a146"
+q = '''How do you read the `id` of the first item in `data["result"]["items"]`?'''
+a = '''`data["result"]["items"][0]["id"]`, working from the outside in.'''
+
+[[card]]
+id = "1b0c89f3"
+q = '''What does `json.dumps(x, indent=2, sort_keys=True)` add?'''
+a = '''Readable indentation and keys in sorted order.'''
+

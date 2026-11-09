@@ -1,0 +1,6 @@
+id = "extra-34"
+title = "Percentile rank of GPA"
+difficulty = "hard"
+concept = "PERCENT_RANK"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "PERCENT_RANK() OVER (ORDER BY gpa)."

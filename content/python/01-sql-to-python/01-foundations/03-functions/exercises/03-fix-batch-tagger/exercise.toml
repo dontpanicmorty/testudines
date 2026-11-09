@@ -1,0 +1,9 @@
+id = "foundations.functions.fix-batch-tagger"
+title = "Debug: tags leaking between calls"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Call tag_batch twice in a row in the REPL and look at the second result.",
+  "A default value is evaluated once, when the function is defined.",
+  "Use None as the default and build a new list inside the function. Also check you are not mutating the argument.",
+]

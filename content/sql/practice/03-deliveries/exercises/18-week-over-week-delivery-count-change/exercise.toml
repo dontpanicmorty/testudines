@@ -1,0 +1,6 @@
+id = "extra-58"
+title = "Week-over-week delivery count change"
+difficulty = "hard"
+concept = "LAG"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Aggregate counts per week in a CTE, then LAG(delivery_count) OVER (ORDER BY delivery_week)."

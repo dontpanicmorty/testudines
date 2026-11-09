@@ -1,0 +1,1 @@
+-- customers(customer_id, first_name, last_name, region, signup_date, is_active)

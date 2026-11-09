@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.cleaning-messy-exports.clean-invoices"
+title = "Clean the invoice export"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Plan the steps first: read rows, normalise header keys, clean each field, dedupe.",
+  "Reuse small helpers: one for amounts, one for dates. Keep a seen set of invoice ids.",
+  "Statuses: strip and lowercase; blank becomes None. Customer: strip then .title().",
+]

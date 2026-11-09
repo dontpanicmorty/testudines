@@ -1,0 +1,29 @@
+[[card]]
+id = "e47e891f"
+q = "What is a watermark in an incremental load?"
+a = "The highest value of an increasing column (e.g. `updated_at`) that has been fully processed. The next run reads rows beyond it."
+
+[[card]]
+id = "a31bf2de"
+q = "In what order should an incremental job write data and save its watermark, and why?"
+a = "Write the data first, save the watermark second. A crash in between then causes a harmless re-read instead of silent data loss."
+
+[[card]]
+id = "daa251ef"
+q = "A late row has `updated_at` older than the watermark. What mechanism catches it?"
+a = "A lookback window: re-read a margin before the watermark and rely on an idempotent upsert to absorb the overlap."
+
+[[card]]
+id = "aabc9c22"
+q = "Write the Python for 'keep the latest row per id' given `rows`."
+a = "```python\nlatest = {}\nfor r in sorted(rows, key=lambda r: r[\"updated_at\"]):\n    latest[r[\"id\"]] = r\n```"
+
+[[card]]
+id = "f754746a"
+q = "What should the next watermark be if the batch is empty?"
+a = "The old watermark, unchanged. Never reset it to `None` or move it backwards (`max(..., default=watermark)`)."
+
+[[card]]
+id = "da6cb763"
+q = "Which source changes can a timestamp watermark never detect?"
+a = "Hard deletes (and anything that does not bump the timestamp). Use soft deletes, a change log or a periodic full refresh."

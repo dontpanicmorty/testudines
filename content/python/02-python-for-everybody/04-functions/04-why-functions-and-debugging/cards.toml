@@ -1,0 +1,29 @@
+[[card]]
+id = "e23af1fa"
+q = '''Give two reasons for writing a function.'''
+a = '''For example: naming a group of steps, avoiding repeated code, splitting a big problem into parts, reusing code later.'''
+
+[[card]]
+id = "a72845c5"
+q = '''What does `final_price(10)` do if it is `with_delivery(with_vat(price))`?'''
+a = '''It works from the inside out: `with_vat` runs first, and its result is passed to `with_delivery`.'''
+
+[[card]]
+id = "32038f80"
+q = '''What is a docstring?'''
+a = '''A short explanation in triple quotes placed directly under the `def` line.'''
+
+[[card]]
+id = "d2b39eac"
+q = '''A function prints `None`. What is the most likely cause?'''
+a = '''The function never returns a value: a `return` is missing.'''
+
+[[card]]
+id = "87e69ed8"
+q = '''How can you check a function really ran?'''
+a = '''Put a `print` as the first line of its body, and see whether the message appears.'''
+
+[[card]]
+id = "1889c436"
+q = '''If you add a parameter to a function, what else must change?'''
+a = '''Every call to that function, so each passes the new argument.'''

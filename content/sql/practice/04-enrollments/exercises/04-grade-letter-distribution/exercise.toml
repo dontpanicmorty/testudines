@@ -1,0 +1,6 @@
+id = "extra-64"
+title = "Grade letter distribution"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "GROUP BY grade_letter."

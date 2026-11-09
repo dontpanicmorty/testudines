@@ -1,0 +1,8 @@
+id = "everybody.why-program.talking-to-python.party-budget"
+title = "Plan the party budget"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Do the steps in order, one per line, storing each result in a variable.",
+  "Adding 10 percent means multiplying by 1.1 (or adding a tenth of the total).",
+]

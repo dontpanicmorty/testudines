@@ -1,0 +1,34 @@
+[[card]]
+id = "9a4fe993"
+q = "Why does the `src/` layout exist?"
+a = "It stops you importing the package straight from the project folder, so tests run against the *installed* package and packaging mistakes show up early."
+
+[[card]]
+id = "921d6810"
+q = "What does `__init__.py` do?"
+a = "Marks a folder as a package and runs when the package is imported. Use it to re-export the public API and set `__version__`."
+
+[[card]]
+id = "97802f2e"
+q = "Inside `mylib/transform.py`, `from cleaning import clean_name` raises `ModuleNotFoundError` when you `import mylib.transform`. Give two fixes."
+a = "```python\nfrom .cleaning import clean_name        # relative\nfrom mylib.cleaning import clean_name   # absolute\n```"
+
+[[card]]
+id = "cd5d4942"
+q = "Write the `pyproject.toml` lines that make a terminal command `ingest` run `main()` in `mylib/cli.py`."
+a = "```toml\n[project.scripts]\ningest = \"mylib.cli:main\"\n```"
+
+[[card]]
+id = "892a62b7"
+q = "Which three kinds of top-level tables are in a typical `pyproject.toml`?"
+a = "`[project]` (metadata, dependencies), `[build-system]` (how to build), and `[tool.*]` (settings for ruff, pytest, mypy...)."
+
+[[card]]
+id = "74c23cf2"
+q = "What does `from ..other import helper` mean?"
+a = "Import `helper` from module `other` in the *parent* package (two dots = go up one level)."
+
+[[card]]
+id = "cd4b58d7"
+q = "How do you read a `pyproject.toml` string into a dict with the standard library?"
+a = "```python\nimport tomllib\ndata = tomllib.loads(text)\n```"

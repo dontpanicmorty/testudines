@@ -1,0 +1,6 @@
+id = "12.4"
+title = "Simulating not_null and relationships Tests"
+difficulty = "medium"
+concept = "not_null + relationships simulation"
+tables = "orders(order_id, customer_id)\ncustomers(customer_id)"
+hint = "Combine `customer_id is null` with `or customer_id not in (select customer_id from customers)`."

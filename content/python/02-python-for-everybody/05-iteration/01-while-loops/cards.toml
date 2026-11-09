@@ -1,0 +1,25 @@
+[[card]]
+id = "02d580dc"
+q = '''What does `x = x + 1` do?'''
+a = '''It reads the current value of `x`, adds 1, and stores the result back in `x`. It is called incrementing.'''
+
+[[card]]
+id = "dcfe76ab"
+q = '''What decides whether a `while` loop runs another iteration?'''
+a = '''Its condition. Python checks it before each iteration and stops when it is `False`.'''
+
+[[card]]
+id = "43f8ec15"
+q = '''What is an infinite loop and how do you stop one in a terminal?'''
+a = '''A loop whose condition never becomes false. Press Ctrl+C to interrupt it.'''
+
+[[card]]
+id = "a8902b49"
+q = '''What is the difference between `break` and `continue`?'''
+a = '''`break` leaves the loop completely. `continue` skips the rest of this iteration and goes back to the condition.'''
+
+[[card]]
+id = "99a12c9b"
+q = '''What does it mean to initialize a variable?'''
+a = '''To give it its first value before you use it, such as `total = 0`.'''
+

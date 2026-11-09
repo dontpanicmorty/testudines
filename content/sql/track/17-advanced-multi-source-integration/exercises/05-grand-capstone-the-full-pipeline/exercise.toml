@@ -1,0 +1,6 @@
+id = "17.5"
+title = "Grand capstone: the full pipeline"
+difficulty = "hard"
+concept = "Everything in this lesson, combined"
+tables = "same as 10.3/10.4"
+hint = "Same three CTEs as 17.3/17.4, plus a CASE on COALESCE(contracts.contract_value, 0) for account_tier."

@@ -1,0 +1,30 @@
+[[card]]
+id = "d53e7971"
+q = '''What are nodes and edges?'''
+a = '''Nodes are the items in a graph (pages, people); edges are the links between them.'''
+
+[[card]]
+id = "6b3271d3"
+q = '''How can a link graph be stored in Python?'''
+a = '''A dictionary mapping each node to the list of nodes it links to.'''
+
+[[card]]
+id = "dc1b04ff"
+q = '''What is the one rule behind the PageRank-style score?'''
+a = '''Each page splits its current score equally among the pages it links to.'''
+
+[[card]]
+id = "49b29c28"
+q = '''What does the damping factor do?'''
+a = '''It models a reader who sometimes jumps to a random page; it gives every page a small base score and helps the scores settle.'''
+
+[[card]]
+id = "16694430"
+q = '''Why build a new dictionary each iteration?'''
+a = '''So every page's new score is computed from the old scores, not from a mix of old and new.'''
+
+[[card]]
+id = "1c645702"
+q = '''What two lists does a browser graph drawing usually need?'''
+a = '''A list of nodes (with ids and scores) and a list of links (source and target).'''
+

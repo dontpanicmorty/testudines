@@ -1,0 +1,6 @@
+id = "15.3"
+title = "Snapshot: detecting new rows"
+difficulty = "hard"
+concept = "Rows a snapshot would insert as brand new"
+tables = "daily_feed_day1, daily_feed_day2"
+hint = "LEFT JOIN day2 to day1, WHERE d1.employee_id IS NULL."

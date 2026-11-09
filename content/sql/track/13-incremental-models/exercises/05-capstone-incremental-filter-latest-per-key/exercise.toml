@@ -1,0 +1,6 @@
+id = "13.5"
+title = "Capstone: incremental filter + latest-per-key"
+difficulty = "hard"
+concept = "Combining is_incremental() filtering with dedup"
+tables = "raw_usage_events + existing_target"
+hint = "A new_rows CTE applying the incremental filter, then QUALIFY on top to keep the latest row per account_id."

@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.your-first-class.tally-keeper"
+title = "Keep a running count"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Set the starting value when the object is created.",
+  "Methods change the data stored on the object itself."
+]

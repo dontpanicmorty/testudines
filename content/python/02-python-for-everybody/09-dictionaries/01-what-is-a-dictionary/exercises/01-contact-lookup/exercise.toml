@@ -1,0 +1,8 @@
+id = "everybody.dictionaries.what-is-a-dictionary.contact-lookup"
+title = "Look up a contact"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "A dictionary method can take a second argument to use when the key is missing.",
+  "Alternatively check the key first before reading it.",
+]

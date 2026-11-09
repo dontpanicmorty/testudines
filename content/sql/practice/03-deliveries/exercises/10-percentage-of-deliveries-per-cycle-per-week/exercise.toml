@@ -1,0 +1,6 @@
+id = "extra-50"
+title = "Percentage of deliveries per cycle per week"
+difficulty = "medium"
+concept = "CTE / CASE WHEN"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Build a CTE labeling each row's cycle_day, then aggregate with SUM(CASE WHEN ...) / COUNT(*) per week."

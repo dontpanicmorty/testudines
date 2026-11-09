@@ -1,0 +1,6 @@
+id = "extra-152"
+title = "Sellers With More Than Two Items Listed"
+difficulty = "medium"
+concept = "HAVING"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "JOIN, GROUP BY seller name, HAVING COUNT(*) > 2."

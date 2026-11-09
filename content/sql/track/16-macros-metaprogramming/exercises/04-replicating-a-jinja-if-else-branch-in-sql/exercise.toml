@@ -1,0 +1,6 @@
+id = "16.4"
+title = "Replicating a Jinja if/else branch in SQL"
+difficulty = "hard"
+concept = "CASE WHEN as the SQL-side analog of a Jinja {% if %} branch"
+tables = "columns_metadata(column_name, data_type)"
+hint = "CASE WHEN data_type = 'TIMESTAMP_TZ' THEN column_name || '::timestamp_ntz' ELSE column_name END AS cast_expression"

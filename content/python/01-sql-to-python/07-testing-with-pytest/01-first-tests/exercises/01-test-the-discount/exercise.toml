@@ -1,0 +1,6 @@
+id = "testing-with-pytest.first-tests.test-the-discount"
+title = "Write tests for apply_discount"
+difficulty = 1
+main = "my_tests.py"
+hints = ["Start with the typical case, then the two edges of the valid range (0 and 100), then values just outside it.", "Rounding is a behaviour too: choose a price and percent whose exact result has more than two decimals.", "Use `pytest.raises(ValueError)` for the out-of-range cases."]
+timeout = 120

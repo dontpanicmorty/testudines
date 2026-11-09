@@ -1,0 +1,25 @@
+[[card]]
+id = "b058d26d"
+q = '''In `d = {'a': 1, 'b': 2}`, what does `'a' in d` check, and what does `1 in d` give?'''
+a = '''`in` checks the keys. `'a' in d` is `True`; `1 in d` is `False` because `1` is a value, not a key.'''
+
+[[card]]
+id = "21bfa6df"
+q = '''What happens if you write `d['zzz']` and the key is not in the dictionary?'''
+a = '''Python stops with a `KeyError`. Check with `in` first, or use `d.get('zzz', fallback)`.'''
+
+[[card]]
+id = "41471377"
+q = '''What does `d['x'] = 5` do when `'x'` is already a key?'''
+a = '''It replaces the old value. A dictionary never holds the same key twice.'''
+
+[[card]]
+id = "6a87f0ef"
+q = '''Which kinds of value can be a dictionary key, and which cannot?'''
+a = '''Values that can never change (strings, numbers, tuples) can be keys. A list cannot, because lists can change.'''
+
+[[card]]
+id = "5b078c41"
+q = '''How do you test whether a value (not a key) is present in a dictionary?'''
+a = '''Use `value in d.values()`. It works, but it is slower than a key check.'''
+

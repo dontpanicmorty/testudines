@@ -1,0 +1,8 @@
+id = "apis-and-config.pagination-and-retries.iterate-cursor-pages"
+title = "Iterate cursor-paginated records"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Keep a cursor variable that starts as None. Only send the cursor parameter when it is not None.",
+  "Use `yield from body[\"data\"]`, then update the cursor from body[\"next_cursor\"]. Stop when it is None.",
+]

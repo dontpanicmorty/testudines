@@ -1,0 +1,6 @@
+id = "18.1"
+title = "Depth of Each Employee From the Top of the Org"
+difficulty = "hard"
+concept = "WITH RECURSIVE basic depth"
+tables = "employees(employee_id, employee_name, manager_id)"
+hint = "Anchor member: `where manager_id is null` with `depth = 0`. Recursive member: join `employees` back to the CTE on `e.manager_id = o.employee_id`, `depth + 1`."

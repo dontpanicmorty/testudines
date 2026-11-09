@@ -1,0 +1,8 @@
+id = "everybody.variables-expressions-statements.operators-and-expressions.temperature-convert"
+title = "Warm it up"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The recipe: multiply by 9, divide by 5, add 32.",
+  "Check the order the operators are worked out; add brackets if unsure.",
+]

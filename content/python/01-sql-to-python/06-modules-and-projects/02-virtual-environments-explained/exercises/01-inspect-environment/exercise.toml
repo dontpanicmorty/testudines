@@ -1,0 +1,5 @@
+id = "modules-and-projects.virtual-environments-explained.inspect-environment"
+title = "Inspect the running environment"
+difficulty = 1
+main = "solution.py"
+hints = ["`sys.base_prefix` is the base installation, `sys.prefix` is the active environment.", "`importlib.metadata.version(name)` raises `PackageNotFoundError` when the package isn't installed.", "`sys.version_info.major` and `.minor` give the numbers for the version string."]

@@ -1,0 +1,2 @@
+-- source_subscriptions(sub_id, account_id, plan_code, start_date, end_date, mrr, is_trial)
+-- source_accounts(account_id, account_name, segment)

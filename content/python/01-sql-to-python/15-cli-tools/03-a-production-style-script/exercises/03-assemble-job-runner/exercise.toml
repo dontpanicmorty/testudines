@@ -1,0 +1,9 @@
+id = "cli-tools.a-production-style-script.assemble-job-runner"
+title = "Assemble the job runner"
+difficulty = 3
+main = "jobrunner/cli.py"
+hints = [
+  "Work bottom-up: validate_row first, then load_config, then main. Run the tests after each piece.",
+  "In main: build `merged = dict(env)`, let CLI flags override JOB_* keys, call load_config, setup_logging(verbose), run_job, then evaluate with the error rate.",
+  "Map exceptions to codes: ConfigError -> 2, FileNotFoundError -> 3 (both print 'error: ...' to stderr). Print the summary line to stdout only on a completed run.",
+]

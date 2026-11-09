@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.extracting-with-findall.quoted-phrases"
+title = "Words in quotes"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "A greedy pattern will join separate quotes into one.",
+  "Ask for as little as possible between the quotes, or exclude quote characters from the middle.",
+  "Remove the quote marks from each result.",
+]

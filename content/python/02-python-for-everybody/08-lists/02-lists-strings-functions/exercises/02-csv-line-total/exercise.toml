@@ -1,0 +1,8 @@
+id = "everybody.lists.lists-strings-functions.csv-line-total"
+title = "Add up a row"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Cut the line at the commas.",
+  "Remember that pieces are text.",
+]

@@ -1,0 +1,6 @@
+id = "1.3"
+title = "Aliasing and Snowflake-style casts"
+difficulty = "easy"
+concept = "::type casts, explicit aliases"
+tables = "orders(order_id, customer_id, order_date, amount, status)"
+hint = "amount::INTEGER and order_date::VARCHAR, each with an explicit AS alias."

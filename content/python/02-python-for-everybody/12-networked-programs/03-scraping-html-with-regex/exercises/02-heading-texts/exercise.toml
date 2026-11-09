@@ -1,0 +1,9 @@
+id = "everybody.networked-programs.scraping-html-with-regex.heading-texts"
+title = "Collect the headings"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Headings are <h1> or <h2> tags; one character class can cover both.",
+  "Take the text between the opening and closing tags, non-greedy.",
+  "Strip spaces from the ends of each heading.",
+]

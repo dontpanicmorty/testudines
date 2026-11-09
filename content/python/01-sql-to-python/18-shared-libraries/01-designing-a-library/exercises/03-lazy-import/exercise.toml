@@ -1,0 +1,9 @@
+id = "shared-libraries.designing-a-library.lazy-import"
+title = "Debug: importing the library fails without pandas"
+difficulty = 3
+main = "pricing/frames.py"
+hints = [
+  "Where is pandas imported? Anything at the top of a module runs at import time.",
+  "Move the import inside the function that actually builds a DataFrame.",
+  "Also check pricing/__init__.py: it must not trigger the import either.",
+]

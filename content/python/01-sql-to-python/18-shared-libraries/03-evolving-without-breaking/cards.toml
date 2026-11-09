@@ -1,0 +1,34 @@
+[[card]]
+id = "b8ef04b5"
+q = "Is adding a new required positional parameter breaking? Why?"
+a = "Yes. Every existing call that omits it now raises `TypeError: missing 1 required positional argument`."
+
+[[card]]
+id = "fb7c59c9"
+q = "Write the call that deprecates `old()` so the warning points at the caller's line."
+a = "```python\nwarnings.warn(\"old is deprecated, use new\", DeprecationWarning, stacklevel=2)\n```"
+
+[[card]]
+id = "f9f9cba2"
+q = "What does `stacklevel=2` change in `warnings.warn`?"
+a = "It attributes the warning to the code that called your function, not to the line inside your library."
+
+[[card]]
+id = "763912ad"
+q = "A function's signature is unchanged, but it now raises where it used to return None. Breaking?"
+a = "Yes. Behaviour, including exceptions, is part of the contract."
+
+[[card]]
+id = "570abbfc"
+q = "In which kind of release should a deprecated function be removed?"
+a = "A major release (e.g. 1.x to 2.0.0), after at least one release that warned about it."
+
+[[card]]
+id = "98312577"
+q = "What is a contract test and when may you edit one?"
+a = "A test pinning behaviour consumers depend on. Edit it only when you deliberately make a breaking change (with a major bump)."
+
+[[card]]
+id = "06bffdde"
+q = "Why are feature flags 'temporary scaffolding'?"
+a = "Each flag doubles the paths you must test, so schedule its removal when you introduce it."

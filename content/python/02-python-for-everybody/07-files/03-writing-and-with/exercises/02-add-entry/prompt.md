@@ -1,0 +1,1 @@
+Write `add_entry(path, day, text)`. Add one line to the end of the text file at `path` in the form `day: text` followed by a newline, for example `Mon: rain`. If the file does not exist yet, create it. Earlier entries must stay in place.

@@ -1,0 +1,9 @@
+id = "services.fastapi-basics.customer-routes"
+title = "Customer routes"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Create the app inside create_app(customers) and register routes with @app.get inside it, so each call builds an independent app.",
+  "The path parameter customer_id: int gives you the 422 for free. For a missing id raise HTTPException(404, ...).",
+  "For the list route, filter by region only when it is not None, then slice with offset and limit. Use Query(ge=..., le=...) for limits.",
+]

@@ -1,0 +1,6 @@
+id = "extra-103"
+title = "Count of each animal type"
+difficulty = "easy"
+concept = "two COUNTs / UNION ALL"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Two SELECTs combined with UNION ALL, each with a literal label column."

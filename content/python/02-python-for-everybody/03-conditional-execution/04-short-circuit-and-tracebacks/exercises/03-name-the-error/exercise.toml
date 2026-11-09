@@ -1,0 +1,9 @@
+id = "everybody.conditional-execution.short-circuit-and-tracebacks.name-the-error"
+title = "What went wrong?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "The function you receive is called with no arguments.",
+  "Run it in a try block and catch the exception as a variable.",
+  "type(problem).__name__ gives its name as text.",
+]

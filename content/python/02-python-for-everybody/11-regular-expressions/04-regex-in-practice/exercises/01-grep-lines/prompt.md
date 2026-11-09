@@ -1,0 +1,1 @@
+Write `grep(path, pattern)` that reads the text file at `path` and returns a list of the lines that contain a match for the regular expression `pattern`. Return the lines without their trailing newline, in file order.

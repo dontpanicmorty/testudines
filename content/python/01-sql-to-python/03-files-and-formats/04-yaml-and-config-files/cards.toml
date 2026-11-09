@@ -1,0 +1,38 @@
+[[card]]
+id = "d46ded15"
+q = '''Why `yaml.safe_load` and never `yaml.load`?'''
+a = '''`load` can construct arbitrary Python objects from the file (code execution risk). `safe_load` only builds plain data types.'''
+
+[[card]]
+id = "056210fb"
+q = '''What Python value does `yaml.safe_load("flag: no")["flag"]` give?'''
+a = '''`False`. Quote it (`"no"`) to keep the text.'''
+
+[[card]]
+id = "c6bebdb8"
+q = '''`{**defaults, **prod}` with nested `db` dicts loses `db.port`. Why, and what fixes it?'''
+a = '''Unpacking is a shallow merge: the whole `db` dict is replaced. Use a recursive deep merge.'''
+
+[[card]]
+id = "bcb0d306"
+q = '''`int(os.environ.get("RETRIES", 3))` with `RETRIES=5` set. What type is `os.environ.get("RETRIES")` before `int`?'''
+a = '''`str` (`"5"`). Environment values are always strings.'''
+
+[[card]]
+id = "cb442018"
+q = '''Where does an API token belong: a YAML file in the repo, a Python constant, or the environment?'''
+a = '''The environment (or a secret manager). A config file may name the variable, never hold the value.'''
+
+[[card]]
+id = "c940a055"
+q = '''Write a helper line that raises a clear error when `API_TOKEN` is missing.'''
+a = '''```python
+token = os.environ.get("API_TOKEN")
+if not token:
+    raise RuntimeError("Missing required environment variable: API_TOKEN")
+```'''
+
+[[card]]
+id = "fe8e838c"
+q = '''List the usual config precedence from lowest to highest.'''
+a = '''Code defaults, config file, environment variables, command-line flags.'''

@@ -1,0 +1,8 @@
+id = "everybody.lists.lists-strings-functions.initials-and-users"
+title = "Who sent it?"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Look at the pieces of a line after cutting on blanks.",
+  "The address itself can be cut again at the @ sign.",
+]

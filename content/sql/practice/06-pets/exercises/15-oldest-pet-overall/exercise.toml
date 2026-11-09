@@ -1,0 +1,6 @@
+id = "extra-115"
+title = "Oldest pet overall"
+difficulty = "hard"
+concept = "UNION ALL / LIMIT"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "Combine with UNION ALL, then ORDER BY age DESC LIMIT 1."

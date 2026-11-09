@@ -1,0 +1,1 @@
+CREATE TABLE users_roles (userId INTEGER, roleId INTEGER); ALTER TABLE users_roles ADD COLUMN assigned_at DATE DEFAULT CURRENT_DATE; ALTER TABLE users_roles ALTER COLUMN userId SET NOT NULL;

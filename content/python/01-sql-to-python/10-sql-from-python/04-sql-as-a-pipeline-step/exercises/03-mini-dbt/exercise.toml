@@ -1,0 +1,9 @@
+id = "sql-from-python.sql-as-a-pipeline-step.mini-dbt"
+title = "A mini dbt run"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Reuse your regex idea: find the ref names in each model to get its parents.",
+  "TopologicalSorter(graph).static_order() takes {node: set_of_parents}. Models can only be referenced if they are keys of the models dict.",
+  "For each model in order run: CREATE OR REPLACE TABLE <name> AS <rendered sql>. The relation name for a ref is just the model name.",
+]

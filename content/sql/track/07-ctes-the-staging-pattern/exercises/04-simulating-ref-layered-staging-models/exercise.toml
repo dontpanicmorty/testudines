@@ -1,0 +1,6 @@
+id = "7.4"
+title = "Simulating ref()-layered staging models"
+difficulty = "medium"
+concept = "stg_ CTEs + LEFT JOIN + COALESCE default"
+tables = "source_subscriptions(sub_id, account_id, plan_code, mrr, is_trial)\nsource_accounts(account_id, account_name, segment)"
+hint = "LEFT JOIN inside the joined CTE, then COALESCE(account_name, 'Unknown') in the outer select."

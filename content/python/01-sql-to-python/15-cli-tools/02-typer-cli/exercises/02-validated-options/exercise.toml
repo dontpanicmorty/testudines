@@ -1,0 +1,9 @@
+id = "cli-tools.typer-cli.validated-options"
+title = "Debug: bad values slip through"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A plain `str` accepts anything. What type makes Typer reject unknown choices?",
+  "typer.Option(default, '--count', min=1) enforces a lower bound with exit code 2.",
+  "Define class Format(str, Enum) with csv and json members and use it as the parameter type; compare with .value.",
+]

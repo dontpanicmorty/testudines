@@ -1,0 +1,6 @@
+id = "extra-162"
+title = "Users with unknown sex"
+difficulty = "easy"
+concept = "IS NULL"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "WHERE sex IS NULL."

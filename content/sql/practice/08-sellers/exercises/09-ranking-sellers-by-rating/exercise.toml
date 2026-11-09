@@ -1,0 +1,6 @@
+id = "extra-149"
+title = "Ranking Sellers by Rating"
+difficulty = "medium"
+concept = "RANK"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "RANK() OVER (ORDER BY rating DESC)."

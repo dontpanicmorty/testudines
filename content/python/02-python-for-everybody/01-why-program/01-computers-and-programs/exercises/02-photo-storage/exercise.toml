@@ -1,0 +1,8 @@
+id = "everybody.why-program.computers-and-programs.photo-storage"
+title = "How much room do the photos need?"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Multiply the number of photos by the size of each one.",
+  "There are 1000 megabytes in a gigabyte, so divide by 1000.",
+]

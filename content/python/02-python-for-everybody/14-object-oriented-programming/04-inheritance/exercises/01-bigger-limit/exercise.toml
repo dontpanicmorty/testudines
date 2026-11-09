@@ -1,0 +1,8 @@
+id = "everybody.object-oriented-programming.inheritance.bigger-limit"
+title = "A different allowance"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "The child type reuses the parent and changes only one thing.",
+  "A method defined in the child takes priority."
+]

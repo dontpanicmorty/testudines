@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.auth-and-environments.describe-safely"
+title = "Describe parameters without leaking secrets"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Decide per key: is it in SECRET_KEYS? Compare lower-cased names so 'Password' is also caught.",
+  "session_parameters is a nested dict: render it as nested key=value pairs inside braces, applying the same redaction to its keys.",
+  "Sort the keys so the output is stable, and join with ', '.",
+]

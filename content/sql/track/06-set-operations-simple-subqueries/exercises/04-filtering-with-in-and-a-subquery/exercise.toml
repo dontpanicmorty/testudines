@@ -1,0 +1,6 @@
+id = "6.4"
+title = "Filtering with IN and a Subquery"
+difficulty = "easy"
+concept = "IN with subquery"
+tables = "orders(order_id, customer_id, amount)\ncustomers(customer_id, region)"
+hint = "`where customer_id in (select customer_id from customers where region = 'west')`."

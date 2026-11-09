@@ -1,0 +1,8 @@
+id = "everybody.iteration.for-loops.step-sum"
+title = "Every other number"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "range can take a start, an end and a step.",
+  "Remember that the end value itself is not included.",
+]

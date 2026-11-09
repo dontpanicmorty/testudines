@@ -1,0 +1,6 @@
+id = "18.3"
+title = "Counting Each Employee's Descendants"
+difficulty = "hard"
+concept = "recursive CTE + aggregation"
+tables = "employees(employee_id, employee_name, manager_id)"
+hint = "Seed `descendants` with each employee as their own ancestor/descendant, recurse down via `manager_id`, then `count(...) filter (where descendant_id != ancestor_id)` to exclude self-counting."

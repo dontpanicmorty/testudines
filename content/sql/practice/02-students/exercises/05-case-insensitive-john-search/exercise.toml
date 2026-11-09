@@ -1,0 +1,6 @@
+id = "extra-25"
+title = "Case-insensitive John search"
+difficulty = "easy"
+concept = "LOWER"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "Wrap firstName in LOWER() and compare to a lowercase literal."

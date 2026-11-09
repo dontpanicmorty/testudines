@@ -1,0 +1,6 @@
+id = "extra-24"
+title = "Students per grade"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "GROUP BY grade, COUNT(*)."

@@ -1,0 +1,25 @@
+[[card]]
+id = "ea9d9c8f"
+q = '''What does `re.findall(r'\d+', 'a1 b22 c333')` return?'''
+a = '''`['1', '22', '333']`: a list of strings, one per match.'''
+
+[[card]]
+id = "ffaabdda"
+q = '''What does it mean that `*` is greedy?'''
+a = '''It matches as much text as it can while the whole pattern still fits, which can swallow far more than you wanted.'''
+
+[[card]]
+id = "c68b41f7"
+q = '''How do you make `.*` non-greedy?'''
+a = '''Add a question mark: `.*?` matches as little as possible.'''
+
+[[card]]
+id = "f5443eb8"
+q = '''What does `findall` return when nothing matches?'''
+a = '''An empty list, `[]`.'''
+
+[[card]]
+id = "80052107"
+q = '''Which pattern pulls out hashtags such as `#python`?'''
+a = '''`#[A-Za-z0-9_]+` (a hash followed by one or more letters, digits or underscores).'''
+

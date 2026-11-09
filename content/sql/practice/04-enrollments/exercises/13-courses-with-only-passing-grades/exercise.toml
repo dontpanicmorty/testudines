@@ -1,0 +1,6 @@
+id = "extra-73"
+title = "Courses with only passing grades"
+difficulty = "medium"
+concept = "NOT EXISTS"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "NOT EXISTS a correlated subquery looking for an 'F' in the same course."

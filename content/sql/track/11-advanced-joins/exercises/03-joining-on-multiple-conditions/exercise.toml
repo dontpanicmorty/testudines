@@ -1,0 +1,6 @@
+id = "11.3"
+title = "Joining on Multiple Conditions"
+difficulty = "medium"
+concept = "multi-condition ON clause"
+tables = "shipments(shipment_id, warehouse_code, order_id, shipped_at)\nwarehouse_rates(warehouse_code, effective_year, rate_per_unit)"
+hint = "The `on` clause needs two conditions joined with `and`: matching `warehouse_code` AND matching year to `effective_year`."

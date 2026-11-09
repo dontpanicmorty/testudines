@@ -1,0 +1,1 @@
+-- events(event_id, event_type)

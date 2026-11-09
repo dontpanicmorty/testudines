@@ -1,0 +1,29 @@
+[[card]]
+id = "39ca4bea"
+q = "What does this print?\n```python\ng = (n for n in range(3))\nprint(list(g), list(g))\n```"
+a = "`[0, 1, 2] []`. A generator is exhausted after one pass."
+
+[[card]]
+id = "e61ad4ae"
+q = "Write a generator function `read_rows(path)` that yields CSV rows as dicts without loading the file."
+a = "```python\ndef read_rows(path):\n    with open(path, newline=\"\") as f:\n        yield from csv.DictReader(f)\n```"
+
+[[card]]
+id = "3b50bc0b"
+q = "Write `chunks(iterable, size)` that yields lists of up to `size` items."
+a = "```python\ndef chunks(iterable, size):\n    it = iter(iterable)\n    while batch := list(islice(it, size)):\n        yield batch\n```"
+
+[[card]]
+id = "cf790c55"
+q = "Why is `executemany` + one commit per batch better than an insert and commit per row?"
+a = "Far fewer round trips and fsyncs. Per-row commits are the slowest pattern; batches also bound memory."
+
+[[card]]
+id = "780b5f69"
+q = "What is the difference between `pl.read_csv` and `pl.scan_csv`?"
+a = "`read_csv` is eager: loads everything now. `scan_csv` returns a `LazyFrame` plan; nothing runs until `.collect()`, letting Polars read only needed columns and push down filters."
+
+[[card]]
+id = "fa3eac0f"
+q = "`rows = [...]` vs `rows = (... for ...)`: when is the second a bug?"
+a = "When you iterate twice (second pass is empty), need `len()` or indexing, or need to inspect it repeatedly."

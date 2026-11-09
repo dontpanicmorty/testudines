@@ -1,0 +1,6 @@
+id = "extra-85"
+title = "Salary above a threshold"
+difficulty = "easy"
+concept = "WHERE"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "WHERE salary > 120000."

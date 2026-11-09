@@ -1,0 +1,9 @@
+id = "services.what-a-service-is.mini-router"
+title = "Build a mini router"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Split both the route pattern and the request path on '/'. They must have the same number of segments.",
+  "A segment like '{order_id}' is a placeholder: capture the actual segment under that name. Any other segment must match exactly.",
+  "Keep a list of (method, pattern, handler). If the path matches some route but not for this method, that is 405; if no pattern matches at all, 404.",
+]

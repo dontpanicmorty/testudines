@@ -1,0 +1,29 @@
+[[card]]
+id = "6c4da777"
+q = '''What are arguments and what is a return value?'''
+a = '''Arguments are the values you put inside a function's brackets. The return value is what the function gives back.'''
+
+[[card]]
+id = "7360d7d3"
+q = '''What does `import math` allow you to do?'''
+a = '''Use the module's tools with a dot, such as `math.sqrt(16)` and `math.pi`.'''
+
+[[card]]
+id = "c8eeaada"
+q = '''What range does `random.randint(1, 6)` cover?'''
+a = '''Whole numbers from 1 to 6, including both 1 and 6.'''
+
+[[card]]
+id = "9cd801cd"
+q = '''What is the difference between `math.floor(4.8)` and `math.ceil(4.2)`?'''
+a = '''`floor` rounds down (4); `ceil` rounds up (5).'''
+
+[[card]]
+id = "692226dc"
+q = '''What does `len("banana")` return?'''
+a = '''`6`, the number of characters.'''
+
+[[card]]
+id = "e7116aca"
+q = '''Why is naming your own file `random.py` a bad idea?'''
+a = '''Python may import your file instead of the standard `random` module and your program breaks.'''

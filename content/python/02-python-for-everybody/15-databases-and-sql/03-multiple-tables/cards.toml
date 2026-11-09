@@ -1,0 +1,30 @@
+[[card]]
+id = "980b9b12"
+q = '''What golden rule drives splitting data into tables?'''
+a = '''Do not repeat string data: store each fact once and refer to it by key.'''
+
+[[card]]
+id = "7c77720d"
+q = '''What does `INTEGER PRIMARY KEY AUTOINCREMENT` do?'''
+a = '''The database numbers each new row automatically (1, 2, 3...) and never reuses a number.'''
+
+[[card]]
+id = "8dc32a52"
+q = '''What is a foreign key?'''
+a = '''A column holding another table's primary key, such as `book.author_id`.'''
+
+[[card]]
+id = "c4c44af4"
+q = '''What does marking a column `UNIQUE` give you?'''
+a = '''A constraint that rejects duplicates, plus an index that makes lookups on it fast.'''
+
+[[card]]
+id = "6abe7cb3"
+q = '''What does `INSERT OR IGNORE` do?'''
+a = '''Inserts the row unless a constraint would be broken, in which case it silently skips it.'''
+
+[[card]]
+id = "3b58c62e"
+q = '''Describe get-or-create in two steps.'''
+a = '''Run `INSERT OR IGNORE` to ensure the row exists, then `SELECT` its id by the logical key.'''
+

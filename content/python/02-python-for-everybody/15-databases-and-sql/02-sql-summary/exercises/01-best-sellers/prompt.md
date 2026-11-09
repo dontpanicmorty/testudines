@@ -1,0 +1,1 @@
+The connection `conn` has a table `book(title TEXT, year INTEGER, price REAL)`. Write `priciest(conn, n)` returning the titles of the `n` most expensive books, most expensive first (ties broken alphabetically by title), as a list of strings.

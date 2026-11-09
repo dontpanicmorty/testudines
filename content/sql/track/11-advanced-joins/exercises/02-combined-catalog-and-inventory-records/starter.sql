@@ -1,0 +1,2 @@
+-- product_catalog(product_id, product_name)
+  -- inventory(product_id, quantity_on_hand)

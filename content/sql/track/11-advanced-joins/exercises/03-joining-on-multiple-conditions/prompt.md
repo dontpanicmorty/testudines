@@ -1,0 +1,1 @@
+`warehouse_rates` has a different `rate_per_unit` per `warehouse_code` per `effective_year`. Join `shipments` to `warehouse_rates` matching BOTH `warehouse_code` and the shipment's shipped year to `effective_year`. Return `shipment_id`, `warehouse_code`, `shipped_at`, and `rate_per_unit`. Order by `shipment_id`.

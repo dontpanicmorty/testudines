@@ -1,0 +1,6 @@
+id = "extra-155"
+title = "Percent of catalog value per seller"
+difficulty = "hard"
+concept = "window SUM OVER ()"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "Aggregate per-seller totals in a CTE, then divide by SUM(...) OVER () for the grand total."

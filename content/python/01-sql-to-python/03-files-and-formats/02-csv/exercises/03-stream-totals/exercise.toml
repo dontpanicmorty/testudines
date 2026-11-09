@@ -1,0 +1,9 @@
+id = "files-and-formats.csv.stream-totals"
+title = "Debug: streaming revenue totals"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Run it on a tiny file and print the totals before returning.",
+  "Look at the type of row['quantity'] * row['unit_price'] when both come from csv.",
+  "A generator can be consumed only once. How many passes does the code make?",
+]

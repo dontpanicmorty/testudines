@@ -1,0 +1,8 @@
+id = "everybody.tuples.list-comprehensions.doubled-evens"
+title = "Even numbers, doubled"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Build the new list in a single expression.",
+  "A condition at the end of the expression keeps only some items.",
+]

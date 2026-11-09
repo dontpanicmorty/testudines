@@ -1,0 +1,30 @@
+[[card]]
+id = "05c163bc"
+q = '''What do `INSERT`, `SELECT`, `UPDATE` and `DELETE` each do?'''
+a = '''Add a row, read rows, change rows, remove rows.'''
+
+[[card]]
+id = "03aea406"
+q = '''What happens if you run `UPDATE` or `DELETE` without `WHERE`?'''
+a = '''It affects every row in the table.'''
+
+[[card]]
+id = "4b912c04"
+q = '''How do you sort results largest first?'''
+a = '''`ORDER BY column DESC`.'''
+
+[[card]]
+id = "67d2a758"
+q = '''Which attribute tells you how many rows a write changed?'''
+a = '''`cur.rowcount`.'''
+
+[[card]]
+id = "28364dfa"
+q = '''What does `LIKE 'M%'` match?'''
+a = '''Text that starts with M; `%` stands for any run of characters.'''
+
+[[card]]
+id = "a32c8178"
+q = '''Are SELECT results guaranteed to come in insertion order?'''
+a = '''No. Use `ORDER BY` whenever order matters.'''
+

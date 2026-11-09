@@ -1,0 +1,6 @@
+id = "extra-51"
+title = "Users with any failed delivery"
+difficulty = "medium"
+concept = "IN / subquery"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "A subquery selecting user_ids with a failed delivery, then IN."

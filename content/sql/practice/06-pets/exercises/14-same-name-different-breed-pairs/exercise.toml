@@ -1,0 +1,6 @@
+id = "extra-114"
+title = "Same name, different breed pairs"
+difficulty = "hard"
+concept = "JOIN across tables"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "JOIN dogs and cats ON matching name."

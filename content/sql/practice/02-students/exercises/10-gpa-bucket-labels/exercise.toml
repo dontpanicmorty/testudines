@@ -1,0 +1,6 @@
+id = "extra-30"
+title = "GPA bucket labels"
+difficulty = "medium"
+concept = "CASE WHEN"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "CASE WHEN ... THEN ... WHEN ... ELSE ... END."

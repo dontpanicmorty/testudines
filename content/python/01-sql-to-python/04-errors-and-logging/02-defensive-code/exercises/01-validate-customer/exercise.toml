@@ -1,0 +1,9 @@
+id = "errors-and-logging.defensive-code.validate-customer"
+title = "Validate a customer row"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Build an errors list and append a message for each failed check.",
+  "Normalise first: strip whitespace and lowercase the email.",
+  "Raise ValidationError('; '.join(errors)) if the list is not empty.",
+]

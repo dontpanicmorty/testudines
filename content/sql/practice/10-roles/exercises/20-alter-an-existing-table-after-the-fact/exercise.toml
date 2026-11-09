@@ -1,0 +1,6 @@
+id = "extra-200"
+title = "Alter an existing table after the fact"
+difficulty = "hard"
+concept = "ALTER TABLE / ADD COLUMN / SET NOT NULL"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "ALTER TABLE ... ADD COLUMN ... DEFAULT ..., then a separate ALTER TABLE ... ALTER COLUMN ... SET NOT NULL."

@@ -1,0 +1,8 @@
+id = "apis-and-config.http-with-httpx.fetch-users-page"
+title = "Fetch one page of users"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Pass the page number with params={\"page\": page} rather than formatting the URL.",
+  "Call resp.raise_for_status() before resp.json() so a 500 never gets parsed as data.",
+]

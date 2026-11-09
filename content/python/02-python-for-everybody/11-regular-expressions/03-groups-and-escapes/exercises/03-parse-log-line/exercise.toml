@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.groups-and-escapes.parse-log-line"
+title = "Break a log line into parts"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Use one group for each part: date, time, level, message.",
+  "The level sits inside square brackets, which are special and need escaping.",
+  "Return None when the line does not fit the format.",
+]

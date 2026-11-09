@@ -1,0 +1,29 @@
+[[card]]
+id = "7eb463be"
+q = '''What does `"ab" * 3` give?'''
+a = '''`"ababab"`'''
+
+[[card]]
+id = "c0febd1d"
+q = '''What type does `input` always return?'''
+a = '''A string (`str`), even if the user types digits.'''
+
+[[card]]
+id = "3ede3e0b"
+q = '''How do you read a whole number from the user?'''
+a = '''`int(input("prompt "))`'''
+
+[[card]]
+id = "d53910f6"
+q = '''Why does `"Cups: " + 3` fail, and how do you fix it?'''
+a = '''You cannot join text and a number. Convert: `"Cups: " + str(3)`.'''
+
+[[card]]
+id = "ec9dfcb5"
+q = '''What does `int(7.9)` return?'''
+a = '''`7`. It chops off the fraction; it does not round.'''
+
+[[card]]
+id = "2cdfbea9"
+q = '''What does a `#` do in a line of code?'''
+a = '''Starts a comment: Python ignores the rest of that line.'''

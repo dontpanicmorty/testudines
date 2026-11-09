@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.classes-from-first-principles.run-stats"
+title = "A run-statistics counter"
+difficulty = 1
+main = "solution.py"
+hints = ["Initialise both counters to 0 in `__init__`.", "`reject_rate` should avoid dividing by zero when nothing has been read.", "`__repr__` must produce exactly `RunStats(read=3, rejected=1)`."]

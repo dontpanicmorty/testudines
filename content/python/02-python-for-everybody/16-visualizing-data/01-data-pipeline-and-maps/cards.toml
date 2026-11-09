@@ -1,0 +1,25 @@
+[[card]]
+id = "8176c360"
+q = '''What are the four steps of the data pipeline?'''
+a = '''Gather, clean, store, visualize. Each reads the output of the one before.'''
+
+[[card]]
+id = "09f461dc"
+q = '''What is geocoding?'''
+a = '''Turning a place name into coordinates (latitude and longitude).'''
+
+[[card]]
+id = "d1ad4093"
+q = '''Why cache lookup results in SQLite?'''
+a = '''To avoid asking the service again for the same item, stay under rate limits, and keep progress if the program stops.'''
+
+[[card]]
+id = "862a5034"
+q = '''What range of values can latitude and longitude have?'''
+a = '''Latitude -90 to 90; longitude -180 to 180.'''
+
+[[card]]
+id = "d219d4f6"
+q = '''How do you safely write Python data into a JavaScript file?'''
+a = '''Use `json.dumps` to produce the text, e.g. `"var points = " + json.dumps(points) + ";"`.'''
+

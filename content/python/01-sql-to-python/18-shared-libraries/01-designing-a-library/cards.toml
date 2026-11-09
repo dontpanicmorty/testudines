@@ -1,0 +1,34 @@
+[[card]]
+id = "ea4a866c"
+q = "What does a leading underscore on a function or module name communicate?"
+a = "It is private: not part of the public API and free to change without notice."
+
+[[card]]
+id = "f6516802"
+q = "Write the `__init__.py` line that makes only `clean_name` public for `from pkg import *`."
+a = "```python\n__all__ = [\"clean_name\"]\n```"
+
+[[card]]
+id = "ddfcedd8"
+q = "Why should consumers import from the package top level rather than `pkg.core`?"
+a = "It lets you reorganise internal modules without breaking them; the top level is the stable public face."
+
+[[card]]
+id = "eb7b1692"
+q = "How do you stop a heavy optional dependency from breaking `import mylib`?"
+a = "Import it inside the function that needs it (lazy import) instead of at module top level."
+
+[[card]]
+id = "4ddc8b6b"
+q = "Add an optional `top_n` to `def f(rows, key)` without breaking any existing call. Write the signature."
+a = "```python\ndef f(rows, key, *, top_n=None):\n```\nDefaulted and keyword-only."
+
+[[card]]
+id = "da902019"
+q = "Which is a breaking change: adding an optional keyword-only parameter, or adding a required positional one?"
+a = "Adding a required positional parameter. Existing calls that omit it raise `TypeError`."
+
+[[card]]
+id = "bfce1c2f"
+q = "What is a good test for 'does this belong in the shared library'?"
+a = "It is generic, stable, and already needed by two or more projects."

@@ -1,0 +1,6 @@
+id = "extra-164"
+title = "All friendship pairs"
+difficulty = "easy"
+concept = "SELECT"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "SELECT user1, user2 FROM friends ORDER BY user1, user2."

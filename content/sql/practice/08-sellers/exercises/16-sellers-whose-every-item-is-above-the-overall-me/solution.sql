@@ -1,0 +1,1 @@
+SELECT s.name FROM sellers s WHERE NOT EXISTS (SELECT 1 FROM items i WHERE i.sellerId = s.id AND i.price <= (SELECT MEDIAN(price) FROM items)) AND EXISTS (SELECT 1 FROM items i2 WHERE i2.sellerId = s.id) ORDER BY s.name;

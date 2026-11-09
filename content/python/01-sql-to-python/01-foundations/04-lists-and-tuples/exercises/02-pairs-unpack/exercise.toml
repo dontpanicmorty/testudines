@@ -1,0 +1,8 @@
+id = "foundations.lists-and-tuples.pairs-unpack"
+title = "Unpack header and rows"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "`header, *body = lines` splits the first item from the rest.",
+  "Split each line on commas and strip each cell; zip the header with a row to pair them up (or index by position).",
+]

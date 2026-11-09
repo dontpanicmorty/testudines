@@ -1,0 +1,34 @@
+[[card]]
+id = "f3018ee0"
+q = "Why does a validator return `(good, bad)` rather than raise on the first bad row?"
+a = "One malformed row would abort the whole batch. Returning both lets valid data flow while bad rows are quarantined with a reason."
+
+[[card]]
+id = "94766d6f"
+q = "What makes a load idempotent in this design, and why a single transaction?"
+a = "It deletes the days it is about to write and then inserts, so re-running gives the same table. One transaction (`with conn:`) means readers never see a half-replaced day and a failure rolls back."
+
+[[card]]
+id = "897f704d"
+q = "Why reprocess from the watermark day inclusive (`>=`) instead of strictly after (`>`)?"
+a = "Late orders for the watermark day arrive after the run. Strict `>` loses them; reprocessing that day is safe because whole days are replaced."
+
+[[card]]
+id = "93dfeead"
+q = "A quarantined row is saved twice by two runs. What stops duplicates?"
+a = "A deterministic key (hash of source + raw row) as primary key with `INSERT OR REPLACE`."
+
+[[card]]
+id = "25c21ae4"
+q = "Why read all CSVs before calling `load.connect`?"
+a = "A missing file should fail cleanly before any database file or table is created."
+
+[[card]]
+id = "46d90126"
+q = "Why does `main(argv=None)` take the argument list as a parameter?"
+a = "Tests can call `main([\"--db\", ...])` directly and check the return code instead of spawning a process and patching `sys.argv`."
+
+[[card]]
+id = "4e28c5da"
+q = "Which exit code and log level does a missing input file get here, and why not just let the exception escape?"
+a = "Log an ERROR and return `2`: schedulers and shells read exit codes, and a clean message beats a traceback for a known failure."

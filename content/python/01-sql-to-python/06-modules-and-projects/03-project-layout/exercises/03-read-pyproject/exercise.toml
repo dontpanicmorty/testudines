@@ -1,0 +1,6 @@
+id = "modules-and-projects.project-layout.read-pyproject"
+title = "Summarise a pyproject.toml"
+difficulty = 3
+main = "solution.py"
+hints = ["`tomllib.loads(text)` gives nested dicts. Project data is under the `project` key.", "Each dependency string ends its name at the first of `[ < > = ! ~ ; space`.", "A script target `\"mylib.cli:main\"` splits on the colon into module and function."]
+timeout = 120

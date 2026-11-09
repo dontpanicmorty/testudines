@@ -1,0 +1,124 @@
+Invoice #,Customer Name ,AMOUNT,Invoice Date,Status
+INV-0001,MARGARET LISKOV,1310.11,2025-09-26,Paid
+INV-0002,  barbara liskov ,2593.25,2025-09-22,Open
+INV-0003,  margaret liskov ,2962.64,2025-09-12,
+INV-0004,ADA TURING,"$3,291.26",2025-05-20,PAID 
+INV-0005,Hedy Knuth,,20 Jun 2025,Open
+INV-0006,  katherine lovelace ,N/A,05/26/2025,Paid
+INV-0007,  alan perlman ,3928.62,05/31/2025,PAID 
+INV-0008,  margaret hopper ,,31 Jan 2025,PAID 
+INV-0009,Grace Johnson,,2025-01-28,overdue
+INV-0010,  frances hamilton ,"$1,162.09",2025-02-05,Open
+INV-0011,KEN HAMILTON,$964.38,17 Feb 2025,PAID 
+INV-0012,  vint torvalds ,,05 May 2025,
+INV-0013,HEDY HAMILTON,2750.49,07/07/2025,Open
+INV-0014,SHAFI GOLDWASSER,N/A,09/07/2025,overdue
+INV-0015,  joan hopper ,478.49,2025-06-12,Paid
+INV-0016,RADIA TORVALDS,1837.37,03 Jan 2025,PAID 
+INV-0017,Linus Perlman,1870.05,10/16/2025,Open
+INV-0018,Vint Lovelace,"$4,128.18",21 Feb 2025,Paid
+INV-0019,  katherine shannon ,N/A,2025-07-24,PAID 
+INV-0020,Guido Goldwasser,N/A,05 Oct 2025,paid
+INV-0021,HEDY GOLDWASSER,4515.93,26 Mar 2025,Paid
+INV-0022,JOAN ROSSUM,,2025-03-17,Paid
+INV-0023,  vint perlman ,N/A,16 Jan 2025,PAID 
+INV-0024,Donald Dijkstra,,2025-03-01,PAID 
+INV-0025,Ada Liskov,,06/24/2025,overdue
+INV-0026,  barbara thompson ,"$4,467.78",03/10/2025,PAID 
+INV-0027,Barbara Cerf,"$3,209.61",2025-05-23,PAID 
+INV-0028,Edsger Shannon,"$1,701.88",2025-05-08,
+INV-0029,  frances clarke ,344.23,03/31/2025,Open
+INV-0030,BARBARA LOVELACE,,10/01/2025,paid
+INV-0031,RADIA JOHNSON,4290.26,21 Apr 2025,
+INV-0032,  katherine perlman ,699.66,05 Mar 2025,PAID 
+INV-0033,Ada Dijkstra,N/A,02/12/2025,overdue
+INV-0034,BARBARA LISKOV,,2025-02-09,PAID 
+INV-0035,Claude Allen,$74.77,15 Feb 2025,paid
+INV-0036,Shafi Turing,N/A,26 Mar 2025,Open
+INV-0037,DENNIS LISKOV,,2025-08-11,paid
+INV-0038,  linus torvalds ,$445.02,05 Jun 2025,Paid
+INV-0039,  frances lovelace ,4299.40,04 Sep 2025,overdue
+INV-0040,  katherine liskov ,4593.35,05/29/2025,Paid
+INV-0041,  ken goldwasser ,"$1,382.61",05/16/2025,Paid
+INV-0042,  radia goldwasser ,"$1,541.81",12 Sep 2025,Open
+INV-0043,  ken knuth ,"$4,853.48",06 Jun 2025,overdue
+INV-0044,Linus Lovelace,$226.72,11 Feb 2025,PAID 
+INV-0045,ALAN BERNERS,1700.21,05/29/2025,
+INV-0046,  barbara lamarr ,"$2,141.88",23 Aug 2025,Open
+INV-0047,  claude perlman ,"$3,891.61",06/30/2025,PAID 
+INV-0048,Guido Rossum,1166.43,16 Jun 2025,Open
+INV-0049,  edsger ritchie ,,09/23/2025,overdue
+INV-0050,BARBARA BERNERS,,22 Aug 2025,paid
+INV-0051,BARBARA CLARKE,N/A,2025-02-19,overdue
+INV-0052,ADA DIJKSTRA,,07/15/2025,Paid
+INV-0053,VINT LOVELACE,$747.04,26 Oct 2025,Paid
+INV-0054,  ada goldwasser ,663.23,06/23/2025,PAID 
+INV-0055,  ada thompson ,"$2,933.72",01/19/2025,overdue
+INV-0056,Linus Lamarr,N/A,05/30/2025,Open
+INV-0057,GRACE ROSSUM,"$3,804.46",04/28/2025,Open
+INV-0058,  claude liskov ,257.80,2025-06-05,Paid
+INV-0059,RADIA THOMPSON,,01/30/2025,paid
+INV-0060,  radia cerf ,1698.04,02/15/2025,PAID 
+INV-0061,  alan shannon ,2796.54,2025-02-16,paid
+INV-0062,Joan Cerf,737.74,04/08/2025,
+INV-0063,FRANCES GOLDWASSER,4062.28,2025-03-07,PAID 
+INV-0064,Donald Thompson,,01/29/2025,paid
+INV-0065,Donald Johnson,N/A,25 Aug 2025,Open
+INV-0066,  barbara goldwasser ,"$3,734.00",04/19/2025,
+INV-0067,  dennis goldwasser ,N/A,03 Jan 2025,
+INV-0068,Radia Knuth,,18 Jun 2025,Paid
+INV-0069,  dennis shannon ,,2025-06-20,paid
+INV-0070,VINT HOPPER,N/A,08/07/2025,Open
+INV-0071,  ken clarke ,1835.29,2025-05-12,paid
+INV-0072,  ken cerf ,,2025-07-10,Paid
+INV-0073,BARBARA TURING,"$1,544.25",16 Jul 2025,paid
+INV-0074,  donald torvalds ,N/A,01/15/2025,Open
+INV-0075,  vint goldwasser ,"$2,951.01",2025-02-21,overdue
+INV-0076,KATHERINE ALLEN,4448.96,28 Mar 2025,Open
+INV-0077,GRACE JOHNSON,2325.55,23 Jan 2025,Paid
+INV-0078,  shafi goldwasser ,,23 Apr 2025,paid
+INV-0079,  linus clarke ,2854.29,2025-01-15,Paid
+INV-0080,FRANCES TORVALDS,,06/20/2025,overdue
+INV-0081,RADIA ROSSUM,N/A,02/17/2025,paid
+INV-0082,  claude ritchie ,4559.63,2025-03-14,Paid
+INV-0083,Radia Rossum,4510.03,2025-01-30,paid
+INV-0084,  grace johnson ,N/A,2025-08-27,PAID 
+INV-0085,Barbara Knuth,"$3,693.93",23 Feb 2025,overdue
+INV-0086,  alan johnson ,"$4,416.41",2025-02-06,overdue
+INV-0087,HEDY TURING,,21 Feb 2025,
+INV-0088,Guido Clarke,N/A,2025-09-22,
+INV-0089,MARGARET HAMILTON,N/A,2025-03-28,paid
+INV-0090,Margaret Dijkstra,3632.21,2025-06-26,overdue
+INV-0091,  margaret torvalds ,,2025-05-17,paid
+INV-0092,  claude clarke ,,2025-08-06,Paid
+INV-0093,BARBARA LISKOV,N/A,2025-01-18,Open
+INV-0094,TIM TORVALDS,$332.78,2025-03-08,PAID 
+INV-0095,Ken Torvalds,"$1,697.52",2025-05-08,
+INV-0096,Radia Perlman,4952.79,2025-07-19,Open
+INV-0097,ALAN THOMPSON,2860.76,07/31/2025,overdue
+INV-0098,Shafi Perlman,"$1,210.56",2025-07-10,
+INV-0099,Alan Hopper,$205.96,09 Aug 2025,Open
+INV-0100,Vint Goldwasser,"$4,075.11",03/02/2025,Paid
+INV-0101,MARGARET SHANNON,3011.93,18 Oct 2025,Open
+INV-0102,  vint dijkstra ,,10/23/2025,
+INV-0103,Grace Allen,N/A,01/04/2025,Open
+INV-0104,Donald Allen,4230.51,23 Mar 2025,PAID 
+INV-0105,Dennis Dijkstra,2948.63,01/11/2025,paid
+INV-0106,VINT CERF,N/A,2025-05-01,
+INV-0107,GRACE PERLMAN,2773.20,10/16/2025,Paid
+INV-0108,SHAFI ALLEN,$134.00,09/23/2025,PAID 
+INV-0109,ADA ALLEN,N/A,2025-10-07,Paid
+INV-0110,  hedy lovelace ,N/A,07 Apr 2025,Open
+INV-0111,  donald dijkstra ,4329.07,2025-10-28,overdue
+INV-0112,BARBARA SHANNON,N/A,2025-02-08,overdue
+INV-0113,ADA RITCHIE,4413.20,2025-06-09,Paid
+INV-0114,  alan hamilton ,3236.02,04/09/2025,paid
+INV-0115,Donald Thompson,"$2,350.17",10/18/2025,PAID 
+INV-0116,Barbara Shannon,N/A,08 Mar 2025,
+INV-0117,Grace Allen,,2025-01-16,Paid
+INV-0118,Donald Hamilton,222.56,30 Jan 2025,
+INV-0119,  claude turing ,1066.60,2025-01-23,
+INV-0120,Claude Torvalds,N/A,2025-07-05,overdue
+INV-0005,Hedy Knuth,,20 Jun 2025,Open
+INV-0017,Linus Perlman,1870.05,10/16/2025,Open
+INV-0040,  katherine liskov ,4593.35,05/29/2025,Paid

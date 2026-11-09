@@ -1,0 +1,25 @@
+[[card]]
+id = "8be8f69d"
+q = '''What does `d.items()` give you?'''
+a = '''Every key/value pair of the dictionary as a two-item tuple.'''
+
+[[card]]
+id = "5a41d411"
+q = '''What does `for name, qty in d.items():` do on each pass?'''
+a = '''Takes the next pair and unpacks it into `name` and `qty`, like `name, qty = pair`.'''
+
+[[card]]
+id = "06156997"
+q = '''Why can a tuple be a dictionary key but a list cannot?'''
+a = '''Keys must be unchangeable; tuples are immutable, lists are not (a list key raises `unhashable type`).'''
+
+[[card]]
+id = "01264fb6"
+q = '''How do you turn a list of pairs `[('a', 1), ('b', 2)]` into a dictionary?'''
+a = '''`dict(pairs)`'''
+
+[[card]]
+id = "356e164f"
+q = '''What does 'cannot unpack non-iterable int object' tell you?'''
+a = '''You tried to unpack something that is a single number; the items in your loop are not the pairs you expected.'''
+

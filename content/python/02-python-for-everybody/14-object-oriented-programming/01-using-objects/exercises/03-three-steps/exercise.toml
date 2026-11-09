@@ -1,0 +1,9 @@
+id = "everybody.object-oriented-programming.using-objects.three-steps"
+title = "Minutes on the water"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Split the work into three small functions: one to read, one to total, one to format.",
+  "Sort by total (largest first), then by name.",
+  "A blank line in the input should be ignored."
+]

@@ -1,0 +1,8 @@
+id = "everybody.files.writing-and-with.add-entry"
+title = "Keep a diary"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "There is a mode that keeps old content.",
+  "Build the whole line, including the day and the text, before writing.",
+]

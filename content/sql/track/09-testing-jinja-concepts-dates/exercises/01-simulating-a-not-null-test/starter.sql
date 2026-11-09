@@ -1,0 +1,1 @@
+-- accounts(account_id, account_name, owner_id, region, created_at)

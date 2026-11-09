@@ -1,0 +1,9 @@
+id = "everybody.conditional-execution.if-else-elif.exam-grade"
+title = "Turn a mark into a letter"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Test the highest boundary first.",
+  "A mark of exactly 80 should get the better letter.",
+  "An elif chain with a final else covers the lowest group.",
+]

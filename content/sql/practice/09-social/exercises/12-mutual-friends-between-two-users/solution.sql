@@ -1,0 +1,1 @@
+WITH f_all AS (SELECT user1 AS a, user2 AS b FROM friends UNION SELECT user2, user1 FROM friends) SELECT DISTINCT u.name FROM f_all f1 JOIN f_all f2 ON f1.b = f2.b JOIN users u ON u.id = f1.b WHERE f1.a = 1 AND f2.a = 2 AND f1.b NOT IN (1, 2) ORDER BY u.name;

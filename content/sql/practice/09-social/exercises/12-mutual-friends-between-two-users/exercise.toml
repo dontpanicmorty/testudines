@@ -1,0 +1,6 @@
+id = "extra-172"
+title = "Mutual friends between two users"
+difficulty = "medium"
+concept = "self JOIN on friends"
+tables = "users(id, name, sex, joinYear); friends(user1, user2)"
+hint = "Build a symmetric friends view with UNION, then self-join on the shared friend id for two specific users."

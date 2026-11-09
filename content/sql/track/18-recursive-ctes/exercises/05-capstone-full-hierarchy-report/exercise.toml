@@ -1,0 +1,6 @@
+id = "18.5"
+title = "Capstone: Full Hierarchy Report"
+difficulty = "hard"
+concept = "recursive CTE: depth + path + manager name"
+tables = "employees(employee_id, employee_name, manager_id)"
+hint = "Build `depth` and `path` inside the recursive CTE as in modules 18.1/18.2, then `left join` the CTE's output back to plain `employees` for `manager_name`."

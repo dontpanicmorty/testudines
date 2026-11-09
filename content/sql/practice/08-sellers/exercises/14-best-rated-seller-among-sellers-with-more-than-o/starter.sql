@@ -1,0 +1,1 @@
+-- sellers(id, name, rating); items(id, name, sellerId, price)

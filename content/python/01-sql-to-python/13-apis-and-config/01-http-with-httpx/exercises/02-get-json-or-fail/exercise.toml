@@ -1,0 +1,9 @@
+id = "apis-and-config.http-with-httpx.get-json-or-fail"
+title = "Debug: errors parsed as data"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Run the failing test and read what was returned for a 500: is it data or an error?",
+  "A non-2xx response must become an ApiError that carries the status code. Check resp.is_success.",
+  "Timeouts never produce a response, so there is no status code to report: use None.",
+]

@@ -1,0 +1,6 @@
+id = "extra-26"
+title = "Highest GPA student"
+difficulty = "easy"
+concept = "ORDER BY / LIMIT"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "ORDER BY gpa DESC LIMIT 1."

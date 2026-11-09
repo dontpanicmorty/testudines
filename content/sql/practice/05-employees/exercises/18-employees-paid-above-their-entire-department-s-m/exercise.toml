@@ -1,0 +1,6 @@
+id = "extra-98"
+title = "Employees paid above their entire department's median"
+difficulty = "hard"
+concept = "MEDIAN / subquery"
+tables = "employees(id, managerId, name, department, salary)"
+hint = "Correlated subquery computing MEDIAN(salary) for the same department."

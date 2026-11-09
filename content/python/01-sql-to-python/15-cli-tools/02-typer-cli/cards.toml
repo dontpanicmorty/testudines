@@ -1,0 +1,34 @@
+[[card]]
+id = "a24f31bf"
+q = "In Typer, what does each of these become?\n```python\ndef cmd(path: str, limit: int = 10, dry_run: bool = False): ...\n```"
+a = "`path`: required argument. `limit`: option `--limit` (int). `dry_run`: flag `--dry-run` (and `--no-dry-run`)."
+
+[[card]]
+id = "824884e4"
+q = "Write the call that tests a Typer `app` command `load` with argument `x.csv` and read its exit code and output."
+a = "```python\nr = CliRunner().invoke(app, [\"load\", \"x.csv\"])\nr.exit_code, r.stdout\n```"
+
+[[card]]
+id = "fdab789d"
+q = "What exit code does Typer give for an invalid option value such as `--limit abc`?"
+a = "`2` (usage error)."
+
+[[card]]
+id = "cdf30cb6"
+q = "How do you exit with failure and send the message to stderr?"
+a = "```python\ntyper.echo(\"error: ...\", err=True)\nraise typer.Exit(code=1)\n```"
+
+[[card]]
+id = "5d31bbae"
+q = "How do you restrict `--env` to `dev` or `prod`?"
+a = "Use an `Enum` (`class Env(str, Enum): dev = \"dev\"; prod = \"prod\"`) as the parameter type."
+
+[[card]]
+id = "272b4dee"
+q = "Why does `invoke(app, [\"hello\", \"Ada\"])` fail for an app with a single command `hello`?"
+a = "With one command, Typer runs it directly, so `hello` is taken as the first argument. Add another command or omit the name."
+
+[[card]]
+id = "bab96c4f"
+q = "How would you require `--batch-size` to be at least 1?"
+a = "```python\nbatch: int = typer.Option(500, \"--batch-size\", min=1)\n```"

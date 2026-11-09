@@ -1,0 +1,6 @@
+id = "extra-16"
+title = "Device type with most total duration"
+difficulty = "hard"
+concept = "aggregation / LIMIT"
+tables = "sessions(id, userId, deviceType, duration, sessionDate)"
+hint = "GROUP BY deviceType, SUM(duration), ORDER BY ... DESC LIMIT 1."

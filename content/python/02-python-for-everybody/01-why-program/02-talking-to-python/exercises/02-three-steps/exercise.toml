@@ -1,0 +1,8 @@
+id = "everybody.why-program.talking-to-python.three-steps"
+title = "Follow the steps in order"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Python runs statements top to bottom; you can assign to the same name several times.",
+  "Or write it as one expression, using brackets so the order is right.",
+]

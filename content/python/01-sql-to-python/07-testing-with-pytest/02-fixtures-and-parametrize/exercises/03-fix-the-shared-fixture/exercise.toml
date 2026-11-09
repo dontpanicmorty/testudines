@@ -1,0 +1,6 @@
+id = "testing-with-pytest.fixtures-and-parametrize.fix-the-shared-fixture"
+title = "Tests that only pass in one order"
+difficulty = 2
+main = "my_tests.py"
+hints = ["Run the tests in your head in file order: what is in the cart when `test_add_same_sku_twice` starts?", "The fixture hands every test the same object. Where is it created?", "Create the `Cart` inside the fixture function so each test gets its own."]
+timeout = 120

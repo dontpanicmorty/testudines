@@ -1,0 +1,1 @@
+INSERT INTO enrollments VALUES (200, 2026, 9, 100, NULL);

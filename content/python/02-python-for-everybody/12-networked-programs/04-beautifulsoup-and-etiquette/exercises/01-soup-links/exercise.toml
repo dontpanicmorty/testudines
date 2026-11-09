@@ -1,0 +1,8 @@
+id = "everybody.networked-programs.beautifulsoup-and-etiquette.soup-links"
+title = "Every address on the page"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Find every anchor tag, then read one attribute from each.",
+  "Some anchors have no address at all and must be skipped.",
+]

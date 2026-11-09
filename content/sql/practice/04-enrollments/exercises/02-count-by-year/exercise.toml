@@ -1,0 +1,6 @@
+id = "extra-62"
+title = "Count by year"
+difficulty = "easy"
+concept = "GROUP BY"
+tables = "enrollments(id, year, studentId, courseId, grade_letter)"
+hint = "GROUP BY year, COUNT(*)."

@@ -1,0 +1,8 @@
+id = "everybody.lists.objects-and-aliases.in-place-clean"
+title = "Change it right here"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The caller will look at their own list afterwards, so change that one.",
+  "Rebinding the parameter name to a new list will not be seen by the caller.",
+]

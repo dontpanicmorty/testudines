@@ -1,0 +1,6 @@
+id = "extra-185"
+title = "Insert a mapping row"
+difficulty = "easy"
+concept = "INSERT"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "CREATE TABLE first, then a plain INSERT INTO ... VALUES."

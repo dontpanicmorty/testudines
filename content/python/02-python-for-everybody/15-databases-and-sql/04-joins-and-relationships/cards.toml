@@ -1,0 +1,30 @@
+[[card]]
+id = "b599bf43"
+q = '''What does `JOIN ... ON` do?'''
+a = '''Combines rows from two tables where the `ON` condition matches, e.g. `book.author_id = author.id`.'''
+
+[[card]]
+id = "176d0fef"
+q = '''What is the difference between `JOIN` and `LEFT JOIN`?'''
+a = '''`JOIN` drops rows with no match; `LEFT JOIN` keeps every left-table row, filling the other side with `None`.'''
+
+[[card]]
+id = "b0be4e4c"
+q = '''When do you need a junction table?'''
+a = '''For a many-to-many relationship, such as members and clubs. It has one row per pairing.'''
+
+[[card]]
+id = "41510244"
+q = '''How do you stop the same pairing being stored twice?'''
+a = '''A `UNIQUE (member_id, club_id)` constraint on the junction table.'''
+
+[[card]]
+id = "c096ec60"
+q = '''What does an "ambiguous column name" error mean?'''
+a = '''Two joined tables have a column with that name; write `table.column`.'''
+
+[[card]]
+id = "75159853"
+q = '''Your join returns far too many rows. First suspect?'''
+a = '''A missing or wrong `ON` condition.'''
+

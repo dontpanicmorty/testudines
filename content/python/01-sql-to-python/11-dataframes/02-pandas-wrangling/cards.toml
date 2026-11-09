@@ -1,0 +1,38 @@
+[[card]]
+id = "a363b6ae"
+q = "Write the pandas expression that converts the string column `s` (like `\"$1,234.50\"`, `\"N/A\"`) to floats with NaN for bad values."
+a = '''```python
+pd.to_numeric(s.str.replace(r"[$,]", "", regex=True), errors="coerce")
+```'''
+
+[[card]]
+id = "ca57c4c2"
+q = "What is the SQL equivalent of `errors=\"coerce\"` in `pd.to_numeric`?"
+a = "`TRY_CAST`: unparseable values become NULL (NaN) instead of raising."
+
+[[card]]
+id = "49b651c7"
+q = "Why does `df[df.amt > 10][\"amt\"] = 0` not change `df`, and what is the fix?"
+a = "It assigns into a temporary result. Use `df.loc[df[\"amt\"] > 10, \"amt\"] = 0`."
+
+[[card]]
+id = "89f4828f"
+q = "Keep only the most recent row per `invoice_id` given a `seen_at` column."
+a = '''```python
+df.sort_values("seen_at").drop_duplicates("invoice_id", keep="last")
+```'''
+
+[[card]]
+id = "ca9d41d5"
+q = "`pd.Series([1, 2, None])` prints `1.0, 2.0, NaN`. How do you keep integers?"
+a = "Use the nullable dtype: `pd.Series([1, 2, None], dtype=\"Int64\")`."
+
+[[card]]
+id = "38aa461f"
+q = "Which pandas calls are PIVOT and UNPIVOT?"
+a = "`pivot_table(index=, columns=, values=, aggfunc=)` for pivot, `melt(id_vars=, var_name=, value_name=)` for unpivot."
+
+[[card]]
+id = "a71d1492"
+q = "A date column mixes `2025-01-02` and `01/02/2025`. What is the danger of `format=\"mixed\"`?"
+a = "Ambiguous values (`03/04/2025`) are guessed, month-first by default. Prefer explicit formats per known pattern."

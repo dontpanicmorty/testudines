@@ -1,0 +1,9 @@
+id = "everybody.conditional-execution.short-circuit-and-tracebacks.starts-with-digit"
+title = "Careful first character"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "An empty text has no first character, and asking for one is an error.",
+  "Put a check that the text is not empty before the check on the first character.",
+  "Text has a method that tests whether it is all digits.",
+]

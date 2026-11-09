@@ -1,0 +1,1 @@
+-- campaigns(campaign_id, clicks, impressions)

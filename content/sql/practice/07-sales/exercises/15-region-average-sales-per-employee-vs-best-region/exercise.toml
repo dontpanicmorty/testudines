@@ -1,0 +1,6 @@
+id = "extra-135"
+title = "Region average sales per employee vs best region"
+difficulty = "hard"
+concept = "CTE"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Build employee-to-region mapping, aggregate sales per region, then compare each region's average to the max via a scalar subquery."

@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.composition-and-interfaces.dedupe-strategies"
+title = "Swappable dedupe strategies"
+difficulty = 3
+main = "solution.py"
+hints = ["Group rows by key first (a dict of lists keeps input order), then let the strategy pick one row from each group.", "`keep_max(field)` is a function that *returns* a strategy: a function from a group to one row.", "`max(group, key=...)` returns the first maximal item, which gives the 'first wins on ties' rule for free."]

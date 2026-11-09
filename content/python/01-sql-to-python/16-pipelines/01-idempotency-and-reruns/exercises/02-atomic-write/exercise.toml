@@ -1,0 +1,9 @@
+id = "pipelines.idempotency-and-reruns.atomic-write"
+title = "Atomic file write"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "tempfile.mkstemp(dir=...) gives you a file descriptor and a path in the directory you choose.",
+  "Open the descriptor with os.fdopen(fd, 'w'), call produce(fh), then os.replace(tmp, path).",
+  "Wrap it in try/except BaseException: delete the temp file and re-raise, so the original is untouched.",
+]

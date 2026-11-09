@@ -1,0 +1,34 @@
+[[card]]
+id = "8fc78654"
+q = "Why pass a connection factory (`connect: Callable[[], Conn]`) rather than creating the connection inside the function?"
+a = "Tests can inject a fake, and the function controls when it opens and can guarantee it closes."
+
+[[card]]
+id = "8952eb6a"
+q = "Name three things a contract test on a fake connection can assert."
+a = "The SQL sent, the bound parameters, and lifecycle (closed / committed / rolled back), plus handling of empty or NULL results."
+
+[[card]]
+id = "ab8d9109"
+q = "Why is `assert \"WHERE\" in sql` a weak test of generated SQL, and what is better?"
+a = "It passes for many wrong statements. Normalise whitespace and compare the full statement: `\" \".join(sql.split()) == expected`."
+
+[[card]]
+id = "2cc4f1ac"
+q = "Can bind parameters carry a table name? What do you do instead?"
+a = "No. Validate the identifier with a strict regex or allow-list, then format it in."
+
+[[card]]
+id = "a71a13dc"
+q = "What can DuckDB tell you that a hand-written fake connection cannot?"
+a = "Whether your SQL logic (dedupe, window functions, aggregates) returns the right rows; fakes only check how you called the database."
+
+[[card]]
+id = "fe5b5f25"
+q = "Write the DuckDB-compatible query that keeps the latest row per `id` by `updated_at`."
+a = "```sql\nSELECT * FROM t\nQUALIFY ROW_NUMBER() OVER (PARTITION BY id ORDER BY updated_at DESC) = 1\n```"
+
+[[card]]
+id = "f848384a"
+q = "Name two ways DuckDB differs from Snowflake that matter for portability."
+a = "Placeholder style (`?`/`$name` vs `%(name)s`) and missing Snowflake features (stages/`COPY INTO @stage`, some semi-structured functions)."

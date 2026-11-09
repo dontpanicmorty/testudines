@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.measure-first.orphan-orders"
+title = "Orphan orders"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "An orphan is an order whose customer_id is not among the customers. That is a left anti-join.",
+  "Turn the customer ids into a set first so each membership test is constant time.",
+  "Collect order ids in a set to dedupe, then return sorted(...).",
+]

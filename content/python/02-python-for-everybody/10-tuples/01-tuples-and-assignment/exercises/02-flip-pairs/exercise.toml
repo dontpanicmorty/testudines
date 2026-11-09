@@ -1,0 +1,8 @@
+id = "everybody.tuples.tuples-and-assignment.flip-pairs"
+title = "Flip each pair"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Take each pair apart into two names, then build a new pair.",
+  "Collect the results in a list.",
+]

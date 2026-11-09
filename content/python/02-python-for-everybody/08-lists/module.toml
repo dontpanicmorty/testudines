@@ -1,0 +1,3 @@
+title = "Lists"
+summary = "Store and reshape sequences of values with lists, and understand what happens when lists are shared."
+stage = "Part 3 · Data structures"

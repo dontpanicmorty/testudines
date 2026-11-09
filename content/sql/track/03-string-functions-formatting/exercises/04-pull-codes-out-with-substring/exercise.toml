@@ -1,0 +1,6 @@
+id = "3.4"
+title = "Pull Codes Out with SUBSTRING"
+difficulty = "easy"
+concept = "SUBSTRING"
+tables = "products(product_id, sku)"
+hint = "`substring(sku, 1, 4)` takes 4 characters starting at position 1."

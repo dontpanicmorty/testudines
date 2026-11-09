@@ -1,0 +1,6 @@
+id = "17.2"
+title = "Highest-Priority Territory Match per Account"
+difficulty = "hard"
+concept = "DENSE_RANK() ... QUALIFY = 1, as in rev_sales_territory_planning"
+tables = "accounts_multi, territory_plan (with a genuine duplicate match)"
+hint = "QUALIFY DENSE_RANK() OVER (PARTITION BY COALESCE(a.accountid_a, a.accountid_b) ORDER BY t.priority) = 1"

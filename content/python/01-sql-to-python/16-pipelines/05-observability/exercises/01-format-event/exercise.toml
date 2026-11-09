@@ -1,0 +1,8 @@
+id = "pipelines.observability.format-event"
+title = "Structured log line"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Build a dict with 'event' plus the extra fields, then json.dumps it.",
+  "Pass sort_keys=True so the output is stable.",
+]

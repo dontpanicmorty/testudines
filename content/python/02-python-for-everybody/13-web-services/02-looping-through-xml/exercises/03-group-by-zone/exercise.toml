@@ -1,0 +1,8 @@
+id = "everybody.web-services.looping-through-xml.group-by-zone"
+title = "Zones and their stations"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Loop over the outer elements, then loop over the inner ones.",
+  "A zone with no stations should still appear, with an empty list."
+]

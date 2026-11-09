@@ -1,0 +1,6 @@
+id = "19.2"
+title = "Converting a Struct to JSON"
+difficulty = "hard"
+concept = "to_json(struct)"
+tables = "orders(order_id, customer_id, amount, status)"
+hint = "`to_json(struct_pack(order_id := order_id, amount := amount, status := status))`."

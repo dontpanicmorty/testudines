@@ -1,0 +1,8 @@
+id = "foundations.functions.clean-email"
+title = "Clean an email"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Strip and lowercase first, then decide what to return.",
+  "A blank string is falsy, so `cleaned or None` is a neat ending, or use an explicit if.",
+]

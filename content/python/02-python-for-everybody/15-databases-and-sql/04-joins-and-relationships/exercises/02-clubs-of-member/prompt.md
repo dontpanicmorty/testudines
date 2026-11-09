@@ -1,0 +1,1 @@
+`conn` has `member(id, name)`, `club(id, name)` and `membership(member_id, club_id)`. Write `clubs_of(conn, member_name)` returning a sorted list of the names of the clubs that member has joined. An unknown member, or one with no clubs, gives an empty list.

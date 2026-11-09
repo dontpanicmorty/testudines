@@ -1,0 +1,9 @@
+id = "services.running-in-production.timeout-and-lifespan"
+title = "Timeout and lifespan"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Define an async lifespan with @asynccontextmanager; append 'startup' before yield and 'shutdown' after, and pass lifespan=... to FastAPI.",
+  "Make the route async and call await asyncio.wait_for(fetch(), timeout=timeout). Catch asyncio.TimeoutError.",
+  "On timeout raise HTTPException(504, ...). On success return {'report': value}.",
+]

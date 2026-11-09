@@ -1,0 +1,3 @@
+class Tally:
+    # TODO
+    pass

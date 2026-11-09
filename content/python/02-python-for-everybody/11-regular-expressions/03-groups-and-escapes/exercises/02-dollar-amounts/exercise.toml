@@ -1,0 +1,9 @@
+id = "everybody.regular-expressions.groups-and-escapes.dollar-amounts"
+title = "Add up the prices"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A dollar sign and a dot are special; escape them.",
+  "Put brackets around just the digits.",
+  "Convert the captured strings to numbers before adding.",
+]

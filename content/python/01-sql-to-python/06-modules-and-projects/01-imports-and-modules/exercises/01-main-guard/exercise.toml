@@ -1,0 +1,6 @@
+id = "modules-and-projects.imports-and-modules.main-guard"
+title = "Importing must not run the report"
+difficulty = 1
+main = "solution.py"
+hints = ["Anything at the bottom of the file that is not a definition runs on import.", "Wrap the top-level call in a check on `__name__`.", "The guard is `if __name__ == \"__main__\":`."]
+timeout = 120

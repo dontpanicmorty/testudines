@@ -1,0 +1,6 @@
+id = "extra-28"
+title = "Rank within grade"
+difficulty = "medium"
+concept = "window function"
+tables = "students(id, firstName, lastName, grade, gpa)"
+hint = "RANK() OVER (PARTITION BY grade ORDER BY gpa DESC)."

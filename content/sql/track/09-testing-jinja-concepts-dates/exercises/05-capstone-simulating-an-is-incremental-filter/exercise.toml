@@ -1,0 +1,6 @@
+id = "9.5"
+title = "Capstone: simulating an is_incremental() filter"
+difficulty = "medium"
+concept = "Date filtering, as if branching on is_incremental()"
+tables = "accounts(account_id, account_name, owner_id, region, created_at)"
+hint = "WHERE created_at >= DATE '2024-04-01' - INTERVAL 60 DAY"

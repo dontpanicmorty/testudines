@@ -1,0 +1,6 @@
+id = "extra-142"
+title = "Items over a price"
+difficulty = "easy"
+concept = "WHERE"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "WHERE price > 50."

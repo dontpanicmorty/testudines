@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.connector-anatomy.fetch-with-cleanup"
+title = "Fetch rows and always close the cursor"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Use `with conn.cursor() as cur:` so the cursor closes even if execute raises.",
+  "Pass params straight to cur.execute(sql, params); never format values into the SQL string.",
+  "scalar() returns None for no rows: check the fetched row before indexing.",
+]

@@ -1,0 +1,1 @@
+-- customers(customer_id, first_name, ..., referral_source)

@@ -1,0 +1,1 @@
+Create a users_roles table with userId INTEGER REFERENCES users(id), roleId INTEGER REFERENCES roles(id), then attempt to insert a row with userId 999 (which doesn't exist in users) to demonstrate the foreign key constraint -- write the CREATE TABLE only (do not include the failing INSERT).

@@ -1,0 +1,1 @@
+The connection already has a table `author(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE)`. Write `author_id(conn, name)` that returns the id for that name. If no such author exists yet, add one first. Calling it repeatedly with the same name must return the same id and must not add rows.

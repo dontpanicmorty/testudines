@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.joins-and-aggregations-by-hand.left-join"
+title = "Hash left join"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Group the right rows into a dict key -> list of rows first (the key may repeat).",
+  "For each left row emit one output per match, or one with None columns if no match.",
+  "Build new dicts with {**left_row, ...}; do not mutate the inputs.",
+]

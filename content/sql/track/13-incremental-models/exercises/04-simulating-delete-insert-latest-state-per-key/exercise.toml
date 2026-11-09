@@ -1,0 +1,6 @@
+id = "13.4"
+title = "Simulating delete+insert: latest state per key"
+difficulty = "hard"
+concept = "incremental_strategy = 'delete+insert', latest-row-per-key"
+tables = "raw_usage_events(event_id, account_id, event_type, event_date, loaded_at)"
+hint = "QUALIFY ROW_NUMBER() OVER (PARTITION BY account_id ORDER BY event_date DESC, loaded_at DESC) = 1"

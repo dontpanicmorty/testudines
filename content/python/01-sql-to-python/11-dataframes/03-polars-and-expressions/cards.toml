@@ -1,0 +1,38 @@
+[[card]]
+id = "a564e0ab"
+q = "Write the polars for `SELECT region, SUM(amount) AS total FROM df GROUP BY region ORDER BY region`."
+a = '''```python
+df.group_by("region").agg(pl.col("amount").sum().alias("total")).sort("region")
+```'''
+
+[[card]]
+id = "6fbb2361"
+q = "What does `pl.col(\"amount\")` evaluate to on its own?"
+a = "An expression: a description of a column computation. It runs only inside `select`, `with_columns`, `filter`, `agg` etc."
+
+[[card]]
+id = "1e80251a"
+q = "Translate `CASE WHEN amount >= 100 THEN 'big' ELSE 'small' END AS tier` to polars."
+a = '''```python
+pl.when(pl.col("amount") >= 100).then(pl.lit("big")).otherwise(pl.lit("small")).alias("tier")
+```'''
+
+[[card]]
+id = "bfa60f9f"
+q = "What is the polars spelling of `SUM(x) OVER (PARTITION BY region)`?"
+a = "`pl.col(\"x\").sum().over(\"region\")`"
+
+[[card]]
+id = "6ca7bdbe"
+q = "What is the difference between `pl.read_csv(p)` and `pl.scan_csv(p)`?"
+a = "`read_csv` loads eagerly into a DataFrame. `scan_csv` returns a LazyFrame that is planned and run on `collect()`."
+
+[[card]]
+id = "6438916b"
+q = "Difference between `select` and `with_columns`?"
+a = "`select` returns only the expressions you list. `with_columns` keeps all existing columns and adds or replaces the ones you list."
+
+[[card]]
+id = "184943ef"
+q = "A polars `group_by` result comes out in a different order each run. Fix?"
+a = "Group order is not guaranteed. Add `.sort(...)` (or `maintain_order=True`)."

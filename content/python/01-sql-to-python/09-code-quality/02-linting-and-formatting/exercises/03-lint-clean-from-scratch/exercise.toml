@@ -1,0 +1,6 @@
+id = "code-quality.linting-and-formatting.lint-clean-from-scratch"
+title = "Write it lint-clean from the start"
+difficulty = 2
+main = "solution.py"
+timeout = 120
+hints = ["Work in steps: strip and lower-case, replace runs of non-alphanumerics with one underscore (`re.sub`), trim underscores, then handle empty and duplicate names.", "Keep a `Counter` or dict of names seen so far to number duplicates `_2`, `_3`.", "In a terminal, `python -m ruff format solution.py` fixes layout for you."]

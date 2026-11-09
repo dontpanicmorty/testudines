@@ -1,0 +1,8 @@
+id = "everybody.files.searching-and-choosing.safe-count"
+title = "Count, but only if it exists"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "There are two different outcomes: a number, or no answer.",
+  "Only the open call needs protecting.",
+]

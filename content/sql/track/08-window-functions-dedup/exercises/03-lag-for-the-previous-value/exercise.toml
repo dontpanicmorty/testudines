@@ -1,0 +1,6 @@
+id = "8.3"
+title = "LAG for the previous value"
+difficulty = "medium"
+concept = "LAG() OVER (PARTITION BY ... ORDER BY ...)"
+tables = "subscription_history(sub_id, account_id, status, effective_date)"
+hint = "LAG(status) OVER (PARTITION BY sub_id ORDER BY effective_date) AS previous_status"

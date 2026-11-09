@@ -1,0 +1,6 @@
+id = "3.1"
+title = "Normalize Case with UPPER/LOWER"
+difficulty = "easy"
+concept = "UPPER/LOWER"
+tables = "customers(customer_id, first_name, email)"
+hint = "Wrap the `email` column in `lower(...)` and alias it `email_clean`."

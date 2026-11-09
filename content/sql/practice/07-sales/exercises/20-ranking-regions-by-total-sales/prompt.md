@@ -1,0 +1,1 @@
+Rank every region by its total sales, highest first, treating a region with no sales at all as a total of 0. Regions tied on total sales should share the same rank, with no gap before the next distinct rank. Return region name, total sales, and that rank as sales_rank, ordered by sales_rank.

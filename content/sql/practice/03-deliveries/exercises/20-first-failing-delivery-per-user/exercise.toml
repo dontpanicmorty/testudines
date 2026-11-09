@@ -1,0 +1,6 @@
+id = "extra-60"
+title = "First failing delivery per user"
+difficulty = "hard"
+concept = "QUALIFY"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "Filter to failures first, then QUALIFY ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY delivery_date) = 1."

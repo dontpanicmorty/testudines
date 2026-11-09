@@ -1,0 +1,30 @@
+[[card]]
+id = "5d7d4642"
+q = '''What are a table, a row and a column?'''
+a = '''A table holds one kind of thing; each row is one such thing (a record); each column is one fact (field) about every row.'''
+
+[[card]]
+id = "1c2f1d48"
+q = '''In what order do you use sqlite3's connect, cursor, execute and commit?'''
+a = '''`connect` opens the database, `cursor` creates the command sender, `execute` runs SQL, `commit` saves changes permanently.'''
+
+[[card]]
+id = "a1a32af3"
+q = '''What does `sqlite3.connect(":memory:")` give you?'''
+a = '''A temporary database that lives only in RAM, good for tests and experiments.'''
+
+[[card]]
+id = "77e1a447"
+q = '''Why use `?` placeholders instead of f-strings in SQL?'''
+a = '''They handle quoting safely and prevent SQL injection.'''
+
+[[card]]
+id = "2995ea6c"
+q = '''What does a SELECT row look like in Python?'''
+a = '''A tuple of the selected column values, in the order requested.'''
+
+[[card]]
+id = "3a6c6100"
+q = '''What happens to inserts that you never commit?'''
+a = '''They are lost when the connection closes or the program stops.'''
+

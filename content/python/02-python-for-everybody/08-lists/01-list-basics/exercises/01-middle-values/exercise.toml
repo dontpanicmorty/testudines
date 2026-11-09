@@ -1,0 +1,8 @@
+id = "everybody.lists.list-basics.middle-values"
+title = "Trim both ends"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "A slice can start after the first element and stop before the last.",
+  "Think about what happens with fewer than three items.",
+]

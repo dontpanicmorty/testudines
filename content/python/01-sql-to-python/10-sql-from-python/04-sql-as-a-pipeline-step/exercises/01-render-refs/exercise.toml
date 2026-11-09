@@ -1,0 +1,9 @@
+id = "sql-from-python.sql-as-a-pipeline-step.render-refs"
+title = "A tiny ref() renderer"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Use re.compile with a pattern for {{, optional spaces, ref(, a quoted name, ), optional spaces, }}.",
+  "re.sub accepts a function. Inside it, look up match.group(1) in the mapping.",
+  "Add a second function refs_in(template) that returns the names in order of first appearance without duplicates (re.findall plus dict.fromkeys is a neat way).",
+]

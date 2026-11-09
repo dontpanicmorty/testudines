@@ -1,0 +1,8 @@
+id = "foundations.dicts-as-rows.count-statuses"
+title = "Revenue by status"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Start with an empty dict and loop over the rows.",
+  "totals[key] = totals.get(key, 0) + value is the whole pattern. Round at the end, not in the loop.",
+]

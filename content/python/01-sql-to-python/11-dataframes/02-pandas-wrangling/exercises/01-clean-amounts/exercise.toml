@@ -1,0 +1,8 @@
+id = "dataframes.pandas-wrangling.clean-amounts"
+title = "Clean the amount column"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "The .str accessor works on whole Series. Strip spaces, then remove $ and commas with a regex.",
+  "pd.to_numeric(series, errors='coerce') turns 'N/A' and '' into NaN.",
+]

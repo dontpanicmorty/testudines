@@ -1,0 +1,34 @@
+[[card]]
+id = "31ae976e"
+q = "Where does Python store a function's docstring, and how do you read it?"
+a = "In `fn.__doc__` (also shown by `help(fn)`)."
+
+[[card]]
+id = "7e7e29e7"
+q = "Write a docstring example that `doctest` will verify for `double(2)` returning 4."
+a = "```python\n>>> double(2)\n4\n```\nIndented inside the docstring; the line after `>>>` is the exact expected output."
+
+[[card]]
+id = "84b39efe"
+q = "What does `TestResults(failed=0, attempted=3)` tell you?"
+a = "All 3 doctest examples ran and passed."
+
+[[card]]
+id = "1997f585"
+q = "List the first three sections of a good library README."
+a = "What it is (one sentence), install command, and a copy-pasteable quick start."
+
+[[card]]
+id = "c1807a13"
+q = "Why must a published git tag or version never be changed?"
+a = "Consumers may already depend on that exact artifact. Fix forward with a new patch release instead."
+
+[[card]]
+id = "385ce314"
+q = "What version range expresses 'take any compatible 1.x from 1.4 up'?"
+a = "`>=1.4,<2`."
+
+[[card]]
+id = "0c72b426"
+q = "Name two consistency checks worth automating before a release."
+a = "The version in `pyproject.toml` matches `__version__`; the changelog has a section for the new version."

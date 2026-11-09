@@ -1,0 +1,6 @@
+id = "extra-106"
+title = "Distinct breeds across cats"
+difficulty = "easy"
+concept = "DISTINCT"
+tables = "dogs(id, name, breed, age); cats(id, name, breed, age)"
+hint = "SELECT DISTINCT breed FROM cats."

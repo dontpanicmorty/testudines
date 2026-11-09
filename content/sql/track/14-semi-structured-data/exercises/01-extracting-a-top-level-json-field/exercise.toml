@@ -1,0 +1,6 @@
+id = "14.1"
+title = "Extracting a top-level JSON field"
+difficulty = "hard"
+concept = "Snowflake VARIANT ':' path access, analog: JSON '->>'"
+tables = "raw_payloads(id, account_id, payload) -- payload is a JSON string, like a Snowflake VARIANT column"
+hint = "payload::JSON->>'plan' AS plan"

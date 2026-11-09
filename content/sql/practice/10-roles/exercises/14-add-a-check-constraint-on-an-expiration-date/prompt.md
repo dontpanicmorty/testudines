@@ -1,0 +1,1 @@
+Create a users_roles table with userId INTEGER REFERENCES users(id), roleId INTEGER REFERENCES roles(id), a composite PRIMARY KEY on (userId, roleId), plus assigned_at DATE DEFAULT CURRENT_DATE and expires_at DATE, with a CHECK constraint ensuring expires_at is NULL or strictly after assigned_at.

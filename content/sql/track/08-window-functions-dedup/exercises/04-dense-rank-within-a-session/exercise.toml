@@ -1,0 +1,6 @@
+id = "8.4"
+title = "DENSE_RANK within a session"
+difficulty = "medium"
+concept = "DENSE_RANK() OVER (PARTITION BY ...)"
+tables = "events(event_id, user_id, event_type, event_ts, session_id)"
+hint = "DENSE_RANK() OVER (PARTITION BY session_id ORDER BY event_ts) AS session_rank"

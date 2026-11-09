@@ -1,0 +1,9 @@
+id = "everybody.visualizing-data.data-pipeline-and-maps.points-file"
+title = "Hand the points to the page"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Read the rows in a fixed order.",
+  "Let the standard library write the data portion so that special characters are handled.",
+  "The file must be valid JavaScript assigning to a variable."
+]

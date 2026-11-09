@@ -1,0 +1,6 @@
+id = "extra-129"
+title = "Region average sale amount"
+difficulty = "medium"
+concept = "3-way JOIN / AVG"
+tables = "regions(id,name); states(id,name,regionId); employees(id,name,stateId); sales(id,amount,employeeId)"
+hint = "Chain regions -> states -> employees -> sales, GROUP BY region name, AVG(amount)."

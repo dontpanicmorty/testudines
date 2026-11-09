@@ -1,0 +1,6 @@
+id = "extra-49"
+title = "Deliveries per user per week"
+difficulty = "medium"
+concept = "GROUP BY multiple columns"
+tables = "deliveries_info(delivery_id, user_id, delivery_date, delivery_week, route_id, delivery_success_flag)"
+hint = "GROUP BY user_id, delivery_week."

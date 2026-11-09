@@ -1,0 +1,8 @@
+id = "apis-and-config.secrets-and-settings.redact-mapping"
+title = "Redact secrets before logging"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Check each key with key.lower() against the sensitive words using any(word in lowered for word in SENSITIVE).",
+  "For nested dicts and lists call redact again on the value; build a new structure, never mutate the input.",
+]

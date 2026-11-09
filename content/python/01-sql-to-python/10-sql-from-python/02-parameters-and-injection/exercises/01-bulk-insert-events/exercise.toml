@@ -1,0 +1,8 @@
+id = "sql-from-python.parameters-and-injection.bulk-insert-events"
+title = "Idempotent bulk insert"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "executemany takes the SQL and an iterable of dicts when you use :named placeholders.",
+  "INSERT OR IGNORE skips rows whose primary key exists. cursor.rowcount after executemany is the number actually inserted.",
+]

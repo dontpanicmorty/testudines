@@ -1,0 +1,8 @@
+id = "foundations.decisions-and-booleans.safe-discount"
+title = "Safe discount"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "A missing discount (None) and a discount of 0 are different things, but both mean 'no reduction'.",
+  "Handle None first with `is None`, then validate the range, then compute.",
+]

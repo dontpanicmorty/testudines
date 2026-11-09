@@ -1,0 +1,1 @@
+`employees.manager_id` points to another employee's `employee_id`; the top of the org (the CEO) has a null `manager_id`. For every employee, compute their `depth` -- 0 for the CEO, incrementing by one per level down the chain from the CEO to that employee. Return `employee_id`, `employee_name`, and `depth`. Order by `depth`, `employee_id`.

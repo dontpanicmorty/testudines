@@ -1,0 +1,8 @@
+id = "services.what-a-service-is.get-order"
+title = "Look up an order"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Orders are stored in a dict keyed by integer id. dict.get returns None when the key is absent.",
+  "The id arrives as text from the URL. Convert with int(); if that raises ValueError, the request is bad (400).",
+]

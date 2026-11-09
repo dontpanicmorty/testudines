@@ -1,0 +1,6 @@
+id = "extra-196"
+title = "Role counts per user after seeding data"
+difficulty = "hard"
+concept = "GROUP BY / three tables"
+tables = "users(id PK, userName); roles(id PK, role)"
+hint = "Seed the junction table, JOIN to users, GROUP BY userName, COUNT(*)."

@@ -1,0 +1,5 @@
+id = "classes-dataclasses-typing.dataclasses.version"
+title = "Sortable package versions"
+difficulty = 3
+main = "solution.py"
+hints = ["`@dataclass(order=True, frozen=True)` with fields in sort order: major, minor, patch.", "A `@classmethod` named `parse` receives the class as `cls`; build the instance with `cls(...)`.", "Strip an optional leading `v`, split on `.`, convert with `int`; wrap errors so they raise `ValueError`."]

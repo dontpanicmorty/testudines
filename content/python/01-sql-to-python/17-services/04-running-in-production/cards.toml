@@ -1,0 +1,34 @@
+[[card]]
+id = "b308b354"
+q = "Why can't you keep an idempotency-key cache in a module-level dict when running `--workers 4`?"
+a = "Each worker is a separate process with its own memory, so keys seen by one worker are invisible to the others. Use a shared store (database)."
+
+[[card]]
+id = "b858c64c"
+q = "How do you make `TestClient` run the app's startup and shutdown code?"
+a = "Use it as a context manager: `with TestClient(app) as client:`."
+
+[[card]]
+id = "a5ce6af3"
+q = "Write the middleware signature that adds an `X-Request-ID` header to every response."
+a = "```python\n@app.middleware(\"http\")\nasync def mw(request, call_next):\n    response = await call_next(request)\n    response.headers[\"X-Request-ID\"] = rid\n    return response\n```"
+
+[[card]]
+id = "42ec4dde"
+q = "What does a graceful shutdown do that killing the process does not?"
+a = "It stops accepting new connections, lets in-flight requests finish, then runs cleanup (lifespan shutdown) before exit."
+
+[[card]]
+id = "4a56e15c"
+q = "A downstream call hangs. Which status does your service return after your timeout, and which asyncio function enforces it?"
+a = "`504 Gateway Timeout`, enforced with `asyncio.wait_for(coro, timeout=...)`."
+
+[[card]]
+id = "4139bbc6"
+q = "Why log one JSON object per request instead of `print(f\"got {path}\")`?"
+a = "Machine-parseable fields (status, request_id, duration) can be filtered and aggregated; free text cannot."
+
+[[card]]
+id = "a5db8ecd"
+q = "Name three container habits for a production service."
+a = "Config via environment variables; log to stdout/stderr; run as non-root (also: small image, health endpoint, handle SIGTERM)."

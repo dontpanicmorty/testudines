@@ -1,0 +1,25 @@
+[[card]]
+id = "f5d4e278"
+q = '''What does `for x in items:` do?'''
+a = '''It runs the indented block once for each entry of `items`, setting `x` to that entry each time.'''
+
+[[card]]
+id = "c0c5b54e"
+q = '''Which numbers does `range(3)` produce?'''
+a = '''0, 1 and 2. It starts at 0 and stops before 3.'''
+
+[[card]]
+id = "d5c45cb5"
+q = '''What does `range(10, 0, -3)` produce?'''
+a = '''10, 7, 4, 1. The third number is the step.'''
+
+[[card]]
+id = "891d3fba"
+q = '''Why is a `for` loop called a definite loop?'''
+a = '''Because it runs a known number of times: once per item in the sequence.'''
+
+[[card]]
+id = "d2ad8d86"
+q = '''When would you choose `while` over `for`?'''
+a = '''When you repeat until something happens and do not know in advance how many iterations it will take.'''
+

@@ -1,0 +1,5 @@
+id = "modules-and-projects.project-layout.package-front-door"
+title = "Give the package a front door"
+difficulty = 1
+main = "mylib/__init__.py"
+hints = ["Use relative imports in `__init__.py`: `from .cleaning import ...`.", "`__all__` is a list of the public names, as strings.", "The names to re-export are `clean_name` (from cleaning) and `read_rows` (from rows)."]

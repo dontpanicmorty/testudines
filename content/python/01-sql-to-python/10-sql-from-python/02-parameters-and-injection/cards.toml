@@ -1,0 +1,40 @@
+[[card]]
+id = "6846a3f3"
+q = "Why is `conn.execute(f\"... WHERE name = '{name}'\")` wrong, in one sentence?"
+a = "Data becomes part of the SQL text, so quotes in the data change the statement (breakage or injection). Use a placeholder."
+
+[[card]]
+id = "c9e0385d"
+q = "Write the call that selects customers with `plan` equal to the variable `plan` safely."
+a = '''```python
+conn.execute("SELECT * FROM customers WHERE plan = ?", (plan,))
+```'''
+
+[[card]]
+id = "e1ffafd5"
+q = "Why does `conn.execute(sql, (\"abc\"))` fail with 'Incorrect number of bindings'?"
+a = "`(\"abc\")` is a plain string, not a tuple, so it counts 3 characters. Use `(\"abc\",)`."
+
+[[card]]
+id = "7f9e4571"
+q = "Build the SQL and params for `WHERE id IN (...)` given `ids = [4, 8, 15]`."
+a = '''```python
+marks = ", ".join("?" * len(ids))
+sql = f"SELECT * FROM t WHERE id IN ({marks})"
+conn.execute(sql, ids)
+```'''
+
+[[card]]
+id = "2308236f"
+q = "Why can't you pass a column name as a `?` parameter, and what do you do instead?"
+a = "Identifiers are part of the statement structure, not values. Check them against an allowlist before putting them in the SQL text."
+
+[[card]]
+id = "13f6aced"
+q = "Which method inserts a list of dicts in one call, and what placeholder style fits a dict?"
+a = "`executemany(\"INSERT ... VALUES (:id, :name)\", rows)`. Named placeholders match dict keys."
+
+[[card]]
+id = "c694ed34"
+q = "What should you do with an empty list before building an `IN (...)` clause?"
+a = "Return early (empty result). `IN ()` is invalid SQL."

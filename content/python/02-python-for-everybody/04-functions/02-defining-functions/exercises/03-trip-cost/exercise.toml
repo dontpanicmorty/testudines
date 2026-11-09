@@ -1,0 +1,9 @@
+id = "everybody.functions.defining-functions.trip-cost"
+title = "Cost of a car trip"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Work out the litres used first, then multiply by the price.",
+  "Use clear parameter names and a local variable or two.",
+  "Fuel used = distance / 100 * litres per 100 km.",
+]

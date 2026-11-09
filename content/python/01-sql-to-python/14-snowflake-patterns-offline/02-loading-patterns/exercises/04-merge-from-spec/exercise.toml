@@ -1,0 +1,9 @@
+id = "snowflake-patterns-offline.loading-patterns.merge-from-spec"
+title = "Generate an idempotent MERGE"
+difficulty = 3
+main = "solution.py"
+hints = [
+  "Build the ON clause with ' AND '.join over the keys; build SET from columns that are not keys.",
+  "Validate first: columns must not be empty, keys must be a non-empty subset of columns, otherwise ValueError.",
+  "If every column is a key there is nothing to update: leave out the WHEN MATCHED clause entirely.",
+]

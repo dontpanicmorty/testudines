@@ -1,0 +1,6 @@
+id = "20.1"
+title = "Region Totals as Separate Columns"
+difficulty = "hard"
+concept = "SUM(CASE WHEN...) pivot"
+tables = "orders(order_id, region, amount)"
+hint = "Each pivoted column is its own `sum(case when region = '<x>' then amount else 0 end)` in the same select list."

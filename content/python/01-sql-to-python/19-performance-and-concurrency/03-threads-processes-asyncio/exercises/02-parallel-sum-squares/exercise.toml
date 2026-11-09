@@ -1,0 +1,9 @@
+id = "performance-and-concurrency.threads-processes-asyncio.parallel-sum-squares"
+title = "Parallel sum of squares"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "Split numbers into `workers` roughly equal slices (numbers[i::workers] is the simplest split).",
+  "Define the per-slice function at module top level so it can be pickled, then pool.map it over the slices and sum the partial results.",
+  "Handle an empty list (return 0) and workers=1 (you may skip the pool or still use it).",
+]

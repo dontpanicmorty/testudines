@@ -1,0 +1,1 @@
+SELECT * FROM sessions QUALIFY ROW_NUMBER() OVER (PARTITION BY userId ORDER BY duration DESC) = 2 ORDER BY userId;

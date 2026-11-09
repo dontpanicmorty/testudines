@@ -1,0 +1,29 @@
+[[card]]
+id = "8f4962fe"
+q = '''What is a syntax error?'''
+a = '''A mistake in the grammar of the code, so Python cannot understand it. It is reported before the program runs.'''
+
+[[card]]
+id = "ef172dc7"
+q = '''What is a runtime error?'''
+a = '''An error that happens while the program is running, such as dividing by zero. The program stops at that line.'''
+
+[[card]]
+id = "8e600e9a"
+q = '''What is a logic (semantic) error?'''
+a = '''The program runs without complaint but gives the wrong answer because it does not do what you meant.'''
+
+[[card]]
+id = "fd140a0a"
+q = '''The line `10 + 20 + 30 / 3` gives 40.0, not 20.0. Why?'''
+a = '''Division is worked out before addition. Use brackets: `(10 + 20 + 30) / 3`.'''
+
+[[card]]
+id = "165cc738"
+q = '''Give two debugging steps.'''
+a = '''For example: read the error message and line number; predict what each line should do; print a value in the middle; shrink the problem; change one thing at a time.'''
+
+[[card]]
+id = "1dfb369b"
+q = '''Why should you change only one thing at a time when debugging?'''
+a = '''Otherwise you will not know which change fixed (or broke) the program.'''

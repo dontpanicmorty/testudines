@@ -1,0 +1,9 @@
+id = "wrangling-in-pure-python.a-mini-etl.transform"
+title = "Transform: customer totals"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "Accumulate into a dict keyed by customer_id.",
+  "line total = quantity * unit_price (both already typed; unit_price is a Decimal).",
+  "Return the dicts sorted by customer_id.",
+]

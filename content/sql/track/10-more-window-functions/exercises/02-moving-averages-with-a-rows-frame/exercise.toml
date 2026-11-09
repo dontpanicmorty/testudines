@@ -1,0 +1,6 @@
+id = "10.2"
+title = "Moving Averages with a ROWS Frame"
+difficulty = "medium"
+concept = "AVG() OVER (ROWS BETWEEN)"
+tables = "daily_signups(signup_date, signup_count)"
+hint = "`avg(signup_count) over (order by signup_date rows between 2 preceding and current row)`."

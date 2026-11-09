@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "dbt_version": "1.9.0",
+    "project_name": "shop"
+  },
+  "nodes": {
+    "model.shop.stg_customers": {
+      "unique_id": "model.shop.stg_customers",
+      "resource_type": "model",
+      "name": "stg_customers",
+      "package_name": "shop",
+      "path": "stg_customers.sql",
+      "tags": [
+        "staging"
+      ],
+      "config": {
+        "materialized": "view"
+      },
+      "depends_on": {
+        "nodes": [
+          "source.shop.raw.customers"
+        ]
+      },
+      "description": "The stg_customers model."
+    },
+    "model.shop.stg_orders": {
+      "unique_id": "model.shop.stg_orders",
+      "resource_type": "model",
+      "name": "stg_orders",
+      "package_name": "shop",
+      "path": "stg_orders.sql",
+      "tags": [
+        "staging"
+      ],
+      "config": {
+        "materialized": "view"
+      },
+      "depends_on": {
+        "nodes": [
+          "source.shop.raw.orders"
+        ]
+      },
+      "description": "The stg_orders model."
+    },
+    "model.shop.int_order_totals": {
+      "unique_id": "model.shop.int_order_totals",
+      "resource_type": "model",
+      "name": "int_order_totals",
+      "package_name": "shop",
+      "path": "int_order_totals.sql",
+      "tags": [
+        "intermediate"
+      ],
+      "config": {
+        "materialized": "ephemeral"
+      },
+      "depends_on": {
+        "nodes": [
+          "model.shop.stg_orders"
+        ]
+      },
+      "description": "The int_order_totals model."
+    },
+    "model.shop.dim_customers": {
+      "unique_id": "model.shop.dim_customers",
+      "resource_type": "model",
+      "name": "dim_customers",
+      "package_name": "shop",
+      "path": "dim_customers.sql",
+      "tags": [
+        "marts"
+      ],
+      "config": {
+        "materialized": "table"
+      },
+      "depends_on": {
+        "nodes": [
+          "model.shop.stg_customers"
+        ]
+      },
+      "description": "The dim_customers model."
+    },
+    "model.shop.fct_orders": {
+      "unique_id": "model.shop.fct_orders",
+      "resource_type": "model",
+      "name": "fct_orders",
+      "package_name": "shop",
+      "path": "fct_orders.sql",
+      "tags": [
+        "marts",
+        "finance"
+      ],
+      "config": {
+        "materialized": "incremental"
+      },
+      "depends_on": {
+        "nodes": [
+          "model.shop.int_order_totals",
+          "model.shop.dim_customers"
+        ]
+      },
+      "description": "The fct_orders model."
+    },
+    "test.shop.not_null_fct_orders_order_id": {
+      "unique_id": "test.shop.not_null_fct_orders_order_id",
+      "resource_type": "test",
+      "name": "not_null_fct_orders_order_id",
+      "package_name": "shop",
+      "path": "not_null_fct_orders_order_id.sql",
+      "tags": [],
+      "config": {
+        "materialized": "view"
+      },
+      "depends_on": {
+        "nodes": [
+          "model.shop.fct_orders"
+        ]
+      },
+      "description": "The not_null_fct_orders_order_id model."
+    }
+  },
+  "sources": {
+    "source.shop.raw.customers": {
+      "name": "customers"
+    },
+    "source.shop.raw.orders": {
+      "name": "orders"
+    }
+  }
+}

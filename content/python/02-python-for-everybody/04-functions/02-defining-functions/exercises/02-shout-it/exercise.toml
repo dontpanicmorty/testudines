@@ -1,0 +1,9 @@
+id = "everybody.functions.defining-functions.shout-it"
+title = "Say it again, louder"
+difficulty = 2
+main = "solution.py"
+hints = [
+  "The function's job is to display, not to hand back.",
+  "print shows text on the screen.",
+  "Text has a method that gives its upper-case version.",
+]

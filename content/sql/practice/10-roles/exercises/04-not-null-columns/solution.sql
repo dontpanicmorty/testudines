@@ -1,0 +1,1 @@
+CREATE TABLE users_roles (userId INTEGER NOT NULL, roleId INTEGER NOT NULL);

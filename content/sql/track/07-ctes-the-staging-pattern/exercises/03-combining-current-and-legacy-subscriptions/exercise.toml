@@ -1,0 +1,6 @@
+id = "7.3"
+title = "Combining Current and Legacy Subscriptions"
+difficulty = "medium"
+concept = "UNION ALL + literal tagging column"
+tables = "source_subscriptions(account_id, plan_code, ...)\nlegacy_subscriptions(account_id, plan_code)"
+hint = "SELECT ... , 'current' AS source_system FROM source_subscriptions UNION ALL SELECT ..., 'legacy' AS source_system FROM legacy_subscriptions"

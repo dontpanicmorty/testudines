@@ -1,0 +1,6 @@
+id = "11.1"
+title = "Employee and Manager Names"
+difficulty = "medium"
+concept = "self-join"
+tables = "employees(employee_id, employee_name, manager_id)"
+hint = "Alias the table twice, e.g. `employees as e` and `employees as m`, joining `e.manager_id = m.employee_id`."

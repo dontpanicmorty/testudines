@@ -1,0 +1,8 @@
+id = "files-and-formats.yaml-and-config-files.load-pipeline-config"
+title = "Load a pipeline config"
+difficulty = 1
+main = "solution.py"
+hints = [
+  "yaml.safe_load(text) returns a dict.",
+  "Use cfg.get('retries', 3) style defaults for the optional keys.",
+]

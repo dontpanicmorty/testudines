@@ -1,0 +1,6 @@
+id = "extra-146"
+title = "Total inventory value per seller"
+difficulty = "medium"
+concept = "JOIN / SUM"
+tables = "sellers(id, name, rating); items(id, name, sellerId, price)"
+hint = "JOIN sellers to items, GROUP BY seller name, SUM(price)."

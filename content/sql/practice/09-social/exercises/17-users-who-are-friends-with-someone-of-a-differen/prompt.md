@@ -1,0 +1,1 @@
+Return the distinct name of every user who has at least one friend (counting a friendship regardless of which column stores which user) whose sex is different from their own -- only considering users and friends whose sex is known (not NULL). Order by name.

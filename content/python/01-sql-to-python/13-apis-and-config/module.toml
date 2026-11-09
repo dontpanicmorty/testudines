@@ -1,0 +1,3 @@
+title = "APIs, secrets and configuration"
+summary = "Call HTTP APIs safely, page through results, retry sensibly, and keep secrets and settings out of your code."
+stage = "Stage 4 · Data tooling and integration"
